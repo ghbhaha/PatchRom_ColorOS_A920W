@@ -44,7 +44,6 @@
 
     const/4 v2, 0x0
 
-    .line 16078
     new-instance v0, Lcom/android/server/am/ActivityManagerService$PermissionMode;
 
     const-string v1, "ALLOW"
@@ -53,7 +52,6 @@
 
     sput-object v0, Lcom/android/server/am/ActivityManagerService$PermissionMode;->ALLOW:Lcom/android/server/am/ActivityManagerService$PermissionMode;
 
-    .line 16079
     new-instance v0, Lcom/android/server/am/ActivityManagerService$PermissionMode;
 
     const-string v1, "DENY"
@@ -62,7 +60,6 @@
 
     sput-object v0, Lcom/android/server/am/ActivityManagerService$PermissionMode;->DENY:Lcom/android/server/am/ActivityManagerService$PermissionMode;
 
-    .line 16080
     new-instance v0, Lcom/android/server/am/ActivityManagerService$PermissionMode;
 
     const-string v1, "ASK"
@@ -71,7 +68,6 @@
 
     sput-object v0, Lcom/android/server/am/ActivityManagerService$PermissionMode;->ASK:Lcom/android/server/am/ActivityManagerService$PermissionMode;
 
-    .line 16077
     const/4 v0, 0x3
 
     new-array v0, v0, [Lcom/android/server/am/ActivityManagerService$PermissionMode;
@@ -102,7 +98,6 @@
     .end annotation
 
     .prologue
-    .line 16077
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -113,7 +108,6 @@
     .parameter "name"
 
     .prologue
-    .line 16077
     const-class v0, Lcom/android/server/am/ActivityManagerService$PermissionMode;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -129,7 +123,6 @@
     .locals 1
 
     .prologue
-    .line 16077
     sget-object v0, Lcom/android/server/am/ActivityManagerService$PermissionMode;->$VALUES:[Lcom/android/server/am/ActivityManagerService$PermissionMode;
 
     invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;

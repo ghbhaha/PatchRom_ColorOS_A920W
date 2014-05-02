@@ -1200,6 +1200,44 @@
     return-void
 .end method
 
+.method public emDial(Ljava/lang/String;)V
+    .locals 1
+    .parameter "telNumber"
+    .annotation build Landroid/annotation/OppoHook;
+        level = .enum Landroid/annotation/OppoHook$OppoHookType;->NEW_METHOD:Landroid/annotation/OppoHook$OppoHookType;
+        note = "add getPhone method, only for MTK platform"
+        property = .enum Landroid/annotation/OppoHook$OppoRomType;->OPPO:Landroid/annotation/OppoHook$OppoRomType;
+    .end annotation
+
+    .prologue
+    .line 1580
+    iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
+
+    invoke-interface {v0, p1}, Lcom/android/internal/telephony/Phone;->emDial(Ljava/lang/String;)V
+
+    .line 1581
+    return-void
+.end method
+
+.method public emHungup(Ljava/lang/String;)V
+    .locals 1
+    .parameter "telNumber"
+    .annotation build Landroid/annotation/OppoHook;
+        level = .enum Landroid/annotation/OppoHook$OppoHookType;->NEW_METHOD:Landroid/annotation/OppoHook$OppoHookType;
+        note = "add getPhone method, only for MTK platform"
+        property = .enum Landroid/annotation/OppoHook$OppoRomType;->OPPO:Landroid/annotation/OppoHook$OppoRomType;
+    .end annotation
+
+    .prologue
+    .line 1590
+    iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
+
+    invoke-interface {v0, p1}, Lcom/android/internal/telephony/Phone;->emHungup(Ljava/lang/String;)V
+
+    .line 1591
+    return-void
+.end method
+
 .method public enableApnType(Ljava/lang/String;)I
     .locals 1
     .parameter "type"
@@ -1213,6 +1251,25 @@
     move-result v0
 
     return v0
+.end method
+
+.method public enableEngineerTest(Z)V
+    .locals 1
+    .parameter "on"
+    .annotation build Landroid/annotation/OppoHook;
+        level = .enum Landroid/annotation/OppoHook$OppoHookType;->NEW_METHOD:Landroid/annotation/OppoHook$OppoHookType;
+        note = "add getPhone method, only for MTK platform"
+        property = .enum Landroid/annotation/OppoHook$OppoRomType;->OPPO:Landroid/annotation/OppoHook$OppoRomType;
+    .end annotation
+
+    .prologue
+    .line 1570
+    iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
+
+    invoke-interface {v0, p1}, Lcom/android/internal/telephony/Phone;->enableEngineerTest(Z)V
+
+    .line 1571
+    return-void
 .end method
 
 .method public enableEnhancedVoicePrivacy(ZLandroid/os/Message;)V
@@ -2441,6 +2498,21 @@
     return-object v0
 .end method
 
+.method public getPhone()Lcom/android/internal/telephony/Phone;
+    .locals 1
+    .annotation build Landroid/annotation/OppoHook;
+        level = .enum Landroid/annotation/OppoHook$OppoHookType;->NEW_METHOD:Landroid/annotation/OppoHook$OppoHookType;
+        note = "add getPhone method, only for MTK platform"
+        property = .enum Landroid/annotation/OppoHook$OppoRomType;->OPPO:Landroid/annotation/OppoHook$OppoRomType;
+    .end annotation
+
+    .prologue
+    .line 1600
+    iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
+
+    return-object v0
+.end method
+
 .method public getPhoneName()Ljava/lang/String;
     .locals 1
 
@@ -3202,7 +3274,7 @@
 
     .prologue
     .line 1421
-    const/4 v0, 0x0
+    const/4 v0, 0x1
 
     return v0
 .end method

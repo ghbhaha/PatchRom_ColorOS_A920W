@@ -37,20 +37,16 @@
     .parameter "c"
 
     .prologue
-    .line 49
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 46
     new-instance v0, Landroid/util/SparseArray;
 
     invoke-direct {v0}, Landroid/util/SparseArray;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/AttributeCache$Package;->mMap:Landroid/util/SparseArray;
 
-    .line 50
     iput-object p1, p0, Lcom/android/server/AttributeCache$Package;->context:Landroid/content/Context;
 
-    .line 51
     return-void
 .end method
 
@@ -59,7 +55,6 @@
     .parameter "x0"
 
     .prologue
-    .line 44
     iget-object v0, p0, Lcom/android/server/AttributeCache$Package;->mMap:Landroid/util/SparseArray;
 
     return-object v0

@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 277
     iput-object p1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor$2;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -39,12 +38,10 @@
     .parameter "intent"
 
     .prologue
-    .line 280
     invoke-virtual/range {p2 .. p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v3
 
-    .line 281
     .local v3, action:Ljava/lang/String;
     invoke-static {}, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;->access$1700()Z
 
@@ -76,7 +73,6 @@
 
     invoke-static/range {v18 .. v19}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 283
     :cond_0
     const-string v18, "android.intent.action.TIME_TICK"
 
@@ -108,7 +104,6 @@
 
     if-eqz v18, :cond_3
 
-    .line 286
     :cond_1
     move-object/from16 v0, p0
 
@@ -140,12 +135,10 @@
 
     invoke-virtual/range {v18 .. v19}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
-    .line 478
     :cond_2
     :goto_0
     return-void
 
-    .line 287
     :cond_3
     const-string v18, "android.provider.Telephony.SPN_STRINGS_UPDATED"
 
@@ -157,12 +150,10 @@
 
     if-eqz v18, :cond_6
 
-    .line 289
     new-instance v14, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor$SpnUpdate;
 
     invoke-direct {v14}, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor$SpnUpdate;-><init>()V
 
-    .line 290
     .local v14, spnUpdate:Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor$SpnUpdate;
     invoke-static {}, Lcom/android/internal/policy/impl/keyguard/KeyguardUtils;->isGemini()Z
 
@@ -170,7 +161,6 @@
 
     if-eqz v18, :cond_5
 
-    .line 291
     const-string v18, "simId"
 
     const/16 v19, 0x0
@@ -187,7 +177,6 @@
 
     if-nez v18, :cond_4
 
-    .line 292
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor$2;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;
@@ -212,7 +201,6 @@
     #setter for: Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;->mTelephonyPlmn:Ljava/lang/CharSequence;
     invoke-static/range {v18 .. v19}, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;->access$1902(Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
 
-    .line 293
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor$2;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;
@@ -237,14 +225,12 @@
     #setter for: Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;->mTelephonySpn:Ljava/lang/CharSequence;
     invoke-static/range {v18 .. v19}, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;->access$2102(Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
 
-    .line 294
     const/16 v18, 0x0
 
     move/from16 v0, v18
 
     iput v0, v14, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor$SpnUpdate;->simId:I
 
-    .line 295
     const-string v18, "KeyguardUpdateMonitor"
 
     new-instance v19, Ljava/lang/StringBuilder;
@@ -299,7 +285,6 @@
 
     invoke-static/range {v18 .. v19}, Lcom/android/internal/policy/impl/keyguard/KeyguardUtils;->xlogD(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 310
     :goto_1
     move-object/from16 v0, p0
 
@@ -337,7 +322,6 @@
 
     goto/16 :goto_0
 
-    .line 298
     :cond_4
     move-object/from16 v0, p0
 
@@ -363,7 +347,6 @@
     #setter for: Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;->mTelephonyPlmnGemini:Ljava/lang/CharSequence;
     invoke-static/range {v18 .. v19}, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;->access$2302(Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
 
-    .line 299
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor$2;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;
@@ -388,14 +371,12 @@
     #setter for: Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;->mTelephonySpnGemini:Ljava/lang/CharSequence;
     invoke-static/range {v18 .. v19}, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;->access$2402(Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
 
-    .line 300
     const/16 v18, 0x1
 
     move/from16 v0, v18
 
     iput v0, v14, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor$SpnUpdate;->simId:I
 
-    .line 301
     const-string v18, "KeyguardUpdateMonitor"
 
     new-instance v19, Ljava/lang/StringBuilder;
@@ -452,7 +433,6 @@
 
     goto/16 :goto_1
 
-    .line 305
     :cond_5
     move-object/from16 v0, p0
 
@@ -478,7 +458,6 @@
     #setter for: Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;->mTelephonyPlmn:Ljava/lang/CharSequence;
     invoke-static/range {v18 .. v19}, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;->access$1902(Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
 
-    .line 306
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor$2;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;
@@ -503,7 +482,6 @@
     #setter for: Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;->mTelephonySpn:Ljava/lang/CharSequence;
     invoke-static/range {v18 .. v19}, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;->access$2102(Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
 
-    .line 307
     const-string v18, "KeyguardUpdateMonitor"
 
     new-instance v19, Ljava/lang/StringBuilder;
@@ -560,7 +538,6 @@
 
     goto/16 :goto_1
 
-    .line 311
     .end local v14           #spnUpdate:Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor$SpnUpdate;
     :cond_6
     const-string v18, "android.intent.action.BATTERY_CHANGED"
@@ -573,7 +550,6 @@
 
     if-eqz v18, :cond_7
 
-    .line 312
     const-string v18, "status"
 
     const/16 v19, 0x1
@@ -588,7 +564,6 @@
 
     move-result v17
 
-    .line 313
     .local v17, status:I
     const-string v18, "plugged"
 
@@ -604,7 +579,6 @@
 
     move-result v9
 
-    .line 314
     .local v9, plugged:I
     const-string v18, "level"
 
@@ -620,7 +594,6 @@
 
     move-result v5
 
-    .line 315
     .local v5, level:I
     const-string v18, "health"
 
@@ -636,7 +609,6 @@
 
     move-result v4
 
-    .line 316
     .local v4, health:I
     move-object/from16 v0, p0
 
@@ -663,7 +635,6 @@
 
     move-result-object v7
 
-    .line 318
     .local v7, msg:Landroid/os/Message;
     move-object/from16 v0, p0
 
@@ -682,7 +653,6 @@
 
     goto/16 :goto_0
 
-    .line 319
     .end local v4           #health:I
     .end local v5           #level:I
     .end local v7           #msg:Landroid/os/Message;
@@ -699,10 +669,8 @@
 
     if-eqz v18, :cond_c
 
-    .line 320
     const/4 v12, 0x0
 
-    .line 321
     .local v12, simId:I
     const-string v18, "ss"
 
@@ -714,7 +682,6 @@
 
     move-result-object v16
 
-    .line 322
     .local v16, stateExtra:Ljava/lang/String;
     invoke-static {}, Lcom/android/internal/policy/impl/keyguard/KeyguardUtils;->isGemini()Z
 
@@ -722,7 +689,6 @@
 
     if-eqz v18, :cond_8
 
-    .line 323
     const-string v18, "simId"
 
     const/16 v19, 0x0
@@ -737,7 +703,6 @@
 
     move-result v12
 
-    .line 325
     :cond_8
     invoke-static {}, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;->access$2500()Z
 
@@ -745,7 +710,6 @@
 
     if-eqz v18, :cond_9
 
-    .line 326
     const-string v18, "KeyguardUpdateMonitor"
 
     new-instance v19, Ljava/lang/StringBuilder;
@@ -784,7 +748,6 @@
 
     invoke-static/range {v18 .. v19}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 330
     :cond_9
     const-string v18, "READY"
 
@@ -798,14 +761,12 @@
 
     if-eqz v18, :cond_a
 
-    .line 331
     const/16 v18, 0x1
 
     move/from16 v0, v18
 
     if-ne v12, v0, :cond_b
 
-    .line 332
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor$2;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;
@@ -816,7 +777,6 @@
 
     invoke-static/range {v18 .. v19}, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;->access$1072(Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;I)I
 
-    .line 333
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor$2;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;
@@ -827,7 +787,6 @@
 
     invoke-static/range {v18 .. v19}, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;->access$1072(Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;I)I
 
-    .line 340
     :cond_a
     :goto_2
     const-string v18, "KeyguardUpdateMonitor"
@@ -868,7 +827,6 @@
 
     invoke-static/range {v18 .. v19}, Lcom/android/internal/policy/impl/keyguard/KeyguardUtils;->xlogD(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 341
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor$2;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;
@@ -905,7 +863,6 @@
 
     goto/16 :goto_0
 
-    .line 335
     :cond_b
     move-object/from16 v0, p0
 
@@ -917,7 +874,6 @@
 
     invoke-static/range {v18 .. v19}, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;->access$1072(Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;I)I
 
-    .line 336
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor$2;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;
@@ -930,7 +886,6 @@
 
     goto :goto_2
 
-    .line 344
     .end local v12           #simId:I
     .end local v16           #stateExtra:Ljava/lang/String;
     :cond_c
@@ -944,7 +899,6 @@
 
     if-eqz v18, :cond_e
 
-    .line 345
     invoke-static {}, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;->access$1700()Z
 
     move-result v18
@@ -957,7 +911,6 @@
 
     invoke-static/range {v18 .. v19}, Lcom/android/internal/policy/impl/keyguard/KeyguardUtils;->xlogD(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 346
     :cond_d
     move-object/from16 v0, p0
 
@@ -1007,7 +960,6 @@
 
     goto/16 :goto_0
 
-    .line 348
     :cond_e
     const-string v18, "android.intent.action.PHONE_STATE"
 
@@ -1019,7 +971,6 @@
 
     if-eqz v18, :cond_f
 
-    .line 349
     const-string v18, "state"
 
     move-object/from16 v0, p2
@@ -1030,7 +981,6 @@
 
     move-result-object v15
 
-    .line 350
     .local v15, state:Ljava/lang/String;
     move-object/from16 v0, p0
 
@@ -1068,7 +1018,6 @@
 
     goto/16 :goto_0
 
-    .line 351
     .end local v15           #state:Ljava/lang/String;
     :cond_f
     const-string v18, "android.app.action.DEVICE_POLICY_MANAGER_STATE_CHANGED"
@@ -1081,7 +1030,6 @@
 
     if-eqz v18, :cond_10
 
-    .line 353
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor$2;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;
@@ -1114,7 +1062,6 @@
 
     goto/16 :goto_0
 
-    .line 354
     :cond_10
     const-string v18, "android.intent.action.USER_REMOVED"
 
@@ -1126,7 +1073,6 @@
 
     if-eqz v18, :cond_11
 
-    .line 355
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor$2;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;
@@ -1175,7 +1121,6 @@
 
     goto/16 :goto_0
 
-    .line 357
     :cond_11
     const-string v18, "android.intent.action.BOOT_COMPLETED"
 
@@ -1187,7 +1132,6 @@
 
     if-eqz v18, :cond_12
 
-    .line 358
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor$2;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;
@@ -1220,7 +1164,6 @@
 
     goto/16 :goto_0
 
-    .line 361
     :cond_12
     const-string v18, "android.intent.action.ACTION_SHUTDOWN_IPO"
 
@@ -1232,14 +1175,12 @@
 
     if-eqz v18, :cond_13
 
-    .line 362
     const-string v18, "KeyguardUpdateMonitor"
 
     const-string v19, "received the IPO shutdown message"
 
     invoke-static/range {v18 .. v19}, Lcom/android/internal/policy/impl/keyguard/KeyguardUtils;->xlogD(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 363
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor$2;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;
@@ -1270,7 +1211,6 @@
 
     invoke-virtual/range {v18 .. v19}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
-    .line 367
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor$2;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;
@@ -1288,7 +1228,6 @@
 
     move-result-object v6
 
-    .line 368
     .local v6, m:Landroid/os/Message;
     const/16 v18, 0x0
 
@@ -1296,7 +1235,6 @@
 
     iput v0, v6, Landroid/os/Message;->arg1:I
 
-    .line 369
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor$2;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;
@@ -1314,7 +1252,6 @@
 
     goto/16 :goto_0
 
-    .line 370
     .end local v6           #m:Landroid/os/Message;
     :cond_13
     const-string v18, "android.intent.action.RADIO_OFF"
@@ -1327,7 +1264,6 @@
 
     if-eqz v18, :cond_14
 
-    .line 371
     const-string v18, "slotId"
 
     const/16 v19, 0x0
@@ -1342,7 +1278,6 @@
 
     move-result v13
 
-    .line 372
     .local v13, slotId:I
     const-string v18, "KeyguardUpdateMonitor"
 
@@ -1368,7 +1303,6 @@
 
     invoke-static/range {v18 .. v19}, Lcom/android/internal/policy/impl/keyguard/KeyguardUtils;->xlogD(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 373
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor$2;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;
@@ -1409,7 +1343,6 @@
 
     goto/16 :goto_0
 
-    .line 375
     .end local v13           #slotId:I
     :cond_14
     sget-object v18, Lcom/android/internal/telephony/gemini/GeminiPhone;->EVENT_3G_SWITCH_START_MD_RESET:Ljava/lang/String;
@@ -1422,14 +1355,12 @@
 
     if-eqz v18, :cond_15
 
-    .line 376
     const-string v18, "KeyguardUpdateMonitor"
 
     const-string v19, "received GeminiPhone.EVENT_3G_START_MD_RESET message"
 
     invoke-static/range {v18 .. v19}, Lcom/android/internal/policy/impl/keyguard/KeyguardUtils;->xlogD(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 377
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor$2;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;
@@ -1443,7 +1374,6 @@
 
     goto/16 :goto_0
 
-    .line 378
     :cond_15
     sget-object v18, Lcom/android/internal/telephony/gemini/GeminiPhone;->EVENT_3G_SWITCH_DONE:Ljava/lang/String;
 
@@ -1455,7 +1385,6 @@
 
     if-eqz v18, :cond_16
 
-    .line 379
     const-string v18, "KeyguardUpdateMonitor"
 
     new-instance v19, Ljava/lang/StringBuilder;
@@ -1489,7 +1418,6 @@
 
     invoke-static/range {v18 .. v19}, Lcom/android/internal/policy/impl/keyguard/KeyguardUtils;->xlogD(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 380
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor$2;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;
@@ -1503,7 +1431,6 @@
 
     if-eqz v18, :cond_2
 
-    .line 381
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor$2;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;
@@ -1515,7 +1442,6 @@
     #setter for: Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;->mSIMResetModem:Z
     invoke-static/range {v18 .. v19}, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;->access$2602(Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;Z)Z
 
-    .line 382
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor$2;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;
@@ -1548,7 +1474,6 @@
 
     goto/16 :goto_0
 
-    .line 384
     :cond_16
     const-string v18, "android.intent.action.SIM_INSERTED_STATUS"
 
@@ -1560,7 +1485,6 @@
 
     if-eqz v18, :cond_17
 
-    .line 385
     const-string v18, "slotId"
 
     const/16 v19, 0x0
@@ -1575,7 +1499,6 @@
 
     move-result v13
 
-    .line 386
     .restart local v13       #slotId:I
     const-string v18, "KeyguardUpdateMonitor"
 
@@ -1601,7 +1524,6 @@
 
     invoke-static/range {v18 .. v19}, Lcom/android/internal/policy/impl/keyguard/KeyguardUtils;->xlogD(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 387
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor$2;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;
@@ -1642,7 +1564,6 @@
 
     goto/16 :goto_0
 
-    .line 389
     .end local v13           #slotId:I
     :cond_17
     const-string v18, "android.intent.action.SIM_NAME_UPDATE"
@@ -1655,7 +1576,6 @@
 
     if-eqz v18, :cond_18
 
-    .line 390
     const-string v18, "slotId"
 
     const/16 v19, 0x0
@@ -1670,7 +1590,6 @@
 
     move-result v13
 
-    .line 391
     .restart local v13       #slotId:I
     const-string v18, "KeyguardUpdateMonitor"
 
@@ -1696,7 +1615,6 @@
 
     invoke-static/range {v18 .. v19}, Lcom/android/internal/policy/impl/keyguard/KeyguardUtils;->xlogD(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 392
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor$2;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;
@@ -1737,7 +1655,6 @@
 
     goto/16 :goto_0
 
-    .line 394
     .end local v13           #slotId:I
     :cond_18
     const-string v18, "android.intent.action.CONFIGURATION_CHANGED"
@@ -1750,7 +1667,6 @@
 
     if-eqz v18, :cond_19
 
-    .line 395
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor$2;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;
@@ -1783,7 +1699,6 @@
 
     goto/16 :goto_0
 
-    .line 397
     :cond_19
     const-string v18, "android.intent.action.ACTION_SIM_DETECTED"
 
@@ -1795,7 +1710,6 @@
 
     if-eqz v18, :cond_1b
 
-    .line 398
     const-string v18, "simDetectStatus"
 
     move-object/from16 v0, p2
@@ -1806,7 +1720,6 @@
 
     move-result-object v11
 
-    .line 399
     .local v11, simDetectStatus:Ljava/lang/String;
     const-string v18, "simCount"
 
@@ -1822,7 +1735,6 @@
 
     move-result v10
 
-    .line 400
     .local v10, simCount:I
     const-string v18, "newSIMSlot"
 
@@ -1838,7 +1750,6 @@
 
     move-result v8
 
-    .line 401
     .local v8, newSIMSlot:I
     const-string v18, "KeyguardUpdateMonitor"
 
@@ -1888,7 +1799,6 @@
 
     invoke-static/range {v18 .. v19}, Lcom/android/internal/policy/impl/keyguard/KeyguardUtils;->xlogD(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 403
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor$2;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;
@@ -1912,7 +1822,6 @@
     #setter for: Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;->mSimChangedStatus:Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor$SIMStatus;
     invoke-static/range {v18 .. v19}, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;->access$2702(Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor$SIMStatus;)Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor$SIMStatus;
 
-    .line 404
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor$2;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;
@@ -1926,7 +1835,6 @@
 
     if-eqz v18, :cond_1a
 
-    .line 405
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor$2;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;
@@ -1940,7 +1848,6 @@
 
     invoke-virtual/range {v18 .. v18}, Landroid/app/AlertDialog;->dismiss()V
 
-    .line 408
     :cond_1a
     const-string v18, "KeyguardUpdateMonitor"
 
@@ -1968,7 +1875,6 @@
 
     invoke-static/range {v18 .. v19}, Lcom/android/internal/policy/impl/keyguard/KeyguardUtils;->xlogD(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 409
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor$2;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;
@@ -1991,7 +1897,6 @@
 
     goto/16 :goto_0
 
-    .line 411
     .end local v8           #newSIMSlot:I
     .end local v10           #simCount:I
     .end local v11           #simDetectStatus:Ljava/lang/String;
@@ -2006,14 +1911,12 @@
 
     if-eqz v18, :cond_1c
 
-    .line 412
     const-string v18, "KeyguardUpdateMonitor"
 
     const-string v19, "received normal boot"
 
     invoke-static/range {v18 .. v19}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 414
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor$2;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;
@@ -2027,7 +1930,6 @@
 
     if-eqz v18, :cond_2
 
-    .line 415
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor$2;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;
@@ -2043,7 +1945,6 @@
 
     goto/16 :goto_0
 
-    .line 418
     :cond_1c
     const-string v18, "android.intent.action.SIM_INFO_UPDATE"
 
@@ -2055,7 +1956,6 @@
 
     if-eqz v18, :cond_1d
 
-    .line 419
     const-string v18, "slotId"
 
     const/16 v19, 0x0
@@ -2070,7 +1970,6 @@
 
     move-result v13
 
-    .line 420
     .restart local v13       #slotId:I
     const-string v18, "KeyguardUpdateMonitor"
 
@@ -2096,7 +1995,6 @@
 
     invoke-static/range {v18 .. v19}, Lcom/android/internal/policy/impl/keyguard/KeyguardUtils;->xlogD(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 421
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor$2;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;
@@ -2137,7 +2035,6 @@
 
     goto/16 :goto_0
 
-    .line 426
     .end local v13           #slotId:I
     :cond_1d
     const-string v18, "android.provider.Telephony.DUAL_SIM_MODE_SELECT"
@@ -2150,14 +2047,12 @@
 
     if-eqz v18, :cond_1e
 
-    .line 427
     const-string v18, "KeyguardUpdateMonitor"
 
     const-string v19, "ACTION_DUAL_SIM_MODE_SELECT, received"
 
     invoke-static/range {v18 .. v19}, Lcom/android/internal/policy/impl/keyguard/KeyguardUtils;->xlogD(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 428
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor$2;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;
@@ -2190,7 +2085,6 @@
 
     goto/16 :goto_0
 
-    .line 430
     :cond_1e
     const-string v18, "android.intent.action.AIRPLANE_MODE"
 
@@ -2202,14 +2096,12 @@
 
     if-eqz v18, :cond_1f
 
-    .line 431
     const-string v18, "KeyguardUpdateMonitor"
 
     const-string v19, "ACTION_AIRPLANE_MODE_CHANGED, received"
 
     invoke-static/range {v18 .. v19}, Lcom/android/internal/policy/impl/keyguard/KeyguardUtils;->xlogD(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 432
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor$2;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;
@@ -2235,7 +2127,6 @@
 
     if-eqz v18, :cond_2
 
-    .line 433
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor$2;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;
@@ -2249,7 +2140,6 @@
 
     invoke-virtual/range {v18 .. v18}, Landroid/app/AlertDialog;->dismiss()V
 
-    .line 434
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor$2;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;
@@ -2263,7 +2153,6 @@
 
     goto/16 :goto_0
 
-    .line 439
     :cond_1f
     const-string v18, "android.intent.action.ACTION_SHUTDOWN"
 
@@ -2275,7 +2164,6 @@
 
     if-eqz v18, :cond_20
 
-    .line 440
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor$2;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;
@@ -2293,7 +2181,6 @@
 
     move-result-object v6
 
-    .line 441
     .restart local v6       #m:Landroid/os/Message;
     const/16 v18, 0x0
 
@@ -2301,7 +2188,6 @@
 
     iput v0, v6, Landroid/os/Message;->arg1:I
 
-    .line 442
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor$2;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;
@@ -2319,7 +2205,6 @@
 
     goto/16 :goto_0
 
-    .line 443
     .end local v6           #m:Landroid/os/Message;
     :cond_20
     const-string v18, "android.intent.action.ACTION_PREBOOT_IPO"
@@ -2332,7 +2217,6 @@
 
     if-eqz v18, :cond_21
 
-    .line 445
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor$2;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;
@@ -2350,7 +2234,6 @@
 
     move-result-object v6
 
-    .line 446
     .restart local v6       #m:Landroid/os/Message;
     const/16 v18, 0x1
 
@@ -2358,7 +2241,6 @@
 
     iput v0, v6, Landroid/os/Message;->arg1:I
 
-    .line 447
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor$2;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;
@@ -2376,7 +2258,6 @@
 
     goto/16 :goto_0
 
-    .line 451
     .end local v6           #m:Landroid/os/Message;
     :cond_21
     const-string v18, "android.intent.action.DOWNLOAD_CALIBRATION_DATA"
@@ -2389,7 +2270,6 @@
 
     if-eqz v18, :cond_22
 
-    .line 452
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor$2;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;
@@ -2413,7 +2293,6 @@
     #setter for: Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;->mCalibrationData:Z
     invoke-static/range {v18 .. v19}, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;->access$3202(Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;Z)Z
 
-    .line 453
     const-string v18, "KeyguardUpdateMonitor"
 
     new-instance v19, Ljava/lang/StringBuilder;
@@ -2447,7 +2326,6 @@
 
     invoke-static/range {v18 .. v19}, Lcom/android/internal/policy/impl/keyguard/KeyguardUtils;->xlogD(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 454
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor$2;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;
@@ -2480,7 +2358,6 @@
 
     goto/16 :goto_0
 
-    .line 458
     :cond_22
     const-string v18, "android.intent.action.KEYGUARD_CLEAR_UREAD_TIPS"
 
@@ -2492,7 +2369,6 @@
 
     if-eqz v18, :cond_23
 
-    .line 459
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor$2;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;
@@ -2508,7 +2384,6 @@
 
     goto/16 :goto_0
 
-    .line 463
     :cond_23
     const-string v18, "com.mediatek.lockscreen.action.WALLPAPER_SET"
 
@@ -2520,7 +2395,6 @@
 
     if-eqz v18, :cond_24
 
-    .line 464
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor$2;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;
@@ -2544,7 +2418,6 @@
     #setter for: Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;->mWallpaperSetComplete:Z
     invoke-static/range {v18 .. v19}, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;->access$3402(Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;Z)Z
 
-    .line 465
     const-string v18, "KeyguardUpdateMonitor"
 
     new-instance v19, Ljava/lang/StringBuilder;
@@ -2578,7 +2451,6 @@
 
     invoke-static/range {v18 .. v19}, Lcom/android/internal/policy/impl/keyguard/KeyguardUtils;->xlogD(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 466
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor$2;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;
@@ -2592,7 +2464,6 @@
 
     if-eqz v18, :cond_2
 
-    .line 467
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor$2;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;
@@ -2631,7 +2502,6 @@
 
     goto/16 :goto_0
 
-    .line 472
     :cond_24
     const-string v18, "android.intent.action.ACTION_DUAL_BATTERY_CHANGED"
 
@@ -2643,14 +2513,12 @@
 
     if-eqz v18, :cond_2
 
-    .line 473
     const-string v18, "KeyguardUpdateMonitor"
 
     const-string v19, "ACTION_DUAL_BATTERY_CHANGED received"
 
     invoke-static/range {v18 .. v19}, Lcom/android/internal/policy/impl/keyguard/KeyguardUtils;->xlogD(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 474
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor$2;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;

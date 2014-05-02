@@ -30,15 +30,12 @@
     .parameter "cb"
 
     .prologue
-    .line 6176
     iput-object p1, p0, Landroid/media/AudioService$AudioPathToFMTxDeathHandler;->this$0:Landroid/media/AudioService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 6177
     iput-object p2, p0, Landroid/media/AudioService$AudioPathToFMTxDeathHandler;->mCb:Landroid/os/IBinder;
 
-    .line 6178
     return-void
 .end method
 
@@ -48,19 +45,16 @@
     .locals 2
 
     .prologue
-    .line 6181
     const-string v0, "AudioService"
 
     const-string v1, "AudioPathToFMTxDeathHandler::binderDied"
 
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 6182
     iget-object v0, p0, Landroid/media/AudioService$AudioPathToFMTxDeathHandler;->this$0:Landroid/media/AudioService;
 
     invoke-virtual {v0}, Landroid/media/AudioService;->setAudioPathOutofFMTx()Z
 
-    .line 6183
     return-void
 .end method
 
@@ -68,7 +62,6 @@
     .locals 1
 
     .prologue
-    .line 6186
     iget-object v0, p0, Landroid/media/AudioService$AudioPathToFMTxDeathHandler;->mCb:Landroid/os/IBinder;
 
     return-object v0

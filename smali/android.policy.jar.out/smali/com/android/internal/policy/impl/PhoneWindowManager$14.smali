@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 3966
     iput-object p1, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$14;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -39,12 +38,10 @@
     .parameter "intent"
 
     .prologue
-    .line 3968
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 3970
     .local v0, action:Ljava/lang/String;
     const-string v1, "WindowManager"
 
@@ -52,14 +49,12 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3972
     iget-object v1, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$14;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
     iget-object v2, v1, Lcom/android/internal/policy/impl/PhoneWindowManager;->mKeyDispatchLock:Ljava/lang/Object;
 
     monitor-enter v2
 
-    .line 3973
     :try_start_0
     const-string v1, "android.intent.action.ACTION_SHUTDOWN_IPO"
 
@@ -69,19 +64,16 @@
 
     if-eqz v1, :cond_3
 
-    .line 3974
     sget-boolean v1, Lcom/android/internal/policy/impl/PhoneWindowManager;->DEBUG_INPUT:Z
 
     if-eqz v1, :cond_0
 
-    .line 3975
     const-string v1, "WindowManager"
 
     const-string v3, "Receive IPO_ENABLE"
 
     invoke-static {v1, v3}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3977
     :cond_0
     iget-object v1, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$14;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
@@ -89,19 +81,16 @@
 
     iput v3, v1, Lcom/android/internal/policy/impl/PhoneWindowManager;->mKeyDispatcMode:I
 
-    .line 3988
     :cond_1
     :goto_0
     monitor-exit v2
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 3989
     sget-boolean v1, Lcom/android/internal/policy/impl/PhoneWindowManager;->DEBUG_INPUT:Z
 
     if-eqz v1, :cond_2
 
-    .line 3990
     const-string v1, "WindowManager"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -128,11 +117,9 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3992
     :cond_2
     return-void
 
-    .line 3978
     :cond_3
     :try_start_1
     const-string v1, "android.intent.action.ACTION_BOOT_IPO"
@@ -143,19 +130,16 @@
 
     if-eqz v1, :cond_5
 
-    .line 3979
     sget-boolean v1, Lcom/android/internal/policy/impl/PhoneWindowManager;->DEBUG_INPUT:Z
 
     if-eqz v1, :cond_4
 
-    .line 3980
     const-string v1, "WindowManager"
 
     const-string v3, "Receive IPO_DISABLE"
 
     invoke-static {v1, v3}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3982
     :cond_4
     iget-object v1, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$14;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
@@ -165,7 +149,6 @@
 
     goto :goto_0
 
-    .line 3988
     :catchall_0
     move-exception v1
 
@@ -175,14 +158,12 @@
 
     throw v1
 
-    .line 3984
     :cond_5
     :try_start_2
     sget-boolean v1, Lcom/android/internal/policy/impl/PhoneWindowManager;->DEBUG_INPUT:Z
 
     if-eqz v1, :cond_1
 
-    .line 3985
     const-string v1, "WindowManager"
 
     const-string v3, "Receive Fake Intent"

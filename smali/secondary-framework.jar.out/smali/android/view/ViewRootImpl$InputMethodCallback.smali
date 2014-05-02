@@ -36,17 +36,14 @@
     .parameter "viewAncestor"
 
     .prologue
-    .line 5401
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 5402
     new-instance v0, Ljava/lang/ref/WeakReference;
 
     invoke-direct {v0, p1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
 
     iput-object v0, p0, Landroid/view/ViewRootImpl$InputMethodCallback;->mViewAncestor:Ljava/lang/ref/WeakReference;
 
-    .line 5403
     return-void
 .end method
 
@@ -58,7 +55,6 @@
     .parameter "handled"
 
     .prologue
-    .line 5407
     iget-object v1, p0, Landroid/view/ViewRootImpl$InputMethodCallback;->mViewAncestor:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {v1}, Ljava/lang/ref/Reference;->get()Ljava/lang/Object;
@@ -67,7 +63,6 @@
 
     check-cast v0, Landroid/view/ViewRootImpl;
 
-    .line 5408
     .local v0, viewAncestor:Landroid/view/ViewRootImpl;
     invoke-static {}, Landroid/view/ViewRootImpl;->access$2100()Z
 
@@ -93,7 +88,6 @@
 
     if-eqz v1, :cond_1
 
-    .line 5409
     :cond_0
     const-string v1, "ViewRootImpl"
 
@@ -137,14 +131,11 @@
 
     invoke-static {v1, v2}, Lcom/mediatek/xlog/Xlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 5412
     :cond_1
     if-eqz v0, :cond_2
 
-    .line 5413
     invoke-virtual {v0, p1, p2}, Landroid/view/ViewRootImpl;->dispatchImeFinishedEvent(IZ)V
 
-    .line 5415
     :cond_2
     return-void
 .end method

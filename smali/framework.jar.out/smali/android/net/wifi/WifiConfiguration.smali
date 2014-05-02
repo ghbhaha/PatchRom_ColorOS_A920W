@@ -142,6 +142,14 @@
 
 .field public status:I
 
+.field public wapiASCert:Ljava/lang/String;
+
+.field public wapiPsk:Ljava/lang/String;
+
+.field public wapiPskType:I
+
+.field public wapiUserCert:Ljava/lang/String;
+
 .field public wepKeys:[Ljava/lang/String;
 
 .field public wepTxKeyIndex:I

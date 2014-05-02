@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 4040
     iput-object p1, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$17;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -39,7 +38,6 @@
     .parameter "intent"
 
     .prologue
-    .line 4043
     const-string v1, "WindowManager"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -66,7 +64,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 4044
     sget-object v1, Lcom/android/internal/policy/impl/PhoneWindowManager;->ACTION_SCREEN_SHOT:Ljava/lang/String;
 
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
@@ -79,7 +76,6 @@
 
     if-eqz v1, :cond_0
 
-    .line 4046
     iget-object v1, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$17;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
     iget-object v1, v1, Lcom/android/internal/policy/impl/PhoneWindowManager;->mContext:Landroid/content/Context;
@@ -96,7 +92,6 @@
 
     move-result v0
 
-    .line 4048
     .local v0, IsShot:I
     iget-object v1, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$17;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
@@ -108,7 +103,6 @@
 
     if-lez v0, :cond_0
 
-    .line 4049
     iget-object v1, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$17;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
     iget-object v1, v1, Lcom/android/internal/policy/impl/PhoneWindowManager;->mHandler:Landroid/os/Handler;
@@ -129,7 +123,6 @@
 
     invoke-virtual {v1, v2, v3, v4}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 4051
     .end local v0           #IsShot:I
     :cond_0
     return-void

@@ -23,7 +23,6 @@
     .locals 3
 
     .prologue
-    .line 396
     invoke-static {}, Landroid/net/http/AndroidHttpClient$PermissionMode;->values()[Landroid/net/http/AndroidHttpClient$PermissionMode;
 
     move-result-object v0

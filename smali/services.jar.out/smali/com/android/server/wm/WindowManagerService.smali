@@ -704,110 +704,76 @@
 
     const/4 v1, 0x0
 
-    .line 182
     sput-boolean v1, Lcom/android/server/wm/WindowManagerService;->DEBUG:Z
 
-    .line 183
     sput-boolean v1, Lcom/android/server/wm/WindowManagerService;->DEBUG_ADD_REMOVE:Z
 
-    .line 184
     sput-boolean v1, Lcom/android/server/wm/WindowManagerService;->DEBUG_FOCUS:Z
 
-    .line 185
     sput-boolean v1, Lcom/android/server/wm/WindowManagerService;->DEBUG_ANIM:Z
 
-    .line 186
     sput-boolean v1, Lcom/android/server/wm/WindowManagerService;->DEBUG_LAYOUT:Z
 
-    .line 187
     sput-boolean v1, Lcom/android/server/wm/WindowManagerService;->DEBUG_RESIZE:Z
 
-    .line 188
     sput-boolean v1, Lcom/android/server/wm/WindowManagerService;->DEBUG_LAYERS:Z
 
-    .line 189
     sput-boolean v1, Lcom/android/server/wm/WindowManagerService;->DEBUG_INPUT:Z
 
-    .line 190
     sput-boolean v1, Lcom/android/server/wm/WindowManagerService;->DEBUG_INPUT_METHOD:Z
 
-    .line 191
     sput-boolean v1, Lcom/android/server/wm/WindowManagerService;->DEBUG_VISIBILITY:Z
 
-    .line 192
     sput-boolean v1, Lcom/android/server/wm/WindowManagerService;->DEBUG_WINDOW_MOVEMENT:Z
 
-    .line 193
     sput-boolean v1, Lcom/android/server/wm/WindowManagerService;->DEBUG_TOKEN_MOVEMENT:Z
 
-    .line 194
     sput-boolean v1, Lcom/android/server/wm/WindowManagerService;->DEBUG_ORIENTATION:Z
 
-    .line 195
     sput-boolean v1, Lcom/android/server/wm/WindowManagerService;->DEBUG_APP_ORIENTATION:Z
 
-    .line 196
     sput-boolean v1, Lcom/android/server/wm/WindowManagerService;->DEBUG_CONFIGURATION:Z
 
-    .line 197
     sput-boolean v1, Lcom/android/server/wm/WindowManagerService;->DEBUG_APP_TRANSITIONS:Z
 
-    .line 198
     sput-boolean v1, Lcom/android/server/wm/WindowManagerService;->DEBUG_STARTING_WINDOW:Z
 
-    .line 199
     sput-boolean v1, Lcom/android/server/wm/WindowManagerService;->DEBUG_REORDER:Z
 
-    .line 200
     sput-boolean v1, Lcom/android/server/wm/WindowManagerService;->DEBUG_WALLPAPER:Z
 
-    .line 201
     sget-boolean v0, Lcom/android/server/wm/WindowManagerService;->DEBUG_WALLPAPER:Z
 
     sput-boolean v0, Lcom/android/server/wm/WindowManagerService;->DEBUG_WALLPAPER_LIGHT:Z
 
-    .line 202
     sput-boolean v1, Lcom/android/server/wm/WindowManagerService;->DEBUG_DRAG:Z
 
-    .line 203
     sput-boolean v1, Lcom/android/server/wm/WindowManagerService;->DEBUG_SCREEN_ON:Z
 
-    .line 204
     sput-boolean v1, Lcom/android/server/wm/WindowManagerService;->DEBUG_SCREENSHOT:Z
 
-    .line 205
     sput-boolean v1, Lcom/android/server/wm/WindowManagerService;->DEBUG_BOOT:Z
 
-    .line 206
     sput-boolean v2, Lcom/android/server/wm/WindowManagerService;->DEBUG_LAYOUT_REPEATS:Z
 
-    .line 207
     sput-boolean v1, Lcom/android/server/wm/WindowManagerService;->DEBUG_SURFACE_TRACE:Z
 
-    .line 208
     sput-boolean v1, Lcom/android/server/wm/WindowManagerService;->DEBUG_WINDOW_TRACE:Z
 
-    .line 209
     sput-boolean v1, Lcom/android/server/wm/WindowManagerService;->SHOW_SURFACE_ALLOC:Z
 
-    .line 210
     sput-boolean v1, Lcom/android/server/wm/WindowManagerService;->SHOW_TRANSACTIONS:Z
 
-    .line 211
     sget-boolean v0, Lcom/android/server/wm/WindowManagerService;->SHOW_TRANSACTIONS:Z
 
     sput-boolean v0, Lcom/android/server/wm/WindowManagerService;->SHOW_LIGHT_TRANSACTIONS:Z
 
-    .line 212
     sput-boolean v2, Lcom/android/server/wm/WindowManagerService;->HIDE_STACK_CRAWLS:Z
 
-    .line 213
     sput-boolean v1, Lcom/android/server/wm/WindowManagerService;->DEBUG_WINDOW:Z
 
-    .line 216
     sput-boolean v1, Lcom/android/server/wm/WindowManagerService;->PROFILE_ORIENTATION:Z
 
-    .line 217
     sget-boolean v0, Lcom/android/server/wm/WindowManagerService;->DEBUG:Z
 
     sput-boolean v0, Lcom/android/server/wm/WindowManagerService;->localLOGV:Z
@@ -831,579 +797,480 @@
     .end annotation
 
     .prologue
-    .line 873
     invoke-direct {p0}, Landroid/view/IWindowManager$Stub;-><init>()V
 
-    .line 314
     const/4 v8, 0x0
 
     iput-boolean v8, p0, Lcom/android/server/wm/WindowManagerService;->mIsPerfBoostEnable:Z
 
-    .line 322
     new-instance v8, Lcom/android/server/wm/WindowManagerService$1;
 
     invoke-direct {v8, p0}, Lcom/android/server/wm/WindowManagerService$1;-><init>(Lcom/android/server/wm/WindowManagerService;)V
 
     iput-object v8, p0, Lcom/android/server/wm/WindowManagerService;->mBroadcastReceiver:Landroid/content/BroadcastReceiver;
 
-    .line 375
     const/4 v8, 0x0
 
     iput-boolean v8, p0, Lcom/android/server/wm/WindowManagerService;->mHasReceiveIPO:Z
 
-    .line 388
     invoke-static {}, Lcom/android/internal/policy/PolicyManager;->makeNewWindowManager()Landroid/view/WindowManagerPolicy;
 
     move-result-object v8
 
     iput-object v8, p0, Lcom/android/server/wm/WindowManagerService;->mPolicy:Landroid/view/WindowManagerPolicy;
 
-    .line 397
     new-instance v8, Ljava/util/HashSet;
 
     invoke-direct {v8}, Ljava/util/HashSet;-><init>()V
 
     iput-object v8, p0, Lcom/android/server/wm/WindowManagerService;->mSessions:Ljava/util/HashSet;
 
-    .line 403
     new-instance v8, Ljava/util/HashMap;
 
     invoke-direct {v8}, Ljava/util/HashMap;-><init>()V
 
     iput-object v8, p0, Lcom/android/server/wm/WindowManagerService;->mWindowMap:Ljava/util/HashMap;
 
-    .line 408
     new-instance v8, Ljava/util/HashMap;
 
     invoke-direct {v8}, Ljava/util/HashMap;-><init>()V
 
     iput-object v8, p0, Lcom/android/server/wm/WindowManagerService;->mTokenMap:Ljava/util/HashMap;
 
-    .line 415
     new-instance v8, Ljava/util/ArrayList;
 
     invoke-direct {v8}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v8, p0, Lcom/android/server/wm/WindowManagerService;->mExitingTokens:Ljava/util/ArrayList;
 
-    .line 421
     new-instance v8, Ljava/util/ArrayList;
 
     invoke-direct {v8}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v8, p0, Lcom/android/server/wm/WindowManagerService;->mAppTokens:Ljava/util/ArrayList;
 
-    .line 429
     new-instance v8, Ljava/util/ArrayList;
 
     invoke-direct {v8}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v8, p0, Lcom/android/server/wm/WindowManagerService;->mAnimatingAppTokens:Ljava/util/ArrayList;
 
-    .line 435
     new-instance v8, Ljava/util/ArrayList;
 
     invoke-direct {v8}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v8, p0, Lcom/android/server/wm/WindowManagerService;->mExitingAppTokens:Ljava/util/ArrayList;
 
-    .line 441
     new-instance v8, Ljava/util/ArrayList;
 
     invoke-direct {v8}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v8, p0, Lcom/android/server/wm/WindowManagerService;->mFinishedStarting:Ljava/util/ArrayList;
 
-    .line 447
     new-instance v8, Ljava/util/ArrayList;
 
     invoke-direct {v8}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v8, p0, Lcom/android/server/wm/WindowManagerService;->mFakeWindows:Ljava/util/ArrayList;
 
-    .line 454
     new-instance v8, Ljava/util/ArrayList;
 
     invoke-direct {v8}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v8, p0, Lcom/android/server/wm/WindowManagerService;->mResizingWindows:Ljava/util/ArrayList;
 
-    .line 459
     new-instance v8, Ljava/util/ArrayList;
 
     invoke-direct {v8}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v8, p0, Lcom/android/server/wm/WindowManagerService;->mPendingRemove:Ljava/util/ArrayList;
 
-    .line 464
     const/16 v8, 0x14
 
     new-array v8, v8, [Lcom/android/server/wm/WindowState;
 
     iput-object v8, p0, Lcom/android/server/wm/WindowManagerService;->mPendingRemoveTmp:[Lcom/android/server/wm/WindowState;
 
-    .line 469
     new-instance v8, Ljava/util/ArrayList;
 
     invoke-direct {v8}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v8, p0, Lcom/android/server/wm/WindowManagerService;->mDestroySurface:Ljava/util/ArrayList;
 
-    .line 475
     new-instance v8, Ljava/util/ArrayList;
 
     invoke-direct {v8}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v8, p0, Lcom/android/server/wm/WindowManagerService;->mLosingFocus:Ljava/util/ArrayList;
 
-    .line 486
     new-instance v8, Ljava/util/ArrayList;
 
     invoke-direct {v8}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v8, p0, Lcom/android/server/wm/WindowManagerService;->mWaitingForDrawn:Ljava/util/ArrayList;
 
-    .line 493
     new-instance v8, Ljava/util/ArrayList;
 
     invoke-direct {v8}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v8, p0, Lcom/android/server/wm/WindowManagerService;->mRelayoutWhileAnimating:Ljava/util/ArrayList;
 
-    .line 499
     const/16 v8, 0x14
 
     new-array v8, v8, [Lcom/android/server/wm/WindowState;
 
     iput-object v8, p0, Lcom/android/server/wm/WindowManagerService;->mRebuildTmp:[Lcom/android/server/wm/WindowState;
 
-    .line 507
     const/16 v8, 0x9
 
     new-array v8, v8, [F
 
     iput-object v8, p0, Lcom/android/server/wm/WindowManagerService;->mTmpFloats:[F
 
-    .line 511
     const/4 v8, 0x0
 
     iput-boolean v8, p0, Lcom/android/server/wm/WindowManagerService;->mDisplayEnabled:Z
 
-    .line 512
     const/4 v8, 0x0
 
     iput-boolean v8, p0, Lcom/android/server/wm/WindowManagerService;->mSystemBooted:Z
 
-    .line 513
     const/4 v8, 0x0
 
     iput-boolean v8, p0, Lcom/android/server/wm/WindowManagerService;->mForceDisplayEnabled:Z
 
-    .line 514
     const/4 v8, 0x0
 
     iput-boolean v8, p0, Lcom/android/server/wm/WindowManagerService;->mShowingBootMessages:Z
 
-    .line 519
     new-instance v8, Landroid/util/SparseArray;
 
     invoke-direct {v8}, Landroid/util/SparseArray;-><init>()V
 
     iput-object v8, p0, Lcom/android/server/wm/WindowManagerService;->mDisplayContents:Landroid/util/SparseArray;
 
-    .line 521
     const/4 v8, 0x0
 
     iput v8, p0, Lcom/android/server/wm/WindowManagerService;->mRotation:I
 
-    .line 522
     const/4 v8, -0x1
 
     iput v8, p0, Lcom/android/server/wm/WindowManagerService;->mForcedAppOrientation:I
 
-    .line 523
     const/4 v8, 0x0
 
     iput-boolean v8, p0, Lcom/android/server/wm/WindowManagerService;->mAltOrientation:Z
 
-    .line 524
     new-instance v8, Ljava/util/ArrayList;
 
     invoke-direct {v8}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v8, p0, Lcom/android/server/wm/WindowManagerService;->mRotationWatchers:Ljava/util/ArrayList;
 
-    .line 528
     new-instance v8, Landroid/graphics/Rect;
 
     invoke-direct {v8}, Landroid/graphics/Rect;-><init>()V
 
     iput-object v8, p0, Lcom/android/server/wm/WindowManagerService;->mSystemDecorRect:Landroid/graphics/Rect;
 
-    .line 529
     const/4 v8, 0x0
 
     iput v8, p0, Lcom/android/server/wm/WindowManagerService;->mSystemDecorLayer:I
 
-    .line 530
     new-instance v8, Landroid/graphics/Rect;
 
     invoke-direct {v8}, Landroid/graphics/Rect;-><init>()V
 
     iput-object v8, p0, Lcom/android/server/wm/WindowManagerService;->mScreenRect:Landroid/graphics/Rect;
 
-    .line 532
     const/4 v8, 0x0
 
     iput-boolean v8, p0, Lcom/android/server/wm/WindowManagerService;->mTraversalScheduled:Z
 
-    .line 533
     const/4 v8, 0x0
 
     iput-boolean v8, p0, Lcom/android/server/wm/WindowManagerService;->mDisplayFrozen:Z
 
-    .line 534
     const/4 v8, 0x0
 
     iput-boolean v8, p0, Lcom/android/server/wm/WindowManagerService;->mDisplayFrozenTimeout:Z
 
-    .line 535
     const/4 v8, 0x0
 
     iput-boolean v8, p0, Lcom/android/server/wm/WindowManagerService;->mWaitingForConfig:Z
 
-    .line 536
     const/4 v8, 0x0
 
     iput-boolean v8, p0, Lcom/android/server/wm/WindowManagerService;->mWindowsFreezingScreen:Z
 
-    .line 537
     const/4 v8, 0x0
 
     iput-boolean v8, p0, Lcom/android/server/wm/WindowManagerService;->mClientFreezingScreen:Z
 
-    .line 538
     const/4 v8, 0x0
 
     iput v8, p0, Lcom/android/server/wm/WindowManagerService;->mAppsFreezingScreen:I
 
-    .line 539
     const/4 v8, -0x1
 
     iput v8, p0, Lcom/android/server/wm/WindowManagerService;->mLastWindowForcedOrientation:I
 
-    .line 541
     const/4 v8, 0x0
 
     iput v8, p0, Lcom/android/server/wm/WindowManagerService;->mLayoutSeq:I
 
-    .line 543
     const/4 v8, 0x0
 
     iput v8, p0, Lcom/android/server/wm/WindowManagerService;->mLastStatusBarVisibility:I
 
-    .line 548
     new-instance v8, Landroid/content/res/Configuration;
 
     invoke-direct {v8}, Landroid/content/res/Configuration;-><init>()V
 
     iput-object v8, p0, Lcom/android/server/wm/WindowManagerService;->mCurConfiguration:Landroid/content/res/Configuration;
 
-    .line 560
     const/4 v8, -0x1
 
     iput v8, p0, Lcom/android/server/wm/WindowManagerService;->mNextAppTransition:I
 
-    .line 561
     const/4 v8, 0x0
 
     iput v8, p0, Lcom/android/server/wm/WindowManagerService;->mNextAppTransitionType:I
 
-    .line 573
     const/4 v8, 0x0
 
     iput-boolean v8, p0, Lcom/android/server/wm/WindowManagerService;->mAppTransitionReady:Z
 
-    .line 574
     const/4 v8, 0x0
 
     iput-boolean v8, p0, Lcom/android/server/wm/WindowManagerService;->mAppTransitionRunning:Z
 
-    .line 575
     const/4 v8, 0x0
 
     iput-boolean v8, p0, Lcom/android/server/wm/WindowManagerService;->mAppTransitionTimeout:Z
 
-    .line 576
     const/4 v8, 0x0
 
     iput-boolean v8, p0, Lcom/android/server/wm/WindowManagerService;->mStartingIconInTransition:Z
 
-    .line 577
     const/4 v8, 0x0
 
     iput-boolean v8, p0, Lcom/android/server/wm/WindowManagerService;->mSkipAppTransitionAnimation:Z
 
-    .line 578
     new-instance v8, Ljava/util/ArrayList;
 
     invoke-direct {v8}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v8, p0, Lcom/android/server/wm/WindowManagerService;->mOpeningApps:Ljava/util/ArrayList;
 
-    .line 579
     new-instance v8, Ljava/util/ArrayList;
 
     invoke-direct {v8}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v8, p0, Lcom/android/server/wm/WindowManagerService;->mClosingApps:Ljava/util/ArrayList;
 
-    .line 583
     new-instance v8, Landroid/util/DisplayMetrics;
 
     invoke-direct {v8}, Landroid/util/DisplayMetrics;-><init>()V
 
     iput-object v8, p0, Lcom/android/server/wm/WindowManagerService;->mDisplayMetrics:Landroid/util/DisplayMetrics;
 
-    .line 584
     new-instance v8, Landroid/util/DisplayMetrics;
 
     invoke-direct {v8}, Landroid/util/DisplayMetrics;-><init>()V
 
     iput-object v8, p0, Lcom/android/server/wm/WindowManagerService;->mRealDisplayMetrics:Landroid/util/DisplayMetrics;
 
-    .line 585
     new-instance v8, Landroid/util/DisplayMetrics;
 
     invoke-direct {v8}, Landroid/util/DisplayMetrics;-><init>()V
 
     iput-object v8, p0, Lcom/android/server/wm/WindowManagerService;->mTmpDisplayMetrics:Landroid/util/DisplayMetrics;
 
-    .line 586
     new-instance v8, Landroid/util/DisplayMetrics;
 
     invoke-direct {v8}, Landroid/util/DisplayMetrics;-><init>()V
 
     iput-object v8, p0, Lcom/android/server/wm/WindowManagerService;->mCompatDisplayMetrics:Landroid/util/DisplayMetrics;
 
-    .line 588
     new-instance v8, Lcom/android/server/wm/WindowManagerService$H;
 
     invoke-direct {v8, p0}, Lcom/android/server/wm/WindowManagerService$H;-><init>(Lcom/android/server/wm/WindowManagerService;)V
 
     iput-object v8, p0, Lcom/android/server/wm/WindowManagerService;->mH:Lcom/android/server/wm/WindowManagerService$H;
 
-    .line 590
     invoke-static {}, Landroid/view/Choreographer;->getInstance()Landroid/view/Choreographer;
 
     move-result-object v8
 
     iput-object v8, p0, Lcom/android/server/wm/WindowManagerService;->mChoreographer:Landroid/view/Choreographer;
 
-    .line 592
     const/4 v8, 0x0
 
     iput-object v8, p0, Lcom/android/server/wm/WindowManagerService;->mCurrentFocus:Lcom/android/server/wm/WindowState;
 
-    .line 593
     const/4 v8, 0x0
 
     iput-object v8, p0, Lcom/android/server/wm/WindowManagerService;->mLastFocus:Lcom/android/server/wm/WindowState;
 
-    .line 597
     const/4 v8, 0x0
 
     iput-object v8, p0, Lcom/android/server/wm/WindowManagerService;->mInputMethodTarget:Lcom/android/server/wm/WindowState;
 
-    .line 603
     const/4 v8, 0x0
 
     iput-object v8, p0, Lcom/android/server/wm/WindowManagerService;->mInputMethodWindow:Lcom/android/server/wm/WindowState;
 
-    .line 604
     new-instance v8, Ljava/util/ArrayList;
 
     invoke-direct {v8}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v8, p0, Lcom/android/server/wm/WindowManagerService;->mInputMethodDialogs:Ljava/util/ArrayList;
 
-    .line 610
     new-instance v8, Ljava/util/ArrayList;
 
     invoke-direct {v8}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v8, p0, Lcom/android/server/wm/WindowManagerService;->mWallpaperTokens:Ljava/util/ArrayList;
 
-    .line 612
     const/4 v8, 0x0
 
     iput-boolean v8, p0, Lcom/android/server/wm/WindowManagerService;->mWallpaperTmpRemoved:Z
 
-    .line 617
     const/4 v8, 0x0
 
     iput-object v8, p0, Lcom/android/server/wm/WindowManagerService;->mWallpaperTarget:Lcom/android/server/wm/WindowState;
 
-    .line 620
     const/4 v8, 0x0
 
     iput-object v8, p0, Lcom/android/server/wm/WindowManagerService;->mLowerWallpaperTarget:Lcom/android/server/wm/WindowState;
 
-    .line 623
     const/4 v8, 0x0
 
     iput-object v8, p0, Lcom/android/server/wm/WindowManagerService;->mUpperWallpaperTarget:Lcom/android/server/wm/WindowState;
 
-    .line 625
     const/high16 v8, -0x4080
 
     iput v8, p0, Lcom/android/server/wm/WindowManagerService;->mLastWallpaperX:F
 
-    .line 626
     const/high16 v8, -0x4080
 
     iput v8, p0, Lcom/android/server/wm/WindowManagerService;->mLastWallpaperY:F
 
-    .line 627
     const/high16 v8, -0x4080
 
     iput v8, p0, Lcom/android/server/wm/WindowManagerService;->mLastWallpaperXStep:F
 
-    .line 628
     const/high16 v8, -0x4080
 
     iput v8, p0, Lcom/android/server/wm/WindowManagerService;->mLastWallpaperYStep:F
 
-    .line 639
     const/4 v8, 0x0
 
     iput-object v8, p0, Lcom/android/server/wm/WindowManagerService;->mFocusedApp:Lcom/android/server/wm/AppWindowToken;
 
-    .line 643
     const/high16 v8, 0x3f80
 
     iput v8, p0, Lcom/android/server/wm/WindowManagerService;->mWindowAnimationScale:F
 
-    .line 644
     const/high16 v8, 0x3f80
 
     iput v8, p0, Lcom/android/server/wm/WindowManagerService;->mTransitionAnimationScale:F
 
-    .line 645
     const/high16 v8, 0x3f80
 
     iput v8, p0, Lcom/android/server/wm/WindowManagerService;->mAnimatorDurationScale:F
 
-    .line 657
     const/4 v8, 0x0
 
     iput-object v8, p0, Lcom/android/server/wm/WindowManagerService;->mDragState:Lcom/android/server/wm/DragState;
 
-    .line 686
     new-instance v8, Lcom/android/server/wm/WindowManagerService$LayoutFields;
 
     invoke-direct {v8, p0}, Lcom/android/server/wm/WindowManagerService$LayoutFields;-><init>(Lcom/android/server/wm/WindowManagerService;)V
 
     iput-object v8, p0, Lcom/android/server/wm/WindowManagerService;->mInnerFields:Lcom/android/server/wm/WindowManagerService$LayoutFields;
 
-    .line 721
     new-instance v8, Lcom/android/server/wm/WindowManagerService$LayoutToAnimatorParams;
 
     invoke-direct {v8}, Lcom/android/server/wm/WindowManagerService$LayoutToAnimatorParams;-><init>()V
 
     iput-object v8, p0, Lcom/android/server/wm/WindowManagerService;->mLayoutToAnim:Lcom/android/server/wm/WindowManagerService$LayoutToAnimatorParams;
 
-    .line 724
     const/4 v8, 0x0
 
     iput-object v8, p0, Lcom/android/server/wm/WindowManagerService;->mWindowDetachedWallpaper:Lcom/android/server/wm/WindowState;
 
-    .line 802
     const/4 v8, 0x1
 
     iput-boolean v8, p0, Lcom/android/server/wm/WindowManagerService;->mInTouchMode:Z
 
-    .line 805
     const/4 v8, 0x0
 
     iput-boolean v8, p0, Lcom/android/server/wm/WindowManagerService;->mIsAlarmBooting:Z
 
-    .line 809
     const/4 v8, 0x0
 
     iput-boolean v8, p0, Lcom/android/server/wm/WindowManagerService;->mIsUpdateIpoRotation:Z
 
-    .line 813
     new-instance v8, Landroid/graphics/Region;
 
     invoke-direct {v8}, Landroid/graphics/Region;-><init>()V
 
     iput-object v8, p0, Lcom/android/server/wm/WindowManagerService;->mTempRegion:Landroid/graphics/Region;
 
-    .line 816
     new-instance v8, Ljava/util/ArrayList;
 
     invoke-direct {v8}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v8, p0, Lcom/android/server/wm/WindowManagerService;->mWindowChangeListeners:Ljava/util/ArrayList;
 
-    .line 818
     const/4 v8, 0x0
 
     iput-boolean v8, p0, Lcom/android/server/wm/WindowManagerService;->mWindowsChanged:Z
 
-    .line 825
     new-instance v8, Landroid/content/res/Configuration;
 
     invoke-direct {v8}, Landroid/content/res/Configuration;-><init>()V
 
     iput-object v8, p0, Lcom/android/server/wm/WindowManagerService;->mTempConfiguration:Landroid/content/res/Configuration;
 
-    .line 836
     new-instance v8, Ljava/util/ArrayList;
 
     invoke-direct {v8}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v8, p0, Lcom/android/server/wm/WindowManagerService;->mDebuggedWindowName:Ljava/util/ArrayList;
 
-    .line 837
     new-instance v8, Ljava/util/ArrayList;
 
     invoke-direct {v8}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v8, p0, Lcom/android/server/wm/WindowManagerService;->mDebuggedWindow:Ljava/util/ArrayList;
 
-    .line 7580
     new-instance v8, Lcom/android/server/wm/InputMonitor;
 
     invoke-direct {v8, p0}, Lcom/android/server/wm/InputMonitor;-><init>(Lcom/android/server/wm/WindowManagerService;)V
 
     iput-object v8, p0, Lcom/android/server/wm/WindowManagerService;->mInputMonitor:Lcom/android/server/wm/InputMonitor;
 
-    .line 8761
     const/4 v8, 0x0
 
     iput-boolean v8, p0, Lcom/android/server/wm/WindowManagerService;->mInLayout:Z
 
-    .line 874
     iput-object p1, p0, Lcom/android/server/wm/WindowManagerService;->mContext:Landroid/content/Context;
 
-    .line 875
     move/from16 v0, p6
 
     iput-boolean v0, p0, Lcom/android/server/wm/WindowManagerService;->mHaveInputMethods:Z
 
-    .line 876
     move/from16 v0, p7
 
     iput-boolean v0, p0, Lcom/android/server/wm/WindowManagerService;->mAllowBootMessages:Z
 
-    .line 877
     move/from16 v0, p8
 
     iput-boolean v0, p0, Lcom/android/server/wm/WindowManagerService;->mOnlyCore:Z
 
-    .line 878
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v8
@@ -1416,17 +1283,14 @@
 
     iput-boolean v8, p0, Lcom/android/server/wm/WindowManagerService;->mLimitedAlphaCompositing:Z
 
-    .line 880
     iput-object p3, p0, Lcom/android/server/wm/WindowManagerService;->mDisplayManagerService:Lcom/android/server/display/DisplayManagerService;
 
-    .line 881
     invoke-virtual {p3}, Lcom/android/server/display/DisplayManagerService;->isHeadless()Z
 
     move-result v8
 
     iput-boolean v8, p0, Lcom/android/server/wm/WindowManagerService;->mHeadless:Z
 
-    .line 883
     const-string v8, "display"
 
     invoke-virtual {p1, v8}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -1437,21 +1301,18 @@
 
     iput-object v8, p0, Lcom/android/server/wm/WindowManagerService;->mDisplayManager:Landroid/hardware/display/DisplayManager;
 
-    .line 884
     iget-object v8, p0, Lcom/android/server/wm/WindowManagerService;->mDisplayManager:Landroid/hardware/display/DisplayManager;
 
     const/4 v9, 0x0
 
     invoke-virtual {v8, p0, v9}, Landroid/hardware/display/DisplayManager;->registerDisplayListener(Landroid/hardware/display/DisplayManager$DisplayListener;Landroid/os/Handler;)V
 
-    .line 885
     iget-object v8, p0, Lcom/android/server/wm/WindowManagerService;->mDisplayManager:Landroid/hardware/display/DisplayManager;
 
     invoke-virtual {v8}, Landroid/hardware/display/DisplayManager;->getDisplays()[Landroid/view/Display;
 
     move-result-object v3
 
-    .line 886
     .local v3, displays:[Landroid/view/Display;
     move-object v1, v3
 
@@ -1467,16 +1328,13 @@
 
     aget-object v2, v1, v5
 
-    .line 887
     .local v2, display:Landroid/view/Display;
     invoke-virtual {p0, v2}, Lcom/android/server/wm/WindowManagerService;->createDisplayContentLocked(Landroid/view/Display;)V
 
-    .line 886
     add-int/lit8 v5, v5, 0x1
 
     goto :goto_0
 
-    .line 890
     .end local v2           #display:Landroid/view/Display;
     :cond_0
     new-instance v8, Lcom/android/server/wm/KeyguardDisableHandler;
@@ -1489,17 +1347,14 @@
 
     iput-object v8, p0, Lcom/android/server/wm/WindowManagerService;->mKeyguardDisableHandler:Lcom/android/server/wm/KeyguardDisableHandler;
 
-    .line 892
     iput-object p2, p0, Lcom/android/server/wm/WindowManagerService;->mPowerManager:Lcom/android/server/power/PowerManagerService;
 
-    .line 893
     iget-object v8, p0, Lcom/android/server/wm/WindowManagerService;->mPowerManager:Lcom/android/server/power/PowerManagerService;
 
     iget-object v9, p0, Lcom/android/server/wm/WindowManagerService;->mPolicy:Landroid/view/WindowManagerPolicy;
 
     invoke-virtual {v8, v9}, Lcom/android/server/power/PowerManagerService;->setPolicy(Landroid/view/WindowManagerPolicy;)V
 
-    .line 894
     const-string v8, "power"
 
     invoke-virtual {p1, v8}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -1508,7 +1363,6 @@
 
     check-cast v7, Landroid/os/PowerManager;
 
-    .line 895
     .local v7, pmc:Landroid/os/PowerManager;
     const/4 v8, 0x1
 
@@ -1520,28 +1374,24 @@
 
     iput-object v8, p0, Lcom/android/server/wm/WindowManagerService;->mScreenFrozenLock:Landroid/os/PowerManager$WakeLock;
 
-    .line 897
     iget-object v8, p0, Lcom/android/server/wm/WindowManagerService;->mScreenFrozenLock:Landroid/os/PowerManager$WakeLock;
 
     const/4 v9, 0x0
 
     invoke-virtual {v8, v9}, Landroid/os/PowerManager$WakeLock;->setReferenceCounted(Z)V
 
-    .line 899
     invoke-static {}, Landroid/app/ActivityManagerNative;->getDefault()Landroid/app/IActivityManager;
 
     move-result-object v8
 
     iput-object v8, p0, Lcom/android/server/wm/WindowManagerService;->mActivityManager:Landroid/app/IActivityManager;
 
-    .line 900
     invoke-static {}, Lcom/android/server/am/BatteryStatsService;->getService()Lcom/android/internal/app/IBatteryStats;
 
     move-result-object v8
 
     iput-object v8, p0, Lcom/android/server/wm/WindowManagerService;->mBatteryStats:Lcom/android/internal/app/IBatteryStats;
 
-    .line 903
     invoke-virtual {p1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v8
@@ -1556,7 +1406,6 @@
 
     iput v8, p0, Lcom/android/server/wm/WindowManagerService;->mWindowAnimationScale:F
 
-    .line 905
     invoke-virtual {p1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v8
@@ -1571,7 +1420,6 @@
 
     iput v8, p0, Lcom/android/server/wm/WindowManagerService;->mTransitionAnimationScale:F
 
-    .line 907
     invoke-virtual {p1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v8
@@ -1586,45 +1434,37 @@
 
     invoke-direct {p0, v8}, Lcom/android/server/wm/WindowManagerService;->setAnimatorDurationScale(F)V
 
-    .line 911
     new-instance v4, Landroid/content/IntentFilter;
 
     invoke-direct {v4}, Landroid/content/IntentFilter;-><init>()V
 
-    .line 912
     .local v4, filter:Landroid/content/IntentFilter;
     const-string v8, "android.app.action.DEVICE_POLICY_MANAGER_STATE_CHANGED"
 
     invoke-virtual {v4, v8}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 914
     const-string v8, "android.intent.action.ACTION_BOOT_IPO"
 
     invoke-virtual {v4, v8}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 916
     const-string v8, "android.intent.action.ACTION_PREBOOT_IPO"
 
     invoke-virtual {v4, v8}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 918
     const-string v8, "android.intent.action.ACTION_SHUTDOWN_IPO"
 
     invoke-virtual {v4, v8}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 919
     const-string v8, "android.intent.action.normal.boot.done"
 
     invoke-virtual {v4, v8}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 920
     iget-object v8, p0, Lcom/android/server/wm/WindowManagerService;->mContext:Landroid/content/Context;
 
     iget-object v9, p0, Lcom/android/server/wm/WindowManagerService;->mBroadcastReceiver:Landroid/content/BroadcastReceiver;
 
     invoke-virtual {v8, v9, v4}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
 
-    .line 923
     const v8, 0x2000000a
 
     const-string v9, "WindowManager"
@@ -1635,62 +1475,51 @@
 
     iput-object v8, p0, Lcom/android/server/wm/WindowManagerService;->mHoldingScreenWakeLock:Landroid/os/PowerManager$WakeLock;
 
-    .line 925
     iget-object v8, p0, Lcom/android/server/wm/WindowManagerService;->mHoldingScreenWakeLock:Landroid/os/PowerManager$WakeLock;
 
     const/4 v9, 0x0
 
     invoke-virtual {v8, v9}, Landroid/os/PowerManager$WakeLock;->setReferenceCounted(Z)V
 
-    .line 927
     iput-object p4, p0, Lcom/android/server/wm/WindowManagerService;->mInputManager:Lcom/android/server/input/InputManagerService;
 
-    .line 928
     new-instance v8, Landroid/view/SurfaceSession;
 
     invoke-direct {v8}, Landroid/view/SurfaceSession;-><init>()V
 
     iput-object v8, p0, Lcom/android/server/wm/WindowManagerService;->mFxSession:Landroid/view/SurfaceSession;
 
-    .line 929
     new-instance v8, Lcom/android/server/wm/WindowAnimator;
 
     invoke-direct {v8, p0}, Lcom/android/server/wm/WindowAnimator;-><init>(Lcom/android/server/wm/WindowManagerService;)V
 
     iput-object v8, p0, Lcom/android/server/wm/WindowManagerService;->mAnimator:Lcom/android/server/wm/WindowAnimator;
 
-    .line 931
     move-object/from16 v0, p5
 
     invoke-direct {p0, v0}, Lcom/android/server/wm/WindowManagerService;->initPolicy(Landroid/os/Handler;)V
 
-    .line 934
     invoke-static {}, Lcom/android/server/Watchdog;->getInstance()Lcom/android/server/Watchdog;
 
     move-result-object v8
 
     invoke-virtual {v8, p0}, Lcom/android/server/Watchdog;->addMonitor(Lcom/android/server/Watchdog$Monitor;)V
 
-    .line 936
     invoke-static {}, Landroid/view/Surface;->openTransaction()V
 
-    .line 938
     :try_start_0
     invoke-virtual {p0}, Lcom/android/server/wm/WindowManagerService;->createWatermarkInTransaction()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 940
     invoke-static {}, Landroid/view/Surface;->closeTransaction()V
 
-    .line 943
     invoke-virtual {p0}, Lcom/android/server/wm/WindowManagerService;->isAlarmBoot()Z
 
     move-result v8
 
     iput-boolean v8, p0, Lcom/android/server/wm/WindowManagerService;->mIsAlarmBooting:Z
 
-    .line 944
     const-string v8, "WindowManager"
 
     new-instance v9, Ljava/lang/StringBuilder;
@@ -1715,23 +1544,19 @@
 
     invoke-static {v8, v9}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 945
     iget-boolean v8, p0, Lcom/android/server/wm/WindowManagerService;->mIsAlarmBooting:Z
 
     if-eqz v8, :cond_1
 
-    .line 946
     iget-object v8, p0, Lcom/android/server/wm/WindowManagerService;->mInputMonitor:Lcom/android/server/wm/InputMonitor;
 
     const/4 v9, 0x1
 
     invoke-virtual {v8, v9}, Lcom/android/server/wm/InputMonitor;->setEventDispatchingLw(Z)V
 
-    .line 949
     :cond_1
     return-void
 
-    .line 940
     :catchall_0
     move-exception v8
 
@@ -1745,7 +1570,6 @@
     .parameter "x0"
 
     .prologue
-    .line 177
     iget-object v0, p0, Lcom/android/server/wm/WindowManagerService;->mKeyguardDisableHandler:Lcom/android/server/wm/KeyguardDisableHandler;
 
     return-object v0
@@ -1756,7 +1580,6 @@
     .parameter "x0"
 
     .prologue
-    .line 177
     iget-boolean v0, p0, Lcom/android/server/wm/WindowManagerService;->mIsAlarmBooting:Z
 
     return v0
@@ -1822,7 +1645,6 @@
     .parameter "x2"
 
     .prologue
-    .line 177
     invoke-direct {p0, p1, p2}, Lcom/android/server/wm/WindowManagerService;->handleNotifyRotationChanged(II)V
 
     return-void
@@ -55148,7 +54970,6 @@
     .parameter "x2"
 
     .prologue
-    .line 177
     invoke-direct {p0, p1, p2}, Lcom/android/server/wm/WindowManagerService;->handleNotifyWindowTranstion(ILandroid/view/WindowInfo;)V
 
     return-void
@@ -55162,7 +54983,6 @@
     .parameter "x3"
 
     .prologue
-    .line 177
     invoke-direct {p0, p1, p2, p3}, Lcom/android/server/wm/WindowManagerService;->handleNotifyRectangleOnScreenRequested(ILandroid/graphics/Rect;Z)V
 
     return-void
@@ -55174,7 +54994,6 @@
     .parameter "x1"
 
     .prologue
-    .line 177
     invoke-direct {p0, p1}, Lcom/android/server/wm/WindowManagerService;->handleNotifyWindowLayersChanged(Lcom/android/server/wm/DisplayContent;)V
 
     return-void
@@ -55186,7 +55005,6 @@
     .parameter "x1"
 
     .prologue
-    .line 177
     invoke-direct {p0, p1}, Lcom/android/server/wm/WindowManagerService;->handleDisplayAddedLocked(I)V
 
     return-void
@@ -55207,7 +55025,6 @@
     .parameter "x0"
 
     .prologue
-    .line 177
     iget-object v0, p0, Lcom/android/server/wm/WindowManagerService;->mDisplayContents:Landroid/util/SparseArray;
 
     return-object v0
@@ -55218,7 +55035,6 @@
     .parameter "x0"
 
     .prologue
-    .line 177
     iget-boolean v0, p0, Lcom/android/server/wm/WindowManagerService;->mWindowsChanged:Z
 
     return v0
@@ -55230,7 +55046,6 @@
     .parameter "x1"
 
     .prologue
-    .line 177
     iput-boolean p1, p0, Lcom/android/server/wm/WindowManagerService;->mWindowsChanged:Z
 
     return p1
@@ -55241,7 +55056,6 @@
     .parameter "x0"
 
     .prologue
-    .line 177
     invoke-direct {p0}, Lcom/android/server/wm/WindowManagerService;->notifyWindowsChanged()V
 
     return-void
@@ -55252,7 +55066,6 @@
     .parameter "x0"
 
     .prologue
-    .line 177
     invoke-direct {p0}, Lcom/android/server/wm/WindowManagerService;->copyAnimToLayoutParamsLocked()Z
 
     move-result v0
@@ -55267,7 +55080,6 @@
     .parameter "x2"
 
     .prologue
-    .line 177
     invoke-direct {p0, p1, p2}, Lcom/android/server/wm/WindowManagerService;->showStrictModeViolation(II)V
 
     return-void
@@ -55284,13 +55096,11 @@
     .prologue
     iget-object v0, p0, Lcom/android/server/wm/WindowManagerService;->mContext:Landroid/content/Context;
 
-    .line 7199
     const/4 v1, 0x0
 
     const/4 v2, 0x0
 
     invoke-static {v0, v1, v2}, Lcom/android/server/power/ShutdownThread;->reboot(Landroid/content/Context;Ljava/lang/String;Z)V
 
-    .line 12110
     return-void
 .end method

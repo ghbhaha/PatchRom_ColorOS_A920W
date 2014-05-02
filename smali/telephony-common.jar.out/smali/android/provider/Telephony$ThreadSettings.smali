@@ -42,7 +42,6 @@
     .locals 2
 
     .prologue
-    .line 1931
     sget-object v0, Landroid/provider/Telephony$MmsSms;->CONTENT_URI:Landroid/net/Uri;
 
     const-string v1, "thread_settings"
@@ -60,7 +59,6 @@
     .locals 0
 
     .prologue
-    .line 1930
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

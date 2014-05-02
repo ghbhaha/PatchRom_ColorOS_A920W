@@ -42,7 +42,6 @@
     .locals 0
 
     .prologue
-    .line 846
     iput-object p1, p0, Lcom/android/server/wm/WindowManagerService$2;->val$holder:[Lcom/android/server/wm/WindowManagerService;
 
     iput-object p2, p0, Lcom/android/server/wm/WindowManagerService$2;->val$context:Landroid/content/Context;
@@ -98,6 +97,5 @@
 
     aput-object v0, v9, v10
 
-    .line 851
     return-void
 .end method

@@ -25,6 +25,7 @@
     .locals 2
 
     .prologue
+    .line 2375
     sget-object v0, Landroid/provider/oppo/Telephony$Mms;->CONTENT_URI:Landroid/net/Uri;
 
     const-string v1, "rate"
@@ -42,6 +43,7 @@
     .locals 0
 
     .prologue
+    .line 2374
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

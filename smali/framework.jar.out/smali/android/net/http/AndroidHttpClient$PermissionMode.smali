@@ -44,7 +44,6 @@
 
     const/4 v2, 0x0
 
-    .line 339
     new-instance v0, Landroid/net/http/AndroidHttpClient$PermissionMode;
 
     const-string v1, "ALLOW"
@@ -53,7 +52,6 @@
 
     sput-object v0, Landroid/net/http/AndroidHttpClient$PermissionMode;->ALLOW:Landroid/net/http/AndroidHttpClient$PermissionMode;
 
-    .line 340
     new-instance v0, Landroid/net/http/AndroidHttpClient$PermissionMode;
 
     const-string v1, "DENY"
@@ -62,7 +60,6 @@
 
     sput-object v0, Landroid/net/http/AndroidHttpClient$PermissionMode;->DENY:Landroid/net/http/AndroidHttpClient$PermissionMode;
 
-    .line 341
     new-instance v0, Landroid/net/http/AndroidHttpClient$PermissionMode;
 
     const-string v1, "ASK"
@@ -71,7 +68,6 @@
 
     sput-object v0, Landroid/net/http/AndroidHttpClient$PermissionMode;->ASK:Landroid/net/http/AndroidHttpClient$PermissionMode;
 
-    .line 338
     const/4 v0, 0x3
 
     new-array v0, v0, [Landroid/net/http/AndroidHttpClient$PermissionMode;
@@ -102,7 +98,6 @@
     .end annotation
 
     .prologue
-    .line 338
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -113,7 +108,6 @@
     .parameter "name"
 
     .prologue
-    .line 338
     const-class v0, Landroid/net/http/AndroidHttpClient$PermissionMode;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -129,7 +123,6 @@
     .locals 1
 
     .prologue
-    .line 338
     sget-object v0, Landroid/net/http/AndroidHttpClient$PermissionMode;->$VALUES:[Landroid/net/http/AndroidHttpClient$PermissionMode;
 
     invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;

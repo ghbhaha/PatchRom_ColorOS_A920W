@@ -84,7 +84,6 @@
     .locals 1
 
     .prologue
-    .line 1086
     iput-object p1, p0, Lcom/android/server/ServerThread$3;->this$0:Lcom/android/server/ServerThread;
 
     iput-boolean p2, p0, Lcom/android/server/ServerThread$3;->val$headless:Z
@@ -188,14 +187,12 @@
     .locals 3
 
     .prologue
-    .line 1088
     const-string v1, "SystemServer"
 
     const-string v2, "Making services ready"
 
     invoke-static {v1, v2}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1090
     iget-boolean v1, p0, Lcom/android/server/ServerThread$3;->val$headless:Z
 
     if-nez v1, :cond_0
@@ -204,7 +201,6 @@
 
     invoke-static {v1}, Lcom/android/server/ServerThread;->startSystemUi(Landroid/content/Context;)V
 
-    .line 1092
     :cond_0
     :try_start_0
     iget-object v1, p0, Lcom/android/server/ServerThread$3;->val$mountServiceF:Lcom/android/server/MountService;
@@ -217,7 +213,6 @@
     :try_end_0
     .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1097
     :cond_1
     :goto_0
     :try_start_1
@@ -231,7 +226,6 @@
     :try_end_1
     .catch Ljava/lang/Throwable; {:try_start_1 .. :try_end_1} :catch_1
 
-    .line 1102
     :cond_2
     :goto_1
     :try_start_2
@@ -245,7 +239,6 @@
     :try_end_2
     .catch Ljava/lang/Throwable; {:try_start_2 .. :try_end_2} :catch_2
 
-    .line 1107
     :cond_3
     :goto_2
     :try_start_3
@@ -259,7 +252,6 @@
     :try_end_3
     .catch Ljava/lang/Throwable; {:try_start_3 .. :try_end_3} :catch_3
 
-    .line 1112
     :cond_4
     :goto_3
     :try_start_4
@@ -273,7 +265,6 @@
     :try_end_4
     .catch Ljava/lang/Throwable; {:try_start_4 .. :try_end_4} :catch_4
 
-    .line 1117
     :cond_5
     :goto_4
     :try_start_5
@@ -287,7 +278,6 @@
     :try_end_5
     .catch Ljava/lang/Throwable; {:try_start_5 .. :try_end_5} :catch_5
 
-    .line 1122
     :cond_6
     :goto_5
     :try_start_6
@@ -301,7 +291,6 @@
     :try_end_6
     .catch Ljava/lang/Throwable; {:try_start_6 .. :try_end_6} :catch_6
 
-    .line 1127
     :cond_7
     :goto_6
     :try_start_7
@@ -315,7 +304,6 @@
     :try_end_7
     .catch Ljava/lang/Throwable; {:try_start_7 .. :try_end_7} :catch_7
 
-    .line 1132
     :cond_8
     :goto_7
     :try_start_8
@@ -329,7 +317,6 @@
     :try_end_8
     .catch Ljava/lang/Throwable; {:try_start_8 .. :try_end_8} :catch_8
 
-    .line 1137
     :cond_9
     :goto_8
     :try_start_9
@@ -343,7 +330,6 @@
     :try_end_9
     .catch Ljava/lang/Throwable; {:try_start_9 .. :try_end_9} :catch_9
 
-    .line 1142
     :cond_a
     :goto_9
     :try_start_a
@@ -357,7 +343,6 @@
     :try_end_a
     .catch Ljava/lang/Throwable; {:try_start_a .. :try_end_a} :catch_a
 
-    .line 1146
     :cond_b
     :goto_a
     invoke-static {}, Lcom/android/server/Watchdog;->getInstance()Lcom/android/server/Watchdog;
@@ -366,7 +351,6 @@
 
     invoke-virtual {v1}, Lcom/android/server/Watchdog;->start()V
 
-    .line 1152
     :try_start_b
     iget-object v1, p0, Lcom/android/server/ServerThread$3;->val$appWidgetF:Lcom/android/server/AppWidgetService;
 
@@ -380,7 +364,6 @@
     :try_end_b
     .catch Ljava/lang/Throwable; {:try_start_b .. :try_end_b} :catch_b
 
-    .line 1157
     :cond_c
     :goto_b
     :try_start_c
@@ -394,7 +377,6 @@
     :try_end_c
     .catch Ljava/lang/Throwable; {:try_start_c .. :try_end_c} :catch_c
 
-    .line 1162
     :cond_d
     :goto_c
     :try_start_d
@@ -410,7 +392,6 @@
     :try_end_d
     .catch Ljava/lang/Throwable; {:try_start_d .. :try_end_d} :catch_d
 
-    .line 1167
     :cond_e
     :goto_d
     :try_start_e
@@ -424,7 +405,6 @@
     :try_end_e
     .catch Ljava/lang/Throwable; {:try_start_e .. :try_end_e} :catch_e
 
-    .line 1172
     :cond_f
     :goto_e
     :try_start_f
@@ -438,7 +418,6 @@
     :try_end_f
     .catch Ljava/lang/Throwable; {:try_start_f .. :try_end_f} :catch_f
 
-    .line 1177
     :cond_10
     :goto_f
     :try_start_10
@@ -452,7 +431,6 @@
     :try_end_10
     .catch Ljava/lang/Throwable; {:try_start_10 .. :try_end_10} :catch_10
 
-    .line 1182
     :cond_11
     :goto_10
     :try_start_11
@@ -466,7 +444,6 @@
     :try_end_11
     .catch Ljava/lang/Throwable; {:try_start_11 .. :try_end_11} :catch_11
 
-    .line 1187
     :cond_12
     :goto_11
     :try_start_12
@@ -480,7 +457,6 @@
     :try_end_12
     .catch Ljava/lang/Throwable; {:try_start_12 .. :try_end_12} :catch_12
 
-    .line 1192
     :cond_13
     :goto_12
     :try_start_13
@@ -494,7 +470,6 @@
     :try_end_13
     .catch Ljava/lang/Throwable; {:try_start_13 .. :try_end_13} :catch_13
 
-    .line 1197
     :cond_14
     :goto_13
     :try_start_14
@@ -508,7 +483,6 @@
     :try_end_14
     .catch Ljava/lang/Throwable; {:try_start_14 .. :try_end_14} :catch_14
 
-    .line 1203
     :cond_15
     :goto_14
     :try_start_15
@@ -522,7 +496,6 @@
     :try_end_15
     .catch Ljava/lang/Throwable; {:try_start_15 .. :try_end_15} :catch_15
 
-    .line 1208
     :cond_16
     :goto_15
     :try_start_16
@@ -534,7 +507,6 @@
 
     invoke-virtual {v1}, Lcom/android/server/TelephonyRegistry;->systemReady()V
 
-    .line 1210
     :cond_17
     iget-object v1, p0, Lcom/android/server/ServerThread$3;->val$telephonyRegistryF2:Lcom/android/server/TelephonyRegistry;
 
@@ -546,16 +518,13 @@
     :try_end_16
     .catch Ljava/lang/Throwable; {:try_start_16 .. :try_end_16} :catch_16
 
-    .line 1224
     :cond_18
     :goto_16
     return-void
 
-    .line 1093
     :catch_0
     move-exception v0
 
-    .line 1094
     .local v0, e:Ljava/lang/Throwable;
     iget-object v1, p0, Lcom/android/server/ServerThread$3;->this$0:Lcom/android/server/ServerThread;
 
@@ -565,12 +534,10 @@
 
     goto/16 :goto_0
 
-    .line 1098
     .end local v0           #e:Ljava/lang/Throwable;
     :catch_1
     move-exception v0
 
-    .line 1099
     .restart local v0       #e:Ljava/lang/Throwable;
     iget-object v1, p0, Lcom/android/server/ServerThread$3;->this$0:Lcom/android/server/ServerThread;
 
@@ -580,12 +547,10 @@
 
     goto/16 :goto_1
 
-    .line 1103
     .end local v0           #e:Ljava/lang/Throwable;
     :catch_2
     move-exception v0
 
-    .line 1104
     .restart local v0       #e:Ljava/lang/Throwable;
     iget-object v1, p0, Lcom/android/server/ServerThread$3;->this$0:Lcom/android/server/ServerThread;
 
@@ -595,12 +560,10 @@
 
     goto/16 :goto_2
 
-    .line 1108
     .end local v0           #e:Ljava/lang/Throwable;
     :catch_3
     move-exception v0
 
-    .line 1109
     .restart local v0       #e:Ljava/lang/Throwable;
     iget-object v1, p0, Lcom/android/server/ServerThread$3;->this$0:Lcom/android/server/ServerThread;
 
@@ -610,12 +573,10 @@
 
     goto/16 :goto_3
 
-    .line 1113
     .end local v0           #e:Ljava/lang/Throwable;
     :catch_4
     move-exception v0
 
-    .line 1114
     .restart local v0       #e:Ljava/lang/Throwable;
     iget-object v1, p0, Lcom/android/server/ServerThread$3;->this$0:Lcom/android/server/ServerThread;
 
@@ -625,12 +586,10 @@
 
     goto/16 :goto_4
 
-    .line 1118
     .end local v0           #e:Ljava/lang/Throwable;
     :catch_5
     move-exception v0
 
-    .line 1119
     .restart local v0       #e:Ljava/lang/Throwable;
     iget-object v1, p0, Lcom/android/server/ServerThread$3;->this$0:Lcom/android/server/ServerThread;
 
@@ -640,12 +599,10 @@
 
     goto/16 :goto_5
 
-    .line 1123
     .end local v0           #e:Ljava/lang/Throwable;
     :catch_6
     move-exception v0
 
-    .line 1124
     .restart local v0       #e:Ljava/lang/Throwable;
     iget-object v1, p0, Lcom/android/server/ServerThread$3;->this$0:Lcom/android/server/ServerThread;
 
@@ -655,12 +612,10 @@
 
     goto/16 :goto_6
 
-    .line 1128
     .end local v0           #e:Ljava/lang/Throwable;
     :catch_7
     move-exception v0
 
-    .line 1129
     .restart local v0       #e:Ljava/lang/Throwable;
     iget-object v1, p0, Lcom/android/server/ServerThread$3;->this$0:Lcom/android/server/ServerThread;
 
@@ -670,12 +625,10 @@
 
     goto/16 :goto_7
 
-    .line 1133
     .end local v0           #e:Ljava/lang/Throwable;
     :catch_8
     move-exception v0
 
-    .line 1134
     .restart local v0       #e:Ljava/lang/Throwable;
     iget-object v1, p0, Lcom/android/server/ServerThread$3;->this$0:Lcom/android/server/ServerThread;
 
@@ -685,12 +638,10 @@
 
     goto/16 :goto_8
 
-    .line 1138
     .end local v0           #e:Ljava/lang/Throwable;
     :catch_9
     move-exception v0
 
-    .line 1139
     .restart local v0       #e:Ljava/lang/Throwable;
     iget-object v1, p0, Lcom/android/server/ServerThread$3;->this$0:Lcom/android/server/ServerThread;
 
@@ -700,12 +651,10 @@
 
     goto/16 :goto_9
 
-    .line 1143
     .end local v0           #e:Ljava/lang/Throwable;
     :catch_a
     move-exception v0
 
-    .line 1144
     .restart local v0       #e:Ljava/lang/Throwable;
     iget-object v1, p0, Lcom/android/server/ServerThread$3;->this$0:Lcom/android/server/ServerThread;
 
@@ -715,12 +664,10 @@
 
     goto/16 :goto_a
 
-    .line 1153
     .end local v0           #e:Ljava/lang/Throwable;
     :catch_b
     move-exception v0
 
-    .line 1154
     .restart local v0       #e:Ljava/lang/Throwable;
     iget-object v1, p0, Lcom/android/server/ServerThread$3;->this$0:Lcom/android/server/ServerThread;
 
@@ -730,12 +677,10 @@
 
     goto/16 :goto_b
 
-    .line 1158
     .end local v0           #e:Ljava/lang/Throwable;
     :catch_c
     move-exception v0
 
-    .line 1159
     .restart local v0       #e:Ljava/lang/Throwable;
     iget-object v1, p0, Lcom/android/server/ServerThread$3;->this$0:Lcom/android/server/ServerThread;
 
@@ -745,12 +690,10 @@
 
     goto/16 :goto_c
 
-    .line 1163
     .end local v0           #e:Ljava/lang/Throwable;
     :catch_d
     move-exception v0
 
-    .line 1164
     .restart local v0       #e:Ljava/lang/Throwable;
     iget-object v1, p0, Lcom/android/server/ServerThread$3;->this$0:Lcom/android/server/ServerThread;
 
@@ -760,12 +703,10 @@
 
     goto/16 :goto_d
 
-    .line 1168
     .end local v0           #e:Ljava/lang/Throwable;
     :catch_e
     move-exception v0
 
-    .line 1169
     .restart local v0       #e:Ljava/lang/Throwable;
     iget-object v1, p0, Lcom/android/server/ServerThread$3;->this$0:Lcom/android/server/ServerThread;
 
@@ -775,12 +716,10 @@
 
     goto/16 :goto_e
 
-    .line 1173
     .end local v0           #e:Ljava/lang/Throwable;
     :catch_f
     move-exception v0
 
-    .line 1174
     .restart local v0       #e:Ljava/lang/Throwable;
     iget-object v1, p0, Lcom/android/server/ServerThread$3;->this$0:Lcom/android/server/ServerThread;
 
@@ -790,12 +729,10 @@
 
     goto/16 :goto_f
 
-    .line 1178
     .end local v0           #e:Ljava/lang/Throwable;
     :catch_10
     move-exception v0
 
-    .line 1179
     .restart local v0       #e:Ljava/lang/Throwable;
     iget-object v1, p0, Lcom/android/server/ServerThread$3;->this$0:Lcom/android/server/ServerThread;
 
@@ -805,12 +742,10 @@
 
     goto/16 :goto_10
 
-    .line 1183
     .end local v0           #e:Ljava/lang/Throwable;
     :catch_11
     move-exception v0
 
-    .line 1184
     .restart local v0       #e:Ljava/lang/Throwable;
     iget-object v1, p0, Lcom/android/server/ServerThread$3;->this$0:Lcom/android/server/ServerThread;
 
@@ -820,12 +755,10 @@
 
     goto/16 :goto_11
 
-    .line 1188
     .end local v0           #e:Ljava/lang/Throwable;
     :catch_12
     move-exception v0
 
-    .line 1189
     .restart local v0       #e:Ljava/lang/Throwable;
     iget-object v1, p0, Lcom/android/server/ServerThread$3;->this$0:Lcom/android/server/ServerThread;
 
@@ -835,12 +768,10 @@
 
     goto/16 :goto_12
 
-    .line 1193
     .end local v0           #e:Ljava/lang/Throwable;
     :catch_13
     move-exception v0
 
-    .line 1194
     .restart local v0       #e:Ljava/lang/Throwable;
     iget-object v1, p0, Lcom/android/server/ServerThread$3;->this$0:Lcom/android/server/ServerThread;
 
@@ -850,12 +781,10 @@
 
     goto/16 :goto_13
 
-    .line 1198
     .end local v0           #e:Ljava/lang/Throwable;
     :catch_14
     move-exception v0
 
-    .line 1199
     .restart local v0       #e:Ljava/lang/Throwable;
     iget-object v1, p0, Lcom/android/server/ServerThread$3;->this$0:Lcom/android/server/ServerThread;
 
@@ -865,12 +794,10 @@
 
     goto/16 :goto_14
 
-    .line 1204
     .end local v0           #e:Ljava/lang/Throwable;
     :catch_15
     move-exception v0
 
-    .line 1205
     .restart local v0       #e:Ljava/lang/Throwable;
     iget-object v1, p0, Lcom/android/server/ServerThread$3;->this$0:Lcom/android/server/ServerThread;
 
@@ -880,12 +807,10 @@
 
     goto/16 :goto_15
 
-    .line 1211
     .end local v0           #e:Ljava/lang/Throwable;
     :catch_16
     move-exception v0
 
-    .line 1212
     .restart local v0       #e:Ljava/lang/Throwable;
     iget-object v1, p0, Lcom/android/server/ServerThread$3;->this$0:Lcom/android/server/ServerThread;
 

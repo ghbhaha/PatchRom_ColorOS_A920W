@@ -46,8 +46,6 @@
 
 .field public static final ACTION_DISPLAY_SETTINGS:Ljava/lang/String; = "android.settings.DISPLAY_SETTINGS"
 
-.field public static final ACTION_DREAM_SETTINGS:Ljava/lang/String; = "android.settings.DREAM_SETTINGS"
-
 .field public static final ACTION_DRIVE_SETTINGS:Ljava/lang/String; = "android.settings.DRIVE_SETTINGS"
 
 .field public static final ACTION_DREAM_SETTINGS:Ljava/lang/String; = "android.settings.DREAM_SETTINGS"
@@ -146,10 +144,8 @@
     .locals 0
 
     .prologue
-    .line 82
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 7152
     return-void
 .end method
 
@@ -158,7 +154,6 @@
     .parameter "x0"
 
     .prologue
-    .line 82
     invoke-static {p0}, Landroid/provider/Settings;->amoiLog(Ljava/lang/String;)V
 
     return-void
@@ -169,23 +164,19 @@
     .parameter "msg"
 
     .prologue
-    .line 7178
     if-eqz p0, :cond_0
 
-    .line 7179
     const-string v0, "amoiSystemCheckGPS"
 
     invoke-static {v0, p0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 7184
     :goto_0
     return-void
 
-    .line 7181
     :cond_0
     const-string v0, "amoiSystemCheckGPS"
 
-    const-string/jumbo v1, "null msg"
+    const-string v1, "null msg"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
@@ -199,7 +190,6 @@
     .parameter "value"
 
     .prologue
-    .line 6978
     const/4 v0, 0x1
 
     return v0
@@ -211,12 +201,10 @@
     .parameter "appName"
 
     .prologue
-    .line 6966
     invoke-virtual {p0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
     move-result-object v2
 
-    .line 6968
     .local v2, pm:Landroid/content/pm/PackageManager;
     const/4 v3, 0x0
 
@@ -225,7 +213,6 @@
 
     move-result-object v0
 
-    .line 6969
     .local v0, appInfo:Landroid/content/pm/ApplicationInfo;
     invoke-virtual {v0, v2}, Landroid/content/pm/PackageItemInfo;->loadLabel(Landroid/content/pm/PackageManager;)Ljava/lang/CharSequence;
     :try_end_0
@@ -233,18 +220,15 @@
 
     move-result-object p1
 
-    .line 6972
     .end local v0           #appInfo:Landroid/content/pm/ApplicationInfo;
     .end local p1
     :goto_0
     return-object p1
 
-    .line 6970
     .restart local p1
     :catch_0
     move-exception v1
 
-    .line 6971
     .local v1, e:Landroid/content/pm/PackageManager$NameNotFoundException;
     new-instance v3, Ljava/lang/StringBuilder;
 
@@ -275,12 +259,10 @@
     .parameter "appWant"
 
     .prologue
-    .line 7069
     move-object/from16 v0, p0
 
     iget-object v8, v0, Landroid/provider/Settings$CallerAppInfo;->mCallerApp:Ljava/lang/String;
 
-    .line 7070
     .local v8, appName:Ljava/lang/String;
     move-object/from16 v0, p0
 
@@ -290,11 +272,9 @@
 
     move-result-object v14
 
-    .line 7071
     .local v14, pm:Landroid/content/pm/PackageManager;
     const/4 v7, 0x0
 
-    .line 7073
     .local v7, appInfo:Landroid/content/pm/ApplicationInfo;
     const/4 v1, 0x0
 
@@ -305,11 +285,9 @@
 
     move-result-object v7
 
-    .line 7077
     :goto_0
     invoke-static {v8}, Landroid/provider/Settings;->amoiLog(Ljava/lang/String;)V
 
-    .line 7078
     iget v1, v7, Landroid/content/pm/ApplicationInfo;->flags:I
 
     and-int/lit8 v1, v1, 0x1
@@ -318,21 +296,17 @@
 
     const/4 v15, 0x1
 
-    .line 7079
     .local v15, systemApp:Z
     :goto_1
     const/4 v12, 0x0
 
-    .line 7080
     .local v12, needCheck:Z
     if-eqz v15, :cond_1
 
-    .line 7081
     sget-object v1, Landroid/provider/Settings;->sCheckList:[Ljava/lang/String;
 
     if-nez v1, :cond_0
 
-    .line 7082
     move-object/from16 v0, p0
 
     iget-object v1, v0, Landroid/provider/Settings$CallerAppInfo;->mContext:Landroid/content/Context;
@@ -349,7 +323,6 @@
 
     sput-object v1, Landroid/provider/Settings;->sCheckList:[Ljava/lang/String;
 
-    .line 7086
     :cond_0
     const/4 v11, 0x0
 
@@ -361,7 +334,6 @@
 
     if-ge v11, v1, :cond_1
 
-    .line 7087
     sget-object v1, Landroid/provider/Settings;->sCheckList:[Ljava/lang/String;
 
     aget-object v1, v1, v11
@@ -372,17 +344,14 @@
 
     if-eqz v1, :cond_4
 
-    .line 7088
     const/4 v12, 0x1
 
-    .line 7094
     .end local v11           #index:I
     :cond_1
     if-eqz v15, :cond_2
 
     if-eqz v12, :cond_a
 
-    .line 7095
     :cond_2
     move-object/from16 v0, p0
 
@@ -402,7 +371,7 @@
 
     aput-object p1, v3, v4
 
-    const-string/jumbo v4, "name=?"
+    const-string v4, "name=?"
 
     const/4 v5, 0x1
 
@@ -412,36 +381,30 @@
 
     aput-object v8, v5, v6
 
-    const-string/jumbo v6, "name DESC"
+    const-string v6, "name DESC"
 
     invoke-virtual/range {v1 .. v6}, Landroid/content/ContentResolver;->query(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
 
     move-result-object v9
 
-    .line 7097
     .local v9, cursor:Landroid/database/Cursor;
     if-nez v9, :cond_5
 
-    .line 7098
     const-string v1, "cursor null!!"
 
     invoke-static {v1}, Landroid/provider/Settings;->amoiLog(Ljava/lang/String;)V
 
-    .line 7099
     sget-object v1, Landroid/provider/Settings$PermissionMode;->ASK:Landroid/provider/Settings$PermissionMode;
 
-    .line 7124
     .end local v9           #cursor:Landroid/database/Cursor;
     :goto_3
     return-object v1
 
-    .line 7074
     .end local v12           #needCheck:Z
     .end local v15           #systemApp:Z
     :catch_0
     move-exception v10
 
-    .line 7075
     .local v10, e:Landroid/content/pm/PackageManager$NameNotFoundException;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -465,14 +428,12 @@
 
     goto :goto_0
 
-    .line 7078
     .end local v10           #e:Landroid/content/pm/PackageManager$NameNotFoundException;
     :cond_3
     const/4 v15, 0x0
 
     goto :goto_1
 
-    .line 7086
     .restart local v11       #index:I
     .restart local v12       #needCheck:Z
     .restart local v15       #systemApp:Z
@@ -481,13 +442,11 @@
 
     goto :goto_2
 
-    .line 7101
     .end local v11           #index:I
     .restart local v9       #cursor:Landroid/database/Cursor;
     :cond_5
-    const-string/jumbo v13, "query"
+    const-string v13, "query"
 
-    .line 7103
     .local v13, permission:Ljava/lang/String;
     :try_start_1
     invoke-interface {v9}, Landroid/database/Cursor;->getCount()I
@@ -496,14 +455,12 @@
 
     if-lez v1, :cond_6
 
-    .line 7104
     invoke-interface {v9}, Landroid/database/Cursor;->moveToNext()Z
 
     move-result v1
 
     if-eqz v1, :cond_6
 
-    .line 7105
     move-object/from16 v0, p1
 
     invoke-interface {v9, v0}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
@@ -516,22 +473,17 @@
 
     move-result-object v13
 
-    .line 7110
     :cond_6
     invoke-interface {v9}, Landroid/database/Cursor;->close()V
 
-    .line 7112
     invoke-static {v13}, Landroid/provider/Settings;->amoiLog(Ljava/lang/String;)V
 
-    .line 7113
     if-nez v13, :cond_7
 
-    .line 7114
     sget-object v1, Landroid/provider/Settings$PermissionMode;->ASK:Landroid/provider/Settings$PermissionMode;
 
     goto :goto_3
 
-    .line 7110
     :catchall_0
     move-exception v1
 
@@ -539,7 +491,6 @@
 
     throw v1
 
-    .line 7116
     :cond_7
     const-string v1, "enable"
 
@@ -549,12 +500,10 @@
 
     if-eqz v1, :cond_8
 
-    .line 7117
     sget-object v1, Landroid/provider/Settings$PermissionMode;->ALLOW:Landroid/provider/Settings$PermissionMode;
 
     goto :goto_3
 
-    .line 7118
     :cond_8
     const-string v1, "disable"
 
@@ -564,18 +513,15 @@
 
     if-eqz v1, :cond_9
 
-    .line 7119
     sget-object v1, Landroid/provider/Settings$PermissionMode;->DENY:Landroid/provider/Settings$PermissionMode;
 
     goto :goto_3
 
-    .line 7121
     :cond_9
     sget-object v1, Landroid/provider/Settings$PermissionMode;->ASK:Landroid/provider/Settings$PermissionMode;
 
     goto :goto_3
 
-    .line 7124
     .end local v9           #cursor:Landroid/database/Cursor;
     .end local v13           #permission:Ljava/lang/String;
     :cond_a
@@ -589,7 +535,6 @@
     .parameter "androidId"
 
     .prologue
-    .line 6955
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

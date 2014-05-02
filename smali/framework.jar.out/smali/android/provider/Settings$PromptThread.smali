@@ -30,22 +30,17 @@
     .parameter "message"
 
     .prologue
-    .line 7158
     invoke-direct {p0, p2}, Ljava/lang/Thread;-><init>(Ljava/lang/String;)V
 
-    .line 7159
     iput-object p3, p0, Landroid/provider/Settings$PromptThread;->mMessage:Ljava/lang/String;
 
-    .line 7160
     iput-object p1, p0, Landroid/provider/Settings$PromptThread;->mContext:Landroid/content/Context;
 
-    .line 7161
-    const-string/jumbo v0, "new PromptThread"
+    const-string v0, "new PromptThread"
 
     #calls: Landroid/provider/Settings;->amoiLog(Ljava/lang/String;)V
     invoke-static {v0}, Landroid/provider/Settings;->access$000(Ljava/lang/String;)V
 
-    .line 7162
     return-void
 .end method
 
@@ -55,17 +50,14 @@
     .locals 3
 
     .prologue
-    .line 7166
     invoke-static {}, Landroid/os/Looper;->prepare()V
 
-    .line 7168
     invoke-static {}, Landroid/os/Looper;->myLooper()Landroid/os/Looper;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/provider/Settings$PromptThread;->mLooper:Landroid/os/Looper;
 
-    .line 7169
     iget-object v0, p0, Landroid/provider/Settings$PromptThread;->mContext:Landroid/content/Context;
 
     iget-object v1, p0, Landroid/provider/Settings$PromptThread;->mMessage:Ljava/lang/String;
@@ -78,15 +70,12 @@
 
     invoke-virtual {v0}, Landroid/widget/Toast;->show()V
 
-    .line 7171
     const-string v0, "PromptThread run"
 
     #calls: Landroid/provider/Settings;->amoiLog(Ljava/lang/String;)V
     invoke-static {v0}, Landroid/provider/Settings;->access$000(Ljava/lang/String;)V
 
-    .line 7172
     invoke-static {}, Landroid/os/Looper;->loop()V
 
-    .line 7173
     return-void
 .end method

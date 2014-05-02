@@ -29,14 +29,19 @@
     .prologue
     const-wide/16 v0, 0x0
 
+    .line 3472
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 3469
     iput-wide v0, p0, Landroid/provider/oppo/Telephony$GPRSInfo;->mSimId:J
 
+    .line 3470
     iput-wide v0, p0, Landroid/provider/oppo/Telephony$GPRSInfo;->mGprsIn:J
 
+    .line 3471
     iput-wide v0, p0, Landroid/provider/oppo/Telephony$GPRSInfo;->mGprsOut:J
 
+    .line 3474
     return-void
 .end method
 
@@ -45,10 +50,12 @@
     .parameter "cursor"
 
     .prologue
+    .line 3476
     new-instance v0, Landroid/provider/oppo/Telephony$GPRSInfo;
 
     invoke-direct {v0}, Landroid/provider/oppo/Telephony$GPRSInfo;-><init>()V
 
+    .line 3477
     .local v0, info:Landroid/provider/oppo/Telephony$GPRSInfo;
     const-string v1, "sim_id"
 
@@ -62,6 +69,7 @@
 
     iput-wide v1, v0, Landroid/provider/oppo/Telephony$GPRSInfo;->mSimId:J
 
+    .line 3478
     const-string v1, "gprs_in"
 
     invoke-interface {p0, v1}, Landroid/database/Cursor;->getColumnIndexOrThrow(Ljava/lang/String;)I
@@ -74,6 +82,7 @@
 
     iput-wide v1, v0, Landroid/provider/oppo/Telephony$GPRSInfo;->mGprsIn:J
 
+    .line 3479
     const-string v1, "gprs_out"
 
     invoke-interface {p0, v1}, Landroid/database/Cursor;->getColumnIndexOrThrow(Ljava/lang/String;)I
@@ -86,6 +95,7 @@
 
     iput-wide v1, v0, Landroid/provider/oppo/Telephony$GPRSInfo;->mGprsOut:J
 
+    .line 3480
     return-object v0
 .end method
 
@@ -101,16 +111,19 @@
 
     const-wide/16 v7, 0x0
 
+    .line 3484
     cmp-long v0, p1, v7
 
     if-gtz v0, :cond_1
 
     move-wide v0, v7
 
+    .line 3496
     :cond_0
     :goto_0
     return-wide v0
 
+    .line 3485
     :cond_1
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -150,6 +163,7 @@
 
     move-result-object v6
 
+    .line 3488
     .local v6, cursor:Landroid/database/Cursor;
     if-eqz v6, :cond_2
 
@@ -160,6 +174,7 @@
 
     if-eqz v0, :cond_2
 
+    .line 3489
     const/4 v0, 0x0
 
     invoke-interface {v6, v0}, Landroid/database/Cursor;->getLong(I)J
@@ -168,27 +183,34 @@
 
     move-result-wide v0
 
+    .line 3492
     if-eqz v6, :cond_0
 
+    .line 3493
     invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
     goto :goto_0
 
+    .line 3492
     :cond_2
     if-eqz v6, :cond_3
 
+    .line 3493
     invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
     :cond_3
     move-wide v0, v7
 
+    .line 3496
     goto :goto_0
 
+    .line 3492
     :catchall_0
     move-exception v0
 
     if-eqz v6, :cond_4
 
+    .line 3493
     invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
     :cond_4
@@ -203,10 +225,12 @@
     .prologue
     const/4 v2, 0x0
 
+    .line 3516
     new-instance v7, Landroid/provider/oppo/Telephony$GPRSInfo;
 
     invoke-direct {v7}, Landroid/provider/oppo/Telephony$GPRSInfo;-><init>()V
 
+    .line 3517
     .local v7, info:Landroid/provider/oppo/Telephony$GPRSInfo;
     const-wide/16 v0, 0x0
 
@@ -214,11 +238,13 @@
 
     if-gtz v0, :cond_1
 
+    .line 3529
     .end local v7           #info:Landroid/provider/oppo/Telephony$GPRSInfo;
     :cond_0
     :goto_0
     return-object v7
 
+    .line 3518
     .restart local v7       #info:Landroid/provider/oppo/Telephony$GPRSInfo;
     :cond_1
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -253,6 +279,7 @@
 
     move-result-object v6
 
+    .line 3521
     .local v6, cursor:Landroid/database/Cursor;
     if-eqz v6, :cond_2
 
@@ -263,32 +290,39 @@
 
     if-eqz v0, :cond_2
 
+    .line 3522
     invoke-static {v6}, Landroid/provider/oppo/Telephony$GPRSInfo;->fromCursor(Landroid/database/Cursor;)Landroid/provider/oppo/Telephony$GPRSInfo;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     move-result-object v7
 
+    .line 3525
     .end local v7           #info:Landroid/provider/oppo/Telephony$GPRSInfo;
     if-eqz v6, :cond_0
 
+    .line 3526
     invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
     goto :goto_0
 
+    .line 3525
     .restart local v7       #info:Landroid/provider/oppo/Telephony$GPRSInfo;
     :cond_2
     if-eqz v6, :cond_0
 
+    .line 3526
     invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
     goto :goto_0
 
+    .line 3525
     :catchall_0
     move-exception v0
 
     if-eqz v6, :cond_3
 
+    .line 3526
     invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
     :cond_3
@@ -307,16 +341,19 @@
 
     const-wide/16 v7, 0x0
 
+    .line 3500
     cmp-long v0, p1, v7
 
     if-gtz v0, :cond_1
 
     move-wide v0, v7
 
+    .line 3512
     :cond_0
     :goto_0
     return-wide v0
 
+    .line 3501
     :cond_1
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -356,6 +393,7 @@
 
     move-result-object v6
 
+    .line 3504
     .local v6, cursor:Landroid/database/Cursor;
     if-eqz v6, :cond_2
 
@@ -366,6 +404,7 @@
 
     if-eqz v0, :cond_2
 
+    .line 3505
     const/4 v0, 0x0
 
     invoke-interface {v6, v0}, Landroid/database/Cursor;->getLong(I)J
@@ -374,27 +413,34 @@
 
     move-result-wide v0
 
+    .line 3508
     if-eqz v6, :cond_0
 
+    .line 3509
     invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
     goto :goto_0
 
+    .line 3508
     :cond_2
     if-eqz v6, :cond_3
 
+    .line 3509
     invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
     :cond_3
     move-wide v0, v7
 
+    .line 3512
     goto :goto_0
 
+    .line 3508
     :catchall_0
     move-exception v0
 
     if-eqz v6, :cond_4
 
+    .line 3509
     invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
     :cond_4
@@ -409,15 +455,18 @@
     .prologue
     const/4 v1, 0x0
 
+    .line 3533
     const-wide/16 v2, 0x0
 
     cmp-long v2, p1, v2
 
     if-gtz v2, :cond_0
 
+    .line 3537
     :goto_0
     return v1
 
+    .line 3534
     :cond_0
     new-instance v0, Landroid/content/ContentValues;
 
@@ -425,6 +474,7 @@
 
     invoke-direct {v0, v2}, Landroid/content/ContentValues;-><init>(I)V
 
+    .line 3535
     .local v0, values:Landroid/content/ContentValues;
     const-string v2, "gprs_in"
 
@@ -434,6 +484,7 @@
 
     invoke-virtual {v0, v2, v3}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
+    .line 3536
     const-string v2, "gprs_out"
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -442,6 +493,7 @@
 
     invoke-virtual {v0, v2, v1}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
+    .line 3537
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v1

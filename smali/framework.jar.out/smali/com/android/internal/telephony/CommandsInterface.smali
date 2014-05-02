@@ -433,6 +433,38 @@
 .method public abstract notifyUimInsertedStatus(I)V
 .end method
 
+.method public abstract oppoGetEMMode()Z
+    .annotation build Landroid/annotation/OppoHook;
+        level = .enum Landroid/annotation/OppoHook$OppoHookType;->NEW_METHOD:Landroid/annotation/OppoHook$OppoHookType;
+        note = "add for add for engineer mode test"
+        property = .enum Landroid/annotation/OppoHook$OppoRomType;->ROM:Landroid/annotation/OppoHook$OppoRomType;
+    .end annotation
+.end method
+
+.method public abstract oppoRegisterForEmCallStatusChanged(Landroid/os/Handler;ILjava/lang/Object;)V
+    .annotation build Landroid/annotation/OppoHook;
+        level = .enum Landroid/annotation/OppoHook$OppoHookType;->NEW_METHOD:Landroid/annotation/OppoHook$OppoHookType;
+        note = "add for add for engineer mode test "
+        property = .enum Landroid/annotation/OppoHook$OppoRomType;->ROM:Landroid/annotation/OppoHook$OppoRomType;
+    .end annotation
+.end method
+
+.method public abstract oppoSetEMMode(Z)V
+    .annotation build Landroid/annotation/OppoHook;
+        level = .enum Landroid/annotation/OppoHook$OppoHookType;->NEW_METHOD:Landroid/annotation/OppoHook$OppoHookType;
+        note = "add for add for engineer mode test"
+        property = .enum Landroid/annotation/OppoHook$OppoRomType;->ROM:Landroid/annotation/OppoHook$OppoRomType;
+    .end annotation
+.end method
+
+.method public abstract oppoUnregisterForEmCallStatusChanged(Landroid/os/Handler;)V
+    .annotation build Landroid/annotation/OppoHook;
+        level = .enum Landroid/annotation/OppoHook$OppoHookType;->NEW_METHOD:Landroid/annotation/OppoHook$OppoHookType;
+        note = "add for add for engineer mode test"
+        property = .enum Landroid/annotation/OppoHook$OppoRomType;->ROM:Landroid/annotation/OppoHook$OppoRomType;
+    .end annotation
+.end method
+
 .method public abstract queryAvailableBandMode(Landroid/os/Message;)V
 .end method
 

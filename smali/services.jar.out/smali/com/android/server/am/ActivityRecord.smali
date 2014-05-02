@@ -244,94 +244,118 @@
 
     iput-object v3, p0, Lcom/android/server/am/ActivityRecord;->shortComponentName:Ljava/lang/String;
 
+    .line 349
     iput-object p6, p0, Lcom/android/server/am/ActivityRecord;->resolvedType:Ljava/lang/String;
 
+    .line 350
     move/from16 v0, p12
 
     iput-boolean v0, p0, Lcom/android/server/am/ActivityRecord;->componentSpecified:Z
 
+    .line 351
     move-object/from16 v0, p8
 
     iput-object v0, p0, Lcom/android/server/am/ActivityRecord;->configuration:Landroid/content/res/Configuration;
 
+    .line 352
     move-object/from16 v0, p9
 
     iput-object v0, p0, Lcom/android/server/am/ActivityRecord;->resultTo:Lcom/android/server/am/ActivityRecord;
 
+    .line 353
     move-object/from16 v0, p10
 
     iput-object v0, p0, Lcom/android/server/am/ActivityRecord;->resultWho:Ljava/lang/String;
 
+    .line 354
     move/from16 v0, p11
 
     iput v0, p0, Lcom/android/server/am/ActivityRecord;->requestCode:I
 
+    .line 355
     sget-object v3, Lcom/android/server/am/ActivityStack$ActivityState;->INITIALIZING:Lcom/android/server/am/ActivityStack$ActivityState;
 
     iput-object v3, p0, Lcom/android/server/am/ActivityRecord;->state:Lcom/android/server/am/ActivityStack$ActivityState;
 
+    .line 356
     const/4 v3, 0x0
 
     iput-boolean v3, p0, Lcom/android/server/am/ActivityRecord;->frontOfTask:Z
 
+    .line 357
     const/4 v3, 0x0
 
     iput-boolean v3, p0, Lcom/android/server/am/ActivityRecord;->launchFailed:Z
 
+    .line 358
     const/4 v3, 0x0
 
     iput-boolean v3, p0, Lcom/android/server/am/ActivityRecord;->stopped:Z
 
+    .line 359
     const/4 v3, 0x0
 
     iput-boolean v3, p0, Lcom/android/server/am/ActivityRecord;->delayedResume:Z
 
+    .line 360
     const/4 v3, 0x0
 
     iput-boolean v3, p0, Lcom/android/server/am/ActivityRecord;->finishing:Z
 
+    .line 361
     const/4 v3, 0x0
 
     iput-boolean v3, p0, Lcom/android/server/am/ActivityRecord;->configDestroy:Z
 
+    .line 362
     const/4 v3, 0x0
 
     iput-boolean v3, p0, Lcom/android/server/am/ActivityRecord;->keysPaused:Z
 
+    .line 363
     const/4 v3, 0x0
 
     iput-boolean v3, p0, Lcom/android/server/am/ActivityRecord;->inHistory:Z
 
+    .line 364
     const/4 v3, 0x1
 
     iput-boolean v3, p0, Lcom/android/server/am/ActivityRecord;->visible:Z
 
+    .line 365
     const/4 v3, 0x0
 
     iput-boolean v3, p0, Lcom/android/server/am/ActivityRecord;->waitingVisible:Z
 
+    .line 366
     const/4 v3, 0x0
 
     iput-boolean v3, p0, Lcom/android/server/am/ActivityRecord;->nowVisible:Z
 
+    .line 367
     const/4 v3, 0x0
 
     iput-boolean v3, p0, Lcom/android/server/am/ActivityRecord;->thumbnailNeeded:Z
 
+    .line 368
     const/4 v3, 0x0
 
     iput-boolean v3, p0, Lcom/android/server/am/ActivityRecord;->idle:Z
 
+    .line 369
     const/4 v3, 0x0
 
     iput-boolean v3, p0, Lcom/android/server/am/ActivityRecord;->hasBeenLaunched:Z
 
+    .line 374
     const/4 v3, 0x1
 
     iput-boolean v3, p0, Lcom/android/server/am/ActivityRecord;->haveState:Z
 
+    .line 376
     if-eqz p7, :cond_f
 
+    .line 377
     iget-object v3, p7, Landroid/content/pm/ActivityInfo;->targetActivity:Ljava/lang/String;
 
     if-eqz v3, :cond_0
@@ -636,8 +660,10 @@
 
     move-result v3
 
+
     iput-boolean v3, p0, Lcom/android/server/am/ActivityRecord;->isHomeActivity:Z
 
+    .line 459
     :goto_6
     iget v3, p7, Landroid/content/pm/ActivityInfo;->flags:I
 
@@ -689,17 +715,20 @@
 
     goto/16 :goto_3
 
+    .line 428
     .restart local v2       #ent:Lcom/android/server/AttributeCache$Entry;
     :cond_b
     const/4 v3, 0x0
 
     goto :goto_4
 
+    .line 432
     :cond_c
     const/4 v3, 0x0
 
     goto :goto_5
 
+    .line 453
     :cond_d
     const/4 v3, 0x0
 
@@ -713,52 +742,64 @@
 
     goto :goto_7
 
+    .line 461
     .end local v2           #ent:Lcom/android/server/AttributeCache$Entry;
     :cond_f
     const/4 v3, 0x0
 
     iput-object v3, p0, Lcom/android/server/am/ActivityRecord;->realActivity:Landroid/content/ComponentName;
 
+    .line 462
     const/4 v3, 0x0
 
     iput-object v3, p0, Lcom/android/server/am/ActivityRecord;->taskAffinity:Ljava/lang/String;
 
+    .line 463
     const/4 v3, 0x0
 
     iput-boolean v3, p0, Lcom/android/server/am/ActivityRecord;->stateNotNeeded:Z
 
+    .line 464
     const/4 v3, 0x0
 
     iput-object v3, p0, Lcom/android/server/am/ActivityRecord;->baseDir:Ljava/lang/String;
 
+    .line 465
     const/4 v3, 0x0
 
     iput-object v3, p0, Lcom/android/server/am/ActivityRecord;->resDir:Ljava/lang/String;
 
+    .line 466
     const/4 v3, 0x0
 
     iput-object v3, p0, Lcom/android/server/am/ActivityRecord;->dataDir:Ljava/lang/String;
 
+    .line 467
     const/4 v3, 0x0
 
     iput-object v3, p0, Lcom/android/server/am/ActivityRecord;->processName:Ljava/lang/String;
 
+    .line 468
     const/4 v3, 0x0
 
     iput-object v3, p0, Lcom/android/server/am/ActivityRecord;->packageName:Ljava/lang/String;
 
+    .line 469
     const/4 v3, 0x1
 
     iput-boolean v3, p0, Lcom/android/server/am/ActivityRecord;->fullscreen:Z
 
+    .line 470
     const/4 v3, 0x0
 
     iput-boolean v3, p0, Lcom/android/server/am/ActivityRecord;->noDisplay:Z
 
+    .line 471
     const/4 v3, 0x0
 
     iput-boolean v3, p0, Lcom/android/server/am/ActivityRecord;->isHomeActivity:Z
 
+    .line 472
     const/4 v3, 0x0
 
     iput-boolean v3, p0, Lcom/android/server/am/ActivityRecord;->immersive:Z
@@ -4569,6 +4610,7 @@
     .prologue
     const/4 v0, 0x1
 
+    .line 1057
     const-string v1, "android.intent.action.MAIN"
 
     invoke-virtual {p1}, Landroid/content/Intent;->getAction()Ljava/lang/String;
@@ -4641,6 +4683,7 @@
 
     if-nez v1, :cond_0
 
+    .line 1067
     :goto_0
     return v0
 

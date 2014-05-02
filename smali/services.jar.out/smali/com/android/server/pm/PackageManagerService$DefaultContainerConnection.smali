@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 471
     iput-object p1, p0, Lcom/android/server/pm/PackageManagerService$DefaultContainerConnection;->this$0:Lcom/android/server/pm/PackageManagerService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +41,6 @@
     .parameter "service"
 
     .prologue
-    .line 473
     sget-boolean v1, Lcom/android/server/pm/PackageManagerService;->DEBUG_SD_INSTALL:Z
 
     if-eqz v1, :cond_0
@@ -53,13 +51,11 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 474
     :cond_0
     invoke-static {p2}, Lcom/android/internal/app/IMediaContainerService$Stub;->asInterface(Landroid/os/IBinder;)Lcom/android/internal/app/IMediaContainerService;
 
     move-result-object v0
 
-    .line 476
     .local v0, imcs:Lcom/android/internal/app/IMediaContainerService;
     iget-object v1, p0, Lcom/android/server/pm/PackageManagerService$DefaultContainerConnection;->this$0:Lcom/android/server/pm/PackageManagerService;
 
@@ -77,7 +73,6 @@
 
     invoke-virtual {v1, v2}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
-    .line 477
     return-void
 .end method
 
@@ -86,7 +81,6 @@
     .parameter "name"
 
     .prologue
-    .line 480
     sget-boolean v0, Lcom/android/server/pm/PackageManagerService;->DEBUG_SD_INSTALL:Z
 
     if-eqz v0, :cond_0
@@ -97,7 +91,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 481
     :cond_0
     return-void
 .end method

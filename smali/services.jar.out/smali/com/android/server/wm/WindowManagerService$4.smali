@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 3694
     iput-object p1, p0, Lcom/android/server/wm/WindowManagerService$4;->this$0:Lcom/android/server/wm/WindowManagerService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,15 +42,12 @@
     .prologue
     const/high16 v1, 0x3e80
 
-    .line 3697
     cmpg-float v0, p1, v1
 
     if-gez v0, :cond_0
 
-    .line 3699
     div-float v0, p1, v1
 
-    .line 3702
     :goto_0
     return v0
 

@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 720
     iput-object p1, p0, Landroid/app/Activity$1;->this$0:Landroid/app/Activity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +40,6 @@
     .parameter "id"
 
     .prologue
-    .line 723
     iget-object v0, p0, Landroid/app/Activity$1;->this$0:Landroid/app/Activity;
 
     invoke-virtual {v0, p1}, Landroid/app/Activity;->findViewById(I)Landroid/view/View;

@@ -82,6 +82,7 @@
     .locals 1
 
     .prologue
+    .line 3812
     const-string v0, "content://wappush"
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -90,6 +91,7 @@
 
     sput-object v0, Landroid/provider/oppo/Telephony$WapPush;->CONTENT_URI:Landroid/net/Uri;
 
+    .line 3813
     const-string v0, "content://wappush/si"
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -98,6 +100,7 @@
 
     sput-object v0, Landroid/provider/oppo/Telephony$WapPush;->CONTENT_URI_SI:Landroid/net/Uri;
 
+    .line 3814
     const-string v0, "content://wappush/sl"
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -106,6 +109,7 @@
 
     sput-object v0, Landroid/provider/oppo/Telephony$WapPush;->CONTENT_URI_SL:Landroid/net/Uri;
 
+    .line 3815
     const-string v0, "content://wappush/thread_id"
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -121,6 +125,7 @@
     .locals 0
 
     .prologue
+    .line 3808
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

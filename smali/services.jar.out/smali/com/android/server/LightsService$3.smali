@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 278
     iput-object p1, p0, Lcom/android/server/LightsService$3;->this$0:Lcom/android/server/LightsService;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -49,7 +48,6 @@
 
     const/4 v4, 0x4
 
-    .line 281
     const-string v1, "com.android.settings.LED_ENABLE"
 
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
@@ -62,14 +60,12 @@
 
     if-eqz v1, :cond_3
 
-    .line 282
     const-string v1, "status"
 
     invoke-virtual {p2, v1, v7}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
 
     move-result v0
 
-    .line 283
     .local v0, status:I
     const-string v1, "LightsService"
 
@@ -93,16 +89,13 @@
 
     invoke-static {v1, v2}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 284
     if-nez v0, :cond_1
 
-    .line 285
     iget-object v1, p0, Lcom/android/server/LightsService$3;->this$0:Lcom/android/server/LightsService;
 
     #setter for: Lcom/android/server/LightsService;->mTurnOffByUser:Z
     invoke-static {v1, v6}, Lcom/android/server/LightsService;->access$402(Lcom/android/server/LightsService;Z)Z
 
-    .line 286
     iget-object v1, p0, Lcom/android/server/LightsService$3;->this$0:Lcom/android/server/LightsService;
 
     #getter for: Lcom/android/server/LightsService;->mLights:[Lcom/android/server/LightsService$Light;
@@ -114,7 +107,6 @@
 
     invoke-virtual {v1}, Lcom/android/server/LightsService$Light;->turnOff()V
 
-    .line 287
     iget-object v1, p0, Lcom/android/server/LightsService$3;->this$0:Lcom/android/server/LightsService;
 
     #getter for: Lcom/android/server/LightsService;->mLights:[Lcom/android/server/LightsService$Light;
@@ -126,24 +118,20 @@
 
     invoke-virtual {v1}, Lcom/android/server/LightsService$Light;->turnOff()V
 
-    .line 288
     iget-object v1, p0, Lcom/android/server/LightsService$3;->this$0:Lcom/android/server/LightsService;
 
     #setter for: Lcom/android/server/LightsService;->mTurnOffByUser:Z
     invoke-static {v1, v7}, Lcom/android/server/LightsService;->access$402(Lcom/android/server/LightsService;Z)Z
 
-    .line 349
     .end local v0           #status:I
     :cond_0
     :goto_0
     return-void
 
-    .line 289
     .restart local v0       #status:I
     :cond_1
     if-ne v0, v6, :cond_0
 
-    .line 290
     iget-object v1, p0, Lcom/android/server/LightsService$3;->this$0:Lcom/android/server/LightsService;
 
     #getter for: Lcom/android/server/LightsService;->mLights:[Lcom/android/server/LightsService$Light;
@@ -160,7 +148,6 @@
 
     if-nez v1, :cond_2
 
-    .line 291
     iget-object v1, p0, Lcom/android/server/LightsService$3;->this$0:Lcom/android/server/LightsService;
 
     #getter for: Lcom/android/server/LightsService;->mLights:[Lcom/android/server/LightsService$Light;
@@ -173,7 +160,6 @@
     #calls: Lcom/android/server/LightsService$Light;->reStartLight()V
     invoke-static {v1}, Lcom/android/server/LightsService$Light;->access$1200(Lcom/android/server/LightsService$Light;)V
 
-    .line 292
     :cond_2
     iget-object v1, p0, Lcom/android/server/LightsService$3;->this$0:Lcom/android/server/LightsService;
 
@@ -191,7 +177,6 @@
 
     if-ne v1, v6, :cond_0
 
-    .line 293
     iget-object v1, p0, Lcom/android/server/LightsService$3;->this$0:Lcom/android/server/LightsService;
 
     #getter for: Lcom/android/server/LightsService;->mLights:[Lcom/android/server/LightsService$Light;
@@ -206,7 +191,6 @@
 
     goto :goto_0
 
-    .line 295
     .end local v0           #status:I
     :cond_3
     const-string v1, "com.android.settings.LED_NOTIFICATION_COLOR"
@@ -221,14 +205,12 @@
 
     if-eqz v1, :cond_6
 
-    .line 296
     const-string v1, "status"
 
     invoke-virtual {p2, v1, v7}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
 
     move-result v0
 
-    .line 297
     .restart local v0       #status:I
     const-string v1, "LightsService"
 
@@ -252,7 +234,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 298
     iget-object v1, p0, Lcom/android/server/LightsService$3;->this$0:Lcom/android/server/LightsService;
 
     #getter for: Lcom/android/server/LightsService;->mLights:[Lcom/android/server/LightsService$Light;
@@ -269,10 +250,8 @@
 
     if-ne v1, v6, :cond_0
 
-    .line 299
     if-nez v0, :cond_4
 
-    .line 300
     iget-object v1, p0, Lcom/android/server/LightsService$3;->this$0:Lcom/android/server/LightsService;
 
     #getter for: Lcom/android/server/LightsService;->mLights:[Lcom/android/server/LightsService$Light;
@@ -287,7 +266,6 @@
     #setter for: Lcom/android/server/LightsService$Light;->mColor:I
     invoke-static {v1, v2}, Lcom/android/server/LightsService$Light;->access$1302(Lcom/android/server/LightsService$Light;I)I
 
-    .line 305
     :goto_1
     iget-object v1, p0, Lcom/android/server/LightsService$3;->this$0:Lcom/android/server/LightsService;
 
@@ -303,11 +281,9 @@
 
     goto/16 :goto_0
 
-    .line 301
     :cond_4
     if-ne v0, v6, :cond_5
 
-    .line 302
     iget-object v1, p0, Lcom/android/server/LightsService$3;->this$0:Lcom/android/server/LightsService;
 
     #getter for: Lcom/android/server/LightsService;->mLights:[Lcom/android/server/LightsService$Light;
@@ -322,7 +298,6 @@
 
     goto :goto_1
 
-    .line 304
     :cond_5
     iget-object v1, p0, Lcom/android/server/LightsService$3;->this$0:Lcom/android/server/LightsService;
 
@@ -338,7 +313,6 @@
 
     goto :goto_1
 
-    .line 307
     .end local v0           #status:I
     :cond_6
     const-string v1, "com.android.settings.LED_BATTERY_COLOR"
@@ -353,14 +327,12 @@
 
     if-eqz v1, :cond_9
 
-    .line 308
     const-string v1, "status"
 
     invoke-virtual {p2, v1, v7}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
 
     move-result v0
 
-    .line 309
     .restart local v0       #status:I
     const-string v1, "LightsService"
 
@@ -384,7 +356,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 310
     iget-object v1, p0, Lcom/android/server/LightsService$3;->this$0:Lcom/android/server/LightsService;
 
     #getter for: Lcom/android/server/LightsService;->mLights:[Lcom/android/server/LightsService$Light;
@@ -401,10 +372,8 @@
 
     if-ne v1, v6, :cond_0
 
-    .line 311
     if-nez v0, :cond_7
 
-    .line 312
     iget-object v1, p0, Lcom/android/server/LightsService$3;->this$0:Lcom/android/server/LightsService;
 
     #getter for: Lcom/android/server/LightsService;->mLights:[Lcom/android/server/LightsService$Light;
@@ -419,7 +388,6 @@
     #setter for: Lcom/android/server/LightsService$Light;->mColor:I
     invoke-static {v1, v2}, Lcom/android/server/LightsService$Light;->access$1302(Lcom/android/server/LightsService$Light;I)I
 
-    .line 318
     :goto_2
     iget-object v1, p0, Lcom/android/server/LightsService$3;->this$0:Lcom/android/server/LightsService;
 
@@ -435,11 +403,9 @@
 
     goto/16 :goto_0
 
-    .line 313
     :cond_7
     if-ne v0, v6, :cond_8
 
-    .line 314
     iget-object v1, p0, Lcom/android/server/LightsService$3;->this$0:Lcom/android/server/LightsService;
 
     #getter for: Lcom/android/server/LightsService;->mLights:[Lcom/android/server/LightsService$Light;
@@ -454,7 +420,6 @@
 
     goto :goto_2
 
-    .line 316
     :cond_8
     iget-object v1, p0, Lcom/android/server/LightsService$3;->this$0:Lcom/android/server/LightsService;
 
@@ -470,7 +435,6 @@
 
     goto :goto_2
 
-    .line 320
     .end local v0           #status:I
     :cond_9
     const-string v1, "com.android.settings.LED_FLASH_FREQUENCY"
@@ -485,14 +449,12 @@
 
     if-eqz v1, :cond_0
 
-    .line 321
     const-string v1, "status"
 
     invoke-virtual {p2, v1, v7}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
 
     move-result v0
 
-    .line 322
     .restart local v0       #status:I
     const-string v1, "LightsService"
 
@@ -516,7 +478,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 323
     iget-object v1, p0, Lcom/android/server/LightsService$3;->this$0:Lcom/android/server/LightsService;
 
     #getter for: Lcom/android/server/LightsService;->mLights:[Lcom/android/server/LightsService$Light;
@@ -533,13 +494,11 @@
 
     if-ne v1, v6, :cond_b
 
-    .line 324
     iget-object v1, p0, Lcom/android/server/LightsService$3;->this$0:Lcom/android/server/LightsService;
 
     #setter for: Lcom/android/server/LightsService;->mTurnOffByUser:Z
     invoke-static {v1, v6}, Lcom/android/server/LightsService;->access$402(Lcom/android/server/LightsService;Z)Z
 
-    .line 325
     iget-object v1, p0, Lcom/android/server/LightsService$3;->this$0:Lcom/android/server/LightsService;
 
     #getter for: Lcom/android/server/LightsService;->mLights:[Lcom/android/server/LightsService$Light;
@@ -551,18 +510,15 @@
 
     invoke-virtual {v1}, Lcom/android/server/LightsService$Light;->turnOff()V
 
-    .line 326
     iget-object v1, p0, Lcom/android/server/LightsService$3;->this$0:Lcom/android/server/LightsService;
 
     #setter for: Lcom/android/server/LightsService;->mTurnOffByUser:Z
     invoke-static {v1, v7}, Lcom/android/server/LightsService;->access$402(Lcom/android/server/LightsService;Z)Z
 
-    .line 327
     const/16 v1, 0xbb8
 
     if-ne v0, v1, :cond_a
 
-    .line 328
     iget-object v1, p0, Lcom/android/server/LightsService$3;->this$0:Lcom/android/server/LightsService;
 
     #getter for: Lcom/android/server/LightsService;->mLights:[Lcom/android/server/LightsService$Light;
@@ -577,7 +533,6 @@
     #setter for: Lcom/android/server/LightsService$Light;->mOnMS:I
     invoke-static {v1, v2}, Lcom/android/server/LightsService$Light;->access$1402(Lcom/android/server/LightsService$Light;I)I
 
-    .line 329
     iget-object v1, p0, Lcom/android/server/LightsService$3;->this$0:Lcom/android/server/LightsService;
 
     #getter for: Lcom/android/server/LightsService;->mLights:[Lcom/android/server/LightsService$Light;
@@ -592,7 +547,6 @@
     #setter for: Lcom/android/server/LightsService$Light;->mOffMS:I
     invoke-static {v1, v2}, Lcom/android/server/LightsService$Light;->access$1502(Lcom/android/server/LightsService$Light;I)I
 
-    .line 334
     :goto_3
     iget-object v1, p0, Lcom/android/server/LightsService$3;->this$0:Lcom/android/server/LightsService;
 
@@ -608,7 +562,6 @@
 
     goto/16 :goto_0
 
-    .line 331
     :cond_a
     iget-object v1, p0, Lcom/android/server/LightsService$3;->this$0:Lcom/android/server/LightsService;
 
@@ -624,7 +577,6 @@
     #setter for: Lcom/android/server/LightsService$Light;->mOnMS:I
     invoke-static {v1, v2}, Lcom/android/server/LightsService$Light;->access$1402(Lcom/android/server/LightsService$Light;I)I
 
-    .line 332
     iget-object v1, p0, Lcom/android/server/LightsService$3;->this$0:Lcom/android/server/LightsService;
 
     #getter for: Lcom/android/server/LightsService;->mLights:[Lcom/android/server/LightsService$Light;
@@ -641,7 +593,6 @@
 
     goto :goto_3
 
-    .line 335
     :cond_b
     iget-object v1, p0, Lcom/android/server/LightsService$3;->this$0:Lcom/android/server/LightsService;
 
@@ -659,13 +610,11 @@
 
     if-ne v1, v6, :cond_0
 
-    .line 336
     iget-object v1, p0, Lcom/android/server/LightsService$3;->this$0:Lcom/android/server/LightsService;
 
     #setter for: Lcom/android/server/LightsService;->mTurnOffByUser:Z
     invoke-static {v1, v6}, Lcom/android/server/LightsService;->access$402(Lcom/android/server/LightsService;Z)Z
 
-    .line 337
     iget-object v1, p0, Lcom/android/server/LightsService$3;->this$0:Lcom/android/server/LightsService;
 
     #getter for: Lcom/android/server/LightsService;->mLights:[Lcom/android/server/LightsService$Light;
@@ -677,18 +626,15 @@
 
     invoke-virtual {v1}, Lcom/android/server/LightsService$Light;->turnOff()V
 
-    .line 338
     iget-object v1, p0, Lcom/android/server/LightsService$3;->this$0:Lcom/android/server/LightsService;
 
     #setter for: Lcom/android/server/LightsService;->mTurnOffByUser:Z
     invoke-static {v1, v7}, Lcom/android/server/LightsService;->access$402(Lcom/android/server/LightsService;Z)Z
 
-    .line 339
     const/16 v1, 0xbb8
 
     if-ne v0, v1, :cond_c
 
-    .line 340
     iget-object v1, p0, Lcom/android/server/LightsService$3;->this$0:Lcom/android/server/LightsService;
 
     #getter for: Lcom/android/server/LightsService;->mLights:[Lcom/android/server/LightsService$Light;
@@ -703,7 +649,6 @@
     #setter for: Lcom/android/server/LightsService$Light;->mOnMS:I
     invoke-static {v1, v2}, Lcom/android/server/LightsService$Light;->access$1402(Lcom/android/server/LightsService$Light;I)I
 
-    .line 341
     iget-object v1, p0, Lcom/android/server/LightsService$3;->this$0:Lcom/android/server/LightsService;
 
     #getter for: Lcom/android/server/LightsService;->mLights:[Lcom/android/server/LightsService$Light;
@@ -718,7 +663,6 @@
     #setter for: Lcom/android/server/LightsService$Light;->mOffMS:I
     invoke-static {v1, v2}, Lcom/android/server/LightsService$Light;->access$1502(Lcom/android/server/LightsService$Light;I)I
 
-    .line 346
     :goto_4
     iget-object v1, p0, Lcom/android/server/LightsService$3;->this$0:Lcom/android/server/LightsService;
 
@@ -734,7 +678,6 @@
 
     goto/16 :goto_0
 
-    .line 343
     :cond_c
     iget-object v1, p0, Lcom/android/server/LightsService$3;->this$0:Lcom/android/server/LightsService;
 
@@ -750,7 +693,6 @@
     #setter for: Lcom/android/server/LightsService$Light;->mOnMS:I
     invoke-static {v1, v2}, Lcom/android/server/LightsService$Light;->access$1402(Lcom/android/server/LightsService$Light;I)I
 
-    .line 344
     iget-object v1, p0, Lcom/android/server/LightsService$3;->this$0:Lcom/android/server/LightsService;
 
     #getter for: Lcom/android/server/LightsService;->mLights:[Lcom/android/server/LightsService$Light;

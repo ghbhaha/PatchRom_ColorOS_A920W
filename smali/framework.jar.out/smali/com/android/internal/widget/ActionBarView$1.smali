@@ -26,7 +26,6 @@
     .locals 0
 
     .prologue
-    .line 148
     iput-object p1, p0, Lcom/android/internal/widget/ActionBarView$1;->this$0:Lcom/android/internal/widget/ActionBarView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -44,7 +43,6 @@
     .parameter "id"
 
     .prologue
-    .line 150
     iget-object v0, p0, Lcom/android/internal/widget/ActionBarView$1;->this$0:Lcom/android/internal/widget/ActionBarView;
 
     #getter for: Lcom/android/internal/widget/ActionBarView;->mCallback:Landroid/app/ActionBar$OnNavigationListener;
@@ -54,7 +52,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 151
     iget-object v0, p0, Lcom/android/internal/widget/ActionBarView$1;->this$0:Lcom/android/internal/widget/ActionBarView;
 
     #getter for: Lcom/android/internal/widget/ActionBarView;->mCallback:Landroid/app/ActionBar$OnNavigationListener;
@@ -64,7 +61,6 @@
 
     invoke-interface {v0, p3, p4, p5}, Landroid/app/ActionBar$OnNavigationListener;->onNavigationItemSelected(IJ)Z
 
-    .line 153
     :cond_0
     return-void
 .end method
@@ -74,6 +70,5 @@
     .parameter "parent"
 
     .prologue
-    .line 156
     return-void
 .end method

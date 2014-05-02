@@ -44,21 +44,15 @@
     .parameter "_id"
 
     .prologue
-    .line 10987
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 10988
     iput-object p1, p0, Lcom/android/server/am/ActivityManagerService$MemItem;->label:Ljava/lang/String;
 
-    .line 10989
     iput-object p2, p0, Lcom/android/server/am/ActivityManagerService$MemItem;->shortLabel:Ljava/lang/String;
 
-    .line 10990
     iput-wide p3, p0, Lcom/android/server/am/ActivityManagerService$MemItem;->pss:J
 
-    .line 10991
     iput p5, p0, Lcom/android/server/am/ActivityManagerService$MemItem;->id:I
 
-    .line 10992
     return-void
 .end method

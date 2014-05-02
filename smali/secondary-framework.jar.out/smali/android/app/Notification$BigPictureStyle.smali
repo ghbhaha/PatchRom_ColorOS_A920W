@@ -27,15 +27,12 @@
     .locals 1
 
     .prologue
-    .line 1799
     invoke-direct {p0}, Landroid/app/Notification$Style;-><init>()V
 
-    .line 1797
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Landroid/app/Notification$BigPictureStyle;->mBigLargeIconSet:Z
 
-    .line 1800
     return-void
 .end method
 
@@ -44,41 +41,39 @@
     .parameter "builder"
 
     .prologue
-    .line 1802
     invoke-direct {p0}, Landroid/app/Notification$Style;-><init>()V
 
-    .line 1797
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Landroid/app/Notification$BigPictureStyle;->mBigLargeIconSet:Z
 
-    .line 1803
     invoke-virtual {p0, p1}, Landroid/app/Notification$Style;->setBuilder(Landroid/app/Notification$Builder;)V
 
-    .line 1804
     return-void
 .end method
 
 .method private makeBigContentView()Landroid/widget/RemoteViews;
     .locals 3
+    .annotation build Landroid/annotation/OppoHook;
+        level = .enum Landroid/annotation/OppoHook$OppoHookType;->CHANGE_RESOURCE:Landroid/annotation/OppoHook$OppoHookType;
+        note = "Jiamiao.He@Plf.Keyguard, 2013.02.04: make notification to oppo\'s"
+        property = .enum Landroid/annotation/OppoHook$OppoRomType;->ROM:Landroid/annotation/OppoHook$OppoRomType;
+    .end annotation
 
     .prologue
-    .line 1841
-    const v1, 0x1090090
+    const v1, 0xc09041e
 
     invoke-virtual {p0, v1}, Landroid/app/Notification$Style;->getStandardView(I)Landroid/widget/RemoteViews;
 
     move-result-object v0
 
-    .line 1843
     .local v0, contentView:Landroid/widget/RemoteViews;
-    const v1, 0x1020332
+    const v1, 0xc02047a
 
     iget-object v2, p0, Landroid/app/Notification$BigPictureStyle;->mPicture:Landroid/graphics/Bitmap;
 
     invoke-virtual {v0, v1, v2}, Landroid/widget/RemoteViews;->setImageViewBitmap(ILandroid/graphics/Bitmap;)V
 
-    .line 1845
     return-object v0
 .end method
 
@@ -89,15 +84,12 @@
     .parameter "b"
 
     .prologue
-    .line 1835
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/app/Notification$BigPictureStyle;->mBigLargeIconSet:Z
 
-    .line 1836
     iput-object p1, p0, Landroid/app/Notification$BigPictureStyle;->mBigLargeIcon:Landroid/graphics/Bitmap;
 
-    .line 1837
     return-object p0
 .end method
 
@@ -106,10 +98,8 @@
     .parameter "b"
 
     .prologue
-    .line 1827
     iput-object p1, p0, Landroid/app/Notification$BigPictureStyle;->mPicture:Landroid/graphics/Bitmap;
 
-    .line 1828
     return-object p0
 .end method
 
@@ -117,10 +107,8 @@
     .locals 3
 
     .prologue
-    .line 1850
     invoke-virtual {p0}, Landroid/app/Notification$Style;->checkBuilder()V
 
-    .line 1851
     iget-object v1, p0, Landroid/app/Notification$Style;->mBuilder:Landroid/app/Notification$Builder;
 
     #calls: Landroid/app/Notification$Builder;->buildUnstyled()Landroid/app/Notification;
@@ -128,13 +116,11 @@
 
     move-result-object v0
 
-    .line 1852
     .local v0, wip:Landroid/app/Notification;
     iget-boolean v1, p0, Landroid/app/Notification$BigPictureStyle;->mBigLargeIconSet:Z
 
     if-eqz v1, :cond_0
 
-    .line 1853
     iget-object v1, p0, Landroid/app/Notification$Style;->mBuilder:Landroid/app/Notification$Builder;
 
     iget-object v2, p0, Landroid/app/Notification$BigPictureStyle;->mBigLargeIcon:Landroid/graphics/Bitmap;
@@ -142,7 +128,6 @@
     #setter for: Landroid/app/Notification$Builder;->mLargeIcon:Landroid/graphics/Bitmap;
     invoke-static {v1, v2}, Landroid/app/Notification$Builder;->access$602(Landroid/app/Notification$Builder;Landroid/graphics/Bitmap;)Landroid/graphics/Bitmap;
 
-    .line 1855
     :cond_0
     invoke-direct {p0}, Landroid/app/Notification$BigPictureStyle;->makeBigContentView()Landroid/widget/RemoteViews;
 
@@ -150,7 +135,6 @@
 
     iput-object v1, v0, Landroid/app/Notification;->bigContentView:Landroid/widget/RemoteViews;
 
-    .line 1856
     return-object v0
 .end method
 
@@ -159,10 +143,8 @@
     .parameter "title"
 
     .prologue
-    .line 1811
     invoke-virtual {p0, p1}, Landroid/app/Notification$Style;->internalSetBigContentTitle(Ljava/lang/CharSequence;)V
 
-    .line 1812
     return-object p0
 .end method
 
@@ -171,9 +153,7 @@
     .parameter "cs"
 
     .prologue
-    .line 1819
     invoke-virtual {p0, p1}, Landroid/app/Notification$Style;->internalSetSummaryText(Ljava/lang/CharSequence;)V
 
-    .line 1820
     return-object p0
 .end method

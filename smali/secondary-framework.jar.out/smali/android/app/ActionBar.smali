@@ -38,10 +38,8 @@
     .locals 0
 
     .prologue
-    .line 59
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 909
     return-void
 .end method
 
@@ -96,7 +94,6 @@
     .locals 1
 
     .prologue
-    .line 681
     const/4 v0, 0x0
 
     return-object v0
@@ -167,7 +164,6 @@
     .parameter "enabled"
 
     .prologue
-    .line 670
     return-void
 .end method
 
@@ -197,7 +193,6 @@
     .parameter "d"
 
     .prologue
-    .line 447
     return-void
 .end method
 
@@ -206,7 +201,6 @@
     .parameter "d"
 
     .prologue
-    .line 437
     return-void
 .end method
 

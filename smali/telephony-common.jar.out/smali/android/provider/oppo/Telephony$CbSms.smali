@@ -40,6 +40,7 @@
     .locals 1
 
     .prologue
+    .line 1209
     const-string v0, "content://cb/messages"
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -48,6 +49,7 @@
 
     sput-object v0, Landroid/provider/oppo/Telephony$CbSms;->CONTENT_URI:Landroid/net/Uri;
 
+    .line 1215
     const-string v0, "content://cb/addresses"
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -63,8 +65,10 @@
     .locals 0
 
     .prologue
+    .line 1194
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 1312
     return-void
 .end method
 
@@ -79,12 +83,14 @@
     .parameter "body"
 
     .prologue
+    .line 1237
     new-instance v0, Landroid/content/ContentValues;
 
     const/4 v1, 0x5
 
     invoke-direct {v0, v1}, Landroid/content/ContentValues;-><init>(I)V
 
+    .line 1239
     .local v0, values:Landroid/content/ContentValues;
     const-string v1, "sim_id"
 
@@ -94,6 +100,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
+    .line 1240
     const-string v1, "date"
 
     invoke-static {p4, p5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -102,6 +109,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Long;)V
 
+    .line 1241
     const-string v2, "read"
 
     if-eqz p6, :cond_0
@@ -115,10 +123,12 @@
     :goto_0
     invoke-virtual {v0, v2, v1}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
+    .line 1242
     const-string v1, "body"
 
     invoke-virtual {v0, v1, p7}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
+    .line 1243
     const-string v1, "channel_id"
 
     invoke-static {p3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -127,12 +137,14 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
+    .line 1245
     invoke-virtual {p0, p1, v0}, Landroid/content/ContentResolver;->insert(Landroid/net/Uri;Landroid/content/ContentValues;)Landroid/net/Uri;
 
     move-result-object v1
 
     return-object v1
 
+    .line 1241
     :cond_0
     const/4 v1, 0x0
 
@@ -151,6 +163,7 @@
     .prologue
     const/4 v3, 0x0
 
+    .line 1197
     sget-object v1, Landroid/provider/oppo/Telephony$CbSms;->CONTENT_URI:Landroid/net/Uri;
 
     const-string v5, "date DESC"
@@ -176,6 +189,7 @@
     .parameter "orderBy"
 
     .prologue
+    .line 1202
     sget-object v1, Landroid/provider/oppo/Telephony$CbSms;->CONTENT_URI:Landroid/net/Uri;
 
     const/4 v4, 0x0

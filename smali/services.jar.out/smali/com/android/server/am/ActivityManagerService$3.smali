@@ -25,7 +25,6 @@
     .parameter "x0"
 
     .prologue
-    .line 1792
     iput-object p1, p0, Lcom/android/server/am/ActivityManagerService$3;->this$0:Lcom/android/server/am/ActivityManagerService;
 
     invoke-direct {p0, p2}, Ljava/lang/Thread;-><init>(Ljava/lang/String;)V
@@ -39,7 +38,6 @@
     .locals 11
 
     .prologue
-    .line 1797
     :goto_0
     :try_start_0
     monitor-enter p0
@@ -47,13 +45,11 @@
     .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_1
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1798
     :try_start_1
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v5
 
-    .line 1799
     .local v5, now:J
     iget-object v7, p0, Lcom/android/server/am/ActivityManagerService$3;->this$0:Lcom/android/server/am/ActivityManagerService;
 
@@ -69,7 +65,6 @@
 
     sub-long v1, v7, v5
 
-    .line 1800
     .local v1, nextCpuDelay:J
     iget-object v7, p0, Lcom/android/server/am/ActivityManagerService$3;->this$0:Lcom/android/server/am/ActivityManagerService;
 
@@ -81,16 +76,13 @@
 
     sub-long v3, v7, v5
 
-    .line 1803
     .local v3, nextWriteDelay:J
     cmp-long v7, v3, v1
 
     if-gez v7, :cond_0
 
-    .line 1804
     move-wide v1, v3
 
-    .line 1806
     :cond_0
     const-wide/16 v7, 0x0
 
@@ -98,7 +90,6 @@
 
     if-lez v7, :cond_1
 
-    .line 1807
     iget-object v7, p0, Lcom/android/server/am/ActivityManagerService$3;->this$0:Lcom/android/server/am/ActivityManagerService;
 
     iget-object v7, v7, Lcom/android/server/am/ActivityManagerService;->mProcessStatsMutexFree:Ljava/util/concurrent/atomic/AtomicBoolean;
@@ -107,16 +98,13 @@
 
     invoke-virtual {v7, v8}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
 
-    .line 1808
     invoke-virtual {p0, v1, v2}, Ljava/lang/Object;->wait(J)V
 
-    .line 1810
     :cond_1
     monitor-exit p0
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 1813
     .end local v1           #nextCpuDelay:J
     .end local v3           #nextWriteDelay:J
     .end local v5           #now:J
@@ -130,11 +118,9 @@
 
     goto :goto_0
 
-    .line 1814
     :catch_0
     move-exception v0
 
-    .line 1815
     .local v0, e:Ljava/lang/Exception;
     const-string v7, "ActivityManager"
 
@@ -144,7 +130,6 @@
 
     goto :goto_0
 
-    .line 1810
     .end local v0           #e:Ljava/lang/Exception;
     :catchall_0
     move-exception v7
@@ -160,7 +145,6 @@
     .catch Ljava/lang/InterruptedException; {:try_start_4 .. :try_end_4} :catch_1
     .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_4} :catch_0
 
-    .line 1811
     :catch_1
     move-exception v7
 

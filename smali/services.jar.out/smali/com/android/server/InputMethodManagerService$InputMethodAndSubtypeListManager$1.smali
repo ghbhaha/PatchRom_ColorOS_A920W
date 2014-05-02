@@ -36,7 +36,6 @@
     .locals 0
 
     .prologue
-    .line 3356
     iput-object p1, p0, Lcom/android/server/InputMethodManagerService$InputMethodAndSubtypeListManager$1;->this$0:Lcom/android/server/InputMethodManagerService$InputMethodAndSubtypeListManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -52,16 +51,13 @@
     .parameter "imi2"
 
     .prologue
-    .line 3359
     if-nez p2, :cond_0
 
     const/4 v2, 0x0
 
-    .line 3366
     :goto_0
     return v2
 
-    .line 3360
     :cond_0
     if-nez p1, :cond_1
 
@@ -69,7 +65,6 @@
 
     goto :goto_0
 
-    .line 3361
     :cond_1
     iget-object v2, p0, Lcom/android/server/InputMethodManagerService$InputMethodAndSubtypeListManager$1;->this$0:Lcom/android/server/InputMethodManagerService$InputMethodAndSubtypeListManager;
 
@@ -80,7 +75,6 @@
 
     if-nez v2, :cond_2
 
-    .line 3362
     invoke-virtual {p1}, Landroid/view/inputmethod/InputMethodInfo;->getId()Ljava/lang/String;
 
     move-result-object v2
@@ -95,7 +89,6 @@
 
     goto :goto_0
 
-    .line 3364
     :cond_2
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -134,7 +127,6 @@
 
     move-result-object v0
 
-    .line 3365
     .local v0, imiId1:Ljava/lang/CharSequence;
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -173,7 +165,6 @@
 
     move-result-object v1
 
-    .line 3366
     .local v1, imiId2:Ljava/lang/CharSequence;
     invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
@@ -196,7 +187,6 @@
     .parameter "x1"
 
     .prologue
-    .line 3356
     check-cast p1, Landroid/view/inputmethod/InputMethodInfo;
 
     .end local p1

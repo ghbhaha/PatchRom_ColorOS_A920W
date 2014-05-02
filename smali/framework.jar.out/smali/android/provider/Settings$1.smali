@@ -23,7 +23,6 @@
     .locals 3
 
     .prologue
-    .line 6996
     invoke-static {}, Landroid/provider/Settings$PermissionMode;->values()[Landroid/provider/Settings$PermissionMode;
 
     move-result-object v0

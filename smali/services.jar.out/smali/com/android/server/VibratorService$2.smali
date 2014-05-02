@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 153
     iput-object p1, p0, Lcom/android/server/VibratorService$2;->this$0:Lcom/android/server/VibratorService;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -39,6 +38,5 @@
     .parameter "intent"
 
     .prologue
-    .line 157
     return-void
 .end method

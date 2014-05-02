@@ -26,7 +26,6 @@
     .locals 1
 
     .prologue
-    .line 2841
     iput-object p1, p0, Landroid/widget/AbsListView$CheckForKeyLongPress;->this$0:Landroid/widget/AbsListView;
 
     const/4 v0, 0x0
@@ -42,7 +41,6 @@
     .parameter "x1"
 
     .prologue
-    .line 2841
     invoke-direct {p0, p1}, Landroid/widget/AbsListView$CheckForKeyLongPress;-><init>(Landroid/widget/AbsListView;)V
 
     return-void
@@ -56,7 +54,6 @@
     .prologue
     const/4 v7, 0x0
 
-    .line 2843
     iget-object v3, p0, Landroid/widget/AbsListView$CheckForKeyLongPress;->this$0:Landroid/widget/AbsListView;
 
     invoke-virtual {v3}, Landroid/view/View;->isPressed()Z
@@ -71,7 +68,6 @@
 
     if-ltz v3, :cond_1
 
-    .line 2844
     iget-object v3, p0, Landroid/widget/AbsListView$CheckForKeyLongPress;->this$0:Landroid/widget/AbsListView;
 
     iget v3, v3, Landroid/widget/AdapterView;->mSelectedPosition:I
@@ -82,7 +78,6 @@
 
     sub-int v1, v3, v4
 
-    .line 2845
     .local v1, index:I
     iget-object v3, p0, Landroid/widget/AbsListView$CheckForKeyLongPress;->this$0:Landroid/widget/AbsListView;
 
@@ -90,7 +85,6 @@
 
     move-result-object v2
 
-    .line 2847
     .local v2, v:Landroid/view/View;
     iget-object v3, p0, Landroid/widget/AbsListView$CheckForKeyLongPress;->this$0:Landroid/widget/AbsListView;
 
@@ -98,10 +92,8 @@
 
     if-nez v3, :cond_2
 
-    .line 2848
     const/4 v0, 0x0
 
-    .line 2849
     .local v0, handled:Z
     invoke-virtual {p0}, Landroid/widget/AbsListView$WindowRunnnable;->sameWindow()Z
 
@@ -109,7 +101,6 @@
 
     if-eqz v3, :cond_0
 
-    .line 2850
     iget-object v3, p0, Landroid/widget/AbsListView$CheckForKeyLongPress;->this$0:Landroid/widget/AbsListView;
 
     iget-object v4, p0, Landroid/widget/AbsListView$CheckForKeyLongPress;->this$0:Landroid/widget/AbsListView;
@@ -124,19 +115,15 @@
 
     move-result v0
 
-    .line 2852
     :cond_0
     if-eqz v0, :cond_1
 
-    .line 2853
     iget-object v3, p0, Landroid/widget/AbsListView$CheckForKeyLongPress;->this$0:Landroid/widget/AbsListView;
 
     invoke-virtual {v3, v7}, Landroid/view/View;->setPressed(Z)V
 
-    .line 2854
     invoke-virtual {v2, v7}, Landroid/view/View;->setPressed(Z)V
 
-    .line 2861
     .end local v0           #handled:Z
     .end local v1           #index:I
     .end local v2           #v:Landroid/view/View;
@@ -144,7 +131,6 @@
     :goto_0
     return-void
 
-    .line 2857
     .restart local v1       #index:I
     .restart local v2       #v:Landroid/view/View;
     :cond_2
@@ -152,7 +138,6 @@
 
     invoke-virtual {v3, v7}, Landroid/view/View;->setPressed(Z)V
 
-    .line 2858
     if-eqz v2, :cond_1
 
     invoke-virtual {v2, v7}, Landroid/view/View;->setPressed(Z)V

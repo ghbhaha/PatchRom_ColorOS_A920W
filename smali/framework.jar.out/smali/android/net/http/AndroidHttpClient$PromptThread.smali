@@ -33,25 +33,19 @@
     .parameter "message"
 
     .prologue
-    .line 578
     iput-object p1, p0, Landroid/net/http/AndroidHttpClient$PromptThread;->this$0:Landroid/net/http/AndroidHttpClient;
 
-    .line 579
     invoke-direct {p0, p3}, Ljava/lang/Thread;-><init>(Ljava/lang/String;)V
 
-    .line 580
     iput-object p4, p0, Landroid/net/http/AndroidHttpClient$PromptThread;->mMessage:Ljava/lang/String;
 
-    .line 581
     iput-object p2, p0, Landroid/net/http/AndroidHttpClient$PromptThread;->mContext:Landroid/content/Context;
 
-    .line 582
-    const-string/jumbo v0, "new PromptThread"
+    const-string v0, "new PromptThread"
 
     #calls: Landroid/net/http/AndroidHttpClient;->amoiLog(Ljava/lang/String;)V
     invoke-static {p1, v0}, Landroid/net/http/AndroidHttpClient;->access$300(Landroid/net/http/AndroidHttpClient;Ljava/lang/String;)V
 
-    .line 583
     return-void
 .end method
 
@@ -61,17 +55,14 @@
     .locals 3
 
     .prologue
-    .line 587
     invoke-static {}, Landroid/os/Looper;->prepare()V
 
-    .line 589
     invoke-static {}, Landroid/os/Looper;->myLooper()Landroid/os/Looper;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/net/http/AndroidHttpClient$PromptThread;->mLooper:Landroid/os/Looper;
 
-    .line 590
     iget-object v0, p0, Landroid/net/http/AndroidHttpClient$PromptThread;->mContext:Landroid/content/Context;
 
     iget-object v1, p0, Landroid/net/http/AndroidHttpClient$PromptThread;->mMessage:Ljava/lang/String;
@@ -84,7 +75,6 @@
 
     invoke-virtual {v0}, Landroid/widget/Toast;->show()V
 
-    .line 592
     iget-object v0, p0, Landroid/net/http/AndroidHttpClient$PromptThread;->this$0:Landroid/net/http/AndroidHttpClient;
 
     const-string v1, "PromptThread run"
@@ -92,9 +82,7 @@
     #calls: Landroid/net/http/AndroidHttpClient;->amoiLog(Ljava/lang/String;)V
     invoke-static {v0, v1}, Landroid/net/http/AndroidHttpClient;->access$300(Landroid/net/http/AndroidHttpClient;Ljava/lang/String;)V
 
-    .line 593
     invoke-static {}, Landroid/os/Looper;->loop()V
 
-    .line 594
     return-void
 .end method

@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 4024
     iput-object p1, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$16;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -39,7 +38,6 @@
     .parameter "intent"
 
     .prologue
-    .line 4027
     const-string v0, "android.intent.action.DREAMING_STARTED"
 
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;

@@ -30,17 +30,13 @@
     .parameter "_uid"
 
     .prologue
-    .line 653
     iput-object p1, p0, Lcom/android/server/am/ActivityManagerService$Identity;->this$0:Lcom/android/server/am/ActivityManagerService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 654
     iput p2, p0, Lcom/android/server/am/ActivityManagerService$Identity;->pid:I
 
-    .line 655
     iput p3, p0, Lcom/android/server/am/ActivityManagerService$Identity;->uid:I
 
-    .line 656
     return-void
 .end method

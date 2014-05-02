@@ -54,19 +54,16 @@
     .locals 1
 
     .prologue
-    .line 4973
     iput-object p1, p0, Landroid/view/ViewRootImpl$InvalidateOnAnimationRunnable;->this$0:Landroid/view/ViewRootImpl;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 4975
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Landroid/view/ViewRootImpl$InvalidateOnAnimationRunnable;->mViews:Ljava/util/ArrayList;
 
-    .line 4976
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -82,12 +79,10 @@
     .prologue
     const/4 v2, 0x1
 
-    .line 5049
     iget-boolean v0, p0, Landroid/view/ViewRootImpl$InvalidateOnAnimationRunnable;->mPosted:Z
 
     if-nez v0, :cond_0
 
-    .line 5050
     iget-object v0, p0, Landroid/view/ViewRootImpl$InvalidateOnAnimationRunnable;->this$0:Landroid/view/ViewRootImpl;
 
     iget-object v0, v0, Landroid/view/ViewRootImpl;->mChoreographer:Landroid/view/Choreographer;
@@ -96,10 +91,8 @@
 
     invoke-virtual {v0, v2, p0, v1}, Landroid/view/Choreographer;->postCallback(ILjava/lang/Runnable;Ljava/lang/Object;)V
 
-    .line 5051
     iput-boolean v2, p0, Landroid/view/ViewRootImpl$InvalidateOnAnimationRunnable;->mPosted:Z
 
-    .line 5053
     :cond_0
     return-void
 .end method
@@ -111,25 +104,19 @@
     .parameter "view"
 
     .prologue
-    .line 4982
     monitor-enter p0
 
-    .line 4983
     :try_start_0
     iget-object v0, p0, Landroid/view/ViewRootImpl$InvalidateOnAnimationRunnable;->mViews:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 4984
     invoke-direct {p0}, Landroid/view/ViewRootImpl$InvalidateOnAnimationRunnable;->postIfNeededLocked()V
 
-    .line 4985
     monitor-exit p0
 
-    .line 4986
     return-void
 
-    .line 4985
     :catchall_0
     move-exception v0
 
@@ -145,25 +132,19 @@
     .parameter "info"
 
     .prologue
-    .line 4989
     monitor-enter p0
 
-    .line 4990
     :try_start_0
     iget-object v0, p0, Landroid/view/ViewRootImpl$InvalidateOnAnimationRunnable;->mViewRects:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 4991
     invoke-direct {p0}, Landroid/view/ViewRootImpl$InvalidateOnAnimationRunnable;->postIfNeededLocked()V
 
-    .line 4992
     monitor-exit p0
 
-    .line 4993
     return-void
 
-    .line 4992
     :catchall_0
     move-exception v0
 
@@ -179,16 +160,13 @@
     .parameter "view"
 
     .prologue
-    .line 4996
     monitor-enter p0
 
-    .line 4997
     :try_start_0
     iget-object v3, p0, Landroid/view/ViewRootImpl$InvalidateOnAnimationRunnable;->mViews:Ljava/util/ArrayList;
 
     invoke-virtual {v3, p1}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
-    .line 4999
     iget-object v3, p0, Landroid/view/ViewRootImpl$InvalidateOnAnimationRunnable;->mViewRects:Ljava/util/ArrayList;
 
     invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
@@ -207,7 +185,6 @@
     .restart local v0       #i:I
     if-lez v1, :cond_1
 
-    .line 5000
     iget-object v3, p0, Landroid/view/ViewRootImpl$InvalidateOnAnimationRunnable;->mViewRects:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -216,29 +193,24 @@
 
     check-cast v2, Landroid/view/View$AttachInfo$InvalidateInfo;
 
-    .line 5001
     .local v2, info:Landroid/view/View$AttachInfo$InvalidateInfo;
     iget-object v3, v2, Landroid/view/View$AttachInfo$InvalidateInfo;->target:Landroid/view/View;
 
     if-ne v3, p1, :cond_0
 
-    .line 5002
     iget-object v3, p0, Landroid/view/ViewRootImpl$InvalidateOnAnimationRunnable;->mViewRects:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v0}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
 
-    .line 5003
     invoke-virtual {v2}, Landroid/view/View$AttachInfo$InvalidateInfo;->release()V
 
     :cond_0
     move v1, v0
 
-    .line 5005
     .end local v0           #i:I
     .restart local v1       #i:I
     goto :goto_0
 
-    .line 5007
     .end local v1           #i:I
     .end local v2           #info:Landroid/view/View$AttachInfo$InvalidateInfo;
     .restart local v0       #i:I
@@ -263,7 +235,6 @@
 
     if-eqz v3, :cond_2
 
-    .line 5008
     iget-object v3, p0, Landroid/view/ViewRootImpl$InvalidateOnAnimationRunnable;->this$0:Landroid/view/ViewRootImpl;
 
     iget-object v3, v3, Landroid/view/ViewRootImpl;->mChoreographer:Landroid/view/Choreographer;
@@ -274,19 +245,15 @@
 
     invoke-virtual {v3, v4, p0, v5}, Landroid/view/Choreographer;->removeCallbacks(ILjava/lang/Runnable;Ljava/lang/Object;)V
 
-    .line 5009
     const/4 v3, 0x0
 
     iput-boolean v3, p0, Landroid/view/ViewRootImpl$InvalidateOnAnimationRunnable;->mPosted:Z
 
-    .line 5011
     :cond_2
     monitor-exit p0
 
-    .line 5012
     return-void
 
-    .line 5011
     .end local v0           #i:I
     :catchall_0
     move-exception v3
@@ -302,27 +269,22 @@
     .locals 9
 
     .prologue
-    .line 5018
     monitor-enter p0
 
-    .line 5019
     const/4 v4, 0x0
 
     :try_start_0
     iput-boolean v4, p0, Landroid/view/ViewRootImpl$InvalidateOnAnimationRunnable;->mPosted:Z
 
-    .line 5021
     iget-object v4, p0, Landroid/view/ViewRootImpl$InvalidateOnAnimationRunnable;->mViews:Ljava/util/ArrayList;
 
     invoke-virtual {v4}, Ljava/util/ArrayList;->size()I
 
     move-result v2
 
-    .line 5022
     .local v2, viewCount:I
     if-eqz v2, :cond_0
 
-    .line 5023
     iget-object v5, p0, Landroid/view/ViewRootImpl$InvalidateOnAnimationRunnable;->mViews:Ljava/util/ArrayList;
 
     iget-object v4, p0, Landroid/view/ViewRootImpl$InvalidateOnAnimationRunnable;->mTempViews:[Landroid/view/View;
@@ -340,12 +302,10 @@
 
     iput-object v4, p0, Landroid/view/ViewRootImpl$InvalidateOnAnimationRunnable;->mTempViews:[Landroid/view/View;
 
-    .line 5025
     iget-object v4, p0, Landroid/view/ViewRootImpl$InvalidateOnAnimationRunnable;->mViews:Ljava/util/ArrayList;
 
     invoke-virtual {v4}, Ljava/util/ArrayList;->clear()V
 
-    .line 5028
     :cond_0
     iget-object v4, p0, Landroid/view/ViewRootImpl$InvalidateOnAnimationRunnable;->mViewRects:Ljava/util/ArrayList;
 
@@ -353,11 +313,9 @@
 
     move-result v3
 
-    .line 5029
     .local v3, viewRectCount:I
     if-eqz v3, :cond_1
 
-    .line 5030
     iget-object v5, p0, Landroid/view/ViewRootImpl$InvalidateOnAnimationRunnable;->mViewRects:Ljava/util/ArrayList;
 
     iget-object v4, p0, Landroid/view/ViewRootImpl$InvalidateOnAnimationRunnable;->mTempViewRects:[Landroid/view/View$AttachInfo$InvalidateInfo;
@@ -375,44 +333,37 @@
 
     iput-object v4, p0, Landroid/view/ViewRootImpl$InvalidateOnAnimationRunnable;->mTempViewRects:[Landroid/view/View$AttachInfo$InvalidateInfo;
 
-    .line 5032
     iget-object v4, p0, Landroid/view/ViewRootImpl$InvalidateOnAnimationRunnable;->mViewRects:Ljava/util/ArrayList;
 
     invoke-virtual {v4}, Ljava/util/ArrayList;->clear()V
 
-    .line 5034
     :cond_1
     monitor-exit p0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 5036
     const/4 v0, 0x0
 
     .local v0, i:I
     :goto_2
     if-ge v0, v2, :cond_4
 
-    .line 5037
     iget-object v4, p0, Landroid/view/ViewRootImpl$InvalidateOnAnimationRunnable;->mTempViews:[Landroid/view/View;
 
     aget-object v4, v4, v0
 
     invoke-virtual {v4}, Landroid/view/View;->invalidate()V
 
-    .line 5038
     iget-object v4, p0, Landroid/view/ViewRootImpl$InvalidateOnAnimationRunnable;->mTempViews:[Landroid/view/View;
 
     const/4 v5, 0x0
 
     aput-object v5, v4, v0
 
-    .line 5036
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_2
 
-    .line 5023
     .end local v0           #i:I
     .end local v3           #viewRectCount:I
     :cond_2
@@ -421,14 +372,12 @@
 
     goto :goto_0
 
-    .line 5030
     .restart local v3       #viewRectCount:I
     :cond_3
     new-array v4, v3, [Landroid/view/View$AttachInfo$InvalidateInfo;
 
     goto :goto_1
 
-    .line 5034
     .end local v2           #viewCount:I
     .end local v3           #viewRectCount:I
     :catchall_0
@@ -440,7 +389,6 @@
 
     throw v4
 
-    .line 5041
     .restart local v0       #i:I
     .restart local v2       #viewCount:I
     .restart local v3       #viewRectCount:I
@@ -450,12 +398,10 @@
     :goto_3
     if-ge v0, v3, :cond_5
 
-    .line 5042
     iget-object v4, p0, Landroid/view/ViewRootImpl$InvalidateOnAnimationRunnable;->mTempViewRects:[Landroid/view/View$AttachInfo$InvalidateInfo;
 
     aget-object v1, v4, v0
 
-    .line 5043
     .local v1, info:Landroid/view/View$AttachInfo$InvalidateInfo;
     iget-object v4, v1, Landroid/view/View$AttachInfo$InvalidateInfo;->target:Landroid/view/View;
 
@@ -469,15 +415,12 @@
 
     invoke-virtual {v4, v5, v6, v7, v8}, Landroid/view/View;->invalidate(IIII)V
 
-    .line 5044
     invoke-virtual {v1}, Landroid/view/View$AttachInfo$InvalidateInfo;->release()V
 
-    .line 5041
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_3
 
-    .line 5046
     .end local v1           #info:Landroid/view/View$AttachInfo$InvalidateInfo;
     :cond_5
     return-void

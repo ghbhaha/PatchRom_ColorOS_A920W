@@ -16,6 +16,7 @@
     .locals 0
 
     .prologue
+    .line 28
     invoke-direct {p0}, Lcom/android/internal/app/OppoResolverActivity;-><init>()V
 
     return-void

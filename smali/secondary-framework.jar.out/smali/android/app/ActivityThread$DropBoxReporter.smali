@@ -28,12 +28,10 @@
     .locals 2
 
     .prologue
-    .line 5312
     iput-object p1, p0, Landroid/app/ActivityThread$DropBoxReporter;->this$0:Landroid/app/ActivityThread;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 5313
     invoke-virtual {p1}, Landroid/app/ActivityThread;->getSystemContext()Landroid/app/ContextImpl;
 
     move-result-object v0
@@ -48,7 +46,6 @@
 
     iput-object v0, p0, Landroid/app/ActivityThread$DropBoxReporter;->dropBox:Landroid/os/DropBoxManager;
 
-    .line 5314
     return-void
 .end method
 
@@ -61,12 +58,10 @@
     .parameter "flags"
 
     .prologue
-    .line 5318
     iget-object v0, p0, Landroid/app/ActivityThread$DropBoxReporter;->dropBox:Landroid/os/DropBoxManager;
 
     invoke-virtual {v0, p1, p2, p3}, Landroid/os/DropBoxManager;->addData(Ljava/lang/String;[BI)V
 
-    .line 5319
     return-void
 .end method
 
@@ -76,11 +71,9 @@
     .parameter "data"
 
     .prologue
-    .line 5323
     iget-object v0, p0, Landroid/app/ActivityThread$DropBoxReporter;->dropBox:Landroid/os/DropBoxManager;
 
     invoke-virtual {v0, p1, p2}, Landroid/os/DropBoxManager;->addText(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 5324
     return-void
 .end method

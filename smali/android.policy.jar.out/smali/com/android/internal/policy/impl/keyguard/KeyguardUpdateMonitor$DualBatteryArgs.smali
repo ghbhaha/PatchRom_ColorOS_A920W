@@ -42,10 +42,8 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 2608
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2609
     const-string v0, "power_bat"
 
     invoke-virtual {p1, v0, v1}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
@@ -54,7 +52,6 @@
 
     iput v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor$DualBatteryArgs;->supply_power_battery:I
 
-    .line 2610
     const-string v0, "present_bat"
 
     invoke-virtual {p1, v0, v1}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
@@ -63,7 +60,6 @@
 
     iput v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor$DualBatteryArgs;->battery_present_status:I
 
-    .line 2611
     const-string v0, "batA_level"
 
     invoke-virtual {p1, v0, v1}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
@@ -72,7 +68,6 @@
 
     iput v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor$DualBatteryArgs;->batA_level:I
 
-    .line 2612
     const-string v0, "batB_level"
 
     invoke-virtual {p1, v0, v1}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
@@ -81,7 +76,6 @@
 
     iput v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor$DualBatteryArgs;->batB_level:I
 
-    .line 2613
     const-string v0, "pmic_change"
 
     invoke-virtual {p1, v0, v1}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
@@ -90,7 +84,6 @@
 
     iput v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor$DualBatteryArgs;->pmic_change_status:I
 
-    .line 2614
     const-string v0, "internal_change "
 
     invoke-virtual {p1, v0, v1}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
@@ -99,7 +92,6 @@
 
     iput v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor$DualBatteryArgs;->internal_change_status:I
 
-    .line 2615
     const-string v0, "allow_set"
 
     invoke-virtual {p1, v0, v1}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
@@ -108,7 +100,6 @@
 
     iput v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor$DualBatteryArgs;->allow_user_set_flag:I
 
-    .line 2616
     const-string v0, "preserve1"
 
     invoke-virtual {p1, v0, v1}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
@@ -117,7 +108,6 @@
 
     iput v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor$DualBatteryArgs;->preserve_a:I
 
-    .line 2617
     const-string v0, "preserve2"
 
     invoke-virtual {p1, v0, v1}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
@@ -126,7 +116,6 @@
 
     iput v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor$DualBatteryArgs;->preserve_b:I
 
-    .line 2618
     return-void
 .end method
 
@@ -137,18 +126,14 @@
     .parameter "oldArgs"
 
     .prologue
-    .line 2622
     if-nez p1, :cond_0
 
-    .line 2623
     const/4 v0, 0x1
 
-    .line 2631
     .local v0, ret:Z
     :goto_0
     return v0
 
-    .line 2625
     .end local v0           #ret:Z
     :cond_0
     iget v1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor$DualBatteryArgs;->pmic_change_status:I

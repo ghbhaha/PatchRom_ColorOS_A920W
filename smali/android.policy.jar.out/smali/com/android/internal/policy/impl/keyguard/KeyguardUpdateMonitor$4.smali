@@ -25,7 +25,6 @@
     .parameter "x0"
 
     .prologue
-    .line 710
     iput-object p1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor$4;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;
 
     invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
@@ -42,10 +41,8 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 713
     invoke-super {p0, p1}, Landroid/database/ContentObserver;->onChange(Z)V
 
-    .line 714
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor$4;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;
 
     iget-object v2, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor$4;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;
@@ -73,7 +70,6 @@
     #setter for: Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;->mDeviceProvisioned:Z
     invoke-static {v1, v0}, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;->access$3502(Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;Z)Z
 
-    .line 716
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor$4;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;
 
     #getter for: Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;->mDeviceProvisioned:Z
@@ -83,7 +79,6 @@
 
     if-eqz v0, :cond_1
 
-    .line 717
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor$4;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;
 
     #getter for: Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;->mHandler:Landroid/os/Handler;
@@ -106,7 +101,6 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
-    .line 719
     :cond_1
     invoke-static {}, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;->access$1700()Z
 
@@ -143,7 +137,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 720
     :cond_2
     return-void
 .end method

@@ -272,6 +272,22 @@
 .method public abstract doUSimAuthentication(Ljava/lang/String;Ljava/lang/String;Landroid/os/Message;)V
 .end method
 
+.method public abstract emDial(Ljava/lang/String;)V
+    .annotation build Landroid/annotation/OppoHook;
+        level = .enum Landroid/annotation/OppoHook$OppoHookType;->NEW_METHOD:Landroid/annotation/OppoHook$OppoHookType;
+        note = "add getPhone method, only for MTK platform"
+        property = .enum Landroid/annotation/OppoHook$OppoRomType;->OPPO:Landroid/annotation/OppoHook$OppoRomType;
+    .end annotation
+.end method
+
+.method public abstract emHungup(Ljava/lang/String;)V
+    .annotation build Landroid/annotation/OppoHook;
+        level = .enum Landroid/annotation/OppoHook$OppoHookType;->NEW_METHOD:Landroid/annotation/OppoHook$OppoHookType;
+        note = "add getPhone method, only for MTK platform"
+        property = .enum Landroid/annotation/OppoHook$OppoRomType;->OPPO:Landroid/annotation/OppoHook$OppoRomType;
+    .end annotation
+.end method
+
 .method public abstract enableApnType(Ljava/lang/String;)I
 .end method
 

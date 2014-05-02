@@ -3196,6 +3196,253 @@
     return-void
 .end method
 
+.method public emDial(Ljava/lang/String;)V
+    .locals 3
+    .parameter "telNumber"
+    .annotation build Landroid/annotation/OppoHook;
+        level = .enum Landroid/annotation/OppoHook$OppoHookType;->CHANGE_CODE:Landroid/annotation/OppoHook$OppoHookType;
+        note = "add for add for engineer mode test"
+        property = .enum Landroid/annotation/OppoHook$OppoRomType;->ROM:Landroid/annotation/OppoHook$OppoRomType;
+    .end annotation
+
+    .prologue
+    .line 2968
+    iget-object v0, p0, Lcom/android/internal/telephony/gsm/GSMPhone;->mCM:Lcom/android/internal/telephony/CommandsInterface;
+
+    invoke-interface {v0}, Lcom/android/internal/telephony/CommandsInterface;->oppoGetEMMode()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    .line 2969
+    const-string v0, "GSM"
+
+    const-string v1, "emDial..you should call enableEngineerTest() first! "
+
+    invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 2976
+    :goto_0
+    return-void
+
+    .line 2973
+    :cond_0
+    const-string v0, "GSM"
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "emDial..telNumber: "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 2974
+    iget-object v0, p0, Lcom/android/internal/telephony/gsm/GSMPhone;->mCM:Lcom/android/internal/telephony/CommandsInterface;
+
+    const/4 v1, 0x0
+
+    const/16 v2, 0x12d
+
+    invoke-virtual {p0, v2}, Lcom/android/internal/telephony/gsm/GSMPhone;->obtainMessage(I)Landroid/os/Message;
+
+    move-result-object v2
+
+    invoke-interface {v0, p1, v1, v2}, Lcom/android/internal/telephony/CommandsInterface;->dial(Ljava/lang/String;ILandroid/os/Message;)V
+
+    .line 2975
+    iput-object p1, p0, Lcom/android/internal/telephony/gsm/GSMPhone;->emTelNumber:Ljava/lang/String;
+
+    goto :goto_0
+.end method
+
+.method public emHungup(Ljava/lang/String;)V
+    .locals 3
+    .parameter "telNumber"
+    .annotation build Landroid/annotation/OppoHook;
+        level = .enum Landroid/annotation/OppoHook$OppoHookType;->CHANGE_CODE:Landroid/annotation/OppoHook$OppoHookType;
+        note = "add for add for engineer mode test"
+        property = .enum Landroid/annotation/OppoHook$OppoRomType;->ROM:Landroid/annotation/OppoHook$OppoRomType;
+    .end annotation
+
+    .prologue
+    .line 2982
+    const-string v0, "GSM"
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "emHungup..telNumber: "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 2984
+    iget-object v0, p0, Lcom/android/internal/telephony/gsm/GSMPhone;->emTelNumber:Ljava/lang/String;
+
+    if-eqz v0, :cond_0
+
+    .line 2986
+    const-string v0, "GSM"
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "emHungup..emTelNumber: "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    iget-object v2, p0, Lcom/android/internal/telephony/gsm/GSMPhone;->emTelNumber:Ljava/lang/String;
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 2987
+    const-string v0, "GSM"
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "emHungup..emTelIndex: "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    iget v2, p0, Lcom/android/internal/telephony/gsm/GSMPhone;->emTelIndex:I
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 2988
+    iget v0, p0, Lcom/android/internal/telephony/gsm/GSMPhone;->emTelIndex:I
+
+    if-lez v0, :cond_0
+
+    .line 2989
+    iget-object v0, p0, Lcom/android/internal/telephony/gsm/GSMPhone;->mCM:Lcom/android/internal/telephony/CommandsInterface;
+
+    iget v1, p0, Lcom/android/internal/telephony/gsm/GSMPhone;->emTelIndex:I
+
+    const/16 v2, 0x12f
+
+    invoke-virtual {p0, v2}, Lcom/android/internal/telephony/gsm/GSMPhone;->obtainMessage(I)Landroid/os/Message;
+
+    move-result-object v2
+
+    invoke-interface {v0, v1, v2}, Lcom/android/internal/telephony/CommandsInterface;->hangupConnection(ILandroid/os/Message;)V
+
+    .line 2992
+    :cond_0
+    return-void
+.end method
+
+.method public enableEngineerTest(Z)V
+    .locals 3
+    .parameter "on"
+    .annotation build Landroid/annotation/OppoHook;
+        level = .enum Landroid/annotation/OppoHook$OppoHookType;->CHANGE_CODE:Landroid/annotation/OppoHook$OppoHookType;
+        note = "add for add for engineer mode test"
+        property = .enum Landroid/annotation/OppoHook$OppoRomType;->ROM:Landroid/annotation/OppoHook$OppoRomType;
+    .end annotation
+
+    .prologue
+    .line 2955
+    const-string v0, "GSM"
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "enableEngineerTest: on = "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 2956
+    iget-object v0, p0, Lcom/android/internal/telephony/gsm/GSMPhone;->mCM:Lcom/android/internal/telephony/CommandsInterface;
+
+    invoke-interface {v0, p1}, Lcom/android/internal/telephony/CommandsInterface;->oppoSetEMMode(Z)V
+
+    .line 2957
+    if-eqz p1, :cond_0
+
+    .line 2958
+    iget-object v0, p0, Lcom/android/internal/telephony/gsm/GSMPhone;->mCM:Lcom/android/internal/telephony/CommandsInterface;
+
+    const/16 v1, 0x131
+
+    const/4 v2, 0x0
+
+    invoke-interface {v0, p0, v1, v2}, Lcom/android/internal/telephony/CommandsInterface;->oppoRegisterForEmCallStatusChanged(Landroid/os/Handler;ILjava/lang/Object;)V
+
+    .line 2962
+    :goto_0
+    return-void
+
+    .line 2960
+    :cond_0
+    iget-object v0, p0, Lcom/android/internal/telephony/gsm/GSMPhone;->mCM:Lcom/android/internal/telephony/CommandsInterface;
+
+    invoke-interface {v0, p0}, Lcom/android/internal/telephony/CommandsInterface;->oppoUnregisterForEmCallStatusChanged(Landroid/os/Handler;)V
+
+    goto :goto_0
+.end method
+
 .method public enableLocationUpdates()V
     .locals 1
 

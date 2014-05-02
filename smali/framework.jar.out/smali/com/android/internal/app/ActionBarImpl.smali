@@ -128,78 +128,64 @@
     .parameter "activity"
 
     .prologue
-    .line 150
     invoke-direct {p0}, Landroid/app/ActionBar;-><init>()V
 
-    .line 85
     new-instance v2, Ljava/util/ArrayList;
 
     invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v2, p0, Lcom/android/internal/app/ActionBarImpl;->mTabs:Ljava/util/ArrayList;
 
-    .line 88
     const/4 v2, -0x1
 
     iput v2, p0, Lcom/android/internal/app/ActionBarImpl;->mSavedTabPosition:I
 
-    .line 97
     new-instance v2, Ljava/util/ArrayList;
 
     invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v2, p0, Lcom/android/internal/app/ActionBarImpl;->mMenuVisibilityListeners:Ljava/util/ArrayList;
 
-    .line 108
     new-instance v2, Landroid/os/Handler;
 
     invoke-direct {v2}, Landroid/os/Handler;-><init>()V
 
     iput-object v2, p0, Lcom/android/internal/app/ActionBarImpl;->mHandler:Landroid/os/Handler;
 
-    .line 111
     const/4 v2, 0x0
 
     iput v2, p0, Lcom/android/internal/app/ActionBarImpl;->mCurWindowVisibility:I
 
-    .line 117
     const/4 v2, 0x1
 
     iput-boolean v2, p0, Lcom/android/internal/app/ActionBarImpl;->mNowShowing:Z
 
-    .line 122
     new-instance v2, Lcom/android/internal/app/ActionBarImpl$1;
 
     invoke-direct {v2, p0}, Lcom/android/internal/app/ActionBarImpl$1;-><init>(Lcom/android/internal/app/ActionBarImpl;)V
 
     iput-object v2, p0, Lcom/android/internal/app/ActionBarImpl;->mHideListener:Landroid/animation/Animator$AnimatorListener;
 
-    .line 142
     new-instance v2, Lcom/android/internal/app/ActionBarImpl$2;
 
     invoke-direct {v2, p0}, Lcom/android/internal/app/ActionBarImpl$2;-><init>(Lcom/android/internal/app/ActionBarImpl;)V
 
     iput-object v2, p0, Lcom/android/internal/app/ActionBarImpl;->mShowListener:Landroid/animation/Animator$AnimatorListener;
 
-    .line 151
     iput-object p1, p0, Lcom/android/internal/app/ActionBarImpl;->mActivity:Landroid/app/Activity;
 
-    .line 152
     invoke-virtual {p1}, Landroid/app/Activity;->getWindow()Landroid/view/Window;
 
     move-result-object v1
 
-    .line 153
     .local v1, window:Landroid/view/Window;
     invoke-virtual {v1}, Landroid/view/Window;->getDecorView()Landroid/view/View;
 
     move-result-object v0
 
-    .line 154
     .local v0, decor:Landroid/view/View;
     invoke-direct {p0, v0}, Lcom/android/internal/app/ActionBarImpl;->init(Landroid/view/View;)V
 
-    .line 155
     iget-object v2, p0, Lcom/android/internal/app/ActionBarImpl;->mActivity:Landroid/app/Activity;
 
     invoke-virtual {v2}, Landroid/app/Activity;->getWindow()Landroid/view/Window;
@@ -214,7 +200,6 @@
 
     if-nez v2, :cond_0
 
-    .line 156
     const v2, 0x1020002
 
     invoke-virtual {v0, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -223,7 +208,6 @@
 
     iput-object v2, p0, Lcom/android/internal/app/ActionBarImpl;->mContentView:Landroid/view/View;
 
-    .line 158
     :cond_0
     return-void
 .end method
@@ -233,63 +217,52 @@
     .parameter "dialog"
 
     .prologue
-    .line 160
     invoke-direct {p0}, Landroid/app/ActionBar;-><init>()V
 
-    .line 85
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/android/internal/app/ActionBarImpl;->mTabs:Ljava/util/ArrayList;
 
-    .line 88
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/android/internal/app/ActionBarImpl;->mSavedTabPosition:I
 
-    .line 97
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/android/internal/app/ActionBarImpl;->mMenuVisibilityListeners:Ljava/util/ArrayList;
 
-    .line 108
     new-instance v0, Landroid/os/Handler;
 
     invoke-direct {v0}, Landroid/os/Handler;-><init>()V
 
     iput-object v0, p0, Lcom/android/internal/app/ActionBarImpl;->mHandler:Landroid/os/Handler;
 
-    .line 111
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/internal/app/ActionBarImpl;->mCurWindowVisibility:I
 
-    .line 117
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/internal/app/ActionBarImpl;->mNowShowing:Z
 
-    .line 122
     new-instance v0, Lcom/android/internal/app/ActionBarImpl$1;
 
     invoke-direct {v0, p0}, Lcom/android/internal/app/ActionBarImpl$1;-><init>(Lcom/android/internal/app/ActionBarImpl;)V
 
     iput-object v0, p0, Lcom/android/internal/app/ActionBarImpl;->mHideListener:Landroid/animation/Animator$AnimatorListener;
 
-    .line 142
     new-instance v0, Lcom/android/internal/app/ActionBarImpl$2;
 
     invoke-direct {v0, p0}, Lcom/android/internal/app/ActionBarImpl$2;-><init>(Lcom/android/internal/app/ActionBarImpl;)V
 
     iput-object v0, p0, Lcom/android/internal/app/ActionBarImpl;->mShowListener:Landroid/animation/Animator$AnimatorListener;
 
-    .line 161
     iput-object p1, p0, Lcom/android/internal/app/ActionBarImpl;->mDialog:Landroid/app/Dialog;
 
-    .line 162
     invoke-virtual {p1}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
 
     move-result-object v0
@@ -300,7 +273,6 @@
 
     invoke-direct {p0, v0}, Lcom/android/internal/app/ActionBarImpl;->init(Landroid/view/View;)V
 
-    .line 163
     return-void
 .end method
 
@@ -309,7 +281,6 @@
     .parameter "x0"
 
     .prologue
-    .line 68
     iget-object v0, p0, Lcom/android/internal/app/ActionBarImpl;->mContentView:Landroid/view/View;
 
     return-object v0
@@ -320,7 +291,6 @@
     .parameter "x0"
 
     .prologue
-    .line 68
     iget-object v0, p0, Lcom/android/internal/app/ActionBarImpl;->mTopVisibilityView:Landroid/view/ViewGroup;
 
     return-object v0
@@ -3262,7 +3232,6 @@
     .parameter "x0"
 
     .prologue
-    .line 68
     iget-object v0, p0, Lcom/android/internal/app/ActionBarImpl;->mContextView:Lcom/android/internal/widget/ActionBarContextView;
 
     return-object v0
@@ -3277,7 +3246,6 @@
     .end annotation
 
     .prologue
-    .line 68
     iget-boolean v0, p0, Lcom/android/internal/app/ActionBarImpl;->mHiddenByApp:Z
 
     iget-boolean v1, p0, Lcom/android/internal/app/ActionBarImpl;->mHiddenBySystem:Z

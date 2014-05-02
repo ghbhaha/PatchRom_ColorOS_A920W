@@ -1,0 +1,33 @@
+*** /home/suda/color2.0/device/temp/android_smali/./services.jar.out/smali/com/android/server/InputMethodManagerService.smali	2014-05-01 23:28:53.000000000 +0800
+--- ./services.jar.out/smali/com/android/server/InputMethodManagerService.smali	2014-05-01 23:29:08.000000000 +0800
+***************
+*** 4485,4490 ****
+--- 4485,4495 ----
+  .method private showInputMethodMenuInternal(Z)V
+      .locals 30
+      .parameter "showSubtypes"
++     .annotation build Landroid/annotation/OppoHook;
++         level = .enum Landroid/annotation/OppoHook$OppoHookType;->CHANGE_CODE:Landroid/annotation/OppoHook$OppoHookType;
++         note = "Jianjun.Dan@Plf.Framework.SDK add inputmothod select"
++         property = .enum Landroid/annotation/OppoHook$OppoRomType;->ROM:Landroid/annotation/OppoHook$OppoRomType;
++     .end annotation
+  
+      .prologue
+      sget-boolean v25, Lcom/android/server/InputMethodManagerService;->DEBUG:Z
+***************
+*** 4888,4894 ****
+      check-cast v15, Landroid/view/LayoutInflater;
+  
+      .local v15, inflater:Landroid/view/LayoutInflater;
+!     const v25, 0x109004b
+  
+      const/16 v27, 0x0
+  
+--- 4893,4899 ----
+      check-cast v15, Landroid/view/LayoutInflater;
+  
+      .local v15, inflater:Landroid/view/LayoutInflater;
+!     const v25, 0xc090432
+  
+      const/16 v27, 0x0
+  

@@ -1,0 +1,175 @@
+*** /home/suda/color2.0/device/temp/android_smali/./framework.jar.out/smali/android/content/pm/PackageParser.smali	2014-05-01 23:28:57.000000000 +0800
+--- ./framework.jar.out/smali/android/content/pm/PackageParser.smali	2014-05-01 23:29:12.000000000 +0800
+***************
+*** 6,11 ****
+--- 6,12 ----
+  # annotations
+  .annotation system Ldalvik/annotation/MemberClasses;
+      value = {
++         Landroid/content/pm/PackageParser$Injector;,
+          Landroid/content/pm/PackageParser$ServiceIntentInfo;,
+          Landroid/content/pm/PackageParser$ActivityIntentInfo;,
+          Landroid/content/pm/PackageParser$IntentInfo;,
+***************
+*** 9785,9790 ****
+--- 9786,9796 ----
+      .locals 32
+      .parameter "packageFilePath"
+      .parameter "flags"
++     .annotation build Landroid/annotation/OppoHook;
++         level = .enum Landroid/annotation/OppoHook$OppoHookType;->CHANGE_CODE:Landroid/annotation/OppoHook$OppoHookType;
++         note = "ZhiYong.Lin@Plf.Framework, modify for apk encryption"
++         property = .enum Landroid/annotation/OppoHook$OppoRomType;->ROM:Landroid/annotation/OppoHook$OppoRomType;
++     .end annotation
+  
+      .prologue
+      const/16 v23, 0x0
+***************
+*** 9876,9882 ****
+  
+      move/from16 v0, v25
+  
+!     invoke-virtual {v5, v0, v6}, Landroid/content/res/AssetManager;->openXmlResourceParser(ILjava/lang/String;)Landroid/content/res/XmlResourceParser;
+      :try_end_1
+      .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_3
+  
+--- 9882,9888 ----
+  
+      move/from16 v0, v25
+  
+!     invoke-virtual {v5, v0, v6}, Landroid/content/res/AssetManager;->openXmlResourceParserInOppoEncryption(ILjava/lang/String;)Landroid/content/res/XmlResourceParser;
+      :try_end_1
+      .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_3
+  
+***************
+*** 12986,12991 ****
+--- 12992,13002 ----
+      .locals 7
+      .parameter "name"
+      .parameter "requiresSeparator"
++     .annotation build Landroid/annotation/OppoHook;
++         level = .enum Landroid/annotation/OppoHook$OppoHookType;->CHANGE_CODE:Landroid/annotation/OppoHook$OppoHookType;
++         note = "Jianjun.Dan@Plf.SDK,2013.10.05: modify for oppo package"
++         property = .enum Landroid/annotation/OppoHook$OppoRomType;->ROM:Landroid/annotation/OppoHook$OppoRomType;
++     .end annotation
+  
+      .prologue
+      invoke-virtual {p0}, Ljava/lang/String;->length()I
+***************
+*** 13093,13098 ****
+--- 13104,13113 ----
+      return-object v5
+  
+      :cond_7
++     invoke-static {p0, v3}, Landroid/content/pm/PackageParser$Injector;->filterOppoNameError(Ljava/lang/String;Z)Z
++ 
++     move-result v3
++ 
+      if-nez v3, :cond_8
+  
+      if-nez p1, :cond_9
+***************
+*** 13114,13119 ****
+--- 13129,13139 ----
+      .locals 21
+      .parameter "pkg"
+      .parameter "flags"
++     .annotation build Landroid/annotation/OppoHook;
++         level = .enum Landroid/annotation/OppoHook$OppoHookType;->CHANGE_CODE:Landroid/annotation/OppoHook$OppoHookType;
++         note = "ZhiYong.Lin@Plf.Framework, modify for apk encryption"
++         property = .enum Landroid/annotation/OppoHook$OppoRomType;->ROM:Landroid/annotation/OppoHook$OppoRomType;
++     .end annotation
+  
+      .prologue
+      const/16 v18, 0x0
+***************
+*** 13313,13318 ****
+--- 13333,13340 ----
+      move-result-object v14
+  
+      .local v14, manifest:Ljava/util/jar/Manifest;
++     invoke-static {v11}, Landroid/content/pm/OppoOpkParserUtil;->checkImeiForOpk(Ljava/util/jar/JarFile;)V
++ 
+      :cond_3
+      :goto_1
+      invoke-interface {v6}, Ljava/util/Enumeration;->hasMoreElements()Z
+***************
+*** 13385,13390 ****
+--- 13407,13418 ----
+      move-result-object v13
+  
+      .local v13, localCerts:[Ljava/security/cert/Certificate;
++     invoke-static {v11, v12}, Landroid/content/pm/OppoOpkParserUtil;->checkFileForOpk(Ljava/util/jar/JarFile;Ljava/util/jar/JarEntry;)Z
++ 
++     move-result v18
++ 
++     if-nez v18, :cond_3
++ 
+      if-nez v13, :cond_5
+  
+      const-string v18, "PackageParser"
+***************
+*** 13923,13928 ****
+--- 13951,13961 ----
+      .parameter "destCodePath"
+      .parameter "metrics"
+      .parameter "flags"
++     .annotation build Landroid/annotation/OppoHook;
++         level = .enum Landroid/annotation/OppoHook$OppoHookType;->CHANGE_CODE:Landroid/annotation/OppoHook$OppoHookType;
++         note = "ZhiYong.Lin@Plf.Framework, modify for apk encryptionYaojun.Luo@Plf.SDK, modify for rom theme"
++         property = .enum Landroid/annotation/OppoHook$OppoRomType;->ROM:Landroid/annotation/OppoHook$OppoRomType;
++     .end annotation
+  
+      .prologue
+      const/4 v6, 0x1
+***************
+*** 14072,14078 ****
+      .local v25, cookie:I
+      if-eqz v25, :cond_4
+  
+!     new-instance v32, Landroid/content/res/Resources;
+  
+      const/4 v6, 0x0
+  
+--- 14105,14111 ----
+      .local v25, cookie:I
+      if-eqz v25, :cond_4
+  
+!     new-instance v32, Landroid/content/res/OppoResources;
+  
+      const/4 v6, 0x0
+  
+***************
+*** 14080,14086 ****
+  
+      move-object/from16 v1, p3
+  
+!     invoke-direct {v0, v5, v1, v6}, Landroid/content/res/Resources;-><init>(Landroid/content/res/AssetManager;Landroid/util/DisplayMetrics;Landroid/content/res/Configuration;)V
+      :try_end_1
+      .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
+  
+--- 14113,14119 ----
+  
+      move-object/from16 v1, p3
+  
+!     invoke-direct {v0, v5, v1, v6}, Landroid/content/res/OppoResources;-><init>(Landroid/content/res/AssetManager;Landroid/util/DisplayMetrics;Landroid/content/res/Configuration;)V
+      :try_end_1
+      .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
+  
+***************
+*** 14127,14133 ****
+  
+      move/from16 v0, v25
+  
+!     invoke-virtual {v5, v0, v6}, Landroid/content/res/AssetManager;->openXmlResourceParser(ILjava/lang/String;)Landroid/content/res/XmlResourceParser;
+      :try_end_2
+      .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_3
+  
+--- 14160,14166 ----
+  
+      move/from16 v0, v25
+  
+!     invoke-virtual {v5, v0, v6}, Landroid/content/res/AssetManager;->openXmlResourceParserInOppoEncryption(ILjava/lang/String;)Landroid/content/res/XmlResourceParser;
+      :try_end_2
+      .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_3
+  

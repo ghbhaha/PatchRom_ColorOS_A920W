@@ -1,0 +1,100 @@
+*** /home/suda/color2.0/device/temp/android_smali/./framework.jar.out/smali/android/text/DynamicLayout.smali	2014-05-01 23:28:58.000000000 +0800
+--- ./framework.jar.out/smali/android/text/DynamicLayout.smali	2014-05-01 23:29:13.000000000 +0800
+***************
+*** 47,52 ****
+--- 47,58 ----
+  .field private static final sLock:[Ljava/lang/Object;
+  
+  .field private static sStaticLayout:Landroid/text/StaticLayout;
++     .annotation build Landroid/annotation/OppoHook;
++         level = .enum Landroid/annotation/OppoHook$OppoHookType;->CHANGE_CODE:Landroid/annotation/OppoHook$OppoHookType;
++         note = "JinPeng@Plf.SDK,2013.08.16:Modify for OppoStaticLayout"
++         property = .enum Landroid/annotation/OppoHook$OppoRomType;->ROM:Landroid/annotation/OppoHook$OppoRomType;
++     .end annotation
++ .end field
+  
+  
+  # instance fields
+***************
+*** 93,103 ****
+      .locals 2
+  
+      .prologue
+!     new-instance v0, Landroid/text/StaticLayout;
+  
+      const/4 v1, 0x0
+  
+!     invoke-direct {v0, v1}, Landroid/text/StaticLayout;-><init>(Ljava/lang/CharSequence;)V
+  
+      sput-object v0, Landroid/text/DynamicLayout;->sStaticLayout:Landroid/text/StaticLayout;
+  
+--- 99,109 ----
+      .locals 2
+  
+      .prologue
+!     new-instance v0, Landroid/text/OppoStaticLayout;
+  
+      const/4 v1, 0x0
+  
+!     invoke-direct {v0, v1}, Landroid/text/OppoStaticLayout;-><init>(Ljava/lang/CharSequence;)V
+  
+      sput-object v0, Landroid/text/DynamicLayout;->sStaticLayout:Landroid/text/StaticLayout;
+  
+***************
+*** 803,808 ****
+--- 809,819 ----
+      .parameter "where"
+      .parameter "before"
+      .parameter "after"
++     .annotation build Landroid/annotation/OppoHook;
++         level = .enum Landroid/annotation/OppoHook$OppoHookType;->CHANGE_CODE:Landroid/annotation/OppoHook$OppoHookType;
++         note = "JinPeng@Plf.SDK,2013.08.06:Modify for OppoStaticLayout"
++         property = .enum Landroid/annotation/OppoHook$OppoRomType;->ROM:Landroid/annotation/OppoHook$OppoRomType;
++     .end annotation
+  
+      .prologue
+      move-object/from16 v0, p0
+***************
+*** 1078,1089 ****
+  
+      if-nez v3, :cond_10
+  
+!     new-instance v3, Landroid/text/StaticLayout;
+  
+      .end local v3           #reflowed:Landroid/text/StaticLayout;
+      const/4 v5, 0x0
+  
+!     invoke-direct {v3, v5}, Landroid/text/StaticLayout;-><init>(Ljava/lang/CharSequence;)V
+  
+      .restart local v3       #reflowed:Landroid/text/StaticLayout;
+      :goto_5
+--- 1089,1100 ----
+  
+      if-nez v3, :cond_10
+  
+!     new-instance v3, Landroid/text/OppoStaticLayout;
+  
+      .end local v3           #reflowed:Landroid/text/StaticLayout;
+      const/4 v5, 0x0
+  
+!     invoke-direct {v3, v5}, Landroid/text/OppoStaticLayout;-><init>(Ljava/lang/CharSequence;)V
+  
+      .restart local v3       #reflowed:Landroid/text/StaticLayout;
+      :goto_5
+***************
+*** 1125,1131 ****
+  
+      move/from16 v5, p2
+  
+!     invoke-virtual/range {v3 .. v15}, Landroid/text/StaticLayout;->generate(Ljava/lang/CharSequence;IILandroid/text/TextPaint;ILandroid/text/TextDirectionHeuristic;FFZZFLandroid/text/TextUtils$TruncateAt;)V
+  
+      invoke-virtual {v3}, Landroid/text/StaticLayout;->getLineCount()I
+  
+--- 1136,1142 ----
+  
+      move/from16 v5, p2
+  
+!     invoke-virtual/range {v3 .. v15}, Landroid/text/StaticLayout;->oppoGenerate(Ljava/lang/CharSequence;IILandroid/text/TextPaint;ILandroid/text/TextDirectionHeuristic;FFZZFLandroid/text/TextUtils$TruncateAt;)V
+  
+      invoke-virtual {v3}, Landroid/text/StaticLayout;->getLineCount()I
+  

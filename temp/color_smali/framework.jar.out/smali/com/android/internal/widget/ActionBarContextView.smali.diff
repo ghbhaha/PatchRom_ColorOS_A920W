@@ -1,0 +1,25 @@
+*** /home/suda/color2.0/device/temp/android_smali/./framework.jar.out/smali/com/android/internal/widget/ActionBarContextView.smali	2014-05-01 23:28:56.000000000 +0800
+--- ./framework.jar.out/smali/com/android/internal/widget/ActionBarContextView.smali	2014-05-01 23:29:12.000000000 +0800
+***************
+*** 21,27 ****
+  
+  .field private mAnimationMode:I
+  
+! .field private mClose:Landroid/view/View;
+  
+  .field private mCurrentAnimation:Landroid/animation/Animator;
+  
+--- 21,33 ----
+  
+  .field private mAnimationMode:I
+  
+! .field mClose:Landroid/view/View;
+!     .annotation build Landroid/annotation/OppoHook;
+!         level = .enum Landroid/annotation/OppoHook$OppoHookType;->CHANGE_ACCESS:Landroid/annotation/OppoHook$OppoHookType;
+!         note = "private : Jianhui.Yu@Plf.Framework.SDK : Modify for oppoStyle ActionBarTitle"
+!         property = .enum Landroid/annotation/OppoHook$OppoRomType;->ROM:Landroid/annotation/OppoHook$OppoRomType;
+!     .end annotation
+! .end field
+  
+  .field private mCurrentAnimation:Landroid/animation/Animator;
+  

@@ -1,0 +1,218 @@
+*** /home/suda/color2.0/device/temp/android_smali/./services.jar.out/smali/com/android/server/power/PowerManagerService.smali	2014-05-01 23:28:52.000000000 +0800
+--- ./services.jar.out/smali/com/android/server/power/PowerManagerService.smali	2014-05-01 23:29:06.000000000 +0800
+***************
+*** 20,26 ****
+          Lcom/android/server/power/PowerManagerService$UserSwitchedReceiver;,
+          Lcom/android/server/power/PowerManagerService$DreamReceiver;,
+          Lcom/android/server/power/PowerManagerService$BootCompletedReceiver;,
+!         Lcom/android/server/power/PowerManagerService$BatteryReceiver;
+      }
+  .end annotation
+  
+--- 20,27 ----
+          Lcom/android/server/power/PowerManagerService$UserSwitchedReceiver;,
+          Lcom/android/server/power/PowerManagerService$DreamReceiver;,
+          Lcom/android/server/power/PowerManagerService$BootCompletedReceiver;,
+!         Lcom/android/server/power/PowerManagerService$BatteryReceiver;,
+!         Lcom/android/server/power/PowerManagerService$OppoHelper;
+      }
+  .end annotation
+  
+***************
+*** 3083,3088 ****
+--- 3084,3094 ----
+  
+  .method private sendPendingNotificationsLocked()V
+      .locals 2
++     .annotation build Landroid/annotation/OppoHook;
++         level = .enum Landroid/annotation/OppoHook$OppoHookType;->CHANGE_CODE:Landroid/annotation/OppoHook$OppoHookType;
++         note = "TongXi.Li@Plf.Framework, modify for assertlock and button light"
++         property = .enum Landroid/annotation/OppoHook$OppoRomType;->ROM:Landroid/annotation/OppoHook$OppoRomType;
++     .end annotation
+  
+      .prologue
+      const/4 v1, 0x0
+***************
+*** 3102,3107 ****
+--- 3108,3115 ----
+  
+      iput-boolean v1, p0, Lcom/android/server/power/PowerManagerService;->mSendWakeUpFinishedNotificationWhenReady:Z
+  
++     invoke-static {p0, v1}, Lcom/android/server/power/PowerManagerService$OppoHelper;->updateButtonBrightness(Lcom/android/server/power/PowerManagerService;Z)V
++ 
+      iget-object v0, p0, Lcom/android/server/power/PowerManagerService;->mNotifier:Lcom/android/server/power/Notifier;
+  
+      invoke-virtual {v0}, Lcom/android/server/power/Notifier;->onWakeUpFinished()V
+***************
+*** 3885,3893 ****
+      if-eqz v4, :cond_c
+  
+      :cond_4
+!     iget-object v4, p0, Lcom/android/server/power/PowerManagerService;->mButtonLight:Lcom/android/server/LightsService$Light;
+  
+!     invoke-virtual {v4, v3}, Lcom/android/server/LightsService$Light;->setBrightness(I)V
+  
+      const-string v4, "PowerManagerService"
+  
+--- 3893,3901 ----
+      if-eqz v4, :cond_c
+  
+      :cond_4
+!     #iget-object v4, p0, Lcom/android/server/power/PowerManagerService;->mButtonLight:Lcom/android/server/LightsService$Light;
+  
+!     #invoke-virtual {v4, v3}, Lcom/android/server/LightsService$Light;->setBrightness(I)V
+  
+      const-string v4, "PowerManagerService"
+  
+***************
+*** 4068,4076 ****
+      goto/16 :goto_4
+  
+      :cond_c
+!     iget-object v4, p0, Lcom/android/server/power/PowerManagerService;->mButtonLight:Lcom/android/server/LightsService$Light;
+  
+!     invoke-virtual {v4}, Lcom/android/server/LightsService$Light;->turnOff()V
+  
+      const-string v4, "PowerManagerService"
+  
+--- 4076,4084 ----
+      goto/16 :goto_4
+  
+      :cond_c
+!     #iget-object v4, p0, Lcom/android/server/power/PowerManagerService;->mButtonLight:Lcom/android/server/LightsService$Light;
+  
+!     #invoke-virtual {v4}, Lcom/android/server/LightsService$Light;->turnOff()V
+  
+      const-string v4, "PowerManagerService"
+  
+***************
+*** 4081,4089 ****
+      goto/16 :goto_5
+  
+      :cond_d
+!     iget-object v4, p0, Lcom/android/server/power/PowerManagerService;->mButtonLight:Lcom/android/server/LightsService$Light;
+  
+!     invoke-virtual {v4}, Lcom/android/server/LightsService$Light;->turnOff()V
+  
+      const-string v4, "PowerManagerService"
+  
+--- 4089,4097 ----
+      goto/16 :goto_5
+  
+      :cond_d
+!     #iget-object v4, p0, Lcom/android/server/power/PowerManagerService;->mButtonLight:Lcom/android/server/LightsService$Light;
+  
+!     #invoke-virtual {v4}, Lcom/android/server/LightsService$Light;->turnOff()V
+  
+      const-string v4, "PowerManagerService"
+  
+***************
+*** 4652,4657 ****
+--- 4660,4670 ----
+      .locals 12
+      .parameter "now"
+      .parameter "dirty"
++     .annotation build Landroid/annotation/OppoHook;
++         level = .enum Landroid/annotation/OppoHook$OppoHookType;->CHANGE_CODE:Landroid/annotation/OppoHook$OppoHookType;
++         note = "TongXi.Li@Plf.Framework, modify for button light"
++         property = .enum Landroid/annotation/OppoHook$OppoRomType;->ROM:Landroid/annotation/OppoHook$OppoRomType;
++     .end annotation
+  
+      .prologue
+      const/4 v6, 0x2
+***************
+*** 4801,4806 ****
+--- 4814,4821 ----
+      .end local v5           #screenOffTimeout:I
+      :cond_3
+      :goto_1
++     invoke-static {p0, v7}, Lcom/android/server/power/PowerManagerService$OppoHelper;->updateButtonBrightness(Lcom/android/server/power/PowerManagerService;Z)V
++ 
+      const-string v6, "PowerManagerService"
+  
+      new-instance v7, Ljava/lang/StringBuilder;
+***************
+*** 7940,7945 ****
+--- 7955,7965 ----
+      .locals 13
+      .parameter "twilight"
+      .parameter "dreamManager"
++     .annotation build Landroid/annotation/OppoHook;
++         level = .enum Landroid/annotation/OppoHook$OppoHookType;->CHANGE_CODE:Landroid/annotation/OppoHook$OppoHookType;
++         note = "TongXi.Li@Plf.Framework, modify for button light"
++         property = .enum Landroid/annotation/OppoHook$OppoRomType;->ROM:Landroid/annotation/OppoHook$OppoRomType;
++     .end annotation
+  
+      .prologue
+      iget-object v12, p0, Lcom/android/server/power/PowerManagerService;->mLock:Ljava/lang/Object;
+***************
+*** 8100,8112 ****
+  
+      iget-object v0, p0, Lcom/android/server/power/PowerManagerService;->mLightsService:Lcom/android/server/LightsService;
+  
+!     const/4 v1, 0x2
+! 
+!     invoke-virtual {v0, v1}, Lcom/android/server/LightsService;->getLight(I)Lcom/android/server/LightsService$Light;
+! 
+!     move-result-object v0
+! 
+!     iput-object v0, p0, Lcom/android/server/power/PowerManagerService;->mButtonLight:Lcom/android/server/LightsService$Light;
+  
+      new-instance v9, Landroid/content/IntentFilter;
+  
+--- 8120,8126 ----
+  
+      iget-object v0, p0, Lcom/android/server/power/PowerManagerService;->mLightsService:Lcom/android/server/LightsService;
+  
+!     invoke-static {v0}, Lcom/android/server/power/PowerManagerService$OppoHelper;->setButtonLight(Lcom/android/server/LightsService;)V
+  
+      new-instance v9, Landroid/content/IntentFilter;
+  
+***************
+*** 8813,8815 ****
+--- 8827,8871 ----
+  
+      throw v2
+  .end method
++ 
++ .method getScreenBrightDefault()I
++     .locals 1
++     .annotation build Landroid/annotation/OppoHook;
++         level = .enum Landroid/annotation/OppoHook$OppoHookType;->NEW_METHOD:Landroid/annotation/OppoHook$OppoHookType;
++         note = "TongXi.Li@Plf.Framework, add for button light"
++         property = .enum Landroid/annotation/OppoHook$OppoRomType;->ROM:Landroid/annotation/OppoHook$OppoRomType;
++     .end annotation
++ 
++     .prologue
++     iget v0, p0, Lcom/android/server/power/PowerManagerService;->mScreenBrightnessSettingDefault:I
++ 
++     return v0
++ .end method
++ 
++ .method getUserActivitySumm()I
++     .locals 1
++     .annotation build Landroid/annotation/OppoHook;
++         level = .enum Landroid/annotation/OppoHook$OppoHookType;->NEW_METHOD:Landroid/annotation/OppoHook$OppoHookType;
++         note = "TongXi.Li@Plf.Framework, add for button light"
++         property = .enum Landroid/annotation/OppoHook$OppoRomType;->ROM:Landroid/annotation/OppoHook$OppoRomType;
++     .end annotation
++ 
++     .prologue
++     iget v0, p0, Lcom/android/server/power/PowerManagerService;->mUserActivitySummary:I
++ 
++     return v0
++ .end method
++ 
++ .method getWakefulness()I
++     .locals 1
++     .annotation build Landroid/annotation/OppoHook;
++         level = .enum Landroid/annotation/OppoHook$OppoHookType;->NEW_METHOD:Landroid/annotation/OppoHook$OppoHookType;
++         note = "TongXi.Li@Plf.Framework, add for button light"
++         property = .enum Landroid/annotation/OppoHook$OppoRomType;->ROM:Landroid/annotation/OppoHook$OppoRomType;
++     .end annotation
++ 
++     .prologue
++     iget v0, p0, Lcom/android/server/power/PowerManagerService;->mWakefulness:I
++ 
++     return v0
++ .end method

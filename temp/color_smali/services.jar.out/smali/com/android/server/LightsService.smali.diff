@@ -1,0 +1,86 @@
+*** /home/suda/color2.0/device/temp/android_smali/./services.jar.out/smali/com/android/server/LightsService.smali	2014-05-01 23:28:54.000000000 +0800
+--- ./services.jar.out/smali/com/android/server/LightsService.smali	2014-05-01 23:29:09.000000000 +0800
+***************
+*** 52,73 ****
+  
+  .field private final mLegacyFlashlightHack:Landroid/os/IHardwareService$Stub;
+  
+! .field private final mLights:[Lcom/android/server/LightsService$Light;
+  
+  .field private mNativePointer:I
+  
+  
+  # direct methods
+  .method constructor <init>(Landroid/content/Context;)V
+!     .locals 5
+      .parameter "context"
+  
+      .prologue
+!     const/16 v4, 0x8
+  
+      invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+  
+!     new-array v1, v4, [Lcom/android/server/LightsService$Light;
+  
+      iput-object v1, p0, Lcom/android/server/LightsService;->mLights:[Lcom/android/server/LightsService$Light;
+  
+--- 52,79 ----
+  
+  .field private final mLegacyFlashlightHack:Landroid/os/IHardwareService$Stub;
+  
+! .field final mLights:[Lcom/android/server/LightsService$Light;
+!     .annotation build Landroid/annotation/OppoHook;
+!         level = .enum Landroid/annotation/OppoHook$OppoHookType;->CHANGE_ACCESS:Landroid/annotation/OppoHook$OppoHookType;
+!         note = "Jun.Zhang@Plf.Framework, [-private]:modify for button light"
+!         property = .enum Landroid/annotation/OppoHook$OppoRomType;->ROM:Landroid/annotation/OppoHook$OppoRomType;
+!     .end annotation
+! .end field
+  
+  .field private mNativePointer:I
+  
+  
+  # direct methods
+  .method constructor <init>(Landroid/content/Context;)V
+!     .locals 4
+      .parameter "context"
+  
+      .prologue
+!     const/16 v3, 0x8
+  
+      invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+  
+!     new-array v1, v3, [Lcom/android/server/LightsService$Light;
+  
+      iput-object v1, p0, Lcom/android/server/LightsService;->mLights:[Lcom/android/server/LightsService$Light;
+  
+***************
+*** 101,115 ****
+  
+      .local v0, i:I
+      :goto_0
+!     if-ge v0, v4, :cond_0
+  
+      iget-object v1, p0, Lcom/android/server/LightsService;->mLights:[Lcom/android/server/LightsService$Light;
+  
+      new-instance v2, Lcom/android/server/LightsService$Light;
+  
+!     const/4 v3, 0x0
+! 
+!     invoke-direct {v2, p0, v0, v3}, Lcom/android/server/LightsService$Light;-><init>(Lcom/android/server/LightsService;ILcom/android/server/LightsService$1;)V
+  
+      aput-object v2, v1, v0
+  
+--- 107,119 ----
+  
+      .local v0, i:I
+      :goto_0
+!     if-ge v0, v3, :cond_0
+  
+      iget-object v1, p0, Lcom/android/server/LightsService;->mLights:[Lcom/android/server/LightsService$Light;
+  
+      new-instance v2, Lcom/android/server/LightsService$Light;
+  
+!     invoke-direct {v2, p0, v0}, Lcom/android/server/LightsService$Light;-><init>(Lcom/android/server/LightsService;I)V
+  
+      aput-object v2, v1, v0
+  

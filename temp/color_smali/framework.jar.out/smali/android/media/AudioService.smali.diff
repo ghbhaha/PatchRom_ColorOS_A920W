@@ -1,0 +1,314 @@
+*** /home/suda/color2.0/device/temp/android_smali/./framework.jar.out/smali/android/media/AudioService.smali	2014-05-01 23:28:58.000000000 +0800
+--- ./framework.jar.out/smali/android/media/AudioService.smali	2014-05-01 23:29:13.000000000 +0800
+***************
+*** 433,439 ****
+  
+  .field private mVolumeControlStream:I
+  
+! .field private mVolumePanel:Landroid/view/VolumePanel;
+  
+  
+  # direct methods
+--- 433,439 ----
+  
+  .field private mVolumeControlStream:I
+  
+! .field private mVolumePanel:Lcom/oppo/view/VolumePanel;
+  
+  
+  # direct methods
+***************
+*** 1138,1154 ****
+  
+      sput v2, Landroid/media/AudioService;->sSoundEffectVolumeDb:I
+  
+!     new-instance v2, Landroid/view/VolumePanel;
+  
+      move-object/from16 v0, p1
+  
+      move-object/from16 v1, p0
+  
+!     invoke-direct {v2, v0, v1}, Landroid/view/VolumePanel;-><init>(Landroid/content/Context;Landroid/media/AudioService;)V
+  
+      move-object/from16 v0, p0
+  
+!     iput-object v2, v0, Landroid/media/AudioService;->mVolumePanel:Landroid/view/VolumePanel;
+  
+      const/4 v2, 0x0
+  
+--- 1138,1154 ----
+  
+      sput v2, Landroid/media/AudioService;->sSoundEffectVolumeDb:I
+  
+!     new-instance v2, Lcom/oppo/view/VolumePanel;
+  
+      move-object/from16 v0, p1
+  
+      move-object/from16 v1, p0
+  
+!     invoke-direct {v2, v0, v1}, Lcom/oppo/view/VolumePanel;-><init>(Landroid/content/Context;Landroid/media/AudioService;)V
+  
+      move-object/from16 v0, p0
+  
+!     iput-object v2, v0, Landroid/media/AudioService;->mVolumePanel:Lcom/oppo/view/VolumePanel;
+  
+      const/4 v2, 0x0
+  
+***************
+*** 1658,1671 ****
+      :array_a
+      .array-data 0x4
+          0x0t 0x0t 0x0t 0x0t
+!         0x2t 0x0t 0x0t 0x0t
+          0x2t 0x0t 0x0t 0x0t
+          0x3t 0x0t 0x0t 0x0t
+          0x4t 0x0t 0x0t 0x0t
+          0x2t 0x0t 0x0t 0x0t
+          0x6t 0x0t 0x0t 0x0t
+!         0x2t 0x0t 0x0t 0x0t
+!         0x2t 0x0t 0x0t 0x0t
+          0x3t 0x0t 0x0t 0x0t
+          0xat 0x0t 0x0t 0x0t
+          0xbt 0x0t 0x0t 0x0t
+--- 1658,1671 ----
+      :array_a
+      .array-data 0x4
+          0x0t 0x0t 0x0t 0x0t
+!         0x1t 0x0t 0x0t 0x0t
+          0x2t 0x0t 0x0t 0x0t
+          0x3t 0x0t 0x0t 0x0t
+          0x4t 0x0t 0x0t 0x0t
+          0x2t 0x0t 0x0t 0x0t
+          0x6t 0x0t 0x0t 0x0t
+!         0x1t 0x0t 0x0t 0x0t
+!         0x0t 0x0t 0x0t 0x0t
+          0x3t 0x0t 0x0t 0x0t
+          0xat 0x0t 0x0t 0x0t
+          0xbt 0x0t 0x0t 0x0t
+***************
+*** 2705,2713 ****
+      invoke-direct {p0, v0, p2}, Landroid/media/AudioService;->sendVolumeUpdateToRemote(II)V
+  
+      :cond_1
+!     iget-object v2, p0, Landroid/media/AudioService;->mVolumePanel:Landroid/view/VolumePanel;
+  
+!     invoke-virtual {v2, p1, p3}, Landroid/view/VolumePanel;->postRemoteVolumeChanged(II)V
+  
+      goto :goto_0
+  
+--- 2705,2713 ----
+      invoke-direct {p0, v0, p2}, Landroid/media/AudioService;->sendVolumeUpdateToRemote(II)V
+  
+      :cond_1
+!     iget-object v2, p0, Landroid/media/AudioService;->mVolumePanel:Lcom/oppo/view/VolumePanel;
+  
+!     invoke-virtual {v2, p1, p3}, Lcom/oppo/view/VolumePanel;->postRemoteVolumeChanged(II)V
+  
+      goto :goto_0
+  
+***************
+*** 3161,3169 ****
+  
+      if-le p2, v0, :cond_0
+  
+!     iget-object v0, p0, Landroid/media/AudioService;->mVolumePanel:Landroid/view/VolumePanel;
+  
+!     invoke-virtual {v0}, Landroid/view/VolumePanel;->postDisplaySafeVolumeWarning()V
+  
+      const/4 v0, 0x0
+  
+--- 3161,3169 ----
+  
+      if-le p2, v0, :cond_0
+  
+!     iget-object v0, p0, Landroid/media/AudioService;->mVolumePanel:Lcom/oppo/view/VolumePanel;
+  
+!     invoke-virtual {v0}, Lcom/oppo/view/VolumePanel;->postDisplaySafeVolumeWarning()V
+  
+      const/4 v0, 0x0
+  
+***************
+*** 7917,7925 ****
+  
+      iput v0, p0, Landroid/media/AudioService;->mMusicActiveMs:I
+  
+!     iget-object v0, p0, Landroid/media/AudioService;->mVolumePanel:Landroid/view/VolumePanel;
+  
+!     invoke-virtual {v0}, Landroid/view/VolumePanel;->postDisplaySafeVolumeWarning()V
+  
+      .end local v7           #device:I
+      .end local v8           #index:I
+--- 7917,7925 ----
+  
+      iput v0, p0, Landroid/media/AudioService;->mMusicActiveMs:I
+  
+!     iget-object v0, p0, Landroid/media/AudioService;->mVolumePanel:Lcom/oppo/view/VolumePanel;
+  
+!     invoke-virtual {v0}, Lcom/oppo/view/VolumePanel;->postDisplaySafeVolumeWarning()V
+  
+      .end local v7           #device:I
+      .end local v8           #index:I
+***************
+*** 8166,8174 ****
+  
+      iput p3, v2, Landroid/media/AudioService$RemotePlaybackState;->mVolume:I
+  
+!     iget-object v2, p0, Landroid/media/AudioService;->mVolumePanel:Landroid/view/VolumePanel;
+  
+!     invoke-virtual {v2}, Landroid/view/VolumePanel;->postHasNewRemotePlaybackInfo()V
+  
+      :cond_1
+      monitor-exit v4
+--- 8166,8174 ----
+  
+      iput p3, v2, Landroid/media/AudioService$RemotePlaybackState;->mVolume:I
+  
+!     iget-object v2, p0, Landroid/media/AudioService;->mVolumePanel:Lcom/oppo/view/VolumePanel;
+  
+!     invoke-virtual {v2}, Lcom/oppo/view/VolumePanel;->postHasNewRemotePlaybackInfo()V
+  
+      :cond_1
+      monitor-exit v4
+***************
+*** 8205,8213 ****
+  
+      iput p3, v2, Landroid/media/AudioService$RemotePlaybackState;->mVolumeMax:I
+  
+!     iget-object v2, p0, Landroid/media/AudioService;->mVolumePanel:Landroid/view/VolumePanel;
+  
+!     invoke-virtual {v2}, Landroid/view/VolumePanel;->postHasNewRemotePlaybackInfo()V
+  
+      :cond_2
+      monitor-exit v4
+--- 8205,8213 ----
+  
+      iput p3, v2, Landroid/media/AudioService$RemotePlaybackState;->mVolumeMax:I
+  
+!     iget-object v2, p0, Landroid/media/AudioService;->mVolumePanel:Lcom/oppo/view/VolumePanel;
+  
+!     invoke-virtual {v2}, Lcom/oppo/view/VolumePanel;->postHasNewRemotePlaybackInfo()V
+  
+      :cond_2
+      monitor-exit v4
+***************
+*** 8244,8252 ****
+  
+      iput p3, v2, Landroid/media/AudioService$RemotePlaybackState;->mVolumeHandling:I
+  
+!     iget-object v2, p0, Landroid/media/AudioService;->mVolumePanel:Landroid/view/VolumePanel;
+  
+!     invoke-virtual {v2}, Landroid/view/VolumePanel;->postHasNewRemotePlaybackInfo()V
+  
+      :cond_3
+      monitor-exit v4
+--- 8244,8252 ----
+  
+      iput p3, v2, Landroid/media/AudioService$RemotePlaybackState;->mVolumeHandling:I
+  
+!     iget-object v2, p0, Landroid/media/AudioService;->mVolumePanel:Lcom/oppo/view/VolumePanel;
+  
+!     invoke-virtual {v2}, Lcom/oppo/view/VolumePanel;->postHasNewRemotePlaybackInfo()V
+  
+      :cond_3
+      monitor-exit v4
+***************
+*** 8584,8592 ****
+  
+      iput-boolean v0, p0, Landroid/media/AudioService;->mHasRemotePlayback:Z
+  
+!     iget-object v3, p0, Landroid/media/AudioService;->mVolumePanel:Landroid/view/VolumePanel;
+  
+!     invoke-virtual {v3, v0}, Landroid/view/VolumePanel;->postRemoteSliderVisibility(Z)V
+  
+      :cond_2
+      monitor-exit v4
+--- 8584,8592 ----
+  
+      iput-boolean v0, p0, Landroid/media/AudioService;->mHasRemotePlayback:Z
+  
+!     iget-object v3, p0, Landroid/media/AudioService;->mVolumePanel:Lcom/oppo/view/VolumePanel;
+  
+!     invoke-virtual {v3, v0}, Lcom/oppo/view/VolumePanel;->postRemoteSliderVisibility(Z)V
+  
+      :cond_2
+      monitor-exit v4
+***************
+*** 10887,10895 ****
+      .parameter "flags"
+  
+      .prologue
+!     iget-object v0, p0, Landroid/media/AudioService;->mVolumePanel:Landroid/view/VolumePanel;
+  
+!     invoke-virtual {v0, p2}, Landroid/view/VolumePanel;->postMasterMuteChanged(I)V
+  
+      invoke-direct {p0, p1}, Landroid/media/AudioService;->broadcastMasterMuteStatus(Z)V
+  
+--- 10887,10895 ----
+      .parameter "flags"
+  
+      .prologue
+!     iget-object v0, p0, Landroid/media/AudioService;->mVolumePanel:Lcom/oppo/view/VolumePanel;
+  
+!     invoke-virtual {v0, p2}, Lcom/oppo/view/VolumePanel;->postMasterMuteChanged(I)V
+  
+      invoke-direct {p0, p1}, Landroid/media/AudioService;->broadcastMasterMuteStatus(Z)V
+  
+***************
+*** 10903,10911 ****
+      .parameter "newVolume"
+  
+      .prologue
+!     iget-object v1, p0, Landroid/media/AudioService;->mVolumePanel:Landroid/view/VolumePanel;
+  
+!     invoke-virtual {v1, p1}, Landroid/view/VolumePanel;->postMasterVolumeChanged(I)V
+  
+      new-instance v0, Landroid/content/Intent;
+  
+--- 10903,10911 ----
+      .parameter "newVolume"
+  
+      .prologue
+!     iget-object v1, p0, Landroid/media/AudioService;->mVolumePanel:Lcom/oppo/view/VolumePanel;
+  
+!     invoke-virtual {v1, p1}, Lcom/oppo/view/VolumePanel;->postMasterVolumeChanged(I)V
+  
+      new-instance v0, Landroid/content/Intent;
+  
+***************
+*** 11072,11080 ****
+      const/4 p1, 0x5
+  
+      :cond_0
+!     iget-object v1, p0, Landroid/media/AudioService;->mVolumePanel:Landroid/view/VolumePanel;
+  
+!     invoke-virtual {v1, p1, p4}, Landroid/view/VolumePanel;->postVolumeChanged(II)V
+  
+      and-int/lit8 v1, p4, 0x20
+  
+--- 11072,11080 ----
+      const/4 p1, 0x5
+  
+      :cond_0
+!     iget-object v1, p0, Landroid/media/AudioService;->mVolumePanel:Lcom/oppo/view/VolumePanel;
+  
+!     invoke-virtual {v1, p1, p4}, Lcom/oppo/view/VolumePanel;->postVolumeChanged(II)V
+  
+      and-int/lit8 v1, p4, 0x20
+  
+***************
+*** 12217,12223 ****
+  
+      iput-object v0, p0, Landroid/media/AudioService;->mStreamVolumeAlias:[I
+  
+!     const/4 v7, 0x2
+  
+      .local v7, dtmfStreamAlias:I
+      :goto_0
+--- 12217,12223 ----
+  
+      iput-object v0, p0, Landroid/media/AudioService;->mStreamVolumeAlias:[I
+  
+!     const/4 v7, 0x1
+  
+      .local v7, dtmfStreamAlias:I
+      :goto_0

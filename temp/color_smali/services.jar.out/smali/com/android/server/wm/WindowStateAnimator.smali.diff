@@ -1,0 +1,194 @@
+*** /home/suda/color2.0/device/temp/android_smali/./services.jar.out/smali/com/android/server/wm/WindowStateAnimator.smali	2014-05-01 23:28:53.000000000 +0800
+--- ./services.jar.out/smali/com/android/server/wm/WindowStateAnimator.smali	2014-05-01 23:29:08.000000000 +0800
+***************
+*** 6896,6901 ****
+--- 6896,6905 ----
+  .method setSurfaceBoundariesLocked(Z)V
+      .locals 14
+      .parameter "recoveringMemory"
++     .annotation build Landroid/annotation/OppoHook;
++         level = .enum Landroid/annotation/OppoHook$OppoHookType;->CHANGE_CODE:Landroid/annotation/OppoHook$OppoHookType;
++         note = "hejiamiao add for status bar translucent"
++     .end annotation
+  
+      .prologue
+      const/4 v10, 0x1
+***************
+*** 7138,7144 ****
+      .end local v1           #displayInfo:Landroid/view/DisplayInfo;
+      :cond_9
+      :goto_3
+!     invoke-virtual {p0, p1}, Lcom/android/server/wm/WindowStateAnimator;->updateSurfaceWindowCrop(Z)V
+  
+      :goto_4
+      return-void
+--- 7142,7148 ----
+      .end local v1           #displayInfo:Landroid/view/DisplayInfo;
+      :cond_9
+      :goto_3
+!     invoke-virtual {p0, p1, v7}, Lcom/android/server/wm/WindowStateAnimator;->updateOppoSurfaceWindowCrop(ZLcom/android/server/wm/WindowState;)V
+  
+      :goto_4
+      return-void
+***************
+*** 7423,7428 ****
+--- 7427,7436 ----
+      .locals 4
+      .parameter "left"
+      .parameter "top"
++     .annotation build Landroid/annotation/OppoHook;
++         level = .enum Landroid/annotation/OppoHook$OppoHookType;->CHANGE_CODE:Landroid/annotation/OppoHook$OppoHookType;
++         note = "hejiamiao add for status bar translucent"
++     .end annotation
+  
+      .prologue
+      iget-boolean v1, p0, Lcom/android/server/wm/WindowStateAnimator;->mAnimating:Z
+***************
+*** 7514,7523 ****
+      add-int/2addr v3, p2
+  
+      invoke-virtual {v1, v2, v3}, Landroid/view/Surface;->setPosition(II)V
+- 
+-     const/4 v1, 0x0
+- 
+-     invoke-virtual {p0, v1}, Lcom/android/server/wm/WindowStateAnimator;->updateSurfaceWindowCrop(Z)V
+      :try_end_0
+      .catchall {:try_start_0 .. :try_end_0} :catchall_0
+      .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
+--- 7522,7527 ----
+***************
+*** 8837,8839 ****
+--- 8841,8973 ----
+  
+      goto/16 :goto_1
+  .end method
++ 
++ .method updateOppoSurfaceWindowCrop(ZLcom/android/server/wm/WindowState;)V
++     .locals 9
++     .parameter "recoveringMemory"
++     .parameter "w"
++     .annotation build Landroid/annotation/OppoHook;
++         level = .enum Landroid/annotation/OppoHook$OppoHookType;->NEW_METHOD:Landroid/annotation/OppoHook$OppoHookType;
++         note = "licx@OnLineRD.framework.statusbar_extend : Modify for make statusbar translucent, Wanglan add for smali"
++         property = .enum Landroid/annotation/OppoHook$OppoRomType;->ROM:Landroid/annotation/OppoHook$OppoRomType;
++     .end annotation
++ 
++     .prologue
++     const/4 v5, 0x1
++ 
++     const/4 v6, 0x0
++ 
++     iget v7, p0, Lcom/android/server/wm/WindowStateAnimator;->mAttrFlags:I
++ 
++     and-int/lit16 v7, v7, 0x400
++ 
++     if-nez v7, :cond_4
++ 
++     move v4, v5
++ 
++     .local v4, windowNotFullScreen:Z
++     :goto_0
++     invoke-virtual {p2}, Lcom/android/server/wm/WindowState;->getSystemUiVisibility()I
++ 
++     move-result v7
++ 
++     and-int/lit8 v7, v7, 0x4
++ 
++     if-nez v7, :cond_5
++ 
++     move v2, v5
++ 
++     .local v2, systemUiNotFullScreen:Z
++     :goto_1
++     iget v7, p0, Lcom/android/server/wm/WindowStateAnimator;->mAttrFlags:I
++ 
++     and-int/lit16 v7, v7, 0x800
++ 
++     if-eqz v7, :cond_6
++ 
++     move v3, v5
++ 
++     .local v3, windowForceNotFullScreen:Z
++     :goto_2
++     if-eqz v4, :cond_0
++ 
++     if-nez v2, :cond_1
++ 
++     :cond_0
++     if-eqz v3, :cond_7
++ 
++     :cond_1
++     move v0, v5
++ 
++     .local v0, hasStatusBar:Z
++     :goto_3
++     iget v7, p0, Lcom/android/server/wm/WindowStateAnimator;->mAttrFlags:I
++ 
++     const/high16 v8, 0x10
++ 
++     and-int/2addr v7, v8
++ 
++     if-eqz v7, :cond_8
++ 
++     move v1, v5
++ 
++     .local v1, showWallpaper:Z
++     :goto_4
++     if-nez v1, :cond_3
++ 
++     iget v5, p0, Lcom/android/server/wm/WindowStateAnimator;->mAttrType:I
++ 
++     const/16 v6, 0x7dd
++ 
++     if-eq v5, v6, :cond_3
++ 
++     if-eqz v0, :cond_2
++ 
++     iget v5, p0, Lcom/android/server/wm/WindowStateAnimator;->mAttrFlags:I
++ 
++     const/high16 v6, 0x1
++ 
++     and-int/2addr v5, v6
++ 
++     if-eqz v5, :cond_3
++ 
++     :cond_2
++     invoke-virtual {p0, p1}, Lcom/android/server/wm/WindowStateAnimator;->updateSurfaceWindowCrop(Z)V
++ 
++     :cond_3
++     return-void
++ 
++     .end local v0           #hasStatusBar:Z
++     .end local v1           #showWallpaper:Z
++     .end local v2           #systemUiNotFullScreen:Z
++     .end local v3           #windowForceNotFullScreen:Z
++     .end local v4           #windowNotFullScreen:Z
++     :cond_4
++     move v4, v6
++ 
++     goto :goto_0
++ 
++     .restart local v4       #windowNotFullScreen:Z
++     :cond_5
++     move v2, v6
++ 
++     goto :goto_1
++ 
++     .restart local v2       #systemUiNotFullScreen:Z
++     :cond_6
++     move v3, v6
++ 
++     goto :goto_2
++ 
++     .restart local v3       #windowForceNotFullScreen:Z
++     :cond_7
++     move v0, v6
++ 
++     goto :goto_3
++ 
++     .restart local v0       #hasStatusBar:Z
++     :cond_8
++     move v1, v6
++ 
++     goto :goto_4
++ .end method

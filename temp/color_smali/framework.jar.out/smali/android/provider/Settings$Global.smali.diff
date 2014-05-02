@@ -1,0 +1,23 @@
+*** /home/suda/color2.0/device/temp/android_smali/./framework.jar.out/smali/android/provider/Settings$Global.smali	2014-05-01 23:28:59.000000000 +0800
+--- ./framework.jar.out/smali/android/provider/Settings$Global.smali	2014-05-01 23:29:14.000000000 +0800
+***************
+*** 2,9 ****
+--- 2,19 ----
+  .super Landroid/provider/Settings$NameValueTable;
+  .source "Settings.java"
+  
++ # interfaces
++ .implements Lcom/oppo/provider/OppoSettings$Mtk_Global;
++ .implements Lcom/oppo/provider/OppoSettings$Qcom_Global;
++ 
+  
+  # annotations
++ .annotation build Landroid/annotation/OppoHook;
++     level = .enum Landroid/annotation/OppoHook$OppoHookType;->CHANGE_CODE:Landroid/annotation/OppoHook$OppoHookType;
++     note = "OPPO CHANGE"
++     property = .enum Landroid/annotation/OppoHook$OppoRomType;->ROM:Landroid/annotation/OppoHook$OppoRomType;
++ .end annotation
++ 
+  .annotation system Ldalvik/annotation/EnclosingClass;
+      value = Landroid/provider/Settings;
+  .end annotation

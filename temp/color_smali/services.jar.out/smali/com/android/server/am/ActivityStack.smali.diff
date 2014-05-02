@@ -1,0 +1,123 @@
+*** /home/suda/color2.0/device/temp/android_smali/./services.jar.out/smali/com/android/server/am/ActivityStack.smali	2014-05-01 23:28:54.000000000 +0800
+--- ./services.jar.out/smali/com/android/server/am/ActivityStack.smali	2014-05-01 23:29:09.000000000 +0800
+***************
+*** 189,194 ****
+--- 189,202 ----
+      .end annotation
+  .end field
+  
++ .field mOppoActivityStackHelper:Lcom/android/server/am/OppoActivityStackHelper;
++     .annotation build Landroid/annotation/OppoHook;
++         level = .enum Landroid/annotation/OppoHook$OppoHookType;->NEW_FIELD:Landroid/annotation/OppoHook$OppoHookType;
++         note = "ZhiYong.Lin@Plf.Framework, modify for activity stack helper, for statusbar tansparent"
++         property = .enum Landroid/annotation/OppoHook$OppoRomType;->ROM:Landroid/annotation/OppoHook$OppoRomType;
++     .end annotation
++ .end field
++ 
+  .field mPausingActivity:Lcom/android/server/am/ActivityRecord;
+  
+  .field mResumedActivity:Lcom/android/server/am/ActivityRecord;
+***************
+*** 443,448 ****
+--- 451,462 ----
+  
+      iput v4, p0, Lcom/android/server/am/ActivityStack;->mThumbnailHeight:I
+  
++     new-instance v1, Lcom/android/server/am/OppoActivityStackHelper;
++ 
++     invoke-direct {v1}, Lcom/android/server/am/OppoActivityStackHelper;-><init>()V
++ 
++     iput-object v1, p0, Lcom/android/server/am/ActivityStack;->mOppoActivityStackHelper:Lcom/android/server/am/OppoActivityStackHelper;
++ 
+      new-instance v1, Lcom/android/server/am/ActivityStack$1;
+  
+      invoke-direct {v1, p0}, Lcom/android/server/am/ActivityStack$1;-><init>(Lcom/android/server/am/ActivityStack;)V
+***************
+*** 14966,14971 ****
+--- 14980,14990 ----
+      .locals 25
+      .parameter "prev"
+      .parameter "options"
++     .annotation build Landroid/annotation/OppoHook;
++         level = .enum Landroid/annotation/OppoHook$OppoHookType;->CHANGE_CODE:Landroid/annotation/OppoHook$OppoHookType;
++         note = "ZhiYong.Lin@Plf.Framework, modify for statusbar tansparentJun.Zhang@Plf.Framework, modify for three pointers"
++         property = .enum Landroid/annotation/OppoHook$OppoRomType;->ROM:Landroid/annotation/OppoHook$OppoRomType;
++     .end annotation
+  
+      .prologue
+      const/4 v2, 0x0
+***************
+*** 15020,15025 ****
+--- 15039,15056 ----
+      :cond_0
+      move-object/from16 v0, p0
+  
++     iget-object v2, v0, Lcom/android/server/am/ActivityStack;->mOppoActivityStackHelper:Lcom/android/server/am/OppoActivityStackHelper;
++ 
++     move-object/from16 v0, p0
++ 
++     iget-object v3, v0, Lcom/android/server/am/ActivityStack;->mContext:Landroid/content/Context;
++ 
++     const/4 v4, 0x1
++ 
++     invoke-virtual {v2, v3, v4}, Lcom/android/server/am/OppoActivityStackHelper;->sendIsHomeModeIntent(Landroid/content/Context;Z)V
++ 
++     move-object/from16 v0, p0
++ 
+      iget-object v2, v0, Lcom/android/server/am/ActivityStack;->mService:Lcom/android/server/am/ActivityManagerService;
+  
+      move-object/from16 v0, p0
+***************
+*** 15033,15038 ****
+--- 15064,15097 ----
+      goto :goto_0
+  
+      :cond_1
++     move-object/from16 v0, p0
++ 
++     iget-object v2, v0, Lcom/android/server/am/ActivityStack;->mOppoActivityStackHelper:Lcom/android/server/am/OppoActivityStackHelper;
++ 
++     move-object/from16 v0, p0
++ 
++     iget-object v3, v0, Lcom/android/server/am/ActivityStack;->mContext:Landroid/content/Context;
++ 
++     move-object/from16 v0, p1
++ 
++     move-object/from16 v1, v20
++ 
++     invoke-virtual {v2, v3, v0, v1}, Lcom/android/server/am/OppoActivityStackHelper;->handleSendHomeMode(Landroid/content/Context;Lcom/android/server/am/ActivityRecord;Lcom/android/server/am/ActivityRecord;)V
++ 
++     move-object/from16 v0, p0
++ 
++     iget-object v2, v0, Lcom/android/server/am/ActivityStack;->mOppoActivityStackHelper:Lcom/android/server/am/OppoActivityStackHelper;
++ 
++     move-object/from16 v0, p0
++ 
++     iget-object v3, v0, Lcom/android/server/am/ActivityStack;->mContext:Landroid/content/Context;
++ 
++     move-object/from16 v0, p1
++ 
++     move-object/from16 v1, v20
++ 
++     invoke-virtual {v2, v3, v0, v1}, Lcom/android/server/am/OppoActivityStackHelper;->handleSendCameraMode(Landroid/content/Context;Lcom/android/server/am/ActivityRecord;Lcom/android/server/am/ActivityRecord;)V
++ 
+      const/4 v2, 0x0
+  
+      move-object/from16 v0, v20
+***************
+*** 15137,15143 ****
+  
+      monitor-exit v3
+  
+!     goto :goto_0
+  
+      :catchall_0
+      move-exception v2
+--- 15196,15202 ----
+  
+      monitor-exit v3
+  
+!     goto/16 :goto_0
+  
+      :catchall_0
+      move-exception v2

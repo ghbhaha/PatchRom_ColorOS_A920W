@@ -1,0 +1,18 @@
+*** /home/suda/color2.0/device/temp/android_smali/./secondary-framework.jar.out/smali/android/view/WindowManager$LayoutParams.smali	2014-05-01 23:29:02.000000000 +0800
+--- ./secondary-framework.jar.out/smali/android/view/WindowManager$LayoutParams.smali	2014-05-01 23:29:20.000000000 +0800
+***************
+*** 219,224 ****
+--- 219,231 ----
+  
+  .field public static final TITLE_CHANGED:I = 0x40
+  
++ .field public static final TYPE_APK_LOCKSCREEN:I = 0xa10
++     .annotation build Landroid/annotation/OppoHook;
++         level = .enum Landroid/annotation/OppoHook$OppoHookType;->NEW_FIELD:Landroid/annotation/OppoHook$OppoHookType;
++         note = "zhangkai add for apklock"
++     .end annotation
++ .end field
++ 
+  .field public static final TYPE_APPLICATION:I = 0x2
+  
+  .field public static final TYPE_APPLICATION_ATTACHED_DIALOG:I = 0x3eb

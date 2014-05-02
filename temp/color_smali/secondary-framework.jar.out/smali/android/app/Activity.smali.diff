@@ -1,0 +1,37 @@
+*** /home/suda/color2.0/device/temp/android_smali/./secondary-framework.jar.out/smali/android/app/Activity.smali	2014-05-01 23:29:01.000000000 +0800
+--- ./secondary-framework.jar.out/smali/android/app/Activity.smali	2014-05-01 23:29:18.000000000 +0800
+***************
+*** 407,412 ****
+--- 407,417 ----
+  
+  .method private initActionBar()V
+      .locals 3
++     .annotation build Landroid/annotation/OppoHook;
++         level = .enum Landroid/annotation/OppoHook$OppoHookType;->CHANGE_CODE:Landroid/annotation/OppoHook$OppoHookType;
++         note = "Jianhui.Yu@Plf.Framework : modify for ActionBar of oppo style"
++         property = .enum Landroid/annotation/OppoHook$OppoRomType;->ROM:Landroid/annotation/OppoHook$OppoRomType;
++     .end annotation
+  
+      .prologue
+      invoke-virtual {p0}, Landroid/app/Activity;->getWindow()Landroid/view/Window;
+***************
+*** 439,447 ****
+      return-void
+  
+      :cond_1
+!     new-instance v1, Lcom/android/internal/app/ActionBarImpl;
+  
+!     invoke-direct {v1, p0}, Lcom/android/internal/app/ActionBarImpl;-><init>(Landroid/app/Activity;)V
+  
+      iput-object v1, p0, Landroid/app/Activity;->mActionBar:Lcom/android/internal/app/ActionBarImpl;
+  
+--- 444,452 ----
+      return-void
+  
+      :cond_1
+!     invoke-static {p0}, Lcom/android/internal/app/OppoActionBarImpl;->newInstance(Landroid/app/Activity;)Lcom/android/internal/app/ActionBarImpl;
+  
+!     move-result-object v1
+  
+      iput-object v1, p0, Landroid/app/Activity;->mActionBar:Lcom/android/internal/app/ActionBarImpl;
+  

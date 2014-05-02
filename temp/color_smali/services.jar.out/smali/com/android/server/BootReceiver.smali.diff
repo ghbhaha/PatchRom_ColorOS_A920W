@@ -1,0 +1,16 @@
+*** /home/suda/color2.0/device/temp/android_smali/./services.jar.out/smali/com/android/server/BootReceiver.smali	2014-05-01 23:28:54.000000000 +0800
+--- ./services.jar.out/smali/com/android/server/BootReceiver.smali	2014-05-01 23:29:09.000000000 +0800
+***************
+*** 632,637 ****
+--- 632,642 ----
+      .locals 1
+      .parameter "context"
+      .parameter "intent"
++     .annotation build Landroid/annotation/OppoHook;
++         level = .enum Landroid/annotation/OppoHook$OppoHookType;->CHANGE_CODE:Landroid/annotation/OppoHook$OppoHookType;
++         note = "ZhiYong.Lin@Plf.Framework.OTA modify for ota update result"
++         property = .enum Landroid/annotation/OppoHook$OppoRomType;->ROM:Landroid/annotation/OppoHook$OppoRomType;
++     .end annotation
+  
+      .prologue
+      new-instance v0, Lcom/android/server/BootReceiver$1;

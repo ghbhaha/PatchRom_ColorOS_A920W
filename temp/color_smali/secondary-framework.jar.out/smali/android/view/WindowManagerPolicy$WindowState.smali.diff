@@ -1,0 +1,15 @@
+*** /home/suda/color2.0/device/temp/android_smali/./secondary-framework.jar.out/smali/android/view/WindowManagerPolicy$WindowState.smali	2014-05-01 23:29:02.000000000 +0800
+--- ./secondary-framework.jar.out/smali/android/view/WindowManagerPolicy$WindowState.smali	2014-05-01 23:29:19.000000000 +0800
+***************
+*** 92,94 ****
+--- 92,101 ----
+  
+  .method public abstract showLw(Z)Z
+  .end method
++ 
++ .method public abstract getAttachedWindow()Landroid/view/WindowManagerPolicy$WindowState;
++     .annotation build Landroid/annotation/OppoHook;
++         level = .enum Landroid/annotation/OppoHook$OppoHookType;->NEW_METHOD:Landroid/annotation/OppoHook$OppoHookType;
++         note = "zhangkai add for apklock"
++     .end annotation
++ .end method

@@ -1,0 +1,52 @@
+*** Configuration.smali	2014-05-01 23:28:57.000000000 +0800
+--- Configuration.smali	2014-05-01 23:29:13.000000000 +0800
+***************
+*** 1129,1134 ****
+      or-int/2addr v0, v1
+  
+      :cond_13
+      return v0
+  .end method
+  
+--- 1213,1228 ----
+      or-int/2addr v0, v1
+  
+      :cond_13
++     iget-object v1, p0, Landroid/content/res/Configuration;->mOppoExtraConfiguration:Loppo/content/res/OppoExtraConfiguration;
++ 
++     iget-object v2, p1, Landroid/content/res/Configuration;->mOppoExtraConfiguration:Loppo/content/res/OppoExtraConfiguration;
++ 
++     invoke-virtual {v1, v2}, Loppo/content/res/OppoExtraConfiguration;->diff(Loppo/content/res/OppoExtraConfiguration;)I
++ 
++     move-result v1
++ 
++     or-int/2addr v0, v1
++ 
+      return v0
+  .end method
+  
+***************
+*** 3172,3177 ****
+      iput-object v1, p0, Landroid/content/res/Configuration;->skin:Ljava/lang/String;
+  
+      :cond_1c
+      return v0
+  
+      :cond_1d
+--- 3324,3339 ----
+      iput-object v1, p0, Landroid/content/res/Configuration;->skin:Ljava/lang/String;
+  
+      :cond_1c
++     iget-object v1, p0, Landroid/content/res/Configuration;->mOppoExtraConfiguration:Loppo/content/res/OppoExtraConfiguration;
++ 
++     iget-object v2, p1, Landroid/content/res/Configuration;->mOppoExtraConfiguration:Loppo/content/res/OppoExtraConfiguration;
++ 
++     invoke-virtual {v1, v2}, Loppo/content/res/OppoExtraConfiguration;->updateFrom(Loppo/content/res/OppoExtraConfiguration;)I
++ 
++     move-result v1
++ 
++     or-int/2addr v0, v1
++ 
+      return v0
+  
+      :cond_1d

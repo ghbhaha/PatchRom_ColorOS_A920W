@@ -1,0 +1,279 @@
+*** /home/suda/color2.0/device/temp/android_smali/./framework.jar.out/smali/android/content/res/Resources.smali	2014-05-01 23:28:57.000000000 +0800
+--- ./framework.jar.out/smali/android/content/res/Resources.smali	2014-05-01 23:29:13.000000000 +0800
+***************
+*** 55,61 ****
+  
+  .field private static sPreloaded:Z
+  
+! .field private static final sPreloadedColorDrawables:Landroid/util/LongSparseArray;
+      .annotation system Ldalvik/annotation/Signature;
+          value = {
+              "Landroid/util/LongSparseArray",
+--- 55,67 ----
+  
+  .field private static sPreloaded:Z
+  
+! .field static final sPreloadedColorDrawables:Landroid/util/LongSparseArray;
+!     .annotation build Landroid/annotation/OppoHook;
+!         level = .enum Landroid/annotation/OppoHook$OppoHookType;->CHANGE_ACCESS:Landroid/annotation/OppoHook$OppoHookType;
+!         note = "private : Xiaokang.Feng@Plf.Framework.SDK : Modify for rom theme"
+!         property = .enum Landroid/annotation/OppoHook$OppoRomType;->ROM:Landroid/annotation/OppoHook$OppoRomType;
+!     .end annotation
+! 
+      .annotation system Ldalvik/annotation/Signature;
+          value = {
+              "Landroid/util/LongSparseArray",
+***************
+*** 66,72 ****
+      .end annotation
+  .end field
+  
+! .field private static final sPreloadedColorStateLists:Landroid/util/LongSparseArray;
+      .annotation system Ldalvik/annotation/Signature;
+          value = {
+              "Landroid/util/LongSparseArray",
+--- 72,84 ----
+      .end annotation
+  .end field
+  
+! .field static final sPreloadedColorStateLists:Landroid/util/LongSparseArray;
+!     .annotation build Landroid/annotation/OppoHook;
+!         level = .enum Landroid/annotation/OppoHook$OppoHookType;->CHANGE_ACCESS:Landroid/annotation/OppoHook$OppoHookType;
+!         note = "private : Xiaokang.Feng@Plf.Framework.SDK : Modify for rom theme"
+!         property = .enum Landroid/annotation/OppoHook$OppoRomType;->ROM:Landroid/annotation/OppoHook$OppoRomType;
+!     .end annotation
+! 
+      .annotation system Ldalvik/annotation/Signature;
+          value = {
+              "Landroid/util/LongSparseArray",
+***************
+*** 79,85 ****
+  
+  .field private static sPreloadedDensity:I
+  
+! .field private static final sPreloadedDrawables:Landroid/util/LongSparseArray;
+      .annotation system Ldalvik/annotation/Signature;
+          value = {
+              "Landroid/util/LongSparseArray",
+--- 91,103 ----
+  
+  .field private static sPreloadedDensity:I
+  
+! .field static final sPreloadedDrawables:Landroid/util/LongSparseArray;
+!     .annotation build Landroid/annotation/OppoHook;
+!         level = .enum Landroid/annotation/OppoHook$OppoHookType;->CHANGE_ACCESS:Landroid/annotation/OppoHook$OppoHookType;
+!         note = "private : Xiaokang.Feng@Plf.Framework.SDK : Modify for rom theme"
+!         property = .enum Landroid/annotation/OppoHook$OppoRomType;->ROM:Landroid/annotation/OppoHook$OppoRomType;
+!     .end annotation
+! 
+      .annotation system Ldalvik/annotation/Signature;
+          value = {
+              "Landroid/util/LongSparseArray",
+***************
+*** 100,106 ****
+  
+  .field private final mCachedXmlBlocks:[Landroid/content/res/XmlBlock;
+  
+! .field private final mColorDrawableCache:Landroid/util/LongSparseArray;
+      .annotation system Ldalvik/annotation/Signature;
+          value = {
+              "Landroid/util/LongSparseArray",
+--- 118,130 ----
+  
+  .field private final mCachedXmlBlocks:[Landroid/content/res/XmlBlock;
+  
+! .field final mColorDrawableCache:Landroid/util/LongSparseArray;
+!     .annotation build Landroid/annotation/OppoHook;
+!         level = .enum Landroid/annotation/OppoHook$OppoHookType;->CHANGE_ACCESS:Landroid/annotation/OppoHook$OppoHookType;
+!         note = "private : Xiaokang.Feng@Plf.Framework.SDK : Modify for rom theme"
+!         property = .enum Landroid/annotation/OppoHook$OppoRomType;->ROM:Landroid/annotation/OppoHook$OppoRomType;
+!     .end annotation
+! 
+      .annotation system Ldalvik/annotation/Signature;
+          value = {
+              "Landroid/util/LongSparseArray",
+***************
+*** 113,119 ****
+      .end annotation
+  .end field
+  
+! .field private final mColorStateListCache:Landroid/util/LongSparseArray;
+      .annotation system Ldalvik/annotation/Signature;
+          value = {
+              "Landroid/util/LongSparseArray",
+--- 137,149 ----
+      .end annotation
+  .end field
+  
+! .field final mColorStateListCache:Landroid/util/LongSparseArray;
+!     .annotation build Landroid/annotation/OppoHook;
+!         level = .enum Landroid/annotation/OppoHook$OppoHookType;->CHANGE_ACCESS:Landroid/annotation/OppoHook$OppoHookType;
+!         note = "private : Xiaokang.Feng@Plf.Framework.SDK : Modify for rom theme"
+!         property = .enum Landroid/annotation/OppoHook$OppoRomType;->ROM:Landroid/annotation/OppoHook$OppoRomType;
+!     .end annotation
+! 
+      .annotation system Ldalvik/annotation/Signature;
+          value = {
+              "Landroid/util/LongSparseArray",
+***************
+*** 130,136 ****
+  
+  .field private final mConfiguration:Landroid/content/res/Configuration;
+  
+! .field private final mDrawableCache:Landroid/util/LongSparseArray;
+      .annotation system Ldalvik/annotation/Signature;
+          value = {
+              "Landroid/util/LongSparseArray",
+--- 160,172 ----
+  
+  .field private final mConfiguration:Landroid/content/res/Configuration;
+  
+! .field final mDrawableCache:Landroid/util/LongSparseArray;
+!     .annotation build Landroid/annotation/OppoHook;
+!         level = .enum Landroid/annotation/OppoHook$OppoHookType;->CHANGE_ACCESS:Landroid/annotation/OppoHook$OppoHookType;
+!         note = "private : Xiaokang.Feng@Plf.Framework.SDK : Modify for rom theme"
+!         property = .enum Landroid/annotation/OppoHook$OppoRomType;->ROM:Landroid/annotation/OppoHook$OppoRomType;
+!     .end annotation
+! 
+      .annotation system Ldalvik/annotation/Signature;
+          value = {
+              "Landroid/util/LongSparseArray",
+***************
+*** 200,207 ****
+      return-void
+  .end method
+  
+! .method private constructor <init>()V
+      .locals 3
+  
+      .prologue
+      const/4 v1, 0x4
+--- 236,248 ----
+      return-void
+  .end method
+  
+! .method constructor <init>()V
+      .locals 3
++     .annotation build Landroid/annotation/OppoHook;
++         level = .enum Landroid/annotation/OppoHook$OppoHookType;->CHANGE_CODE:Landroid/annotation/OppoHook$OppoHookType;
++         note = "private: modify for rom theme"
++         property = .enum Landroid/annotation/OppoHook$OppoRomType;->ROM:Landroid/annotation/OppoHook$OppoRomType;
++     .end annotation
+  
+      .prologue
+      const/4 v1, 0x4
+***************
+*** 926,931 ****
+--- 967,977 ----
+  
+  .method public static getSystem()Landroid/content/res/Resources;
+      .locals 3
++     .annotation build Landroid/annotation/OppoHook;
++         level = .enum Landroid/annotation/OppoHook$OppoHookType;->CHANGE_CODE:Landroid/annotation/OppoHook$OppoHookType;
++         note = "modify for rom theme"
++         property = .enum Landroid/annotation/OppoHook$OppoRomType;->ROM:Landroid/annotation/OppoHook$OppoRomType;
++     .end annotation
+  
+      .prologue
+      sget-object v2, Landroid/content/res/Resources;->mSync:Ljava/lang/Object;
+***************
+*** 938,949 ****
+      .local v0, ret:Landroid/content/res/Resources;
+      if-nez v0, :cond_0
+  
+!     new-instance v0, Landroid/content/res/Resources;
+  
+!     .end local v0           #ret:Landroid/content/res/Resources;
+!     invoke-direct {v0}, Landroid/content/res/Resources;-><init>()V
+  
+-     .restart local v0       #ret:Landroid/content/res/Resources;
+      sput-object v0, Landroid/content/res/Resources;->mSystem:Landroid/content/res/Resources;
+  
+      :cond_0
+--- 984,993 ----
+      .local v0, ret:Landroid/content/res/Resources;
+      if-nez v0, :cond_0
+  
+!     invoke-static {}, Landroid/content/res/OppoClassFactory;->newResources()Landroid/content/res/Resources;
+  
+!     move-result-object v0
+  
+      sput-object v0, Landroid/content/res/Resources;->mSystem:Landroid/content/res/Resources;
+  
+      :cond_0
+***************
+*** 4314,4319 ****
+--- 4358,4369 ----
+      .locals 17
+      .parameter "value"
+      .parameter "id"
++     .annotation build Landroid/annotation/OppoHook;
++         level = .enum Landroid/annotation/OppoHook$OppoHookType;->CHANGE_CODE:Landroid/annotation/OppoHook$OppoHookType;
++         note = "modify for rom theme"
++         property = .enum Landroid/annotation/OppoHook$OppoRomType;->ROM:Landroid/annotation/OppoHook$OppoRomType;
++     .end annotation
++ 
+      .annotation system Ldalvik/annotation/Throws;
+          value = {
+              Landroid/content/res/Resources$NotFoundException;
+***************
+*** 4656,4661 ****
+--- 4706,4717 ----
+      .end local v5           #e:Ljava/lang/Exception;
+      .end local v11           #rnf:Landroid/content/res/Resources$NotFoundException;
+      :cond_b
++     invoke-virtual/range {p0 .. p2}, Landroid/content/res/Resources;->loadOverlayDrawable(Landroid/util/TypedValue;I)Landroid/graphics/drawable/Drawable;
++ 
++     move-result-object v3
++ 
++     if-nez v3, :cond_4
++ 
+      :try_start_1
+      move-object/from16 v0, p0
+  
+***************
+*** 5144,5151 ****
+      throw v7
+  .end method
+  
+! .method public final newTheme()Landroid/content/res/Resources$Theme;
+      .locals 1
+  
+      .prologue
+      new-instance v0, Landroid/content/res/Resources$Theme;
+--- 5200,5212 ----
+      throw v7
+  .end method
+  
+! .method public newTheme()Landroid/content/res/Resources$Theme;
+      .locals 1
++     .annotation build Landroid/annotation/OppoHook;
++         level = .enum Landroid/annotation/OppoHook$OppoHookType;->CHANGE_ACCESS:Landroid/annotation/OppoHook$OppoHookType;
++         note = "final : Xiaokang.Feng@Plf.Framework.SDK : Modify for rom theme"
++         property = .enum Landroid/annotation/OppoHook$OppoRomType;->ROM:Landroid/annotation/OppoHook$OppoRomType;
++     .end annotation
+  
+      .prologue
+      new-instance v0, Landroid/content/res/Resources$Theme;
+***************
+*** 6653,6655 ****
+--- 6714,6732 ----
+  
+      throw v2
+  .end method
++ 
++ .method public loadOverlayDrawable(Landroid/util/TypedValue;I)Landroid/graphics/drawable/Drawable;
++     .locals 1
++     .parameter "value"
++     .parameter "id"
++     .annotation build Landroid/annotation/OppoHook;
++         level = .enum Landroid/annotation/OppoHook$OppoHookType;->NEW_METHOD:Landroid/annotation/OppoHook$OppoHookType;
++         note = "modify for rom theme"
++         property = .enum Landroid/annotation/OppoHook$OppoRomType;->ROM:Landroid/annotation/OppoHook$OppoRomType;
++     .end annotation
++ 
++     .prologue
++     const/4 v0, 0x0
++ 
++     return-object v0
++ .end method

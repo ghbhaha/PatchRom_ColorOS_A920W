@@ -1,0 +1,70 @@
+*** Tethering.smali	2014-05-01 23:28:56.000000000 +0800
+--- Tethering.smali	2014-05-01 23:29:11.000000000 +0800
+***************
+*** 2161,2167 ****
+      if-eqz v3, :cond_9
+  
+      :cond_8
+!     const v13, 0x1080560
+  
+      const-string v14, "comb"
+  
+--- 2166,2172 ----
+      if-eqz v3, :cond_9
+  
+      :cond_8
+!     const v13, 0xc080462
+  
+      const-string v14, "comb"
+  
+***************
+*** 2179,2185 ****
+      goto/16 :goto_0
+  
+      :cond_9
+!     const v13, 0x1080561
+  
+      const-string v14, "usb"
+  
+--- 2184,2190 ----
+      goto/16 :goto_0
+  
+      :cond_9
+!     const v13, 0xc080464
+  
+      const-string v14, "usb"
+  
+***************
+*** 2194,2200 ****
+  
+      if-eqz v3, :cond_b
+  
+!     const v13, 0x1080560
+  
+      const-string v14, "comb"
+  
+--- 2199,2205 ----
+  
+      if-eqz v3, :cond_b
+  
+!     const v13, 0xc080462
+  
+      const-string v14, "comb"
+  
+***************
+*** 2212,2218 ****
+      goto/16 :goto_0
+  
+      :cond_b
+!     const v13, 0x1080562
+  
+      const-string v14, "wifi"
+  
+--- 2217,2223 ----
+      goto/16 :goto_0
+  
+      :cond_b
+!     const v13, 0xc080463
+  
+      const-string v14, "wifi"
+  

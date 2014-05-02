@@ -1,0 +1,196 @@
+*** /home/suda/color2.0/device/temp/android_smali/./framework.jar.out/smali/com/android/internal/widget/ScrollingTabContainerView.smali	2014-05-01 23:28:56.000000000 +0800
+--- ./framework.jar.out/smali/com/android/internal/widget/ScrollingTabContainerView.smali	2014-05-01 23:29:12.000000000 +0800
+***************
+*** 28,44 ****
+  # instance fields
+  .field private mAllowCollapse:Z
+  
+! .field private mContentHeight:I
+  
+  .field mMaxTabWidth:I
+  
+! .field private mSelectedTabIndex:I
+  
+  .field mStackedTabMaxWidth:I
+  
+  .field private mTabClickListener:Lcom/android/internal/widget/ScrollingTabContainerView$TabClickListener;
+  
+! .field private mTabLayout:Landroid/widget/LinearLayout;
+  
+  .field mTabSelector:Ljava/lang/Runnable;
+  
+--- 28,62 ----
+  # instance fields
+  .field private mAllowCollapse:Z
+  
+! .field mContentHeight:I
+!     .annotation build Landroid/annotation/OppoHook;
+!         level = .enum Landroid/annotation/OppoHook$OppoHookType;->CHANGE_ACCESS:Landroid/annotation/OppoHook$OppoHookType;
+!         note = "Jianhui.Yu@Plf.SDK,2013.10.05:[-private] Modify for oppoStyle Tab"
+!         property = .enum Landroid/annotation/OppoHook$OppoRomType;->ROM:Landroid/annotation/OppoHook$OppoRomType;
+!     .end annotation
+! .end field
+  
+  .field mMaxTabWidth:I
+  
+! .field mSelectedTabIndex:I
+!     .annotation build Landroid/annotation/OppoHook;
+!         level = .enum Landroid/annotation/OppoHook$OppoHookType;->CHANGE_ACCESS:Landroid/annotation/OppoHook$OppoHookType;
+!         note = "Jianhui.Yu@Plf.SDK,2013.10.05:[-private] Modify for oppoStyle Tab"
+!         property = .enum Landroid/annotation/OppoHook$OppoRomType;->ROM:Landroid/annotation/OppoHook$OppoRomType;
+!     .end annotation
+! .end field
+  
+  .field mStackedTabMaxWidth:I
+  
+  .field private mTabClickListener:Lcom/android/internal/widget/ScrollingTabContainerView$TabClickListener;
+  
+! .field mTabLayout:Landroid/widget/LinearLayout;
+!     .annotation build Landroid/annotation/OppoHook;
+!         level = .enum Landroid/annotation/OppoHook$OppoHookType;->CHANGE_ACCESS:Landroid/annotation/OppoHook$OppoHookType;
+!         note = "Jianhui.Yu@Plf.SDK,2013.10.05 :[-private] Modify for oppoStyle Tab"
+!         property = .enum Landroid/annotation/OppoHook$OppoRomType;->ROM:Landroid/annotation/OppoHook$OppoRomType;
+!     .end annotation
+! .end field
+  
+  .field mTabSelector:Ljava/lang/Runnable;
+  
+***************
+*** 118,147 ****
+      return-void
+  .end method
+  
+- .method static synthetic access$200(Lcom/android/internal/widget/ScrollingTabContainerView;)Landroid/widget/LinearLayout;
+-     .locals 1
+-     .parameter "x0"
+- 
+-     .prologue
+-     iget-object v0, p0, Lcom/android/internal/widget/ScrollingTabContainerView;->mTabLayout:Landroid/widget/LinearLayout;
+- 
+-     return-object v0
+- .end method
+- 
+- .method static synthetic access$300(Lcom/android/internal/widget/ScrollingTabContainerView;Landroid/app/ActionBar$Tab;Z)Lcom/android/internal/widget/ScrollingTabContainerView$TabView;
+-     .locals 1
+-     .parameter "x0"
+-     .parameter "x1"
+-     .parameter "x2"
+- 
+-     .prologue
+-     invoke-direct {p0, p1, p2}, Lcom/android/internal/widget/ScrollingTabContainerView;->createTabView(Landroid/app/ActionBar$Tab;Z)Lcom/android/internal/widget/ScrollingTabContainerView$TabView;
+- 
+-     move-result-object v0
+- 
+-     return-object v0
+- .end method
+- 
+  .method private createSpinner()Landroid/widget/Spinner;
+      .locals 4
+  
+--- 136,141 ----
+***************
+*** 212,221 ****
+      return-object v0
+  .end method
+  
+! .method private createTabView(Landroid/app/ActionBar$Tab;Z)Lcom/android/internal/widget/ScrollingTabContainerView$TabView;
+      .locals 4
+      .parameter "tab"
+      .parameter "forAdapter"
+  
+      .prologue
+      const/4 v2, 0x0
+--- 206,220 ----
+      return-object v0
+  .end method
+  
+! .method createTabView(Landroid/app/ActionBar$Tab;Z)Lcom/android/internal/widget/ScrollingTabContainerView$TabView;
+      .locals 4
+      .parameter "tab"
+      .parameter "forAdapter"
++     .annotation build Landroid/annotation/OppoHook;
++         level = .enum Landroid/annotation/OppoHook$OppoHookType;->CHANGE_ACCESS:Landroid/annotation/OppoHook$OppoHookType;
++         note = "Jianhui.Yu@Plf.SDK,2013.10.05: [-private]Modify for oppoStyle Tab"
++         property = .enum Landroid/annotation/OppoHook$OppoRomType;->ROM:Landroid/annotation/OppoHook$OppoRomType;
++     .end annotation
+  
+      .prologue
+      const/4 v2, 0x0
+***************
+*** 430,436 ****
+      .prologue
+      const/4 v5, 0x0
+  
+!     invoke-direct {p0, p1, v5}, Lcom/android/internal/widget/ScrollingTabContainerView;->createTabView(Landroid/app/ActionBar$Tab;Z)Lcom/android/internal/widget/ScrollingTabContainerView$TabView;
+  
+      move-result-object v0
+  
+--- 429,435 ----
+      .prologue
+      const/4 v5, 0x0
+  
+!     invoke-virtual {p0, p1, v5}, Lcom/android/internal/widget/ScrollingTabContainerView;->createTabView(Landroid/app/ActionBar$Tab;Z)Lcom/android/internal/widget/ScrollingTabContainerView$TabView;
+  
+      move-result-object v0
+  
+***************
+*** 487,493 ****
+      .prologue
+      const/4 v5, 0x0
+  
+!     invoke-direct {p0, p1, v5}, Lcom/android/internal/widget/ScrollingTabContainerView;->createTabView(Landroid/app/ActionBar$Tab;Z)Lcom/android/internal/widget/ScrollingTabContainerView$TabView;
+  
+      move-result-object v0
+  
+--- 486,492 ----
+      .prologue
+      const/4 v5, 0x0
+  
+!     invoke-virtual {p0, p1, v5}, Lcom/android/internal/widget/ScrollingTabContainerView;->createTabView(Landroid/app/ActionBar$Tab;Z)Lcom/android/internal/widget/ScrollingTabContainerView$TabView;
+  
+      move-result-object v0
+  
+***************
+*** 770,775 ****
+--- 769,779 ----
+      .locals 11
+      .parameter "widthMeasureSpec"
+      .parameter "heightMeasureSpec"
++     .annotation build Landroid/annotation/OppoHook;
++         level = .enum Landroid/annotation/OppoHook$OppoHookType;->CHANGE_CODE:Landroid/annotation/OppoHook$OppoHookType;
++         note = "Jianhui.Yu@Plf.SDK,2013.10.05: Modify for resize the max tab width"
++         property = .enum Landroid/annotation/OppoHook$OppoRomType;->ROM:Landroid/annotation/OppoHook$OppoRomType;
++     .end annotation
+  
+      .prologue
+      const/high16 v10, 0x4000
+***************
+*** 837,842 ****
+--- 841,848 ----
+      iput v8, p0, Lcom/android/internal/widget/ScrollingTabContainerView;->mMaxTabWidth:I
+  
+      :goto_2
++     invoke-virtual {p0, v1}, Lcom/android/internal/widget/ScrollingTabContainerView;->hookResizeMaxWidth(I)V
++ 
+      iget v8, p0, Lcom/android/internal/widget/ScrollingTabContainerView;->mContentHeight:I
+  
+      invoke-static {v8, v10}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
+***************
+*** 1127,1129 ****
+--- 1133,1148 ----
+      :cond_1
+      return-void
+  .end method
++ 
++ .method hookResizeMaxWidth(I)V
++     .locals 0
++     .parameter "childCount"
++     .annotation build Landroid/annotation/OppoHook;
++         level = .enum Landroid/annotation/OppoHook$OppoHookType;->NEW_METHOD:Landroid/annotation/OppoHook$OppoHookType;
++         note = "Jianhui.Yu@Plf.SDK,2013.10.05: add for oppoStyle Tab"
++         property = .enum Landroid/annotation/OppoHook$OppoRomType;->ROM:Landroid/annotation/OppoHook$OppoRomType;
++     .end annotation
++ 
++     .prologue
++     return-void
++ .end method

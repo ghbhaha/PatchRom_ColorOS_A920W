@@ -1,0 +1,247 @@
+*** /home/suda/color2.0/device/temp/android_smali/./framework.jar.out/smali/com/android/internal/app/ActionBarImpl$ActionModeImpl.smali	2014-05-01 23:28:56.000000000 +0800
+--- ./framework.jar.out/smali/com/android/internal/app/ActionBarImpl$ActionModeImpl.smali	2014-05-01 23:29:11.000000000 +0800
+***************
+*** 130,148 ****
+      iget-object v0, p0, Lcom/android/internal/app/ActionBarImpl$ActionModeImpl;->this$0:Lcom/android/internal/app/ActionBarImpl;
+  
+      #getter for: Lcom/android/internal/app/ActionBarImpl;->mHiddenByApp:Z
+!     invoke-static {v0}, Lcom/android/internal/app/ActionBarImpl;->access$700(Lcom/android/internal/app/ActionBarImpl;)Z
+  
+      move-result v0
+  
+      iget-object v1, p0, Lcom/android/internal/app/ActionBarImpl$ActionModeImpl;->this$0:Lcom/android/internal/app/ActionBarImpl;
+  
+      #getter for: Lcom/android/internal/app/ActionBarImpl;->mHiddenBySystem:Z
+!     invoke-static {v1}, Lcom/android/internal/app/ActionBarImpl;->access$800(Lcom/android/internal/app/ActionBarImpl;)Z
+  
+      move-result v1
+  
+      #calls: Lcom/android/internal/app/ActionBarImpl;->checkShowingFlags(ZZZ)Z
+!     invoke-static {v0, v1, v2}, Lcom/android/internal/app/ActionBarImpl;->access$900(ZZZ)Z
+  
+      move-result v0
+  
+--- 130,148 ----
+      iget-object v0, p0, Lcom/android/internal/app/ActionBarImpl$ActionModeImpl;->this$0:Lcom/android/internal/app/ActionBarImpl;
+  
+      #getter for: Lcom/android/internal/app/ActionBarImpl;->mHiddenByApp:Z
+!     invoke-static {v0}, Lcom/android/internal/app/ActionBarImpl;->access$600(Lcom/android/internal/app/ActionBarImpl;)Z
+  
+      move-result v0
+  
+      iget-object v1, p0, Lcom/android/internal/app/ActionBarImpl$ActionModeImpl;->this$0:Lcom/android/internal/app/ActionBarImpl;
+  
+      #getter for: Lcom/android/internal/app/ActionBarImpl;->mHiddenBySystem:Z
+!     invoke-static {v1}, Lcom/android/internal/app/ActionBarImpl;->access$700(Lcom/android/internal/app/ActionBarImpl;)Z
+  
+      move-result v1
+  
+      #calls: Lcom/android/internal/app/ActionBarImpl;->checkShowingFlags(ZZZ)Z
+!     invoke-static {v0, v1, v2}, Lcom/android/internal/app/ActionBarImpl;->access$800(ZZZ)Z
+  
+      move-result v0
+  
+***************
+*** 168,174 ****
+      iget-object v0, p0, Lcom/android/internal/app/ActionBarImpl$ActionModeImpl;->this$0:Lcom/android/internal/app/ActionBarImpl;
+  
+      #getter for: Lcom/android/internal/app/ActionBarImpl;->mContextView:Lcom/android/internal/widget/ActionBarContextView;
+!     invoke-static {v0}, Lcom/android/internal/app/ActionBarImpl;->access$1000(Lcom/android/internal/app/ActionBarImpl;)Lcom/android/internal/widget/ActionBarContextView;
+  
+      move-result-object v0
+  
+--- 168,174 ----
+      iget-object v0, p0, Lcom/android/internal/app/ActionBarImpl$ActionModeImpl;->this$0:Lcom/android/internal/app/ActionBarImpl;
+  
+      #getter for: Lcom/android/internal/app/ActionBarImpl;->mContextView:Lcom/android/internal/widget/ActionBarContextView;
+!     invoke-static {v0}, Lcom/android/internal/app/ActionBarImpl;->access$900(Lcom/android/internal/app/ActionBarImpl;)Lcom/android/internal/widget/ActionBarContextView;
+  
+      move-result-object v0
+  
+***************
+*** 177,183 ****
+      iget-object v0, p0, Lcom/android/internal/app/ActionBarImpl$ActionModeImpl;->this$0:Lcom/android/internal/app/ActionBarImpl;
+  
+      #getter for: Lcom/android/internal/app/ActionBarImpl;->mActionView:Lcom/android/internal/widget/ActionBarView;
+!     invoke-static {v0}, Lcom/android/internal/app/ActionBarImpl;->access$1100(Lcom/android/internal/app/ActionBarImpl;)Lcom/android/internal/widget/ActionBarView;
+  
+      move-result-object v0
+  
+--- 177,183 ----
+      iget-object v0, p0, Lcom/android/internal/app/ActionBarImpl$ActionModeImpl;->this$0:Lcom/android/internal/app/ActionBarImpl;
+  
+      #getter for: Lcom/android/internal/app/ActionBarImpl;->mActionView:Lcom/android/internal/widget/ActionBarView;
+!     invoke-static {v0}, Lcom/android/internal/app/ActionBarImpl;->access$1000(Lcom/android/internal/app/ActionBarImpl;)Lcom/android/internal/widget/ActionBarView;
+  
+      move-result-object v0
+  
+***************
+*** 257,263 ****
+      iget-object v0, p0, Lcom/android/internal/app/ActionBarImpl$ActionModeImpl;->this$0:Lcom/android/internal/app/ActionBarImpl;
+  
+      #getter for: Lcom/android/internal/app/ActionBarImpl;->mContextView:Lcom/android/internal/widget/ActionBarContextView;
+!     invoke-static {v0}, Lcom/android/internal/app/ActionBarImpl;->access$1000(Lcom/android/internal/app/ActionBarImpl;)Lcom/android/internal/widget/ActionBarContextView;
+  
+      move-result-object v0
+  
+--- 257,263 ----
+      iget-object v0, p0, Lcom/android/internal/app/ActionBarImpl$ActionModeImpl;->this$0:Lcom/android/internal/app/ActionBarImpl;
+  
+      #getter for: Lcom/android/internal/app/ActionBarImpl;->mContextView:Lcom/android/internal/widget/ActionBarContextView;
+!     invoke-static {v0}, Lcom/android/internal/app/ActionBarImpl;->access$900(Lcom/android/internal/app/ActionBarImpl;)Lcom/android/internal/widget/ActionBarContextView;
+  
+      move-result-object v0
+  
+***************
+*** 275,281 ****
+      iget-object v0, p0, Lcom/android/internal/app/ActionBarImpl$ActionModeImpl;->this$0:Lcom/android/internal/app/ActionBarImpl;
+  
+      #getter for: Lcom/android/internal/app/ActionBarImpl;->mContextView:Lcom/android/internal/widget/ActionBarContextView;
+!     invoke-static {v0}, Lcom/android/internal/app/ActionBarImpl;->access$1000(Lcom/android/internal/app/ActionBarImpl;)Lcom/android/internal/widget/ActionBarContextView;
+  
+      move-result-object v0
+  
+--- 275,281 ----
+      iget-object v0, p0, Lcom/android/internal/app/ActionBarImpl$ActionModeImpl;->this$0:Lcom/android/internal/app/ActionBarImpl;
+  
+      #getter for: Lcom/android/internal/app/ActionBarImpl;->mContextView:Lcom/android/internal/widget/ActionBarContextView;
+!     invoke-static {v0}, Lcom/android/internal/app/ActionBarImpl;->access$900(Lcom/android/internal/app/ActionBarImpl;)Lcom/android/internal/widget/ActionBarContextView;
+  
+      move-result-object v0
+  
+***************
+*** 326,332 ****
+      iget-object v0, p0, Lcom/android/internal/app/ActionBarImpl$ActionModeImpl;->this$0:Lcom/android/internal/app/ActionBarImpl;
+  
+      #getter for: Lcom/android/internal/app/ActionBarImpl;->mContextView:Lcom/android/internal/widget/ActionBarContextView;
+!     invoke-static {v0}, Lcom/android/internal/app/ActionBarImpl;->access$1000(Lcom/android/internal/app/ActionBarImpl;)Lcom/android/internal/widget/ActionBarContextView;
+  
+      move-result-object v0
+  
+--- 326,332 ----
+      iget-object v0, p0, Lcom/android/internal/app/ActionBarImpl$ActionModeImpl;->this$0:Lcom/android/internal/app/ActionBarImpl;
+  
+      #getter for: Lcom/android/internal/app/ActionBarImpl;->mContextView:Lcom/android/internal/widget/ActionBarContextView;
+!     invoke-static {v0}, Lcom/android/internal/app/ActionBarImpl;->access$900(Lcom/android/internal/app/ActionBarImpl;)Lcom/android/internal/widget/ActionBarContextView;
+  
+      move-result-object v0
+  
+***************
+*** 397,403 ****
+      iget-object v0, p0, Lcom/android/internal/app/ActionBarImpl$ActionModeImpl;->this$0:Lcom/android/internal/app/ActionBarImpl;
+  
+      #getter for: Lcom/android/internal/app/ActionBarImpl;->mContextView:Lcom/android/internal/widget/ActionBarContextView;
+!     invoke-static {v0}, Lcom/android/internal/app/ActionBarImpl;->access$1000(Lcom/android/internal/app/ActionBarImpl;)Lcom/android/internal/widget/ActionBarContextView;
+  
+      move-result-object v0
+  
+--- 397,403 ----
+      iget-object v0, p0, Lcom/android/internal/app/ActionBarImpl$ActionModeImpl;->this$0:Lcom/android/internal/app/ActionBarImpl;
+  
+      #getter for: Lcom/android/internal/app/ActionBarImpl;->mContextView:Lcom/android/internal/widget/ActionBarContextView;
+!     invoke-static {v0}, Lcom/android/internal/app/ActionBarImpl;->access$900(Lcom/android/internal/app/ActionBarImpl;)Lcom/android/internal/widget/ActionBarContextView;
+  
+      move-result-object v0
+  
+***************
+*** 453,459 ****
+      iget-object v0, p0, Lcom/android/internal/app/ActionBarImpl$ActionModeImpl;->this$0:Lcom/android/internal/app/ActionBarImpl;
+  
+      #getter for: Lcom/android/internal/app/ActionBarImpl;->mContextView:Lcom/android/internal/widget/ActionBarContextView;
+!     invoke-static {v0}, Lcom/android/internal/app/ActionBarImpl;->access$1000(Lcom/android/internal/app/ActionBarImpl;)Lcom/android/internal/widget/ActionBarContextView;
+  
+      move-result-object v0
+  
+--- 453,459 ----
+      iget-object v0, p0, Lcom/android/internal/app/ActionBarImpl$ActionModeImpl;->this$0:Lcom/android/internal/app/ActionBarImpl;
+  
+      #getter for: Lcom/android/internal/app/ActionBarImpl;->mContextView:Lcom/android/internal/widget/ActionBarContextView;
+!     invoke-static {v0}, Lcom/android/internal/app/ActionBarImpl;->access$900(Lcom/android/internal/app/ActionBarImpl;)Lcom/android/internal/widget/ActionBarContextView;
+  
+      move-result-object v0
+  
+***************
+*** 476,482 ****
+      iget-object v0, p0, Lcom/android/internal/app/ActionBarImpl$ActionModeImpl;->this$0:Lcom/android/internal/app/ActionBarImpl;
+  
+      #getter for: Lcom/android/internal/app/ActionBarImpl;->mContext:Landroid/content/Context;
+!     invoke-static {v0}, Lcom/android/internal/app/ActionBarImpl;->access$1200(Lcom/android/internal/app/ActionBarImpl;)Landroid/content/Context;
+  
+      move-result-object v0
+  
+--- 476,482 ----
+      iget-object v0, p0, Lcom/android/internal/app/ActionBarImpl$ActionModeImpl;->this$0:Lcom/android/internal/app/ActionBarImpl;
+  
+      #getter for: Lcom/android/internal/app/ActionBarImpl;->mContext:Landroid/content/Context;
+!     invoke-static {v0}, Lcom/android/internal/app/ActionBarImpl;->access$1100(Lcom/android/internal/app/ActionBarImpl;)Landroid/content/Context;
+  
+      move-result-object v0
+  
+***************
+*** 501,507 ****
+      iget-object v0, p0, Lcom/android/internal/app/ActionBarImpl$ActionModeImpl;->this$0:Lcom/android/internal/app/ActionBarImpl;
+  
+      #getter for: Lcom/android/internal/app/ActionBarImpl;->mContextView:Lcom/android/internal/widget/ActionBarContextView;
+!     invoke-static {v0}, Lcom/android/internal/app/ActionBarImpl;->access$1000(Lcom/android/internal/app/ActionBarImpl;)Lcom/android/internal/widget/ActionBarContextView;
+  
+      move-result-object v0
+  
+--- 501,507 ----
+      iget-object v0, p0, Lcom/android/internal/app/ActionBarImpl$ActionModeImpl;->this$0:Lcom/android/internal/app/ActionBarImpl;
+  
+      #getter for: Lcom/android/internal/app/ActionBarImpl;->mContextView:Lcom/android/internal/widget/ActionBarContextView;
+!     invoke-static {v0}, Lcom/android/internal/app/ActionBarImpl;->access$900(Lcom/android/internal/app/ActionBarImpl;)Lcom/android/internal/widget/ActionBarContextView;
+  
+      move-result-object v0
+  
+***************
+*** 518,524 ****
+      iget-object v0, p0, Lcom/android/internal/app/ActionBarImpl$ActionModeImpl;->this$0:Lcom/android/internal/app/ActionBarImpl;
+  
+      #getter for: Lcom/android/internal/app/ActionBarImpl;->mContext:Landroid/content/Context;
+!     invoke-static {v0}, Lcom/android/internal/app/ActionBarImpl;->access$1200(Lcom/android/internal/app/ActionBarImpl;)Landroid/content/Context;
+  
+      move-result-object v0
+  
+--- 518,524 ----
+      iget-object v0, p0, Lcom/android/internal/app/ActionBarImpl$ActionModeImpl;->this$0:Lcom/android/internal/app/ActionBarImpl;
+  
+      #getter for: Lcom/android/internal/app/ActionBarImpl;->mContext:Landroid/content/Context;
+!     invoke-static {v0}, Lcom/android/internal/app/ActionBarImpl;->access$1100(Lcom/android/internal/app/ActionBarImpl;)Landroid/content/Context;
+  
+      move-result-object v0
+  
+***************
+*** 543,549 ****
+      iget-object v0, p0, Lcom/android/internal/app/ActionBarImpl$ActionModeImpl;->this$0:Lcom/android/internal/app/ActionBarImpl;
+  
+      #getter for: Lcom/android/internal/app/ActionBarImpl;->mContextView:Lcom/android/internal/widget/ActionBarContextView;
+!     invoke-static {v0}, Lcom/android/internal/app/ActionBarImpl;->access$1000(Lcom/android/internal/app/ActionBarImpl;)Lcom/android/internal/widget/ActionBarContextView;
+  
+      move-result-object v0
+  
+--- 543,549 ----
+      iget-object v0, p0, Lcom/android/internal/app/ActionBarImpl$ActionModeImpl;->this$0:Lcom/android/internal/app/ActionBarImpl;
+  
+      #getter for: Lcom/android/internal/app/ActionBarImpl;->mContextView:Lcom/android/internal/widget/ActionBarContextView;
+!     invoke-static {v0}, Lcom/android/internal/app/ActionBarImpl;->access$900(Lcom/android/internal/app/ActionBarImpl;)Lcom/android/internal/widget/ActionBarContextView;
+  
+      move-result-object v0
+  
+***************
+*** 562,568 ****
+      iget-object v0, p0, Lcom/android/internal/app/ActionBarImpl$ActionModeImpl;->this$0:Lcom/android/internal/app/ActionBarImpl;
+  
+      #getter for: Lcom/android/internal/app/ActionBarImpl;->mContextView:Lcom/android/internal/widget/ActionBarContextView;
+!     invoke-static {v0}, Lcom/android/internal/app/ActionBarImpl;->access$1000(Lcom/android/internal/app/ActionBarImpl;)Lcom/android/internal/widget/ActionBarContextView;
+  
+      move-result-object v0
+  
+--- 562,568 ----
+      iget-object v0, p0, Lcom/android/internal/app/ActionBarImpl$ActionModeImpl;->this$0:Lcom/android/internal/app/ActionBarImpl;
+  
+      #getter for: Lcom/android/internal/app/ActionBarImpl;->mContextView:Lcom/android/internal/widget/ActionBarContextView;
+!     invoke-static {v0}, Lcom/android/internal/app/ActionBarImpl;->access$900(Lcom/android/internal/app/ActionBarImpl;)Lcom/android/internal/widget/ActionBarContextView;
+  
+      move-result-object v0
+  

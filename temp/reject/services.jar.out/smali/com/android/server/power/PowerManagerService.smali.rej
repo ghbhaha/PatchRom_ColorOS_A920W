@@ -1,0 +1,42 @@
+*** PowerManagerService.smali	2014-05-01 23:28:52.000000000 +0800
+--- PowerManagerService.smali	2014-05-01 23:29:06.000000000 +0800
+***************
+*** 4814,4819 ****
+      .end local v5           #screenOffTimeout:I
+      :cond_3
+      :goto_1
+      const-string v6, "PowerManagerService"
+  
+      new-instance v7, Ljava/lang/StringBuilder;
+--- 4827,4834 ----
+      .end local v5           #screenOffTimeout:I
+      :cond_3
+      :goto_1
++     invoke-static {p0, v7}, Lcom/android/server/power/PowerManagerService$OppoHelper;->updateButtonBrightness(Lcom/android/server/power/PowerManagerService;Z)V
++ 
+      const-string v6, "PowerManagerService"
+  
+      new-instance v7, Ljava/lang/StringBuilder;
+***************
+*** 8118,8130 ****
+  
+      iget-object v0, p0, Lcom/android/server/power/PowerManagerService;->mLightsService:Lcom/android/server/LightsService;
+  
+!     const/4 v1, 0x2
+! 
+!     invoke-virtual {v0, v1}, Lcom/android/server/LightsService;->getLight(I)Lcom/android/server/LightsService$Light;
+! 
+!     move-result-object v0
+! 
+!     iput-object v0, p0, Lcom/android/server/power/PowerManagerService;->mButtonLight:Lcom/android/server/LightsService$Light;
+  
+      new-instance v9, Landroid/content/IntentFilter;
+  
+--- 8138,8144 ----
+  
+      iget-object v0, p0, Lcom/android/server/power/PowerManagerService;->mLightsService:Lcom/android/server/LightsService;
+  
+!     invoke-static {v0}, Lcom/android/server/power/PowerManagerService$OppoHelper;->setButtonLight(Lcom/android/server/LightsService;)V
+  
+      new-instance v9, Landroid/content/IntentFilter;
+  

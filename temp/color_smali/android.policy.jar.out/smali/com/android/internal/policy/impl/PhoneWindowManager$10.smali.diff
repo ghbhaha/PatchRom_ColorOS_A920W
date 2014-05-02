@@ -1,0 +1,23 @@
+*** /home/suda/color2.0/device/temp/android_smali/./android.policy.jar.out/smali/com/android/internal/policy/impl/PhoneWindowManager$10.smali	2014-05-01 23:28:50.000000000 +0800
+--- ./android.policy.jar.out/smali/com/android/internal/policy/impl/PhoneWindowManager$10.smali	2014-05-01 23:29:04.000000000 +0800
+***************
+*** 42,50 ****
+      .prologue
+      iget-object v0, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$10;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
+  
+!     iget-object v0, v0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mKeyguardMediator:Lcom/android/internal/policy/impl/keyguard/KeyguardViewMediator;
+  
+!     invoke-virtual {v0}, Lcom/android/internal/policy/impl/keyguard/KeyguardViewMediator;->dismiss()V
+  
+      return-void
+  .end method
+--- 42,50 ----
+      .prologue
+      iget-object v0, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$10;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
+  
+!     iget-object v0, v0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mKeyguardMediator:Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;
+  
+!     invoke-virtual {v0}, Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;->dismiss()V
+  
+      return-void
+  .end method

@@ -1,0 +1,24 @@
+*** /home/suda/color2.0/device/temp/android_smali/./secondary-framework.jar.out/smali/android/app/ActionBar.smali	2014-05-01 23:29:01.000000000 +0800
+--- ./secondary-framework.jar.out/smali/android/app/ActionBar.smali	2014-05-01 23:29:19.000000000 +0800
+***************
+*** 218,220 ****
+--- 218,236 ----
+  
+  .method public abstract show()V
+  .end method
++ 
++ .method public abstract updateAnimateTab(IFI)V
++     .annotation build Landroid/annotation/OppoHook;
++         level = .enum Landroid/annotation/OppoHook$OppoHookType;->NEW_METHOD:Landroid/annotation/OppoHook$OppoHookType;
++         note = "Xiaokang.Feng@Plf.SDK,2013.10.07: Add for oppoStyle Tab"
++         property = .enum Landroid/annotation/OppoHook$OppoRomType;->ROM:Landroid/annotation/OppoHook$OppoRomType;
++     .end annotation
++ .end method
++ 
++ .method public abstract updateScrollState(I)V
++     .annotation build Landroid/annotation/OppoHook;
++         level = .enum Landroid/annotation/OppoHook$OppoHookType;->NEW_METHOD:Landroid/annotation/OppoHook$OppoHookType;
++         note = "Xiaokang.Feng@Plf.SDK,2013.10.07: Add for oppoStyle Tab"
++         property = .enum Landroid/annotation/OppoHook$OppoRomType;->ROM:Landroid/annotation/OppoHook$OppoRomType;
++     .end annotation
++ .end method

@@ -1,0 +1,223 @@
+*** /home/suda/color2.0/device/temp/android_smali/./secondary-framework.jar.out/smali/android/app/WallpaperManager.smali	2014-05-01 23:29:00.000000000 +0800
+--- ./secondary-framework.jar.out/smali/android/app/WallpaperManager.smali	2014-05-01 23:29:17.000000000 +0800
+***************
+*** 105,110 ****
+--- 105,115 ----
+      .parameter "bm"
+      .parameter "width"
+      .parameter "height"
++     .annotation build Landroid/annotation/OppoHook;
++         level = .enum Landroid/annotation/OppoHook$OppoHookType;->CHANGE_CODE:Landroid/annotation/OppoHook$OppoHookType;
++         note = "gaoliang@Plf.Keyguard, 2013.07.22:add to make the wallpaper show full screen"
++         property = .enum Landroid/annotation/OppoHook$OppoRomType;->ROM:Landroid/annotation/OppoHook$OppoRomType;
++     .end annotation
+  
+      .prologue
+      if-nez p1, :cond_1
+***************
+*** 270,289 ****
+      if-lez v3, :cond_4
+  
+      :cond_3
+-     if-le v4, v3, :cond_5
+- 
+      move/from16 v0, p2
+  
+!     int-to-float v12, v0
+! 
+!     iget v13, v10, Landroid/graphics/Rect;->right:I
+  
+!     int-to-float v13, v13
+  
+!     div-float v9, v12, v13
+  
+      .local v9, scale:F
+-     :goto_1
+      iget v12, v10, Landroid/graphics/Rect;->right:I
+  
+      int-to-float v12, v12
+--- 275,289 ----
+      if-lez v3, :cond_4
+  
+      :cond_3
+      move/from16 v0, p2
+  
+!     move/from16 v1, p3
+  
+!     invoke-static {v0, v1, v10}, Landroid/app/WallpaperManager;->calcScale(IILandroid/graphics/Rect;)F
+  
+!     move-result v9
+  
+      .local v9, scale:F
+      iget v12, v10, Landroid/graphics/Rect;->right:I
+  
+      int-to-float v12, v12
+***************
+*** 386,418 ****
+      const/4 v12, 0x0
+  
+      invoke-virtual {v2, v12}, Landroid/graphics/Canvas;->setBitmap(Landroid/graphics/Bitmap;)V
+- 
+-     move-object/from16 p1, v7
+- 
+-     goto/16 :goto_0
+- 
+-     .end local v8           #paint:Landroid/graphics/Paint;
+-     :cond_5
+-     move/from16 v0, p3
+- 
+-     int-to-float v12, v0
+- 
+-     iget v13, v10, Landroid/graphics/Rect;->bottom:I
+      :try_end_0
+      .catch Ljava/lang/OutOfMemoryError; {:try_start_0 .. :try_end_0} :catch_0
+  
+!     int-to-float v13, v13
+! 
+!     div-float v9, v12, v13
+  
+!     .restart local v9       #scale:F
+!     goto :goto_1
+  
+      .end local v2           #c:Landroid/graphics/Canvas;
+      .end local v3           #deltah:I
+      .end local v4           #deltaw:I
+      .end local v7           #newbm:Landroid/graphics/Bitmap;
+!     .end local v9           #scale:F
+      .end local v10           #targetRect:Landroid/graphics/Rect;
+      :catch_0
+      move-exception v5
+--- 386,403 ----
+      const/4 v12, 0x0
+  
+      invoke-virtual {v2, v12}, Landroid/graphics/Canvas;->setBitmap(Landroid/graphics/Bitmap;)V
+      :try_end_0
+      .catch Ljava/lang/OutOfMemoryError; {:try_start_0 .. :try_end_0} :catch_0
+  
+!     move-object/from16 p1, v7
+  
+!     goto/16 :goto_0
+  
+      .end local v2           #c:Landroid/graphics/Canvas;
+      .end local v3           #deltah:I
+      .end local v4           #deltaw:I
+      .end local v7           #newbm:Landroid/graphics/Bitmap;
+!     .end local v8           #paint:Landroid/graphics/Paint;
+      .end local v10           #targetRect:Landroid/graphics/Rect;
+      :catch_0
+      move-exception v5
+***************
+*** 516,521 ****
+--- 501,512 ----
+  # virtual methods
+  .method public clear()V
+      .locals 1
++     .annotation build Landroid/annotation/OppoHook;
++         level = .enum Landroid/annotation/OppoHook$OppoHookType;->CHANGE_RESOURCE:Landroid/annotation/OppoHook$OppoHookType;
++         note = "gaoliang@Plf.Keyguard, 2013.07.22:add to change the default wallpaper res"
++         property = .enum Landroid/annotation/OppoHook$OppoRomType;->ROM:Landroid/annotation/OppoHook$OppoRomType;
++     .end annotation
++ 
+      .annotation system Ldalvik/annotation/Throws;
+          value = {
+              Ljava/io/IOException;
+***************
+*** 523,529 ****
+      .end annotation
+  
+      .prologue
+!     const v0, 0x108021e
+  
+      invoke-virtual {p0, v0}, Landroid/app/WallpaperManager;->setResource(I)V
+  
+--- 514,520 ----
+      .end annotation
+  
+      .prologue
+!     const v0, 0xc08003e
+  
+      invoke-virtual {p0, v0}, Landroid/app/WallpaperManager;->setResource(I)V
+  
+***************
+*** 1033,1038 ****
+--- 1024,1035 ----
+  .method public setBitmap(Landroid/graphics/Bitmap;)V
+      .locals 5
+      .parameter "bitmap"
++     .annotation build Landroid/annotation/OppoHook;
++         level = .enum Landroid/annotation/OppoHook$OppoHookType;->CHANGE_CODE:Landroid/annotation/OppoHook$OppoHookType;
++         note = "gaoliang@Plf.Keyguard,2012.08.27:add to resolve the problem that set big wallpaper too slow"
++         property = .enum Landroid/annotation/OppoHook$OppoRomType;->ROM:Landroid/annotation/OppoHook$OppoRomType;
++     .end annotation
++ 
+      .annotation system Ldalvik/annotation/Throws;
+          value = {
+              Ljava/io/IOException;
+***************
+*** 1092,1098 ****
+      .end local v1           #fos:Ljava/io/FileOutputStream;
+      .local v2, fos:Ljava/io/FileOutputStream;
+      :try_start_2
+!     sget-object v3, Landroid/graphics/Bitmap$CompressFormat;->PNG:Landroid/graphics/Bitmap$CompressFormat;
+  
+      const/16 v4, 0x5a
+  
+--- 1089,1095 ----
+      .end local v1           #fos:Ljava/io/FileOutputStream;
+      .local v2, fos:Ljava/io/FileOutputStream;
+      :try_start_2
+!     sget-object v3, Landroid/graphics/Bitmap$CompressFormat;->JPEG:Landroid/graphics/Bitmap$CompressFormat;
+  
+      const/16 v4, 0x5a
+  
+***************
+*** 1486,1488 ****
+--- 1483,1530 ----
+  
+      goto :goto_0
+  .end method
++ 
++ .method static calcScale(IILandroid/graphics/Rect;)F
++     .locals 4
++     .parameter "width"
++     .parameter "height"
++     .parameter "targetRect"
++     .annotation build Landroid/annotation/OppoHook;
++         level = .enum Landroid/annotation/OppoHook$OppoHookType;->NEW_METHOD:Landroid/annotation/OppoHook$OppoHookType;
++         note = "Qihu.Liu@Prd.DesktopApp.Wallpaper, 2013/02/05 : Wanglan Add for smali"
++         property = .enum Landroid/annotation/OppoHook$OppoRomType;->ROM:Landroid/annotation/OppoHook$OppoRomType;
++     .end annotation
++ 
++     .prologue
++     int-to-float v2, p0
++ 
++     iget v3, p2, Landroid/graphics/Rect;->right:I
++ 
++     int-to-float v3, v3
++ 
++     div-float v1, v2, v3
++ 
++     .local v1, scalew:F
++     int-to-float v2, p1
++ 
++     iget v3, p2, Landroid/graphics/Rect;->bottom:I
++ 
++     int-to-float v3, v3
++ 
++     div-float v0, v2, v3
++ 
++     .local v0, scaleh:F
++     cmpl-float v2, v1, v0
++ 
++     if-lez v2, :cond_0
++ 
++     .end local v1           #scalew:F
++     :goto_0
++     return v1
++ 
++     .restart local v1       #scalew:F
++     :cond_0
++     move v1, v0
++ 
++     goto :goto_0
++ .end method

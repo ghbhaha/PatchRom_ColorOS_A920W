@@ -1,0 +1,32 @@
+*** /home/suda/color2.0/device/temp/android_smali/./secondary-framework.jar.out/smali/android/widget/AppSecurityPermissions.smali	2014-05-01 23:29:03.000000000 +0800
+--- ./secondary-framework.jar.out/smali/android/widget/AppSecurityPermissions.smali	2014-05-01 23:29:21.000000000 +0800
+***************
+*** 421,426 ****
+--- 421,432 ----
+      .locals 4
+      .parameter "context"
+      .parameter
++     .annotation build Landroid/annotation/OppoHook;
++         level = .enum Landroid/annotation/OppoHook$OppoHookType;->CHANGE_CODE:Landroid/annotation/OppoHook$OppoHookType;
++         note = "YongDong.Zhang@Plf.Framework.SDK : Modify for make convertIcon useless here"
++         property = .enum Landroid/annotation/OppoHook$OppoRomType;->ROM:Landroid/annotation/OppoHook$OppoRomType;
++     .end annotation
++ 
+      .annotation system Ldalvik/annotation/Signature;
+          value = {
+              "(",
+***************
+*** 472,477 ****
+--- 478,489 ----
+  
+      iput-object v2, p0, Landroid/widget/AppSecurityPermissions;->mPermGroupComparator:Landroid/widget/AppSecurityPermissions$PermissionGroupInfoComparator;
+  
++     new-instance v2, Ljava/util/ArrayList;
++ 
++     invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
++ 
++     iput-object v2, p0, Landroid/widget/AppSecurityPermissions;->mPermsList:Ljava/util/List;
++ 
+      invoke-interface {p2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+  
+      move-result-object v0

@@ -1,0 +1,133 @@
+*** /home/suda/color2.0/device/temp/android_smali/./framework.jar.out/smali/com/android/internal/app/ActionBarImpl$TabImpl.smali	2014-05-01 23:28:56.000000000 +0800
+--- ./framework.jar.out/smali/com/android/internal/app/ActionBarImpl$TabImpl.smali	2014-05-01 23:29:11.000000000 +0800
+***************
+*** 133,139 ****
+      iget-object v0, p0, Lcom/android/internal/app/ActionBarImpl$TabImpl;->this$0:Lcom/android/internal/app/ActionBarImpl;
+  
+      #getter for: Lcom/android/internal/app/ActionBarImpl;->mContext:Landroid/content/Context;
+!     invoke-static {v0}, Lcom/android/internal/app/ActionBarImpl;->access$1200(Lcom/android/internal/app/ActionBarImpl;)Landroid/content/Context;
+  
+      move-result-object v0
+  
+--- 133,139 ----
+      iget-object v0, p0, Lcom/android/internal/app/ActionBarImpl$TabImpl;->this$0:Lcom/android/internal/app/ActionBarImpl;
+  
+      #getter for: Lcom/android/internal/app/ActionBarImpl;->mContext:Landroid/content/Context;
+!     invoke-static {v0}, Lcom/android/internal/app/ActionBarImpl;->access$1100(Lcom/android/internal/app/ActionBarImpl;)Landroid/content/Context;
+  
+      move-result-object v0
+  
+***************
+*** 165,174 ****
+  
+      iget-object v0, p0, Lcom/android/internal/app/ActionBarImpl$TabImpl;->this$0:Lcom/android/internal/app/ActionBarImpl;
+  
+!     #getter for: Lcom/android/internal/app/ActionBarImpl;->mTabScrollView:Lcom/android/internal/widget/ScrollingTabContainerView;
+!     invoke-static {v0}, Lcom/android/internal/app/ActionBarImpl;->access$1300(Lcom/android/internal/app/ActionBarImpl;)Lcom/android/internal/widget/ScrollingTabContainerView;
+! 
+!     move-result-object v0
+  
+      iget v1, p0, Lcom/android/internal/app/ActionBarImpl$TabImpl;->mPosition:I
+  
+--- 165,171 ----
+  
+      iget-object v0, p0, Lcom/android/internal/app/ActionBarImpl$TabImpl;->this$0:Lcom/android/internal/app/ActionBarImpl;
+  
+!     iget-object v0, v0, Lcom/android/internal/app/ActionBarImpl;->mTabScrollView:Lcom/android/internal/widget/ScrollingTabContainerView;
+  
+      iget v1, p0, Lcom/android/internal/app/ActionBarImpl$TabImpl;->mPosition:I
+  
+***************
+*** 219,228 ****
+  
+      iget-object v0, p0, Lcom/android/internal/app/ActionBarImpl$TabImpl;->this$0:Lcom/android/internal/app/ActionBarImpl;
+  
+!     #getter for: Lcom/android/internal/app/ActionBarImpl;->mTabScrollView:Lcom/android/internal/widget/ScrollingTabContainerView;
+!     invoke-static {v0}, Lcom/android/internal/app/ActionBarImpl;->access$1300(Lcom/android/internal/app/ActionBarImpl;)Lcom/android/internal/widget/ScrollingTabContainerView;
+! 
+!     move-result-object v0
+  
+      iget v1, p0, Lcom/android/internal/app/ActionBarImpl$TabImpl;->mPosition:I
+  
+--- 216,222 ----
+  
+      iget-object v0, p0, Lcom/android/internal/app/ActionBarImpl$TabImpl;->this$0:Lcom/android/internal/app/ActionBarImpl;
+  
+!     iget-object v0, v0, Lcom/android/internal/app/ActionBarImpl;->mTabScrollView:Lcom/android/internal/widget/ScrollingTabContainerView;
+  
+      iget v1, p0, Lcom/android/internal/app/ActionBarImpl$TabImpl;->mPosition:I
+  
+***************
+*** 240,246 ****
+      iget-object v0, p0, Lcom/android/internal/app/ActionBarImpl$TabImpl;->this$0:Lcom/android/internal/app/ActionBarImpl;
+  
+      #getter for: Lcom/android/internal/app/ActionBarImpl;->mContext:Landroid/content/Context;
+!     invoke-static {v0}, Lcom/android/internal/app/ActionBarImpl;->access$1200(Lcom/android/internal/app/ActionBarImpl;)Landroid/content/Context;
+  
+      move-result-object v0
+  
+--- 234,240 ----
+      iget-object v0, p0, Lcom/android/internal/app/ActionBarImpl$TabImpl;->this$0:Lcom/android/internal/app/ActionBarImpl;
+  
+      #getter for: Lcom/android/internal/app/ActionBarImpl;->mContext:Landroid/content/Context;
+!     invoke-static {v0}, Lcom/android/internal/app/ActionBarImpl;->access$1100(Lcom/android/internal/app/ActionBarImpl;)Landroid/content/Context;
+  
+      move-result-object v0
+  
+***************
+*** 272,281 ****
+  
+      iget-object v0, p0, Lcom/android/internal/app/ActionBarImpl$TabImpl;->this$0:Lcom/android/internal/app/ActionBarImpl;
+  
+!     #getter for: Lcom/android/internal/app/ActionBarImpl;->mTabScrollView:Lcom/android/internal/widget/ScrollingTabContainerView;
+!     invoke-static {v0}, Lcom/android/internal/app/ActionBarImpl;->access$1300(Lcom/android/internal/app/ActionBarImpl;)Lcom/android/internal/widget/ScrollingTabContainerView;
+! 
+!     move-result-object v0
+  
+      iget v1, p0, Lcom/android/internal/app/ActionBarImpl$TabImpl;->mPosition:I
+  
+--- 266,272 ----
+  
+      iget-object v0, p0, Lcom/android/internal/app/ActionBarImpl$TabImpl;->this$0:Lcom/android/internal/app/ActionBarImpl;
+  
+!     iget-object v0, v0, Lcom/android/internal/app/ActionBarImpl;->mTabScrollView:Lcom/android/internal/widget/ScrollingTabContainerView;
+  
+      iget v1, p0, Lcom/android/internal/app/ActionBarImpl$TabImpl;->mPosition:I
+  
+***************
+*** 323,329 ****
+      iget-object v0, p0, Lcom/android/internal/app/ActionBarImpl$TabImpl;->this$0:Lcom/android/internal/app/ActionBarImpl;
+  
+      #getter for: Lcom/android/internal/app/ActionBarImpl;->mContext:Landroid/content/Context;
+!     invoke-static {v0}, Lcom/android/internal/app/ActionBarImpl;->access$1200(Lcom/android/internal/app/ActionBarImpl;)Landroid/content/Context;
+  
+      move-result-object v0
+  
+--- 314,320 ----
+      iget-object v0, p0, Lcom/android/internal/app/ActionBarImpl$TabImpl;->this$0:Lcom/android/internal/app/ActionBarImpl;
+  
+      #getter for: Lcom/android/internal/app/ActionBarImpl;->mContext:Landroid/content/Context;
+!     invoke-static {v0}, Lcom/android/internal/app/ActionBarImpl;->access$1100(Lcom/android/internal/app/ActionBarImpl;)Landroid/content/Context;
+  
+      move-result-object v0
+  
+***************
+*** 355,364 ****
+  
+      iget-object v0, p0, Lcom/android/internal/app/ActionBarImpl$TabImpl;->this$0:Lcom/android/internal/app/ActionBarImpl;
+  
+!     #getter for: Lcom/android/internal/app/ActionBarImpl;->mTabScrollView:Lcom/android/internal/widget/ScrollingTabContainerView;
+!     invoke-static {v0}, Lcom/android/internal/app/ActionBarImpl;->access$1300(Lcom/android/internal/app/ActionBarImpl;)Lcom/android/internal/widget/ScrollingTabContainerView;
+! 
+!     move-result-object v0
+  
+      iget v1, p0, Lcom/android/internal/app/ActionBarImpl$TabImpl;->mPosition:I
+  
+--- 346,352 ----
+  
+      iget-object v0, p0, Lcom/android/internal/app/ActionBarImpl$TabImpl;->this$0:Lcom/android/internal/app/ActionBarImpl;
+  
+!     iget-object v0, v0, Lcom/android/internal/app/ActionBarImpl;->mTabScrollView:Lcom/android/internal/widget/ScrollingTabContainerView;
+  
+      iget v1, p0, Lcom/android/internal/app/ActionBarImpl$TabImpl;->mPosition:I
+  

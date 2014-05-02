@@ -1,0 +1,60 @@
+*** /home/suda/color2.0/device/temp/android_smali/./framework.jar.out/smali/com/android/internal/widget/ScrollingTabContainerView$TabAdapter.smali	2014-05-01 23:28:56.000000000 +0800
+--- ./framework.jar.out/smali/com/android/internal/widget/ScrollingTabContainerView$TabAdapter.smali	2014-05-01 23:29:12.000000000 +0800
+***************
+*** 50,59 ****
+      .prologue
+      iget-object v0, p0, Lcom/android/internal/widget/ScrollingTabContainerView$TabAdapter;->this$0:Lcom/android/internal/widget/ScrollingTabContainerView;
+  
+!     #getter for: Lcom/android/internal/widget/ScrollingTabContainerView;->mTabLayout:Landroid/widget/LinearLayout;
+!     invoke-static {v0}, Lcom/android/internal/widget/ScrollingTabContainerView;->access$200(Lcom/android/internal/widget/ScrollingTabContainerView;)Landroid/widget/LinearLayout;
+! 
+!     move-result-object v0
+  
+      invoke-virtual {v0}, Landroid/widget/LinearLayout;->getChildCount()I
+  
+--- 50,56 ----
+      .prologue
+      iget-object v0, p0, Lcom/android/internal/widget/ScrollingTabContainerView$TabAdapter;->this$0:Lcom/android/internal/widget/ScrollingTabContainerView;
+  
+!     iget-object v0, v0, Lcom/android/internal/widget/ScrollingTabContainerView;->mTabLayout:Landroid/widget/LinearLayout;
+  
+      invoke-virtual {v0}, Landroid/widget/LinearLayout;->getChildCount()I
+  
+***************
+*** 69,78 ****
+      .prologue
+      iget-object v0, p0, Lcom/android/internal/widget/ScrollingTabContainerView$TabAdapter;->this$0:Lcom/android/internal/widget/ScrollingTabContainerView;
+  
+!     #getter for: Lcom/android/internal/widget/ScrollingTabContainerView;->mTabLayout:Landroid/widget/LinearLayout;
+!     invoke-static {v0}, Lcom/android/internal/widget/ScrollingTabContainerView;->access$200(Lcom/android/internal/widget/ScrollingTabContainerView;)Landroid/widget/LinearLayout;
+! 
+!     move-result-object v0
+  
+      invoke-virtual {v0, p1}, Landroid/widget/LinearLayout;->getChildAt(I)Landroid/view/View;
+  
+--- 66,72 ----
+      .prologue
+      iget-object v0, p0, Lcom/android/internal/widget/ScrollingTabContainerView$TabAdapter;->this$0:Lcom/android/internal/widget/ScrollingTabContainerView;
+  
+!     iget-object v0, v0, Lcom/android/internal/widget/ScrollingTabContainerView;->mTabLayout:Landroid/widget/LinearLayout;
+  
+      invoke-virtual {v0, p1}, Landroid/widget/LinearLayout;->getChildAt(I)Landroid/view/View;
+  
+***************
+*** 116,123 ****
+  
+      const/4 v2, 0x1
+  
+!     #calls: Lcom/android/internal/widget/ScrollingTabContainerView;->createTabView(Landroid/app/ActionBar$Tab;Z)Lcom/android/internal/widget/ScrollingTabContainerView$TabView;
+!     invoke-static {v1, v0, v2}, Lcom/android/internal/widget/ScrollingTabContainerView;->access$300(Lcom/android/internal/widget/ScrollingTabContainerView;Landroid/app/ActionBar$Tab;Z)Lcom/android/internal/widget/ScrollingTabContainerView$TabView;
+  
+      move-result-object p2
+  
+--- 110,116 ----
+  
+      const/4 v2, 0x1
+  
+!     invoke-virtual {v1, v0, v2}, Lcom/android/internal/widget/ScrollingTabContainerView;->createTabView(Landroid/app/ActionBar$Tab;Z)Lcom/android/internal/widget/ScrollingTabContainerView$TabView;
+  
+      move-result-object p2
+  

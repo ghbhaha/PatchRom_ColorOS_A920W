@@ -1,0 +1,42 @@
+*** WifiService.smali	2014-05-01 23:28:55.000000000 +0800
+--- WifiService.smali	2014-05-01 23:29:10.000000000 +0800
+***************
+*** 29,35 ****
+  
+  .field private static final DEFAULT_IDLE_MS:J = 0xdbba0L
+  
+! .field private static final ICON_NETWORKS_AVAILABLE:I = 0x1080520
+  
+  .field private static final IDLE_REQUEST:I = 0x0
+  
+--- 29,41 ----
+  
+  .field private static final DEFAULT_IDLE_MS:J = 0xdbba0L
+  
+! .field private static final ICON_NETWORKS_AVAILABLE:I = 0xc080465
+!     .annotation build Landroid/annotation/OppoHook;
+!         level = .enum Landroid/annotation/OppoHook$OppoHookType;->CHANGE_RESOURCE:Landroid/annotation/OppoHook$OppoHookType;
+!         note = "Congwei.Yan@Plf.CommSrv,2013.10.11:modify for replace with oppo\'s icon"
+!         property = .enum Landroid/annotation/OppoHook$OppoRomType;->ROM:Landroid/annotation/OppoHook$OppoRomType;
+!     .end annotation
+! .end field
+  
+  .field private static final IDLE_REQUEST:I = 0x0
+  
+***************
+*** 2866,2872 ****
+      .prologue
+      const/4 v10, 0x0
+  
+!     const v9, 0x1080520
+  
+      const/4 v8, 0x0
+  
+--- 2872,2878 ----
+      .prologue
+      const/4 v10, 0x0
+  
+!     const v9, 0xc080465
+  
+      const/4 v8, 0x0
+  

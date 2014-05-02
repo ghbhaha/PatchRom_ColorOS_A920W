@@ -1,0 +1,19 @@
+*** WallpaperManager.smali	2014-05-01 23:29:00.000000000 +0800
+--- WallpaperManager.smali	2014-05-01 23:29:17.000000000 +0800
+***************
+*** 514,520 ****
+      .end annotation
+  
+      .prologue
+!     const v0, 0x108021e
+  
+      invoke-virtual {p0, v0}, Landroid/app/WallpaperManager;->setResource(I)V
+  
+--- 505,511 ----
+      .end annotation
+  
+      .prologue
+!     const v0, 0xc08003e
+  
+      invoke-virtual {p0, v0}, Landroid/app/WallpaperManager;->setResource(I)V
+  

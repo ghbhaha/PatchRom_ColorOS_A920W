@@ -1,0 +1,56 @@
+*** /home/suda/color2.0/device/temp/android_smali/./services.jar.out/smali/com/android/server/wm/WindowManagerService$2.smali	2014-05-01 23:28:53.000000000 +0800
+--- ./services.jar.out/smali/com/android/server/wm/WindowManagerService$2.smali	2014-05-01 23:29:08.000000000 +0800
+***************
+*** 77,90 ****
+  
+  # virtual methods
+  .method public run()V
+!     .locals 12
+  
+      .prologue
+!     iget-object v10, p0, Lcom/android/server/wm/WindowManagerService$2;->val$holder:[Lcom/android/server/wm/WindowManagerService;
+  
+!     const/4 v11, 0x0
+  
+!     new-instance v0, Lcom/android/server/wm/WindowManagerService;
+  
+      iget-object v1, p0, Lcom/android/server/wm/WindowManagerService$2;->val$context:Landroid/content/Context;
+  
+--- 77,90 ----
+  
+  # virtual methods
+  .method public run()V
+!     .locals 11
+  
+      .prologue
+!     iget-object v9, p0, Lcom/android/server/wm/WindowManagerService$2;->val$holder:[Lcom/android/server/wm/WindowManagerService;
+  
+!     const/4 v10, 0x0
+  
+!     new-instance v0, Lcom/android/server/wm/OppoWindowManagerService;
+  
+      iget-object v1, p0, Lcom/android/server/wm/WindowManagerService$2;->val$context:Landroid/content/Context;
+  
+***************
+*** 102,112 ****
+  
+      iget-boolean v8, p0, Lcom/android/server/wm/WindowManagerService$2;->val$onlyCore:Z
+  
+!     const/4 v9, 0x0
+  
+!     invoke-direct/range {v0 .. v9}, Lcom/android/server/wm/WindowManagerService;-><init>(Landroid/content/Context;Lcom/android/server/power/PowerManagerService;Lcom/android/server/display/DisplayManagerService;Lcom/android/server/input/InputManagerService;Landroid/os/Handler;ZZZLcom/android/server/wm/WindowManagerService$1;)V
+! 
+!     aput-object v0, v10, v11
+  
+      return-void
+  .end method
+--- 102,110 ----
+  
+      iget-boolean v8, p0, Lcom/android/server/wm/WindowManagerService$2;->val$onlyCore:Z
+  
+!     invoke-direct/range {v0 .. v8}, Lcom/android/server/wm/OppoWindowManagerService;-><init>(Landroid/content/Context;Lcom/android/server/power/PowerManagerService;Lcom/android/server/display/DisplayManagerService;Lcom/android/server/input/InputManagerService;Landroid/os/Handler;ZZZ)V
+  
+!     aput-object v0, v9, v10
+  
+      return-void
+  .end method

@@ -1,0 +1,19 @@
+*** /home/suda/color2.0/device/temp/android_smali/./services.jar.out/smali/com/android/server/LightsService$2.smali	2014-05-01 23:28:53.000000000 +0800
+--- ./services.jar.out/smali/com/android/server/LightsService$2.smali	2014-05-01 23:29:08.000000000 +0800
+***************
+*** 44,50 ****
+  
+      .local v0, light:Lcom/android/server/LightsService$Light;
+      #calls: Lcom/android/server/LightsService$Light;->stopFlashing()V
+!     invoke-static {v0}, Lcom/android/server/LightsService$Light;->access$500(Lcom/android/server/LightsService$Light;)V
+  
+      return-void
+  .end method
+--- 44,50 ----
+  
+      .local v0, light:Lcom/android/server/LightsService$Light;
+      #calls: Lcom/android/server/LightsService$Light;->stopFlashing()V
+!     invoke-static {v0}, Lcom/android/server/LightsService$Light;->access$400(Lcom/android/server/LightsService$Light;)V
+  
+      return-void
+  .end method

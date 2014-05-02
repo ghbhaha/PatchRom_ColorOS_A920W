@@ -1,0 +1,29 @@
+set oppo package id : 12 : 0x0c
+set oppo public base id:1024:0x0400
+aapt: warning: string 'action_mode_done' has no default translation in /home/suda/color2.0/build/res-build/oppo-framework-res/res; found: ar da de el en en_ZA es fr in it ja nb nl pt ru sv th tr vi zh_CN zh_HK zh_TW
+aapt: warning: string 'format_error_phone' has no default translation in /home/suda/color2.0/build/res-build/oppo-framework-res/res; found: es
+aapt: warning: string 'media_bad_removal_phone' has no default translation in /home/suda/color2.0/build/res-build/oppo-framework-res/res; found: es
+aapt: warning: string 'media_checking_phone' has no default translation in /home/suda/color2.0/build/res-build/oppo-framework-res/res; found: es
+aapt: warning: string 'media_shared_phone' has no default translation in /home/suda/color2.0/build/res-build/oppo-framework-res/res; found: es
+aapt: warning: string 'modify_pkg_perms' has no default translation in /home/suda/color2.0/build/res-build/oppo-framework-res/res; found: el
+aapt: warning: string 'oppo_alwaysUse' has no default translation in /home/suda/color2.0/build/res-build/oppo-framework-res/res; found: ar da de en en_ZA es in it ja nb nl ru sv th tr vi zh_CN zh_HK zh_TW
+aapt: warning: string 'oppo_battery_charge_soc_fall' has no default translation in /home/suda/color2.0/build/res-build/oppo-framework-res/res; found: en en_ZA es in ja nb nl
+aapt: warning: string 'oppo_screen_shot_down_text' has no default translation in /home/suda/color2.0/build/res-build/oppo-framework-res/res; found: en in nb nl ru th
+aapt: warning: string 'oppo_screen_shot_up_text' has no default translation in /home/suda/color2.0/build/res-build/oppo-framework-res/res; found: en in nb nl ru th
+aapt: warning: string 'oppo_statusbar_key_swmgr' has no default translation in /home/suda/color2.0/build/res-build/oppo-framework-res/res; found: ar da de en en_ZA es in it ja nb nl ru sv th tr vi zh_CN zh_HK zh_TW
+aapt: warning: string 'oppo_whichApplication' has no default translation in /home/suda/color2.0/build/res-build/oppo-framework-res/res; found: ar da de en en_ZA es in it ja nb nl ru sv th tr vi zh_CN zh_HK zh_TW
+aapt: warning: string 'permission_choice_label' has no default translation in /home/suda/color2.0/build/res-build/oppo-framework-res/res; found: sv
+aapt: warning: string 'progress_erasing_phone' has no default translation in /home/suda/color2.0/build/res-build/oppo-framework-res/res; found: es
+aapt: warning: string 'sms_dialog_close' has no default translation in /home/suda/color2.0/build/res-build/oppo-framework-res/res; found: el
+aapt: warning: string 'sms_dialog_look' has no default translation in /home/suda/color2.0/build/res-build/oppo-framework-res/res; found: el
+aapt: warning: string 'status_3g' has no default translation in /home/suda/color2.0/build/res-build/oppo-framework-res/res; found: de es fr pt
+aapt: warning: string 'status_autosync' has no default translation in /home/suda/color2.0/build/res-build/oppo-framework-res/res; found: de es fr pt
+aapt: warning: string 'status_brightness' has no default translation in /home/suda/color2.0/build/res-build/oppo-framework-res/res; found: de es fr pt
+aapt: warning: string 'status_flight' has no default translation in /home/suda/color2.0/build/res-build/oppo-framework-res/res; found: de es fr pt
+aapt: warning: string 'status_gps' has no default translation in /home/suda/color2.0/build/res-build/oppo-framework-res/res; found: de es fr pt
+aapt: warning: string 'status_hotspot' has no default translation in /home/suda/color2.0/build/res-build/oppo-framework-res/res; found: de es fr pt
+aapt: warning: string 'status_silent' has no default translation in /home/suda/color2.0/build/res-build/oppo-framework-res/res; found: de es fr pt
+aapt: warning: string 'statusbar_key_bt' has no default translation in /home/suda/color2.0/build/res-build/oppo-framework-res/res; found: es
+aapt: warning: string 'usb_selection_processing' has no default translation in /home/suda/color2.0/build/res-build/oppo-framework-res/res; found: el
+aapt: warning: string 'wifi_p2p_noncuncurrency_invite_message' has no default translation in /home/suda/color2.0/build/res-build/oppo-framework-res/res; found: de es
+aapt: warning: string 'wifi_p2p_noncuncurrency_message' has no default translation in /home/suda/color2.0/build/res-build/oppo-framework-res/res; found: de es

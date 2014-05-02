@@ -1,0 +1,42 @@
+*** /home/suda/color2.0/device/temp/android_smali/./secondary-framework.jar.out/smali/android/app/Notification$BigPictureStyle.smali	2014-05-01 23:29:00.000000000 +0800
+--- ./secondary-framework.jar.out/smali/android/app/Notification$BigPictureStyle.smali	2014-05-01 23:29:16.000000000 +0800
+***************
+*** 54,69 ****
+  
+  .method private makeBigContentView()Landroid/widget/RemoteViews;
+      .locals 3
+  
+      .prologue
+!     const v1, 0x1090090
+  
+      invoke-virtual {p0, v1}, Landroid/app/Notification$BigPictureStyle;->getStandardView(I)Landroid/widget/RemoteViews;
+  
+      move-result-object v0
+  
+      .local v0, contentView:Landroid/widget/RemoteViews;
+!     const v1, 0x1020332
+  
+      iget-object v2, p0, Landroid/app/Notification$BigPictureStyle;->mPicture:Landroid/graphics/Bitmap;
+  
+--- 54,74 ----
+  
+  .method private makeBigContentView()Landroid/widget/RemoteViews;
+      .locals 3
++     .annotation build Landroid/annotation/OppoHook;
++         level = .enum Landroid/annotation/OppoHook$OppoHookType;->CHANGE_RESOURCE:Landroid/annotation/OppoHook$OppoHookType;
++         note = "Jiamiao.He@Plf.Keyguard, 2013.02.04: make notification to oppo\'s"
++         property = .enum Landroid/annotation/OppoHook$OppoRomType;->ROM:Landroid/annotation/OppoHook$OppoRomType;
++     .end annotation
+  
+      .prologue
+!     const v1, 0xc09041e
+  
+      invoke-virtual {p0, v1}, Landroid/app/Notification$BigPictureStyle;->getStandardView(I)Landroid/widget/RemoteViews;
+  
+      move-result-object v0
+  
+      .local v0, contentView:Landroid/widget/RemoteViews;
+!     const v1, 0xc02047a
+  
+      iget-object v2, p0, Landroid/app/Notification$BigPictureStyle;->mPicture:Landroid/graphics/Bitmap;
+  

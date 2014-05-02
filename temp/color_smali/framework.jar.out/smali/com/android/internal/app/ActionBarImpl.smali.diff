@@ -1,0 +1,500 @@
+*** /home/suda/color2.0/device/temp/android_smali/./framework.jar.out/smali/com/android/internal/app/ActionBarImpl.smali	2014-05-01 23:28:56.000000000 +0800
+--- ./framework.jar.out/smali/com/android/internal/app/ActionBarImpl.smali	2014-05-01 23:29:12.000000000 +0800
+***************
+*** 41,47 ****
+  
+  .field private mCurWindowVisibility:I
+  
+! .field private mCurrentShowAnim:Landroid/animation/Animator;
+  
+  .field mDeferredDestroyActionMode:Landroid/view/ActionMode;
+  
+--- 41,53 ----
+  
+  .field private mCurWindowVisibility:I
+  
+! .field mCurrentShowAnim:Landroid/animation/Animator;
+!     .annotation build Landroid/annotation/OppoHook;
+!         level = .enum Landroid/annotation/OppoHook$OppoHookType;->CHANGE_ACCESS:Landroid/annotation/OppoHook$OppoHookType;
+!         note = "Jianhui.Yu@Plf.SDK,2013-07-27:[-private]Modify for ActionMode animation"
+!         property = .enum Landroid/annotation/OppoHook$OppoRomType;->ROM:Landroid/annotation/OppoHook$OppoRomType;
+!     .end annotation
+! .end field
+  
+  .field mDeferredDestroyActionMode:Landroid/view/ActionMode;
+  
+***************
+*** 90,96 ****
+  
+  .field private mSplitView:Lcom/android/internal/widget/ActionBarContainer;
+  
+! .field private mTabScrollView:Lcom/android/internal/widget/ScrollingTabContainerView;
+  
+  .field mTabSelector:Ljava/lang/Runnable;
+  
+--- 96,108 ----
+  
+  .field private mSplitView:Lcom/android/internal/widget/ActionBarContainer;
+  
+! .field mTabScrollView:Lcom/android/internal/widget/ScrollingTabContainerView;
+!     .annotation build Landroid/annotation/OppoHook;
+!         level = .enum Landroid/annotation/OppoHook$OppoHookType;->CHANGE_ACCESS:Landroid/annotation/OppoHook$OppoHookType;
+!         note = "Jianhui.Yu@Plf.SDK,2013.10.05:[-private]Modify for oppoStyle Tab"
+!         property = .enum Landroid/annotation/OppoHook$OppoRomType;->ROM:Landroid/annotation/OppoHook$OppoRomType;
+!     .end annotation
+! .end field
+  
+  .field mTabSelector:Ljava/lang/Runnable;
+  
+***************
+*** 284,329 ****
+      return-object v0
+  .end method
+  
+- .method static synthetic access$1000(Lcom/android/internal/app/ActionBarImpl;)Lcom/android/internal/widget/ActionBarContextView;
+-     .locals 1
+-     .parameter "x0"
+- 
+-     .prologue
+-     iget-object v0, p0, Lcom/android/internal/app/ActionBarImpl;->mContextView:Lcom/android/internal/widget/ActionBarContextView;
+- 
+-     return-object v0
+- .end method
+- 
+- .method static synthetic access$1100(Lcom/android/internal/app/ActionBarImpl;)Lcom/android/internal/widget/ActionBarView;
+-     .locals 1
+-     .parameter "x0"
+- 
+-     .prologue
+-     iget-object v0, p0, Lcom/android/internal/app/ActionBarImpl;->mActionView:Lcom/android/internal/widget/ActionBarView;
+- 
+-     return-object v0
+- .end method
+- 
+- .method static synthetic access$1200(Lcom/android/internal/app/ActionBarImpl;)Landroid/content/Context;
+-     .locals 1
+-     .parameter "x0"
+- 
+-     .prologue
+-     iget-object v0, p0, Lcom/android/internal/app/ActionBarImpl;->mContext:Landroid/content/Context;
+- 
+-     return-object v0
+- .end method
+- 
+- .method static synthetic access$1300(Lcom/android/internal/app/ActionBarImpl;)Lcom/android/internal/widget/ScrollingTabContainerView;
+-     .locals 1
+-     .parameter "x0"
+- 
+-     .prologue
+-     iget-object v0, p0, Lcom/android/internal/app/ActionBarImpl;->mTabScrollView:Lcom/android/internal/widget/ScrollingTabContainerView;
+- 
+-     return-object v0
+- .end method
+- 
+  .method static synthetic access$200(Lcom/android/internal/app/ActionBarImpl;)Lcom/android/internal/widget/ActionBarContainer;
+      .locals 1
+      .parameter "x0"
+--- 296,301 ----
+***************
+*** 354,414 ****
+      return-object v0
+  .end method
+  
+- .method static synthetic access$502(Lcom/android/internal/app/ActionBarImpl;Landroid/animation/Animator;)Landroid/animation/Animator;
+-     .locals 0
+-     .parameter "x0"
+-     .parameter "x1"
+- 
+-     .prologue
+-     iput-object p1, p0, Lcom/android/internal/app/ActionBarImpl;->mCurrentShowAnim:Landroid/animation/Animator;
+- 
+-     return-object p1
+- .end method
+- 
+- .method static synthetic access$600(Lcom/android/internal/app/ActionBarImpl;)Lcom/android/internal/widget/ActionBarOverlayLayout;
+-     .locals 1
+-     .parameter "x0"
+- 
+-     .prologue
+-     iget-object v0, p0, Lcom/android/internal/app/ActionBarImpl;->mOverlayLayout:Lcom/android/internal/widget/ActionBarOverlayLayout;
+- 
+-     return-object v0
+- .end method
+- 
+  .method static synthetic access$700(Lcom/android/internal/app/ActionBarImpl;)Z
+      .locals 1
+      .parameter "x0"
+  
+      .prologue
+-     iget-boolean v0, p0, Lcom/android/internal/app/ActionBarImpl;->mHiddenByApp:Z
+- 
+-     return v0
+- .end method
+- 
+- .method static synthetic access$800(Lcom/android/internal/app/ActionBarImpl;)Z
+-     .locals 1
+-     .parameter "x0"
+- 
+-     .prologue
+      iget-boolean v0, p0, Lcom/android/internal/app/ActionBarImpl;->mHiddenBySystem:Z
+  
+      return v0
+  .end method
+  
+- .method static synthetic access$900(ZZZ)Z
+-     .locals 1
+-     .parameter "x0"
+-     .parameter "x1"
+-     .parameter "x2"
+- 
+-     .prologue
+-     invoke-static {p0, p1, p2}, Lcom/android/internal/app/ActionBarImpl;->checkShowingFlags(ZZZ)Z
+- 
+-     move-result v0
+- 
+-     return v0
+- .end method
+- 
+  .method private static checkShowingFlags(ZZZ)Z
+      .locals 1
+      .parameter "hiddenByApp"
+--- 326,341 ----
+***************
+*** 534,539 ****
+--- 461,471 ----
+  
+  .method private ensureTabsExist()V
+      .locals 4
++     .annotation build Landroid/annotation/OppoHook;
++         level = .enum Landroid/annotation/OppoHook$OppoHookType;->CHANGE_CODE:Landroid/annotation/OppoHook$OppoHookType;
++         note = "Jianhui.Yu@Plf.SDK,2013-07-27: Modify for oppoStyle Tab"
++         property = .enum Landroid/annotation/OppoHook$OppoRomType;->ROM:Landroid/annotation/OppoHook$OppoRomType;
++     .end annotation
+  
+      .prologue
+      const/4 v3, 0x0
+***************
+*** 546,556 ****
+      return-void
+  
+      :cond_0
+-     new-instance v0, Lcom/android/internal/widget/ScrollingTabContainerView;
+- 
+      iget-object v1, p0, Lcom/android/internal/app/ActionBarImpl;->mContext:Landroid/content/Context;
+  
+!     invoke-direct {v0, v1}, Lcom/android/internal/widget/ScrollingTabContainerView;-><init>(Landroid/content/Context;)V
+  
+      .local v0, tabScroller:Lcom/android/internal/widget/ScrollingTabContainerView;
+      iget-boolean v1, p0, Lcom/android/internal/app/ActionBarImpl;->mHasEmbeddedTabs:Z
+--- 478,488 ----
+      return-void
+  
+      :cond_0
+      iget-object v1, p0, Lcom/android/internal/app/ActionBarImpl;->mContext:Landroid/content/Context;
+  
+!     invoke-static {v1}, Lcom/android/internal/widget/OppoScrollingTabContainerView;->newInstance(Landroid/content/Context;)Lcom/android/internal/widget/ScrollingTabContainerView;
+! 
+!     move-result-object v0
+  
+      .local v0, tabScroller:Lcom/android/internal/widget/ScrollingTabContainerView;
+      iget-boolean v1, p0, Lcom/android/internal/app/ActionBarImpl;->mHasEmbeddedTabs:Z
+***************
+*** 633,638 ****
+--- 565,575 ----
+  .method private init(Landroid/view/View;)V
+      .locals 7
+      .parameter "decor"
++     .annotation build Landroid/annotation/OppoHook;
++         level = .enum Landroid/annotation/OppoHook$OppoHookType;->CHANGE_CODE:Landroid/annotation/OppoHook$OppoHookType;
++         note = "Jianhui.Yu@Plf.SDK,2013-07-27:Modify for ActionMode animation"
++         property = .enum Landroid/annotation/OppoHook$OppoRomType;->ROM:Landroid/annotation/OppoHook$OppoRomType;
++     .end annotation
+  
+      .prologue
+      const/4 v5, 0x0
+***************
+*** 787,793 ****
+  
+      move-result v3
+  
+!     if-eqz v3, :cond_7
+  
+      move v3, v4
+  
+--- 724,730 ----
+  
+      move-result v3
+  
+!     if-eqz v3, :cond_6
+  
+      move v3, v4
+  
+***************
+*** 803,809 ****
+      .local v1, current:I
+      and-int/lit8 v3, v1, 0x4
+  
+!     if-eqz v3, :cond_8
+  
+      move v2, v4
+  
+--- 740,746 ----
+      .local v1, current:I
+      and-int/lit8 v3, v1, 0x4
+  
+!     if-eqz v3, :cond_7
+  
+      move v2, v4
+  
+***************
+*** 827,839 ****
+  
+      if-nez v3, :cond_5
+  
+!     if-eqz v2, :cond_6
+  
+      :cond_5
+!     move v5, v4
+  
+!     :cond_6
+!     invoke-virtual {p0, v5}, Lcom/android/internal/app/ActionBarImpl;->setHomeButtonEnabled(Z)V
+  
+      invoke-virtual {v0}, Lcom/android/internal/view/ActionBarPolicy;->hasEmbeddedTabs()Z
+  
+--- 764,776 ----
+  
+      if-nez v3, :cond_5
+  
+!     if-eqz v2, :cond_8
+  
+      :cond_5
+!     move v3, v4
+  
+!     :goto_2
+!     invoke-virtual {p0, v3}, Lcom/android/internal/app/ActionBarImpl;->setHomeButtonEnabled(Z)V
+  
+      invoke-virtual {v0}, Lcom/android/internal/view/ActionBarPolicy;->hasEmbeddedTabs()Z
+  
+***************
+*** 841,861 ****
+  
+      invoke-direct {p0, v3}, Lcom/android/internal/app/ActionBarImpl;->setHasEmbeddedTabs(Z)V
+  
+      return-void
+  
+      .end local v0           #abp:Lcom/android/internal/view/ActionBarPolicy;
+      .end local v1           #current:I
+      .end local v2           #homeAsUp:Z
+!     :cond_7
+      move v3, v5
+  
+      goto :goto_0
+  
+      .restart local v1       #current:I
+!     :cond_8
+      move v2, v5
+  
+      goto :goto_1
+  .end method
+  
+  .method private setHasEmbeddedTabs(Z)V
+--- 778,843 ----
+  
+      invoke-direct {p0, v3}, Lcom/android/internal/app/ActionBarImpl;->setHasEmbeddedTabs(Z)V
+  
++     const/4 v3, 0x6
++ 
++     new-array v3, v3, [Landroid/view/View;
++ 
++     iget-object v6, p0, Lcom/android/internal/app/ActionBarImpl;->mOverlayLayout:Lcom/android/internal/widget/ActionBarOverlayLayout;
++ 
++     aput-object v6, v3, v5
++ 
++     iget-object v5, p0, Lcom/android/internal/app/ActionBarImpl;->mContainerView:Lcom/android/internal/widget/ActionBarContainer;
++ 
++     aput-object v5, v3, v4
++ 
++     const/4 v4, 0x2
++ 
++     iget-object v5, p0, Lcom/android/internal/app/ActionBarImpl;->mTopVisibilityView:Landroid/view/ViewGroup;
++ 
++     aput-object v5, v3, v4
++ 
++     const/4 v4, 0x3
++ 
++     iget-object v5, p0, Lcom/android/internal/app/ActionBarImpl;->mActionView:Lcom/android/internal/widget/ActionBarView;
++ 
++     aput-object v5, v3, v4
++ 
++     const/4 v4, 0x4
++ 
++     iget-object v5, p0, Lcom/android/internal/app/ActionBarImpl;->mContextView:Lcom/android/internal/widget/ActionBarContextView;
++ 
++     aput-object v5, v3, v4
++ 
++     const/4 v4, 0x5
++ 
++     iget-object v5, p0, Lcom/android/internal/app/ActionBarImpl;->mSplitView:Lcom/android/internal/widget/ActionBarContainer;
++ 
++     aput-object v5, v3, v4
++ 
++     invoke-virtual {p0, v3}, Lcom/android/internal/app/ActionBarImpl;->hookInitViews([Landroid/view/View;)V
++ 
+      return-void
+  
+      .end local v0           #abp:Lcom/android/internal/view/ActionBarPolicy;
+      .end local v1           #current:I
+      .end local v2           #homeAsUp:Z
+!     :cond_6
+      move v3, v5
+  
+      goto :goto_0
+  
+      .restart local v1       #current:I
+!     :cond_7
+      move v2, v5
+  
+      goto :goto_1
++ 
++     .restart local v0       #abp:Lcom/android/internal/view/ActionBarPolicy;
++     .restart local v2       #homeAsUp:Z
++     :cond_8
++     move v3, v5
++ 
++     goto :goto_2
+  .end method
+  
+  .method private setHasEmbeddedTabs(Z)V
+***************
+*** 3166,3168 ****
+--- 3148,3277 ----
+  
+      goto :goto_0
+  .end method
++ 
++ .method static synthetic access$1000(Lcom/android/internal/app/ActionBarImpl;)Lcom/android/internal/widget/ActionBarView;
++     .locals 1
++     .parameter "x0"
++ 
++     .prologue
++     iget-object v0, p0, Lcom/android/internal/app/ActionBarImpl;->mActionView:Lcom/android/internal/widget/ActionBarView;
++ 
++     return-object v0
++ .end method
++ 
++ .method static synthetic access$1100(Lcom/android/internal/app/ActionBarImpl;)Landroid/content/Context;
++     .locals 1
++     .parameter "x0"
++ 
++     .prologue
++     iget-object v0, p0, Lcom/android/internal/app/ActionBarImpl;->mContext:Landroid/content/Context;
++ 
++     return-object v0
++ .end method
++ 
++ .method static synthetic access$500(Lcom/android/internal/app/ActionBarImpl;)Lcom/android/internal/widget/ActionBarOverlayLayout;
++     .locals 1
++     .parameter "x0"
++ 
++     .prologue
++     iget-object v0, p0, Lcom/android/internal/app/ActionBarImpl;->mOverlayLayout:Lcom/android/internal/widget/ActionBarOverlayLayout;
++ 
++     return-object v0
++ .end method
++ 
++ .method static synthetic access$600(Lcom/android/internal/app/ActionBarImpl;)Z
++     .locals 1
++     .parameter "x0"
++ 
++     .prologue
++     iget-boolean v0, p0, Lcom/android/internal/app/ActionBarImpl;->mHiddenByApp:Z
++ 
++     return v0
++ .end method
++ 
++ .method static synthetic access$800(ZZZ)Z
++     .locals 1
++     .parameter "x0"
++     .parameter "x1"
++     .parameter "x2"
++ 
++     .prologue
++     invoke-static {p0, p1, p2}, Lcom/android/internal/app/ActionBarImpl;->checkShowingFlags(ZZZ)Z
++ 
++     move-result v0
++ 
++     return v0
++ .end method
++ 
++ .method static synthetic access$900(Lcom/android/internal/app/ActionBarImpl;)Lcom/android/internal/widget/ActionBarContextView;
++     .locals 1
++     .parameter "x0"
++ 
++     .prologue
++     iget-object v0, p0, Lcom/android/internal/app/ActionBarImpl;->mContextView:Lcom/android/internal/widget/ActionBarContextView;
++ 
++     return-object v0
++ .end method
++ 
++ .method hookCheckShowingFlags()Z
++     .locals 3
++     .annotation build Landroid/annotation/OppoHook;
++         level = .enum Landroid/annotation/OppoHook$OppoHookType;->NEW_METHOD:Landroid/annotation/OppoHook$OppoHookType;
++         note = "Jianhui.Yu@Plf.SDK, Add for ActionMode animation"
++         property = .enum Landroid/annotation/OppoHook$OppoRomType;->ROM:Landroid/annotation/OppoHook$OppoRomType;
++     .end annotation
++ 
++     .prologue
++     iget-boolean v0, p0, Lcom/android/internal/app/ActionBarImpl;->mHiddenByApp:Z
++ 
++     iget-boolean v1, p0, Lcom/android/internal/app/ActionBarImpl;->mHiddenBySystem:Z
++ 
++     const/4 v2, 0x0
++ 
++     invoke-static {v0, v1, v2}, Lcom/android/internal/app/ActionBarImpl;->checkShowingFlags(ZZZ)Z
++ 
++     move-result v0
++ 
++     return v0
++ .end method
++ 
++ .method hookInitViews([Landroid/view/View;)V
++     .locals 0
++     .parameter "views"
++     .annotation build Landroid/annotation/OppoHook;
++         level = .enum Landroid/annotation/OppoHook$OppoHookType;->NEW_METHOD:Landroid/annotation/OppoHook$OppoHookType;
++         note = "Jianhui.Yu@Plf.SDK : Add for ActionMode animation"
++         property = .enum Landroid/annotation/OppoHook$OppoRomType;->ROM:Landroid/annotation/OppoHook$OppoRomType;
++     .end annotation
++ 
++     .prologue
++     return-void
++ .end method
++ 
++ .method public updateAnimateTab(IFI)V
++     .locals 0
++     .parameter "position"
++     .parameter "positionOffset"
++     .parameter "positionOffsetPixels"
++     .annotation build Landroid/annotation/OppoHook;
++         level = .enum Landroid/annotation/OppoHook$OppoHookType;->NEW_METHOD:Landroid/annotation/OppoHook$OppoHookType;
++         note = "Xiaokang.Feng@Plf.SDK : Add for oppoStyle Tab"
++         property = .enum Landroid/annotation/OppoHook$OppoRomType;->ROM:Landroid/annotation/OppoHook$OppoRomType;
++     .end annotation
++ 
++     .prologue
++     return-void
++ .end method
++ 
++ .method public updateScrollState(I)V
++     .locals 0
++     .parameter "state"
++     .annotation build Landroid/annotation/OppoHook;
++         level = .enum Landroid/annotation/OppoHook$OppoHookType;->NEW_METHOD:Landroid/annotation/OppoHook$OppoHookType;
++         note = "Xiaokang.Feng@Plf.SDK : Add for oppoStyle Tab"
++         property = .enum Landroid/annotation/OppoHook$OppoRomType;->ROM:Landroid/annotation/OppoHook$OppoRomType;
++     .end annotation
++ 
++     .prologue
++     return-void
++ .end method

@@ -1,0 +1,13 @@
+*** /home/suda/color2.0/device/temp/android_smali/./framework.jar.out/smali/android/media/AudioService$AudioServiceBroadcastReceiver.smali	2014-05-01 23:28:58.000000000 +0800
+--- ./framework.jar.out/smali/android/media/AudioService$AudioServiceBroadcastReceiver.smali	2014-05-01 23:29:13.000000000 +0800
+***************
+*** 1189,1196 ****
+  
+      goto/16 :goto_1
+  
+-     nop
+- 
+      :pswitch_data_0
+      .packed-switch 0x1
+          :pswitch_0
+--- 1189,1194 ----

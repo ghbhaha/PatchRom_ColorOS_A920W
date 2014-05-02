@@ -1,0 +1,199 @@
+*** /home/suda/color2.0/device/temp/android_smali/./framework.jar.out/smali/android/content/res/AssetManager.smali	2014-05-01 23:28:57.000000000 +0800
+--- ./framework.jar.out/smali/android/content/res/AssetManager.smali	2014-05-01 23:29:13.000000000 +0800
+***************
+*** 94,99 ****
+--- 94,104 ----
+  
+  .method public constructor <init>()V
+      .locals 2
++     .annotation build Landroid/annotation/OppoHook;
++         level = .enum Landroid/annotation/OppoHook$OppoHookType;->CHANGE_CODE:Landroid/annotation/OppoHook$OppoHookType;
++         note = "Jianjun.Dan@Plf.SDK,2013.10.05: modify for oppo-framework-res"
++         property = .enum Landroid/annotation/OppoHook$OppoRomType;->ROM:Landroid/annotation/OppoHook$OppoRomType;
++     .end annotation
+  
+      .prologue
+      const/4 v1, 0x1
+***************
+*** 127,132 ****
+--- 132,139 ----
+  
+      invoke-static {}, Landroid/content/res/AssetManager;->ensureSystemAssets()V
+  
++     invoke-static {p0}, Landroid/content/res/OppoResourceHelper;->addExtraAssetPaths(Landroid/content/res/AssetManager;)V
++ 
+      monitor-exit p0
+  
+      return-void
+***************
+*** 144,149 ****
+--- 151,161 ----
+  .method private constructor <init>(Z)V
+      .locals 2
+      .parameter "isSystem"
++     .annotation build Landroid/annotation/OppoHook;
++         level = .enum Landroid/annotation/OppoHook$OppoHookType;->CHANGE_CODE:Landroid/annotation/OppoHook$OppoHookType;
++         note = "Jianjun.Dan@Plf.SDK,2013.10.05 : modify for oppo-framework-res"
++         property = .enum Landroid/annotation/OppoHook$OppoRomType;->ROM:Landroid/annotation/OppoHook$OppoRomType;
++     .end annotation
+  
+      .prologue
+      const/4 v1, 0x1
+***************
+*** 172,177 ****
+--- 184,191 ----
+  
+      invoke-direct {p0}, Landroid/content/res/AssetManager;->init()V
+  
++     invoke-static {p0}, Landroid/content/res/OppoResourceHelper;->addExtraAssetPaths(Landroid/content/res/AssetManager;)V
++ 
+      return-void
+  .end method
+  
+***************
+*** 1797,1799 ****
+--- 1811,1954 ----
+  
+      throw v0
+  .end method
++ 
++ .method final openXmlBlockAssetInOppoEncryption(ILjava/lang/String;)Landroid/content/res/XmlBlock;
++     .locals 6
++     .parameter "cookie"
++     .parameter "fileName"
++     .annotation build Landroid/annotation/OppoHook;
++         level = .enum Landroid/annotation/OppoHook$OppoHookType;->NEW_METHOD:Landroid/annotation/OppoHook$OppoHookType;
++         note = "ZhiYong.Lin@Plf.Framework, add for apk encryption"
++         property = .enum Landroid/annotation/OppoHook$OppoRomType;->ROM:Landroid/annotation/OppoHook$OppoRomType;
++     .end annotation
++ 
++     .annotation system Ldalvik/annotation/Throws;
++         value = {
++             Ljava/io/IOException;
++         }
++     .end annotation
++ 
++     .prologue
++     monitor-enter p0
++ 
++     :try_start_0
++     iget-boolean v3, p0, Landroid/content/res/AssetManager;->mOpen:Z
++ 
++     if-nez v3, :cond_0
++ 
++     new-instance v3, Ljava/lang/RuntimeException;
++ 
++     const-string v4, "Assetmanager has been closed"
++ 
++     invoke-direct {v3, v4}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
++ 
++     throw v3
++ 
++     :catchall_0
++     move-exception v3
++ 
++     monitor-exit p0
++     :try_end_0
++     .catchall {:try_start_0 .. :try_end_0} :catchall_0
++ 
++     throw v3
++ 
++     :cond_0
++     :try_start_1
++     invoke-static {}, Landroid/encryption/OppoEncryption;->getInstance()Landroid/encryption/OppoEncryption;
++ 
++     move-result-object v0
++ 
++     .local v0, oppoEncryption:Landroid/encryption/OppoEncryption;
++     iget v3, p0, Landroid/content/res/AssetManager;->mObject:I
++ 
++     invoke-virtual {v0, v3}, Landroid/encryption/OppoEncryption;->initAssetManager(I)V
++ 
++     invoke-virtual {v0, p1, p2}, Landroid/encryption/OppoEncryption;->openXmlAssetInOppoEncryption(ILjava/lang/String;)I
++ 
++     move-result v2
++ 
++     .local v2, xmlBlock:I
++     if-eqz v2, :cond_1
++ 
++     const/4 v1, 0x0
++ 
++     .local v1, res:Landroid/content/res/XmlBlock;
++     new-instance v1, Landroid/content/res/XmlBlock;
++ 
++     .end local v1           #res:Landroid/content/res/XmlBlock;
++     invoke-direct {v1, p0, v2}, Landroid/content/res/XmlBlock;-><init>(Landroid/content/res/AssetManager;I)V
++ 
++     .restart local v1       #res:Landroid/content/res/XmlBlock;
++     invoke-virtual {v1}, Ljava/lang/Object;->hashCode()I
++ 
++     move-result v3
++ 
++     invoke-direct {p0, v3}, Landroid/content/res/AssetManager;->incRefsLocked(I)V
++ 
++     monitor-exit p0
++ 
++     return-object v1
++ 
++     .end local v1           #res:Landroid/content/res/XmlBlock;
++     :cond_1
++     monitor-exit p0
++     :try_end_1
++     .catchall {:try_start_1 .. :try_end_1} :catchall_0
++ 
++     new-instance v3, Ljava/io/FileNotFoundException;
++ 
++     new-instance v4, Ljava/lang/StringBuilder;
++ 
++     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
++ 
++     const-string v5, "Asset XML file: "
++ 
++     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
++ 
++     move-result-object v4
++ 
++     invoke-virtual {v4, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
++ 
++     move-result-object v4
++ 
++     invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
++ 
++     move-result-object v4
++ 
++     invoke-direct {v3, v4}, Ljava/io/FileNotFoundException;-><init>(Ljava/lang/String;)V
++ 
++     throw v3
++ .end method
++ 
++ .method public final openXmlResourceParserInOppoEncryption(ILjava/lang/String;)Landroid/content/res/XmlResourceParser;
++     .locals 2
++     .parameter "cookie"
++     .parameter "fileName"
++     .annotation build Landroid/annotation/OppoHook;
++         level = .enum Landroid/annotation/OppoHook$OppoHookType;->NEW_METHOD:Landroid/annotation/OppoHook$OppoHookType;
++         note = "ZhiYong.Lin@Plf.Framework, add for apk encryption"
++         property = .enum Landroid/annotation/OppoHook$OppoRomType;->ROM:Landroid/annotation/OppoHook$OppoRomType;
++     .end annotation
++ 
++     .annotation system Ldalvik/annotation/Throws;
++         value = {
++             Ljava/io/IOException;
++         }
++     .end annotation
++ 
++     .prologue
++     invoke-virtual {p0, p1, p2}, Landroid/content/res/AssetManager;->openXmlBlockAssetInOppoEncryption(ILjava/lang/String;)Landroid/content/res/XmlBlock;
++ 
++     move-result-object v0
++ 
++     .local v0, block:Landroid/content/res/XmlBlock;
++     invoke-virtual {v0}, Landroid/content/res/XmlBlock;->newParser()Landroid/content/res/XmlResourceParser;
++ 
++     move-result-object v1
++ 
++     .local v1, rp:Landroid/content/res/XmlResourceParser;
++     invoke-virtual {v0}, Landroid/content/res/XmlBlock;->close()V
++ 
++     return-object v1
++ .end method

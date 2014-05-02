@@ -1,0 +1,19 @@
+*** /home/suda/color2.0/device/temp/android_smali/./services.jar.out/smali/com/android/server/am/ActivityManagerService$8$1.smali	2014-05-01 23:28:54.000000000 +0800
+--- ./services.jar.out/smali/com/android/server/am/ActivityManagerService$8$1.smali	2014-05-01 23:29:09.000000000 +0800
+***************
+*** 64,70 ****
+      iget-object v0, v0, Lcom/android/server/am/ActivityManagerService$8;->val$doneReceivers:Ljava/util/ArrayList;
+  
+      #calls: Lcom/android/server/am/ActivityManagerService;->writeLastDonePreBootReceivers(Ljava/util/ArrayList;)V
+!     invoke-static {v0}, Lcom/android/server/am/ActivityManagerService;->access$800(Ljava/util/ArrayList;)V
+  
+      iget-object v0, p0, Lcom/android/server/am/ActivityManagerService$8$1;->this$1:Lcom/android/server/am/ActivityManagerService$8;
+  
+--- 64,70 ----
+      iget-object v0, v0, Lcom/android/server/am/ActivityManagerService$8;->val$doneReceivers:Ljava/util/ArrayList;
+  
+      #calls: Lcom/android/server/am/ActivityManagerService;->writeLastDonePreBootReceivers(Ljava/util/ArrayList;)V
+!     invoke-static {v0}, Lcom/android/server/am/ActivityManagerService;->access$700(Ljava/util/ArrayList;)V
+  
+      iget-object v0, p0, Lcom/android/server/am/ActivityManagerService$8$1;->this$1:Lcom/android/server/am/ActivityManagerService$8;
+  

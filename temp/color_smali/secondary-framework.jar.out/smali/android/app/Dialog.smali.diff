@@ -1,0 +1,140 @@
+*** /home/suda/color2.0/device/temp/android_smali/./secondary-framework.jar.out/smali/android/app/Dialog.smali	2014-05-01 23:29:00.000000000 +0800
+--- ./secondary-framework.jar.out/smali/android/app/Dialog.smali	2014-05-01 23:29:17.000000000 +0800
+***************
+*** 12,17 ****
+--- 12,18 ----
+  # annotations
+  .annotation system Ldalvik/annotation/MemberClasses;
+      value = {
++         Landroid/app/Dialog$Injector;,
+          Landroid/app/Dialog$ListenersHandler;
+      }
+  .end annotation
+***************
+*** 36,41 ****
+--- 37,44 ----
+  
+  .field private mActionMode:Landroid/view/ActionMode;
+  
++ .field private mButtonFlag:I
++ 
+  .field private mCancelAndDismissTaken:Ljava/lang/String;
+  
+  .field private mCancelMessage:Landroid/os/Message;
+***************
+*** 110,126 ****
+  
+      const/4 v4, 0x1
+  
+!     const/4 v2, 0x0
+  
+      invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+  
+      iput-boolean v4, p0, Landroid/app/Dialog;->mCancelable:Z
+  
+!     iput-boolean v2, p0, Landroid/app/Dialog;->mCreated:Z
+  
+!     iput-boolean v2, p0, Landroid/app/Dialog;->mShowing:Z
+  
+!     iput-boolean v2, p0, Landroid/app/Dialog;->mCanceled:Z
+  
+      new-instance v2, Landroid/os/Handler;
+  
+--- 113,129 ----
+  
+      const/4 v4, 0x1
+  
+!     const/4 v3, 0x0
+  
+      invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+  
+      iput-boolean v4, p0, Landroid/app/Dialog;->mCancelable:Z
+  
+!     iput-boolean v3, p0, Landroid/app/Dialog;->mCreated:Z
+  
+!     iput-boolean v3, p0, Landroid/app/Dialog;->mShowing:Z
+  
+!     iput-boolean v3, p0, Landroid/app/Dialog;->mCanceled:Z
+  
+      new-instance v2, Landroid/os/Handler;
+  
+***************
+*** 128,133 ****
+--- 131,138 ----
+  
+      iput-object v2, p0, Landroid/app/Dialog;->mHandler:Landroid/os/Handler;
+  
++     iput v3, p0, Landroid/app/Dialog;->mButtonFlag:I
++ 
+      new-instance v2, Landroid/app/Dialog$1;
+  
+      invoke-direct {v2, p0}, Landroid/app/Dialog$1;-><init>(Landroid/app/Dialog;)V
+***************
+*** 1969,1974 ****
+--- 1974,1984 ----
+  
+  .method public show()V
+      .locals 5
++     .annotation build Landroid/annotation/OppoHook;
++         level = .enum Landroid/annotation/OppoHook$OppoHookType;->CHANGE_CODE:Landroid/annotation/OppoHook$OppoHookType;
++         note = "Jianhui.Yu@Plf.SDK : Modify for ActionBar of oppo style"
++         property = .enum Landroid/annotation/OppoHook$OppoRomType;->ROM:Landroid/annotation/OppoHook$OppoRomType;
++     .end annotation
+  
+      .prologue
+      const/4 v4, 0x0
+***************
+*** 2016,2021 ****
+--- 2026,2035 ----
+      invoke-virtual {p0, v2}, Landroid/app/Dialog;->dispatchOnCreate(Landroid/os/Bundle;)V
+  
+      :cond_3
++     iget v2, p0, Landroid/app/Dialog;->mButtonFlag:I
++ 
++     invoke-static {p0, v2}, Landroid/app/Dialog$Injector;->initButtonBackground(Landroid/app/Dialog;I)V
++ 
+      invoke-virtual {p0}, Landroid/app/Dialog;->onStart()V
+  
+      iget-object v2, p0, Landroid/app/Dialog;->mWindow:Landroid/view/Window;
+***************
+*** 2038,2046 ****
+  
+      if-eqz v2, :cond_4
+  
+!     new-instance v2, Lcom/android/internal/app/ActionBarImpl;
+  
+!     invoke-direct {v2, p0}, Lcom/android/internal/app/ActionBarImpl;-><init>(Landroid/app/Dialog;)V
+  
+      iput-object v2, p0, Landroid/app/Dialog;->mActionBar:Lcom/android/internal/app/ActionBarImpl;
+  
+--- 2052,2060 ----
+  
+      if-eqz v2, :cond_4
+  
+!     invoke-static {p0}, Lcom/android/internal/app/OppoActionBarImpl;->newInstance(Landroid/app/Dialog;)Lcom/android/internal/app/ActionBarImpl;
+  
+!     move-result-object v2
+  
+      iput-object v2, p0, Landroid/app/Dialog;->mActionBar:Lcom/android/internal/app/ActionBarImpl;
+  
+***************
+*** 2163,2165 ****
+--- 2177,2194 ----
+  
+      return-void
+  .end method
++ 
++ .method public setFousedButton(I)V
++     .locals 0
++     .parameter "flag"
++     .annotation build Landroid/annotation/OppoHook;
++         level = .enum Landroid/annotation/OppoHook$OppoHookType;->NEW_METHOD:Landroid/annotation/OppoHook$OppoHookType;
++         note = "Jianhua.Lin@Plf.SDK : Add for Oppo Theme"
++         property = .enum Landroid/annotation/OppoHook$OppoRomType;->ROM:Landroid/annotation/OppoHook$OppoRomType;
++     .end annotation
++ 
++     .prologue
++     iput p1, p0, Landroid/app/Dialog;->mButtonFlag:I
++ 
++     return-void
++ .end method

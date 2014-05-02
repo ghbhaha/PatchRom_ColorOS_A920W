@@ -1,0 +1,39 @@
+*** /home/suda/color2.0/device/temp/android_smali/./services.jar.out/smali/com/android/server/am/ActivityManagerService$AThread.smali	2014-05-01 23:28:55.000000000 +0800
+--- ./services.jar.out/smali/com/android/server/am/ActivityManagerService$AThread.smali	2014-05-01 23:29:09.000000000 +0800
+***************
+*** 40,45 ****
+--- 40,50 ----
+  # virtual methods
+  .method public run()V
+      .locals 3
++     .annotation build Landroid/annotation/OppoHook;
++         level = .enum Landroid/annotation/OppoHook$OppoHookType;->CHANGE_CODE:Landroid/annotation/OppoHook$OppoHookType;
++         note = "zhangyinxiang@Plf.Framework, modify for OppoActivityManagerService"
++         property = .enum Landroid/annotation/OppoHook$OppoRomType;->ROM:Landroid/annotation/OppoHook$OppoRomType;
++     .end annotation
+  
+      .prologue
+      invoke-static {}, Landroid/os/Looper;->prepare()V
+***************
+*** 52,62 ****
+  
+      invoke-static {v1}, Landroid/os/Process;->setCanSelfBackground(Z)V
+  
+!     new-instance v0, Lcom/android/server/am/ActivityManagerService;
+  
+!     const/4 v1, 0x0
+! 
+!     invoke-direct {v0, v1}, Lcom/android/server/am/ActivityManagerService;-><init>(Lcom/android/server/am/ActivityManagerService$1;)V
+  
+      .local v0, m:Lcom/android/server/am/ActivityManagerService;
+      monitor-enter p0
+--- 57,65 ----
+  
+      invoke-static {v1}, Landroid/os/Process;->setCanSelfBackground(Z)V
+  
+!     new-instance v0, Lcom/android/server/am/OppoActivityManagerService;
+  
+!     invoke-direct {v0}, Lcom/android/server/am/OppoActivityManagerService;-><init>()V
+  
+      .local v0, m:Lcom/android/server/am/ActivityManagerService;
+      monitor-enter p0

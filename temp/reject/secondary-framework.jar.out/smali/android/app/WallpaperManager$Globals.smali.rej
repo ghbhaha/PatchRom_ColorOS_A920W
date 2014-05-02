@@ -1,0 +1,19 @@
+*** WallpaperManager$Globals.smali	2014-05-01 23:29:01.000000000 +0800
+--- WallpaperManager$Globals.smali	2014-05-01 23:29:18.000000000 +0800
+***************
+*** 284,290 ****
+  
+      move-result-object v6
+  
+!     const v8, 0x108021e
+  
+      invoke-virtual {v6, v8}, Landroid/content/res/Resources;->openRawResource(I)Ljava/io/InputStream;
+  
+--- 289,295 ----
+  
+      move-result-object v6
+  
+!     const v8, 0xc08003e
+  
+      invoke-virtual {v6, v8}, Landroid/content/res/Resources;->openRawResource(I)Ljava/io/InputStream;
+  

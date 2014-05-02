@@ -1,0 +1,39 @@
+*** /home/suda/color2.0/device/temp/android_smali/./services.jar.out/smali/com/android/server/AttributeCache.smali	2014-05-01 23:28:56.000000000 +0800
+--- ./services.jar.out/smali/com/android/server/AttributeCache.smali	2014-05-01 23:29:11.000000000 +0800
+***************
+*** 98,105 ****
+      return-object v0
+  .end method
+  
+- 
+- # virtual methods
+  .method public get(Ljava/lang/String;I[I)Lcom/android/server/AttributeCache$Entry;
+      .locals 9
+      .parameter "packageName"
+--- 98,103 ----
+***************
+*** 367,369 ****
+--- 365,387 ----
+  
+      throw v1
+  .end method
++ # virtual methods
++ .method public get(ILjava/lang/String;I[I)Lcom/android/server/AttributeCache$Entry;
++     .locals 1
++     .parameter "userId"
++     .parameter "packageName"
++     .parameter "resId"
++     .parameter "styleable"
++     .annotation build Landroid/annotation/OppoHook;
++         level = .enum Landroid/annotation/OppoHook$OppoHookType;->NEW_METHOD:Landroid/annotation/OppoHook$OppoHookType;
++         note = "Jianjun.Dan@Plf.SDK,2014.03.04 :add for QCOM and MTK with Google source code differences "
++         property = .enum Landroid/annotation/OppoHook$OppoRomType;->QCOM:Landroid/annotation/OppoHook$OppoRomType;
++     .end annotation
++ 
++     .prologue
++     invoke-virtual {p0, p2, p3, p4}, Lcom/android/server/AttributeCache;->get(Ljava/lang/String;I[I)Lcom/android/server/AttributeCache$Entry;
++ 
++     move-result-object v0
++ 
++     return-object v0
++ .end method

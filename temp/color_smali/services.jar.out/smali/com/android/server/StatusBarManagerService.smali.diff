@@ -1,0 +1,33 @@
+*** /home/suda/color2.0/device/temp/android_smali/./services.jar.out/smali/com/android/server/StatusBarManagerService.smali	2014-05-01 23:28:56.000000000 +0800
+--- ./services.jar.out/smali/com/android/server/StatusBarManagerService.smali	2014-05-01 23:29:11.000000000 +0800
+***************
+*** 83,88 ****
+--- 83,93 ----
+      .locals 3
+      .parameter "context"
+      .parameter "windowManager"
++     .annotation build Landroid/annotation/OppoHook;
++         level = .enum Landroid/annotation/OppoHook$OppoHookType;->CHANGE_RESOURCE:Landroid/annotation/OppoHook$OppoHookType;
++         note = "Jiamiao.He@Plf.Keyguard,2013.02.04:to load oppo-framework-res"
++         property = .enum Landroid/annotation/OppoHook$OppoRomType;->ROM:Landroid/annotation/OppoHook$OppoRomType;
++     .end annotation
+  
+      .prologue
+      const/4 v2, 0x0
+***************
+*** 158,164 ****
+      .local v0, res:Landroid/content/res/Resources;
+      iget-object v1, p0, Lcom/android/server/StatusBarManagerService;->mIcons:Lcom/android/internal/statusbar/StatusBarIconList;
+  
+!     const v2, 0x1070013
+  
+      invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getStringArray(I)[Ljava/lang/String;
+  
+--- 163,169 ----
+      .local v0, res:Landroid/content/res/Resources;
+      iget-object v1, p0, Lcom/android/server/StatusBarManagerService;->mIcons:Lcom/android/internal/statusbar/StatusBarIconList;
+  
+!     const v2, 0xc07040c
+  
+      invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getStringArray(I)[Ljava/lang/String;
+  

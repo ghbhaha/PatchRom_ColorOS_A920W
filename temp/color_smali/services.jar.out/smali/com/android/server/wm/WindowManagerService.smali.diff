@@ -1,0 +1,1520 @@
+*** /home/suda/color2.0/device/temp/android_smali/./services.jar.out/smali/com/android/server/wm/WindowManagerService.smali	2014-05-01 23:28:53.000000000 +0800
+--- ./services.jar.out/smali/com/android/server/wm/WindowManagerService.smali	2014-05-01 23:29:08.000000000 +0800
+***************
+*** 775,781 ****
+      return-void
+  .end method
+  
+! .method private constructor <init>(Landroid/content/Context;Lcom/android/server/power/PowerManagerService;Lcom/android/server/display/DisplayManagerService;Lcom/android/server/input/InputManagerService;Landroid/os/Handler;ZZZ)V
+      .locals 11
+      .parameter "context"
+      .parameter "pm"
+--- 775,781 ----
+      return-void
+  .end method
+  
+! .method constructor <init>(Landroid/content/Context;Lcom/android/server/power/PowerManagerService;Lcom/android/server/display/DisplayManagerService;Lcom/android/server/input/InputManagerService;Landroid/os/Handler;ZZZ)V
+      .locals 11
+      .parameter "context"
+      .parameter "pm"
+***************
+*** 785,790 ****
+--- 785,794 ----
+      .parameter "haveInputMethods"
+      .parameter "showBootMsgs"
+      .parameter "onlyCore"
++     .annotation build Landroid/annotation/OppoHook;
++         level = .enum Landroid/annotation/OppoHook$OppoHookType;->CHANGE_ACCESS:Landroid/annotation/OppoHook$OppoHookType;
++         note = "zhangkai change for apklock"
++     .end annotation
+  
+      .prologue
+      invoke-direct {p0}, Landroid/view/IWindowManager$Stub;-><init>()V
+***************
+*** 1547,1570 ****
+      throw v8
+  .end method
+  
+- .method synthetic constructor <init>(Landroid/content/Context;Lcom/android/server/power/PowerManagerService;Lcom/android/server/display/DisplayManagerService;Lcom/android/server/input/InputManagerService;Landroid/os/Handler;ZZZLcom/android/server/wm/WindowManagerService$1;)V
+-     .locals 0
+-     .parameter "x0"
+-     .parameter "x1"
+-     .parameter "x2"
+-     .parameter "x3"
+-     .parameter "x4"
+-     .parameter "x5"
+-     .parameter "x6"
+-     .parameter "x7"
+-     .parameter "x8"
+- 
+-     .prologue
+-     invoke-direct/range {p0 .. p8}, Lcom/android/server/wm/WindowManagerService;-><init>(Landroid/content/Context;Lcom/android/server/power/PowerManagerService;Lcom/android/server/display/DisplayManagerService;Lcom/android/server/input/InputManagerService;Landroid/os/Handler;ZZZ)V
+- 
+-     return-void
+- .end method
+- 
+  .method static synthetic access$000(Lcom/android/server/wm/WindowManagerService;)Lcom/android/server/wm/KeyguardDisableHandler;
+      .locals 1
+      .parameter "x0"
+--- 1551,1556 ----
+***************
+*** 1585,1602 ****
+      return v0
+  .end method
+  
+- .method static synthetic access$1000(Lcom/android/server/wm/WindowManagerService;II)V
+-     .locals 0
+-     .parameter "x0"
+-     .parameter "x1"
+-     .parameter "x2"
+- 
+-     .prologue
+-     invoke-direct {p0, p1, p2}, Lcom/android/server/wm/WindowManagerService;->handleNotifyRotationChanged(II)V
+- 
+-     return-void
+- .end method
+- 
+  .method static synthetic access$102(Lcom/android/server/wm/WindowManagerService;Z)Z
+      .locals 0
+      .parameter "x0"
+--- 1571,1576 ----
+***************
+*** 1608,1672 ****
+      return p1
+  .end method
+  
+- .method static synthetic access$1100(Lcom/android/server/wm/WindowManagerService;ILandroid/view/WindowInfo;)V
+-     .locals 0
+-     .parameter "x0"
+-     .parameter "x1"
+-     .parameter "x2"
+- 
+-     .prologue
+-     invoke-direct {p0, p1, p2}, Lcom/android/server/wm/WindowManagerService;->handleNotifyWindowTranstion(ILandroid/view/WindowInfo;)V
+- 
+-     return-void
+- .end method
+- 
+- .method static synthetic access$1200(Lcom/android/server/wm/WindowManagerService;ILandroid/graphics/Rect;Z)V
+-     .locals 0
+-     .parameter "x0"
+-     .parameter "x1"
+-     .parameter "x2"
+-     .parameter "x3"
+- 
+-     .prologue
+-     invoke-direct {p0, p1, p2, p3}, Lcom/android/server/wm/WindowManagerService;->handleNotifyRectangleOnScreenRequested(ILandroid/graphics/Rect;Z)V
+- 
+-     return-void
+- .end method
+- 
+- .method static synthetic access$1300(Lcom/android/server/wm/WindowManagerService;Lcom/android/server/wm/DisplayContent;)V
+-     .locals 0
+-     .parameter "x0"
+-     .parameter "x1"
+- 
+-     .prologue
+-     invoke-direct {p0, p1}, Lcom/android/server/wm/WindowManagerService;->handleNotifyWindowLayersChanged(Lcom/android/server/wm/DisplayContent;)V
+- 
+-     return-void
+- .end method
+- 
+  .method static synthetic access$1400(Lcom/android/server/wm/WindowManagerService;I)V
+      .locals 0
+      .parameter "x0"
+      .parameter "x1"
+  
+      .prologue
+-     invoke-direct {p0, p1}, Lcom/android/server/wm/WindowManagerService;->handleDisplayAddedLocked(I)V
+- 
+-     return-void
+- .end method
+- 
+- .method static synthetic access$1500(Lcom/android/server/wm/WindowManagerService;I)V
+-     .locals 0
+-     .parameter "x0"
+-     .parameter "x1"
+- 
+-     .prologue
+      invoke-direct {p0, p1}, Lcom/android/server/wm/WindowManagerService;->handleDisplayRemovedLocked(I)V
+  
+      return-void
+  .end method
+  
+! .method static synthetic access$1600(Lcom/android/server/wm/WindowManagerService;I)V
+      .locals 0
+      .parameter "x0"
+      .parameter "x1"
+--- 1582,1599 ----
+      return p1
+  .end method
+  
+  .method static synthetic access$1400(Lcom/android/server/wm/WindowManagerService;I)V
+      .locals 0
+      .parameter "x0"
+      .parameter "x1"
+  
+      .prologue
+      invoke-direct {p0, p1}, Lcom/android/server/wm/WindowManagerService;->handleDisplayRemovedLocked(I)V
+  
+      return-void
+  .end method
+  
+! .method static synthetic access$1500(Lcom/android/server/wm/WindowManagerService;I)V
+      .locals 0
+      .parameter "x0"
+      .parameter "x1"
+***************
+*** 1677,1713 ****
+      return-void
+  .end method
+  
+- .method static synthetic access$2500(Lcom/android/server/wm/WindowManagerService;)Landroid/util/SparseArray;
+-     .locals 1
+-     .parameter "x0"
+- 
+-     .prologue
+-     iget-object v0, p0, Lcom/android/server/wm/WindowManagerService;->mDisplayContents:Landroid/util/SparseArray;
+- 
+-     return-object v0
+- .end method
+- 
+  .method static synthetic access$300(Lcom/android/server/wm/WindowManagerService;)V
+      .locals 0
+      .parameter "x0"
+  
+      .prologue
+-     invoke-direct {p0}, Lcom/android/server/wm/WindowManagerService;->notifyFocusChanged()V
+- 
+-     return-void
+- .end method
+- 
+- .method static synthetic access$400(Lcom/android/server/wm/WindowManagerService;)V
+-     .locals 0
+-     .parameter "x0"
+- 
+-     .prologue
+      invoke-direct {p0}, Lcom/android/server/wm/WindowManagerService;->performLayoutAndPlaceSurfacesLocked()V
+  
+      return-void
+  .end method
+  
+! .method static synthetic access$500(Lcom/android/server/wm/WindowManagerService;)V
+      .locals 0
+      .parameter "x0"
+  
+--- 1604,1620 ----
+      return-void
+  .end method
+  
+  .method static synthetic access$300(Lcom/android/server/wm/WindowManagerService;)V
+      .locals 0
+      .parameter "x0"
+  
+      .prologue
+      invoke-direct {p0}, Lcom/android/server/wm/WindowManagerService;->performLayoutAndPlaceSurfacesLocked()V
+  
+      return-void
+  .end method
+  
+! .method static synthetic access$400(Lcom/android/server/wm/WindowManagerService;)V
+      .locals 0
+      .parameter "x0"
+  
+***************
+*** 1717,1765 ****
+      return-void
+  .end method
+  
+- .method static synthetic access$600(Lcom/android/server/wm/WindowManagerService;)Z
+-     .locals 1
+-     .parameter "x0"
+- 
+-     .prologue
+-     iget-boolean v0, p0, Lcom/android/server/wm/WindowManagerService;->mWindowsChanged:Z
+- 
+-     return v0
+- .end method
+- 
+- .method static synthetic access$602(Lcom/android/server/wm/WindowManagerService;Z)Z
+-     .locals 0
+-     .parameter "x0"
+-     .parameter "x1"
+- 
+-     .prologue
+-     iput-boolean p1, p0, Lcom/android/server/wm/WindowManagerService;->mWindowsChanged:Z
+- 
+-     return p1
+- .end method
+- 
+- .method static synthetic access$700(Lcom/android/server/wm/WindowManagerService;)V
+-     .locals 0
+-     .parameter "x0"
+- 
+-     .prologue
+-     invoke-direct {p0}, Lcom/android/server/wm/WindowManagerService;->notifyWindowsChanged()V
+- 
+-     return-void
+- .end method
+- 
+- .method static synthetic access$800(Lcom/android/server/wm/WindowManagerService;)Z
+-     .locals 1
+-     .parameter "x0"
+- 
+-     .prologue
+-     invoke-direct {p0}, Lcom/android/server/wm/WindowManagerService;->copyAnimToLayoutParamsLocked()Z
+- 
+-     move-result v0
+- 
+-     return v0
+- .end method
+- 
+  .method static synthetic access$900(Lcom/android/server/wm/WindowManagerService;II)V
+      .locals 0
+      .parameter "x0"
+--- 1624,1629 ----
+***************
+*** 1767,1773 ****
+      .parameter "x2"
+  
+      .prologue
+!     invoke-direct {p0, p1, p2}, Lcom/android/server/wm/WindowManagerService;->showStrictModeViolation(II)V
+  
+      return-void
+  .end method
+--- 1631,1637 ----
+      .parameter "x2"
+  
+      .prologue
+!     invoke-direct {p0, p1, p2}, Lcom/android/server/wm/WindowManagerService;->handleNotifyRotationChanged(II)V
+  
+      return-void
+  .end method
+***************
+*** 3468,3479 ****
+      return v0
+  .end method
+  
+! .method private applyAnimationLocked(Lcom/android/server/wm/AppWindowToken;Landroid/view/WindowManager$LayoutParams;IZ)Z
+      .locals 9
+      .parameter "atoken"
+      .parameter "lp"
+      .parameter "transit"
+      .parameter "enter"
+  
+      .prologue
+      invoke-virtual {p0}, Lcom/android/server/wm/WindowManagerService;->okToDisplay()Z
+--- 3332,3348 ----
+      return v0
+  .end method
+  
+! .method protected applyAnimationLocked(Lcom/android/server/wm/AppWindowToken;Landroid/view/WindowManager$LayoutParams;IZ)Z
+      .locals 9
+      .parameter "atoken"
+      .parameter "lp"
+      .parameter "transit"
+      .parameter "enter"
++     .annotation build Landroid/annotation/OppoHook;
++         level = .enum Landroid/annotation/OppoHook$OppoHookType;->CHANGE_ACCESS:Landroid/annotation/OppoHook$OppoHookType;
++         note = "Jianjun.Dan@Plf.SDK, 2014.03.03:[-private + protected]modify for app open and close anim"
++         property = .enum Landroid/annotation/OppoHook$OppoRomType;->ROM:Landroid/annotation/OppoHook$OppoRomType;
++     .end annotation
+  
+      .prologue
+      invoke-virtual {p0}, Lcom/android/server/wm/WindowManagerService;->okToDisplay()Z
+***************
+*** 5110,5116 ****
+      const/4 v8, 0x1
+  
+      #setter for: Lcom/android/server/wm/WindowManagerService$LayoutFields;->mUpdateRotation:Z
+!     invoke-static {v7, v8}, Lcom/android/server/wm/WindowManagerService$LayoutFields;->access$2402(Lcom/android/server/wm/WindowManagerService$LayoutFields;Z)Z
+  
+      const/4 v4, 0x1
+  
+--- 4979,4985 ----
+      const/4 v8, 0x1
+  
+      #setter for: Lcom/android/server/wm/WindowManagerService$LayoutFields;->mUpdateRotation:Z
+!     invoke-static {v7, v8}, Lcom/android/server/wm/WindowManagerService$LayoutFields;->access$2302(Lcom/android/server/wm/WindowManagerService$LayoutFields;Z)Z
+  
+      const/4 v4, 0x1
+  
+***************
+*** 7974,7979 ****
+--- 7843,7852 ----
+      .parameter "currentTime"
+      .parameter "innerDw"
+      .parameter "innerDh"
++     .annotation build Landroid/annotation/OppoHook;
++         level = .enum Landroid/annotation/OppoHook$OppoHookType;->CHANGE_CODE:Landroid/annotation/OppoHook$OppoHookType;
++         note = "zhangkai add for apklock"
++     .end annotation
+  
+      .prologue
+      move-object/from16 v0, p1
+***************
+*** 8008,8014 ****
+      iget-object v13, v0, Lcom/android/server/wm/WindowState;->mSession:Lcom/android/server/wm/Session;
+  
+      #setter for: Lcom/android/server/wm/WindowManagerService$LayoutFields;->mHoldScreen:Lcom/android/server/wm/Session;
+!     invoke-static {v12, v13}, Lcom/android/server/wm/WindowManagerService$LayoutFields;->access$1702(Lcom/android/server/wm/WindowManagerService$LayoutFields;Lcom/android/server/wm/Session;)Lcom/android/server/wm/Session;
+  
+      :cond_0
+      move-object/from16 v0, p0
+--- 7881,7887 ----
+      iget-object v13, v0, Lcom/android/server/wm/WindowState;->mSession:Lcom/android/server/wm/Session;
+  
+      #setter for: Lcom/android/server/wm/WindowManagerService$LayoutFields;->mHoldScreen:Lcom/android/server/wm/Session;
+!     invoke-static {v12, v13}, Lcom/android/server/wm/WindowManagerService$LayoutFields;->access$1602(Lcom/android/server/wm/WindowManagerService$LayoutFields;Lcom/android/server/wm/Session;)Lcom/android/server/wm/Session;
+  
+      :cond_0
+      move-object/from16 v0, p0
+***************
+*** 8016,8022 ****
+      iget-object v12, v0, Lcom/android/server/wm/WindowManagerService;->mInnerFields:Lcom/android/server/wm/WindowManagerService$LayoutFields;
+  
+      #getter for: Lcom/android/server/wm/WindowManagerService$LayoutFields;->mSyswin:Z
+!     invoke-static {v12}, Lcom/android/server/wm/WindowManagerService$LayoutFields;->access$1800(Lcom/android/server/wm/WindowManagerService$LayoutFields;)Z
+  
+      move-result v12
+  
+--- 7889,7895 ----
+      iget-object v12, v0, Lcom/android/server/wm/WindowManagerService;->mInnerFields:Lcom/android/server/wm/WindowManagerService$LayoutFields;
+  
+      #getter for: Lcom/android/server/wm/WindowManagerService$LayoutFields;->mSyswin:Z
+!     invoke-static {v12}, Lcom/android/server/wm/WindowManagerService$LayoutFields;->access$1700(Lcom/android/server/wm/WindowManagerService$LayoutFields;)Z
+  
+      move-result v12
+  
+***************
+*** 8039,8045 ****
+      iget-object v12, v0, Lcom/android/server/wm/WindowManagerService;->mInnerFields:Lcom/android/server/wm/WindowManagerService$LayoutFields;
+  
+      #getter for: Lcom/android/server/wm/WindowManagerService$LayoutFields;->mScreenBrightness:F
+!     invoke-static {v12}, Lcom/android/server/wm/WindowManagerService$LayoutFields;->access$1900(Lcom/android/server/wm/WindowManagerService$LayoutFields;)F
+  
+      move-result v12
+  
+--- 7912,7918 ----
+      iget-object v12, v0, Lcom/android/server/wm/WindowManagerService;->mInnerFields:Lcom/android/server/wm/WindowManagerService$LayoutFields;
+  
+      #getter for: Lcom/android/server/wm/WindowManagerService$LayoutFields;->mScreenBrightness:F
+!     invoke-static {v12}, Lcom/android/server/wm/WindowManagerService$LayoutFields;->access$1800(Lcom/android/server/wm/WindowManagerService$LayoutFields;)F
+  
+      move-result v12
+  
+***************
+*** 8060,8066 ****
+      iget v13, v13, Landroid/view/WindowManager$LayoutParams;->screenBrightness:F
+  
+      #setter for: Lcom/android/server/wm/WindowManagerService$LayoutFields;->mScreenBrightness:F
+!     invoke-static {v12, v13}, Lcom/android/server/wm/WindowManagerService$LayoutFields;->access$1902(Lcom/android/server/wm/WindowManagerService$LayoutFields;F)F
+  
+      :cond_1
+      move-object/from16 v0, p0
+--- 7933,7939 ----
+      iget v13, v13, Landroid/view/WindowManager$LayoutParams;->screenBrightness:F
+  
+      #setter for: Lcom/android/server/wm/WindowManagerService$LayoutFields;->mScreenBrightness:F
+!     invoke-static {v12, v13}, Lcom/android/server/wm/WindowManagerService$LayoutFields;->access$1802(Lcom/android/server/wm/WindowManagerService$LayoutFields;F)F
+  
+      :cond_1
+      move-object/from16 v0, p0
+***************
+*** 8068,8074 ****
+      iget-object v12, v0, Lcom/android/server/wm/WindowManagerService;->mInnerFields:Lcom/android/server/wm/WindowManagerService$LayoutFields;
+  
+      #getter for: Lcom/android/server/wm/WindowManagerService$LayoutFields;->mSyswin:Z
+!     invoke-static {v12}, Lcom/android/server/wm/WindowManagerService$LayoutFields;->access$1800(Lcom/android/server/wm/WindowManagerService$LayoutFields;)Z
+  
+      move-result v12
+  
+--- 7941,7947 ----
+      iget-object v12, v0, Lcom/android/server/wm/WindowManagerService;->mInnerFields:Lcom/android/server/wm/WindowManagerService$LayoutFields;
+  
+      #getter for: Lcom/android/server/wm/WindowManagerService$LayoutFields;->mSyswin:Z
+!     invoke-static {v12}, Lcom/android/server/wm/WindowManagerService$LayoutFields;->access$1700(Lcom/android/server/wm/WindowManagerService$LayoutFields;)Z
+  
+      move-result v12
+  
+***************
+*** 8091,8097 ****
+      iget-object v12, v0, Lcom/android/server/wm/WindowManagerService;->mInnerFields:Lcom/android/server/wm/WindowManagerService$LayoutFields;
+  
+      #getter for: Lcom/android/server/wm/WindowManagerService$LayoutFields;->mButtonBrightness:F
+!     invoke-static {v12}, Lcom/android/server/wm/WindowManagerService$LayoutFields;->access$2000(Lcom/android/server/wm/WindowManagerService$LayoutFields;)F
+  
+      move-result v12
+  
+--- 7964,7970 ----
+      iget-object v12, v0, Lcom/android/server/wm/WindowManagerService;->mInnerFields:Lcom/android/server/wm/WindowManagerService$LayoutFields;
+  
+      #getter for: Lcom/android/server/wm/WindowManagerService$LayoutFields;->mButtonBrightness:F
+!     invoke-static {v12}, Lcom/android/server/wm/WindowManagerService$LayoutFields;->access$1900(Lcom/android/server/wm/WindowManagerService$LayoutFields;)F
+  
+      move-result v12
+  
+***************
+*** 8112,8118 ****
+      iget v13, v13, Landroid/view/WindowManager$LayoutParams;->buttonBrightness:F
+  
+      #setter for: Lcom/android/server/wm/WindowManagerService$LayoutFields;->mButtonBrightness:F
+!     invoke-static {v12, v13}, Lcom/android/server/wm/WindowManagerService$LayoutFields;->access$2002(Lcom/android/server/wm/WindowManagerService$LayoutFields;F)F
+  
+      :cond_2
+      move-object/from16 v0, p0
+--- 7985,7991 ----
+      iget v13, v13, Landroid/view/WindowManager$LayoutParams;->buttonBrightness:F
+  
+      #setter for: Lcom/android/server/wm/WindowManagerService$LayoutFields;->mButtonBrightness:F
+!     invoke-static {v12, v13}, Lcom/android/server/wm/WindowManagerService$LayoutFields;->access$1902(Lcom/android/server/wm/WindowManagerService$LayoutFields;F)F
+  
+      :cond_2
+      move-object/from16 v0, p0
+***************
+*** 8120,8126 ****
+      iget-object v12, v0, Lcom/android/server/wm/WindowManagerService;->mInnerFields:Lcom/android/server/wm/WindowManagerService$LayoutFields;
+  
+      #getter for: Lcom/android/server/wm/WindowManagerService$LayoutFields;->mSyswin:Z
+!     invoke-static {v12}, Lcom/android/server/wm/WindowManagerService$LayoutFields;->access$1800(Lcom/android/server/wm/WindowManagerService$LayoutFields;)Z
+  
+      move-result v12
+  
+--- 7993,7999 ----
+      iget-object v12, v0, Lcom/android/server/wm/WindowManagerService;->mInnerFields:Lcom/android/server/wm/WindowManagerService$LayoutFields;
+  
+      #getter for: Lcom/android/server/wm/WindowManagerService$LayoutFields;->mSyswin:Z
+!     invoke-static {v12}, Lcom/android/server/wm/WindowManagerService$LayoutFields;->access$1700(Lcom/android/server/wm/WindowManagerService$LayoutFields;)Z
+  
+      move-result v12
+  
+***************
+*** 8143,8149 ****
+      iget-object v12, v0, Lcom/android/server/wm/WindowManagerService;->mInnerFields:Lcom/android/server/wm/WindowManagerService$LayoutFields;
+  
+      #getter for: Lcom/android/server/wm/WindowManagerService$LayoutFields;->mUserActivityTimeout:J
+!     invoke-static {v12}, Lcom/android/server/wm/WindowManagerService$LayoutFields;->access$2100(Lcom/android/server/wm/WindowManagerService$LayoutFields;)J
+  
+      move-result-wide v12
+  
+--- 8016,8022 ----
+      iget-object v12, v0, Lcom/android/server/wm/WindowManagerService;->mInnerFields:Lcom/android/server/wm/WindowManagerService$LayoutFields;
+  
+      #getter for: Lcom/android/server/wm/WindowManagerService$LayoutFields;->mUserActivityTimeout:J
+!     invoke-static {v12}, Lcom/android/server/wm/WindowManagerService$LayoutFields;->access$2000(Lcom/android/server/wm/WindowManagerService$LayoutFields;)J
+  
+      move-result-wide v12
+  
+***************
+*** 8164,8170 ****
+      iget-wide v13, v13, Landroid/view/WindowManager$LayoutParams;->userActivityTimeout:J
+  
+      #setter for: Lcom/android/server/wm/WindowManagerService$LayoutFields;->mUserActivityTimeout:J
+!     invoke-static {v12, v13, v14}, Lcom/android/server/wm/WindowManagerService$LayoutFields;->access$2102(Lcom/android/server/wm/WindowManagerService$LayoutFields;J)J
+  
+      :cond_3
+      iget v9, v4, Landroid/view/WindowManager$LayoutParams;->type:I
+--- 8037,8043 ----
+      iget-wide v13, v13, Landroid/view/WindowManager$LayoutParams;->userActivityTimeout:J
+  
+      #setter for: Lcom/android/server/wm/WindowManagerService$LayoutFields;->mUserActivityTimeout:J
+!     invoke-static {v12, v13, v14}, Lcom/android/server/wm/WindowManagerService$LayoutFields;->access$2002(Lcom/android/server/wm/WindowManagerService$LayoutFields;J)J
+  
+      :cond_3
+      iget v9, v4, Landroid/view/WindowManager$LayoutParams;->type:I
+***************
+*** 8184,8189 ****
+--- 8057,8066 ----
+  
+      if-eq v9, v12, :cond_4
+  
++     const/16 v12, 0xa10
++ 
++     if-eq v9, v12, :cond_4
++ 
+      const/16 v12, 0x7da
+  
+      if-ne v9, v12, :cond_5
+***************
+*** 8196,8202 ****
+      const/4 v13, 0x1
+  
+      #setter for: Lcom/android/server/wm/WindowManagerService$LayoutFields;->mSyswin:Z
+!     invoke-static {v12, v13}, Lcom/android/server/wm/WindowManagerService$LayoutFields;->access$1802(Lcom/android/server/wm/WindowManagerService$LayoutFields;Z)Z
+  
+      :cond_5
+      if-eqz v5, :cond_7
+--- 8073,8079 ----
+      const/4 v13, 0x1
+  
+      #setter for: Lcom/android/server/wm/WindowManagerService$LayoutFields;->mSyswin:Z
+!     invoke-static {v12, v13}, Lcom/android/server/wm/WindowManagerService$LayoutFields;->access$1702(Lcom/android/server/wm/WindowManagerService$LayoutFields;Z)Z
+  
+      :cond_5
+      if-eqz v5, :cond_7
+***************
+*** 8217,8223 ****
+      const/4 v13, 0x1
+  
+      #setter for: Lcom/android/server/wm/WindowManagerService$LayoutFields;->mDisplayHasContent:I
+!     invoke-static {v12, v13}, Lcom/android/server/wm/WindowManagerService$LayoutFields;->access$2202(Lcom/android/server/wm/WindowManagerService$LayoutFields;I)I
+  
+      .end local v9           #type:I
+      :cond_7
+--- 8094,8100 ----
+      const/4 v13, 0x1
+  
+      #setter for: Lcom/android/server/wm/WindowManagerService$LayoutFields;->mDisplayHasContent:I
+!     invoke-static {v12, v13}, Lcom/android/server/wm/WindowManagerService$LayoutFields;->access$2102(Lcom/android/server/wm/WindowManagerService$LayoutFields;I)I
+  
+      .end local v9           #type:I
+      :cond_7
+***************
+*** 8255,8261 ****
+      const/4 v13, 0x1
+  
+      #setter for: Lcom/android/server/wm/WindowManagerService$LayoutFields;->mObscured:Z
+!     invoke-static {v12, v13}, Lcom/android/server/wm/WindowManagerService$LayoutFields;->access$2302(Lcom/android/server/wm/WindowManagerService$LayoutFields;Z)Z
+  
+      :cond_8
+      :goto_2
+--- 8132,8138 ----
+      const/4 v13, 0x1
+  
+      #setter for: Lcom/android/server/wm/WindowManagerService$LayoutFields;->mObscured:Z
+!     invoke-static {v12, v13}, Lcom/android/server/wm/WindowManagerService$LayoutFields;->access$2202(Lcom/android/server/wm/WindowManagerService$LayoutFields;Z)Z
+  
+      :cond_8
+      :goto_2
+***************
+*** 8269,8275 ****
+      iget-object v12, v0, Lcom/android/server/wm/WindowManagerService;->mInnerFields:Lcom/android/server/wm/WindowManagerService$LayoutFields;
+  
+      #getter for: Lcom/android/server/wm/WindowManagerService$LayoutFields;->mDisplayHasContent:I
+!     invoke-static {v12}, Lcom/android/server/wm/WindowManagerService$LayoutFields;->access$2200(Lcom/android/server/wm/WindowManagerService$LayoutFields;)I
+  
+      move-result v12
+  
+--- 8146,8152 ----
+      iget-object v12, v0, Lcom/android/server/wm/WindowManagerService;->mInnerFields:Lcom/android/server/wm/WindowManagerService$LayoutFields;
+  
+      #getter for: Lcom/android/server/wm/WindowManagerService$LayoutFields;->mDisplayHasContent:I
+!     invoke-static {v12}, Lcom/android/server/wm/WindowManagerService$LayoutFields;->access$2100(Lcom/android/server/wm/WindowManagerService$LayoutFields;)I
+  
+      move-result v12
+  
+***************
+*** 8282,8288 ****
+      const/4 v13, 0x2
+  
+      #setter for: Lcom/android/server/wm/WindowManagerService$LayoutFields;->mDisplayHasContent:I
+!     invoke-static {v12, v13}, Lcom/android/server/wm/WindowManagerService$LayoutFields;->access$2202(Lcom/android/server/wm/WindowManagerService$LayoutFields;I)I
+  
+      goto :goto_0
+  
+--- 8159,8165 ----
+      const/4 v13, 0x2
+  
+      #setter for: Lcom/android/server/wm/WindowManagerService$LayoutFields;->mDisplayHasContent:I
+!     invoke-static {v12, v13}, Lcom/android/server/wm/WindowManagerService$LayoutFields;->access$2102(Lcom/android/server/wm/WindowManagerService$LayoutFields;I)I
+  
+      goto :goto_0
+  
+***************
+*** 8354,8360 ****
+      iget-object v14, v0, Lcom/android/server/wm/WindowManagerService;->mInnerFields:Lcom/android/server/wm/WindowManagerService$LayoutFields;
+  
+      #getter for: Lcom/android/server/wm/WindowManagerService$LayoutFields;->mObscured:Z
+!     invoke-static {v14}, Lcom/android/server/wm/WindowManagerService$LayoutFields;->access$2300(Lcom/android/server/wm/WindowManagerService$LayoutFields;)Z
+  
+      move-result v14
+  
+--- 8231,8237 ----
+      iget-object v14, v0, Lcom/android/server/wm/WindowManagerService;->mInnerFields:Lcom/android/server/wm/WindowManagerService$LayoutFields;
+  
+      #getter for: Lcom/android/server/wm/WindowManagerService$LayoutFields;->mObscured:Z
+!     invoke-static {v14}, Lcom/android/server/wm/WindowManagerService$LayoutFields;->access$2200(Lcom/android/server/wm/WindowManagerService$LayoutFields;)Z
+  
+      move-result v14
+  
+***************
+*** 9220,9225 ****
+--- 9097,9106 ----
+      .parameter "haveInputMethods"
+      .parameter "showBootMsgs"
+      .parameter "onlyCore"
++     .annotation build Landroid/annotation/OppoHook;
++         level = .enum Landroid/annotation/OppoHook$OppoHookType;->CHANGE_ACCESS:Landroid/annotation/OppoHook$OppoHookType;
++         note = "zhangkai change for apklock"
++     .end annotation
+  
+      .prologue
+      const/4 v0, 0x1
+***************
+*** 9896,9902 ****
+      const/4 v8, 0x0
+  
+      #setter for: Lcom/android/server/wm/WindowManagerService$LayoutFields;->mHoldScreen:Lcom/android/server/wm/Session;
+!     invoke-static {v2, v8}, Lcom/android/server/wm/WindowManagerService$LayoutFields;->access$1702(Lcom/android/server/wm/WindowManagerService$LayoutFields;Lcom/android/server/wm/Session;)Lcom/android/server/wm/Session;
+  
+      move-object/from16 v0, p0
+  
+--- 9777,9783 ----
+      const/4 v8, 0x0
+  
+      #setter for: Lcom/android/server/wm/WindowManagerService$LayoutFields;->mHoldScreen:Lcom/android/server/wm/Session;
+!     invoke-static {v2, v8}, Lcom/android/server/wm/WindowManagerService$LayoutFields;->access$1602(Lcom/android/server/wm/WindowManagerService$LayoutFields;Lcom/android/server/wm/Session;)Lcom/android/server/wm/Session;
+  
+      move-object/from16 v0, p0
+  
+***************
+*** 9905,9911 ****
+      const/high16 v8, -0x4080
+  
+      #setter for: Lcom/android/server/wm/WindowManagerService$LayoutFields;->mScreenBrightness:F
+!     invoke-static {v2, v8}, Lcom/android/server/wm/WindowManagerService$LayoutFields;->access$1902(Lcom/android/server/wm/WindowManagerService$LayoutFields;F)F
+  
+      move-object/from16 v0, p0
+  
+--- 9786,9792 ----
+      const/high16 v8, -0x4080
+  
+      #setter for: Lcom/android/server/wm/WindowManagerService$LayoutFields;->mScreenBrightness:F
+!     invoke-static {v2, v8}, Lcom/android/server/wm/WindowManagerService$LayoutFields;->access$1802(Lcom/android/server/wm/WindowManagerService$LayoutFields;F)F
+  
+      move-object/from16 v0, p0
+  
+***************
+*** 9914,9920 ****
+      const/high16 v8, -0x4080
+  
+      #setter for: Lcom/android/server/wm/WindowManagerService$LayoutFields;->mButtonBrightness:F
+!     invoke-static {v2, v8}, Lcom/android/server/wm/WindowManagerService$LayoutFields;->access$2002(Lcom/android/server/wm/WindowManagerService$LayoutFields;F)F
+  
+      move-object/from16 v0, p0
+  
+--- 9795,9801 ----
+      const/high16 v8, -0x4080
+  
+      #setter for: Lcom/android/server/wm/WindowManagerService$LayoutFields;->mButtonBrightness:F
+!     invoke-static {v2, v8}, Lcom/android/server/wm/WindowManagerService$LayoutFields;->access$1902(Lcom/android/server/wm/WindowManagerService$LayoutFields;F)F
+  
+      move-object/from16 v0, p0
+  
+***************
+*** 9923,9929 ****
+      const-wide/16 v8, -0x1
+  
+      #setter for: Lcom/android/server/wm/WindowManagerService$LayoutFields;->mUserActivityTimeout:J
+!     invoke-static {v2, v8, v9}, Lcom/android/server/wm/WindowManagerService$LayoutFields;->access$2102(Lcom/android/server/wm/WindowManagerService$LayoutFields;J)J
+  
+      move-object/from16 v0, p0
+  
+--- 9804,9810 ----
+      const-wide/16 v8, -0x1
+  
+      #setter for: Lcom/android/server/wm/WindowManagerService$LayoutFields;->mUserActivityTimeout:J
+!     invoke-static {v2, v8, v9}, Lcom/android/server/wm/WindowManagerService$LayoutFields;->access$2002(Lcom/android/server/wm/WindowManagerService$LayoutFields;J)J
+  
+      move-object/from16 v0, p0
+  
+***************
+*** 9932,9938 ****
+      const/4 v8, 0x0
+  
+      #setter for: Lcom/android/server/wm/WindowManagerService$LayoutFields;->mDisplayHasContent:I
+!     invoke-static {v2, v8}, Lcom/android/server/wm/WindowManagerService$LayoutFields;->access$2202(Lcom/android/server/wm/WindowManagerService$LayoutFields;I)I
+  
+      move-object/from16 v0, p0
+  
+--- 9813,9819 ----
+      const/4 v8, 0x0
+  
+      #setter for: Lcom/android/server/wm/WindowManagerService$LayoutFields;->mDisplayHasContent:I
+!     invoke-static {v2, v8}, Lcom/android/server/wm/WindowManagerService$LayoutFields;->access$2102(Lcom/android/server/wm/WindowManagerService$LayoutFields;I)I
+  
+      move-object/from16 v0, p0
+  
+***************
+*** 10094,10100 ****
+      iget-object v2, v0, Lcom/android/server/wm/WindowManagerService;->mInnerFields:Lcom/android/server/wm/WindowManagerService$LayoutFields;
+  
+      #getter for: Lcom/android/server/wm/WindowManagerService$LayoutFields;->mDisplayHasContent:I
+!     invoke-static {v2}, Lcom/android/server/wm/WindowManagerService$LayoutFields;->access$2200(Lcom/android/server/wm/WindowManagerService$LayoutFields;)I
+  
+      move-result v2
+  
+--- 9975,9981 ----
+      iget-object v2, v0, Lcom/android/server/wm/WindowManagerService;->mInnerFields:Lcom/android/server/wm/WindowManagerService$LayoutFields;
+  
+      #getter for: Lcom/android/server/wm/WindowManagerService$LayoutFields;->mDisplayHasContent:I
+!     invoke-static {v2}, Lcom/android/server/wm/WindowManagerService$LayoutFields;->access$2100(Lcom/android/server/wm/WindowManagerService$LayoutFields;)I
+  
+      move-result v2
+  
+***************
+*** 10109,10115 ****
+      const/4 v8, 0x0
+  
+      #setter for: Lcom/android/server/wm/WindowManagerService$LayoutFields;->mDisplayHasContent:I
+!     invoke-static {v2, v8}, Lcom/android/server/wm/WindowManagerService$LayoutFields;->access$2202(Lcom/android/server/wm/WindowManagerService$LayoutFields;I)I
+  
+      :cond_8
+      const/16 v40, 0x0
+--- 9990,9996 ----
+      const/4 v8, 0x0
+  
+      #setter for: Lcom/android/server/wm/WindowManagerService$LayoutFields;->mDisplayHasContent:I
+!     invoke-static {v2, v8}, Lcom/android/server/wm/WindowManagerService$LayoutFields;->access$2102(Lcom/android/server/wm/WindowManagerService$LayoutFields;I)I
+  
+      :cond_8
+      const/16 v40, 0x0
+***************
+*** 10144,10150 ****
+      const/4 v8, 0x0
+  
+      #setter for: Lcom/android/server/wm/WindowManagerService$LayoutFields;->mObscured:Z
+!     invoke-static {v2, v8}, Lcom/android/server/wm/WindowManagerService$LayoutFields;->access$2302(Lcom/android/server/wm/WindowManagerService$LayoutFields;Z)Z
+  
+      move-object/from16 v0, p0
+  
+--- 10025,10031 ----
+      const/4 v8, 0x0
+  
+      #setter for: Lcom/android/server/wm/WindowManagerService$LayoutFields;->mObscured:Z
+!     invoke-static {v2, v8}, Lcom/android/server/wm/WindowManagerService$LayoutFields;->access$2202(Lcom/android/server/wm/WindowManagerService$LayoutFields;Z)Z
+  
+      move-object/from16 v0, p0
+  
+***************
+*** 10161,10167 ****
+      const/4 v8, 0x0
+  
+      #setter for: Lcom/android/server/wm/WindowManagerService$LayoutFields;->mSyswin:Z
+!     invoke-static {v2, v8}, Lcom/android/server/wm/WindowManagerService$LayoutFields;->access$1802(Lcom/android/server/wm/WindowManagerService$LayoutFields;Z)Z
+  
+      move-object/from16 v0, p0
+  
+--- 10042,10048 ----
+      const/4 v8, 0x0
+  
+      #setter for: Lcom/android/server/wm/WindowManagerService$LayoutFields;->mSyswin:Z
+!     invoke-static {v2, v8}, Lcom/android/server/wm/WindowManagerService$LayoutFields;->access$1702(Lcom/android/server/wm/WindowManagerService$LayoutFields;Z)Z
+  
+      move-object/from16 v0, p0
+  
+***************
+*** 10205,10211 ****
+      iget-object v8, v0, Lcom/android/server/wm/WindowManagerService;->mInnerFields:Lcom/android/server/wm/WindowManagerService$LayoutFields;
+  
+      #getter for: Lcom/android/server/wm/WindowManagerService$LayoutFields;->mObscured:Z
+!     invoke-static {v8}, Lcom/android/server/wm/WindowManagerService$LayoutFields;->access$2300(Lcom/android/server/wm/WindowManagerService$LayoutFields;)Z
+  
+      move-result v8
+  
+--- 10086,10092 ----
+      iget-object v8, v0, Lcom/android/server/wm/WindowManagerService;->mInnerFields:Lcom/android/server/wm/WindowManagerService$LayoutFields;
+  
+      #getter for: Lcom/android/server/wm/WindowManagerService$LayoutFields;->mObscured:Z
+!     invoke-static {v8}, Lcom/android/server/wm/WindowManagerService$LayoutFields;->access$2200(Lcom/android/server/wm/WindowManagerService$LayoutFields;)Z
+  
+      move-result v8
+  
+***************
+*** 10220,10226 ****
+      iget-object v2, v0, Lcom/android/server/wm/WindowManagerService;->mInnerFields:Lcom/android/server/wm/WindowManagerService$LayoutFields;
+  
+      #getter for: Lcom/android/server/wm/WindowManagerService$LayoutFields;->mObscured:Z
+!     invoke-static {v2}, Lcom/android/server/wm/WindowManagerService$LayoutFields;->access$2300(Lcom/android/server/wm/WindowManagerService$LayoutFields;)Z
+  
+      move-result v2
+  
+--- 10101,10107 ----
+      iget-object v2, v0, Lcom/android/server/wm/WindowManagerService;->mInnerFields:Lcom/android/server/wm/WindowManagerService$LayoutFields;
+  
+      #getter for: Lcom/android/server/wm/WindowManagerService$LayoutFields;->mObscured:Z
+!     invoke-static {v2}, Lcom/android/server/wm/WindowManagerService$LayoutFields;->access$2200(Lcom/android/server/wm/WindowManagerService$LayoutFields;)Z
+  
+      move-result v2
+  
+***************
+*** 10231,10237 ****
+      iget-object v2, v0, Lcom/android/server/wm/WindowManagerService;->mInnerFields:Lcom/android/server/wm/WindowManagerService$LayoutFields;
+  
+      #getter for: Lcom/android/server/wm/WindowManagerService$LayoutFields;->mObscured:Z
+!     invoke-static {v2}, Lcom/android/server/wm/WindowManagerService$LayoutFields;->access$2300(Lcom/android/server/wm/WindowManagerService$LayoutFields;)Z
+  
+      move-result v2
+  
+--- 10112,10118 ----
+      iget-object v2, v0, Lcom/android/server/wm/WindowManagerService;->mInnerFields:Lcom/android/server/wm/WindowManagerService$LayoutFields;
+  
+      #getter for: Lcom/android/server/wm/WindowManagerService$LayoutFields;->mObscured:Z
+!     invoke-static {v2}, Lcom/android/server/wm/WindowManagerService$LayoutFields;->access$2200(Lcom/android/server/wm/WindowManagerService$LayoutFields;)Z
+  
+      move-result v2
+  
+***************
+*** 11720,11726 ****
+      iget-object v2, v0, Lcom/android/server/wm/WindowManagerService;->mInnerFields:Lcom/android/server/wm/WindowManagerService$LayoutFields;
+  
+      #getter for: Lcom/android/server/wm/WindowManagerService$LayoutFields;->mDisplayHasContent:I
+!     invoke-static {v2}, Lcom/android/server/wm/WindowManagerService$LayoutFields;->access$2200(Lcom/android/server/wm/WindowManagerService$LayoutFields;)I
+  
+      move-result v2
+  
+--- 11601,11607 ----
+      iget-object v2, v0, Lcom/android/server/wm/WindowManagerService;->mInnerFields:Lcom/android/server/wm/WindowManagerService$LayoutFields;
+  
+      #getter for: Lcom/android/server/wm/WindowManagerService$LayoutFields;->mDisplayHasContent:I
+!     invoke-static {v2}, Lcom/android/server/wm/WindowManagerService$LayoutFields;->access$2100(Lcom/android/server/wm/WindowManagerService$LayoutFields;)I
+  
+      move-result v2
+  
+***************
+*** 12658,12664 ****
+      iget-object v2, v0, Lcom/android/server/wm/WindowManagerService;->mInnerFields:Lcom/android/server/wm/WindowManagerService$LayoutFields;
+  
+      #getter for: Lcom/android/server/wm/WindowManagerService$LayoutFields;->mHoldScreen:Lcom/android/server/wm/Session;
+!     invoke-static {v2}, Lcom/android/server/wm/WindowManagerService$LayoutFields;->access$1700(Lcom/android/server/wm/WindowManagerService$LayoutFields;)Lcom/android/server/wm/Session;
+  
+      move-result-object v2
+  
+--- 12539,12545 ----
+      iget-object v2, v0, Lcom/android/server/wm/WindowManagerService;->mInnerFields:Lcom/android/server/wm/WindowManagerService$LayoutFields;
+  
+      #getter for: Lcom/android/server/wm/WindowManagerService$LayoutFields;->mHoldScreen:Lcom/android/server/wm/Session;
+!     invoke-static {v2}, Lcom/android/server/wm/WindowManagerService$LayoutFields;->access$1600(Lcom/android/server/wm/WindowManagerService$LayoutFields;)Lcom/android/server/wm/Session;
+  
+      move-result-object v2
+  
+***************
+*** 12677,12683 ****
+      iget-object v2, v0, Lcom/android/server/wm/WindowManagerService;->mInnerFields:Lcom/android/server/wm/WindowManagerService$LayoutFields;
+  
+      #getter for: Lcom/android/server/wm/WindowManagerService$LayoutFields;->mScreenBrightness:F
+!     invoke-static {v2}, Lcom/android/server/wm/WindowManagerService$LayoutFields;->access$1900(Lcom/android/server/wm/WindowManagerService$LayoutFields;)F
+  
+      move-result v2
+  
+--- 12558,12564 ----
+      iget-object v2, v0, Lcom/android/server/wm/WindowManagerService;->mInnerFields:Lcom/android/server/wm/WindowManagerService$LayoutFields;
+  
+      #getter for: Lcom/android/server/wm/WindowManagerService$LayoutFields;->mScreenBrightness:F
+!     invoke-static {v2}, Lcom/android/server/wm/WindowManagerService$LayoutFields;->access$1800(Lcom/android/server/wm/WindowManagerService$LayoutFields;)F
+  
+      move-result v2
+  
+***************
+*** 12692,12698 ****
+      iget-object v2, v0, Lcom/android/server/wm/WindowManagerService;->mInnerFields:Lcom/android/server/wm/WindowManagerService$LayoutFields;
+  
+      #getter for: Lcom/android/server/wm/WindowManagerService$LayoutFields;->mScreenBrightness:F
+!     invoke-static {v2}, Lcom/android/server/wm/WindowManagerService$LayoutFields;->access$1900(Lcom/android/server/wm/WindowManagerService$LayoutFields;)F
+  
+      move-result v2
+  
+--- 12573,12579 ----
+      iget-object v2, v0, Lcom/android/server/wm/WindowManagerService;->mInnerFields:Lcom/android/server/wm/WindowManagerService$LayoutFields;
+  
+      #getter for: Lcom/android/server/wm/WindowManagerService$LayoutFields;->mScreenBrightness:F
+!     invoke-static {v2}, Lcom/android/server/wm/WindowManagerService$LayoutFields;->access$1800(Lcom/android/server/wm/WindowManagerService$LayoutFields;)F
+  
+      move-result v2
+  
+***************
+*** 12717,12723 ****
+      iget-object v2, v0, Lcom/android/server/wm/WindowManagerService;->mInnerFields:Lcom/android/server/wm/WindowManagerService$LayoutFields;
+  
+      #getter for: Lcom/android/server/wm/WindowManagerService$LayoutFields;->mButtonBrightness:F
+!     invoke-static {v2}, Lcom/android/server/wm/WindowManagerService$LayoutFields;->access$2000(Lcom/android/server/wm/WindowManagerService$LayoutFields;)F
+  
+      move-result v2
+  
+--- 12598,12604 ----
+      iget-object v2, v0, Lcom/android/server/wm/WindowManagerService;->mInnerFields:Lcom/android/server/wm/WindowManagerService$LayoutFields;
+  
+      #getter for: Lcom/android/server/wm/WindowManagerService$LayoutFields;->mButtonBrightness:F
+!     invoke-static {v2}, Lcom/android/server/wm/WindowManagerService$LayoutFields;->access$1900(Lcom/android/server/wm/WindowManagerService$LayoutFields;)F
+  
+      move-result v2
+  
+***************
+*** 12732,12738 ****
+      iget-object v2, v0, Lcom/android/server/wm/WindowManagerService;->mInnerFields:Lcom/android/server/wm/WindowManagerService$LayoutFields;
+  
+      #getter for: Lcom/android/server/wm/WindowManagerService$LayoutFields;->mButtonBrightness:F
+!     invoke-static {v2}, Lcom/android/server/wm/WindowManagerService$LayoutFields;->access$2000(Lcom/android/server/wm/WindowManagerService$LayoutFields;)F
+  
+      move-result v2
+  
+--- 12613,12619 ----
+      iget-object v2, v0, Lcom/android/server/wm/WindowManagerService;->mInnerFields:Lcom/android/server/wm/WindowManagerService$LayoutFields;
+  
+      #getter for: Lcom/android/server/wm/WindowManagerService$LayoutFields;->mButtonBrightness:F
+!     invoke-static {v2}, Lcom/android/server/wm/WindowManagerService$LayoutFields;->access$1900(Lcom/android/server/wm/WindowManagerService$LayoutFields;)F
+  
+      move-result v2
+  
+***************
+*** 12761,12767 ****
+      iget-object v8, v0, Lcom/android/server/wm/WindowManagerService;->mInnerFields:Lcom/android/server/wm/WindowManagerService$LayoutFields;
+  
+      #getter for: Lcom/android/server/wm/WindowManagerService$LayoutFields;->mUserActivityTimeout:J
+!     invoke-static {v8}, Lcom/android/server/wm/WindowManagerService$LayoutFields;->access$2100(Lcom/android/server/wm/WindowManagerService$LayoutFields;)J
+  
+      move-result-wide v8
+  
+--- 12642,12648 ----
+      iget-object v8, v0, Lcom/android/server/wm/WindowManagerService;->mInnerFields:Lcom/android/server/wm/WindowManagerService$LayoutFields;
+  
+      #getter for: Lcom/android/server/wm/WindowManagerService$LayoutFields;->mUserActivityTimeout:J
+!     invoke-static {v8}, Lcom/android/server/wm/WindowManagerService$LayoutFields;->access$2000(Lcom/android/server/wm/WindowManagerService$LayoutFields;)J
+  
+      move-result-wide v8
+  
+***************
+*** 12807,12813 ****
+      iget-object v2, v0, Lcom/android/server/wm/WindowManagerService;->mInnerFields:Lcom/android/server/wm/WindowManagerService$LayoutFields;
+  
+      #getter for: Lcom/android/server/wm/WindowManagerService$LayoutFields;->mUpdateRotation:Z
+!     invoke-static {v2}, Lcom/android/server/wm/WindowManagerService$LayoutFields;->access$2400(Lcom/android/server/wm/WindowManagerService$LayoutFields;)Z
+  
+      move-result v2
+  
+--- 12688,12694 ----
+      iget-object v2, v0, Lcom/android/server/wm/WindowManagerService;->mInnerFields:Lcom/android/server/wm/WindowManagerService$LayoutFields;
+  
+      #getter for: Lcom/android/server/wm/WindowManagerService$LayoutFields;->mUpdateRotation:Z
+!     invoke-static {v2}, Lcom/android/server/wm/WindowManagerService$LayoutFields;->access$2300(Lcom/android/server/wm/WindowManagerService$LayoutFields;)Z
+  
+      move-result v2
+  
+***************
+*** 12863,12869 ****
+      iget-object v2, v0, Lcom/android/server/wm/WindowManagerService;->mInnerFields:Lcom/android/server/wm/WindowManagerService$LayoutFields;
+  
+      #getter for: Lcom/android/server/wm/WindowManagerService$LayoutFields;->mUpdateRotation:Z
+!     invoke-static {v2}, Lcom/android/server/wm/WindowManagerService$LayoutFields;->access$2400(Lcom/android/server/wm/WindowManagerService$LayoutFields;)Z
+  
+      move-result v2
+  
+--- 12744,12750 ----
+      iget-object v2, v0, Lcom/android/server/wm/WindowManagerService;->mInnerFields:Lcom/android/server/wm/WindowManagerService$LayoutFields;
+  
+      #getter for: Lcom/android/server/wm/WindowManagerService$LayoutFields;->mUpdateRotation:Z
+!     invoke-static {v2}, Lcom/android/server/wm/WindowManagerService$LayoutFields;->access$2300(Lcom/android/server/wm/WindowManagerService$LayoutFields;)Z
+  
+      move-result v2
+  
+***************
+*** 12975,12981 ****
+      iget-object v8, v0, Lcom/android/server/wm/WindowManagerService;->mInnerFields:Lcom/android/server/wm/WindowManagerService$LayoutFields;
+  
+      #getter for: Lcom/android/server/wm/WindowManagerService$LayoutFields;->mScreenBrightness:F
+!     invoke-static {v8}, Lcom/android/server/wm/WindowManagerService$LayoutFields;->access$1900(Lcom/android/server/wm/WindowManagerService$LayoutFields;)F
+  
+      move-result v8
+  
+--- 12856,12862 ----
+      iget-object v8, v0, Lcom/android/server/wm/WindowManagerService;->mInnerFields:Lcom/android/server/wm/WindowManagerService$LayoutFields;
+  
+      #getter for: Lcom/android/server/wm/WindowManagerService$LayoutFields;->mScreenBrightness:F
+!     invoke-static {v8}, Lcom/android/server/wm/WindowManagerService$LayoutFields;->access$1800(Lcom/android/server/wm/WindowManagerService$LayoutFields;)F
+  
+      move-result v8
+  
+***************
+*** 12999,13005 ****
+      iget-object v8, v0, Lcom/android/server/wm/WindowManagerService;->mInnerFields:Lcom/android/server/wm/WindowManagerService$LayoutFields;
+  
+      #getter for: Lcom/android/server/wm/WindowManagerService$LayoutFields;->mButtonBrightness:F
+!     invoke-static {v8}, Lcom/android/server/wm/WindowManagerService$LayoutFields;->access$2000(Lcom/android/server/wm/WindowManagerService$LayoutFields;)F
+  
+      move-result v8
+  
+--- 12880,12886 ----
+      iget-object v8, v0, Lcom/android/server/wm/WindowManagerService;->mInnerFields:Lcom/android/server/wm/WindowManagerService$LayoutFields;
+  
+      #getter for: Lcom/android/server/wm/WindowManagerService$LayoutFields;->mButtonBrightness:F
+!     invoke-static {v8}, Lcom/android/server/wm/WindowManagerService$LayoutFields;->access$1900(Lcom/android/server/wm/WindowManagerService$LayoutFields;)F
+  
+      move-result v8
+  
+***************
+*** 13021,13027 ****
+      const/4 v8, 0x0
+  
+      #setter for: Lcom/android/server/wm/WindowManagerService$LayoutFields;->mUpdateRotation:Z
+!     invoke-static {v2, v8}, Lcom/android/server/wm/WindowManagerService$LayoutFields;->access$2402(Lcom/android/server/wm/WindowManagerService$LayoutFields;Z)Z
+  
+      goto/16 :goto_1c
+  
+--- 12902,12908 ----
+      const/4 v8, 0x0
+  
+      #setter for: Lcom/android/server/wm/WindowManagerService$LayoutFields;->mUpdateRotation:Z
+!     invoke-static {v2, v8}, Lcom/android/server/wm/WindowManagerService$LayoutFields;->access$2302(Lcom/android/server/wm/WindowManagerService$LayoutFields;Z)Z
+  
+      goto/16 :goto_1c
+  
+***************
+*** 38501,38506 ****
+--- 38382,38391 ----
+  
+  .method public performEnableScreen()V
+      .locals 21
++     .annotation build Landroid/annotation/OppoHook;
++         level = .enum Landroid/annotation/OppoHook$OppoHookType;->CHANGE_CODE:Landroid/annotation/OppoHook$OppoHookType;
++         note = "zhangkai add for apklock"
++     .end annotation
+  
+      .prologue
+      move-object/from16 v0, p0
+***************
+*** 38705,38711 ****
+  
+      move/from16 v17, v0
+  
+!     if-nez v17, :cond_13
+  
+      const/4 v7, 0x0
+  
+--- 38590,38596 ----
+  
+      move/from16 v17, v0
+  
+!     if-nez v17, :cond_14
+  
+      const/4 v7, 0x0
+  
+***************
+*** 38767,38773 ****
+  
+      .local v11, i:I
+      :goto_2
+!     if-ge v11, v3, :cond_d
+  
+      move-object/from16 v0, v16
+  
+--- 38652,38658 ----
+  
+      .local v11, i:I
+      :goto_2
+!     if-ge v11, v3, :cond_e
+  
+      move-object/from16 v0, v16
+  
+***************
+*** 38966,38988 ****
+  
+      move/from16 v1, v19
+  
+      if-ne v0, v1, :cond_9
+  
+      const/4 v8, 0x1
+  
+      goto :goto_5
+  
+      .end local v14           #w:Lcom/android/server/wm/WindowState;
+!     :cond_d
+      sget-boolean v17, Lcom/android/server/wm/WindowManagerService;->DEBUG_SCREEN_ON:Z
+  
+!     if-nez v17, :cond_e
+  
+      sget-boolean v17, Lcom/android/server/wm/WindowManagerService;->DEBUG_BOOT:Z
+  
+!     if-eqz v17, :cond_f
+  
+!     :cond_e
+      const-string v17, "WindowManager"
+  
+      new-instance v19, Ljava/lang/StringBuilder;
+--- 38851,38892 ----
+  
+      move/from16 v1, v19
+  
++     if-eq v0, v1, :cond_d
++ 
++     iget-object v0, v14, Lcom/android/server/wm/WindowState;->mAttrs:Landroid/view/WindowManager$LayoutParams;
++ 
++     move-object/from16 v17, v0
++ 
++     move-object/from16 v0, v17
++ 
++     iget v0, v0, Landroid/view/WindowManager$LayoutParams;->type:I
++ 
++     move/from16 v17, v0
++ 
++     const/16 v19, 0xa10
++ 
++     move/from16 v0, v17
++ 
++     move/from16 v1, v19
++ 
+      if-ne v0, v1, :cond_9
+  
++     :cond_d
+      const/4 v8, 0x1
+  
+      goto :goto_5
+  
+      .end local v14           #w:Lcom/android/server/wm/WindowState;
+!     :cond_e
+      sget-boolean v17, Lcom/android/server/wm/WindowManagerService;->DEBUG_SCREEN_ON:Z
+  
+!     if-nez v17, :cond_f
+  
+      sget-boolean v17, Lcom/android/server/wm/WindowManagerService;->DEBUG_BOOT:Z
+  
+!     if-eqz v17, :cond_10
+  
+!     :cond_f
+      const-string v17, "WindowManager"
+  
+      new-instance v19, Ljava/lang/StringBuilder;
+***************
+*** 39091,39130 ****
+  
+      invoke-static {v0, v1}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
+  
+!     :cond_f
+      move-object/from16 v0, p0
+  
+      iget-boolean v0, v0, Lcom/android/server/wm/WindowManagerService;->mSystemBooted:Z
+  
+      move/from16 v17, v0
+  
+!     if-nez v17, :cond_10
+  
+!     if-nez v7, :cond_10
+  
+      monitor-exit v18
+  
+      goto/16 :goto_0
+  
+!     :cond_10
+      move-object/from16 v0, p0
+  
+      iget-boolean v0, v0, Lcom/android/server/wm/WindowManagerService;->mSystemBooted:Z
+  
+      move/from16 v17, v0
+  
+!     if-eqz v17, :cond_13
+  
+!     if-nez v6, :cond_11
+  
+!     if-eqz v8, :cond_12
+  
+!     :cond_11
+!     if-eqz v15, :cond_13
+  
+!     if-nez v9, :cond_13
+  
+!     :cond_12
+      monitor-exit v18
+  
+      goto/16 :goto_0
+--- 38995,39034 ----
+  
+      invoke-static {v0, v1}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
+  
+!     :cond_10
+      move-object/from16 v0, p0
+  
+      iget-boolean v0, v0, Lcom/android/server/wm/WindowManagerService;->mSystemBooted:Z
+  
+      move/from16 v17, v0
+  
+!     if-nez v17, :cond_11
+  
+!     if-nez v7, :cond_11
+  
+      monitor-exit v18
+  
+      goto/16 :goto_0
+  
+!     :cond_11
+      move-object/from16 v0, p0
+  
+      iget-boolean v0, v0, Lcom/android/server/wm/WindowManagerService;->mSystemBooted:Z
+  
+      move/from16 v17, v0
+  
+!     if-eqz v17, :cond_14
+  
+!     if-nez v6, :cond_12
+  
+!     if-eqz v8, :cond_13
+  
+!     :cond_12
+!     if-eqz v15, :cond_14
+  
+!     if-nez v9, :cond_14
+  
+!     :cond_13
+      monitor-exit v18
+  
+      goto/16 :goto_0
+***************
+*** 39137,39143 ****
+      .end local v11           #i:I
+      .end local v15           #wallpaperEnabled:Z
+      .end local v16           #windows:Lcom/android/server/wm/WindowList;
+!     :cond_13
+      const/16 v17, 0x1
+  
+      move/from16 v0, v17
+--- 39041,39047 ----
+      .end local v11           #i:I
+      .end local v15           #wallpaperEnabled:Z
+      .end local v16           #windows:Lcom/android/server/wm/WindowList;
+!     :cond_14
+      const/16 v17, 0x1
+  
+      move/from16 v0, v17
+***************
+*** 39148,39160 ****
+  
+      sget-boolean v17, Lcom/android/server/wm/WindowManagerService;->DEBUG_SCREEN_ON:Z
+  
+!     if-nez v17, :cond_14
+  
+      sget-boolean v17, Lcom/android/server/wm/WindowManagerService;->DEBUG_BOOT:Z
+  
+!     if-eqz v17, :cond_15
+  
+!     :cond_14
+      const-string v17, "WindowManager"
+  
+      const-string v19, "******************** ENABLING SCREEN!"
+--- 39052,39064 ----
+  
+      sget-boolean v17, Lcom/android/server/wm/WindowManagerService;->DEBUG_SCREEN_ON:Z
+  
+!     if-nez v17, :cond_15
+  
+      sget-boolean v17, Lcom/android/server/wm/WindowManagerService;->DEBUG_BOOT:Z
+  
+!     if-eqz v17, :cond_16
+  
+!     :cond_15
+      const-string v17, "WindowManager"
+  
+      const-string v19, "******************** ENABLING SCREEN!"
+***************
+*** 39167,39173 ****
+      :try_end_1
+      .catchall {:try_start_1 .. :try_end_1} :catchall_0
+  
+!     :cond_15
+      :try_start_2
+      const-string v17, "SurfaceFlinger"
+  
+--- 39071,39077 ----
+      :try_end_1
+      .catchall {:try_start_1 .. :try_end_1} :catchall_0
+  
+!     :cond_16
+      :try_start_2
+      const-string v17, "SurfaceFlinger"
+  
+***************
+*** 39176,39182 ****
+      move-result-object v12
+  
+      .local v12, surfaceFlinger:Landroid/os/IBinder;
+!     if-eqz v12, :cond_16
+  
+      invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+  
+--- 39080,39086 ----
+      move-result-object v12
+  
+      .local v12, surfaceFlinger:Landroid/os/IBinder;
+!     if-eqz v12, :cond_17
+  
+      invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+  
+***************
+*** 39210,39216 ****
+  
+      .end local v4           #data:Landroid/os/Parcel;
+      .end local v12           #surfaceFlinger:Landroid/os/IBinder;
+!     :cond_16
+      :goto_6
+      :try_start_3
+      move-object/from16 v0, p0
+--- 39114,39120 ----
+  
+      .end local v4           #data:Landroid/os/Parcel;
+      .end local v12           #surfaceFlinger:Landroid/os/IBinder;
+!     :cond_17
+      :goto_6
+      :try_start_3
+      move-object/from16 v0, p0
+***************
+*** 48986,48992 ****
+      :cond_2
+      move/from16 v0, p4
+  
+!     invoke-direct {p0, p1, p2, v0, p3}, Lcom/android/server/wm/WindowManagerService;->applyAnimationLocked(Lcom/android/server/wm/AppWindowToken;Landroid/view/WindowManager$LayoutParams;IZ)Z
+  
+      move-result v9
+  
+--- 48890,48896 ----
+      :cond_2
+      move/from16 v0, p4
+  
+!     invoke-virtual {p0, p1, p2, v0, p3}, Lcom/android/server/wm/WindowManagerService;->applyAnimationLocked(Lcom/android/server/wm/AppWindowToken;Landroid/view/WindowManager$LayoutParams;IZ)Z
+  
+      move-result v9
+  
+***************
+*** 54704,54706 ****
+--- 54608,54752 ----
+  
+      return-object v0
+  .end method
++ 
++ .method static synthetic access$1000(Lcom/android/server/wm/WindowManagerService;ILandroid/view/WindowInfo;)V
++     .locals 0
++     .parameter "x0"
++     .parameter "x1"
++     .parameter "x2"
++ 
++     .prologue
++     invoke-direct {p0, p1, p2}, Lcom/android/server/wm/WindowManagerService;->handleNotifyWindowTranstion(ILandroid/view/WindowInfo;)V
++ 
++     return-void
++ .end method
++ 
++ .method static synthetic access$1100(Lcom/android/server/wm/WindowManagerService;ILandroid/graphics/Rect;Z)V
++     .locals 0
++     .parameter "x0"
++     .parameter "x1"
++     .parameter "x2"
++     .parameter "x3"
++ 
++     .prologue
++     invoke-direct {p0, p1, p2, p3}, Lcom/android/server/wm/WindowManagerService;->handleNotifyRectangleOnScreenRequested(ILandroid/graphics/Rect;Z)V
++ 
++     return-void
++ .end method
++ 
++ .method static synthetic access$1200(Lcom/android/server/wm/WindowManagerService;Lcom/android/server/wm/DisplayContent;)V
++     .locals 0
++     .parameter "x0"
++     .parameter "x1"
++ 
++     .prologue
++     invoke-direct {p0, p1}, Lcom/android/server/wm/WindowManagerService;->handleNotifyWindowLayersChanged(Lcom/android/server/wm/DisplayContent;)V
++ 
++     return-void
++ .end method
++ 
++ .method static synthetic access$1300(Lcom/android/server/wm/WindowManagerService;I)V
++     .locals 0
++     .parameter "x0"
++     .parameter "x1"
++ 
++     .prologue
++     invoke-direct {p0, p1}, Lcom/android/server/wm/WindowManagerService;->handleDisplayAddedLocked(I)V
++ 
++     return-void
++ .end method
++ 
++ .method static synthetic access$200(Lcom/android/server/wm/WindowManagerService;)V
++     .locals 0
++     .parameter "x0"
++ 
++     .prologue
++     invoke-direct {p0}, Lcom/android/server/wm/WindowManagerService;->notifyFocusChanged()V
++ 
++     return-void
++ .end method
++ 
++ .method static synthetic access$2400(Lcom/android/server/wm/WindowManagerService;)Landroid/util/SparseArray;
++     .locals 1
++     .parameter "x0"
++ 
++     .prologue
++     iget-object v0, p0, Lcom/android/server/wm/WindowManagerService;->mDisplayContents:Landroid/util/SparseArray;
++ 
++     return-object v0
++ .end method
++ 
++ .method static synthetic access$500(Lcom/android/server/wm/WindowManagerService;)Z
++     .locals 1
++     .parameter "x0"
++ 
++     .prologue
++     iget-boolean v0, p0, Lcom/android/server/wm/WindowManagerService;->mWindowsChanged:Z
++ 
++     return v0
++ .end method
++ 
++ .method static synthetic access$502(Lcom/android/server/wm/WindowManagerService;Z)Z
++     .locals 0
++     .parameter "x0"
++     .parameter "x1"
++ 
++     .prologue
++     iput-boolean p1, p0, Lcom/android/server/wm/WindowManagerService;->mWindowsChanged:Z
++ 
++     return p1
++ .end method
++ 
++ .method static synthetic access$600(Lcom/android/server/wm/WindowManagerService;)V
++     .locals 0
++     .parameter "x0"
++ 
++     .prologue
++     invoke-direct {p0}, Lcom/android/server/wm/WindowManagerService;->notifyWindowsChanged()V
++ 
++     return-void
++ .end method
++ 
++ .method static synthetic access$700(Lcom/android/server/wm/WindowManagerService;)Z
++     .locals 1
++     .parameter "x0"
++ 
++     .prologue
++     invoke-direct {p0}, Lcom/android/server/wm/WindowManagerService;->copyAnimToLayoutParamsLocked()Z
++ 
++     move-result v0
++ 
++     return v0
++ .end method
++ 
++ .method static synthetic access$800(Lcom/android/server/wm/WindowManagerService;II)V
++     .locals 0
++     .parameter "x0"
++     .parameter "x1"
++     .parameter "x2"
++ 
++     .prologue
++     invoke-direct {p0, p1, p2}, Lcom/android/server/wm/WindowManagerService;->showStrictModeViolation(II)V
++ 
++     return-void
++ .end method
++ 
++ .method public reboot()V
++     .locals 3
++     .annotation build Landroid/annotation/OppoHook;
++         level = .enum Landroid/annotation/OppoHook$OppoHookType;->NEW_METHOD:Landroid/annotation/OppoHook$OppoHookType;
++         note = "yaolang@Plf.Framework, add for oppo global actions"
++         property = .enum Landroid/annotation/OppoHook$OppoRomType;->ROM:Landroid/annotation/OppoHook$OppoRomType;
++     .end annotation
++ 
++     .prologue
++     iget-object v0, p0, Lcom/android/server/wm/WindowManagerService;->mContext:Landroid/content/Context;
++ 
++     const/4 v1, 0x0
++ 
++     const/4 v2, 0x0
++ 
++     invoke-static {v0, v1, v2}, Lcom/android/server/power/ShutdownThread;->reboot(Landroid/content/Context;Ljava/lang/String;Z)V
++ 
++     return-void
++ .end method

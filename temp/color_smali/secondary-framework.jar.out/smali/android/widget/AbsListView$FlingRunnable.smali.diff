@@ -1,0 +1,55 @@
+*** /home/suda/color2.0/device/temp/android_smali/./secondary-framework.jar.out/smali/android/widget/AbsListView$FlingRunnable.smali	2014-05-01 23:29:04.000000000 +0800
+--- ./secondary-framework.jar.out/smali/android/widget/AbsListView$FlingRunnable.smali	2014-05-01 23:29:22.000000000 +0800
+***************
+*** 33,40 ****
+  
+  # direct methods
+  .method constructor <init>(Landroid/widget/AbsListView;)V
+!     .locals 2
+      .parameter
+  
+      .prologue
+      iput-object p1, p0, Landroid/widget/AbsListView$FlingRunnable;->this$0:Landroid/widget/AbsListView;
+--- 33,45 ----
+  
+  # direct methods
+  .method constructor <init>(Landroid/widget/AbsListView;)V
+!     .locals 1
+      .parameter
++     .annotation build Landroid/annotation/OppoHook;
++         level = .enum Landroid/annotation/OppoHook$OppoHookType;->CHANGE_CODE:Landroid/annotation/OppoHook$OppoHookType;
++         note = "LiangJing.Fu@Plf.Framework : modify for mScroller of OppoOverScroller"
++         property = .enum Landroid/annotation/OppoHook$OppoRomType;->ROM:Landroid/annotation/OppoHook$OppoRomType;
++     .end annotation
+  
+      .prologue
+      iput-object p1, p0, Landroid/widget/AbsListView$FlingRunnable;->this$0:Landroid/widget/AbsListView;
+***************
+*** 47,59 ****
+  
+      iput-object v0, p0, Landroid/widget/AbsListView$FlingRunnable;->mCheckFlywheel:Ljava/lang/Runnable;
+  
+-     new-instance v0, Landroid/widget/OverScroller;
+- 
+      invoke-virtual {p1}, Landroid/widget/AbsListView;->getContext()Landroid/content/Context;
+  
+!     move-result-object v1
+  
+!     invoke-direct {v0, v1}, Landroid/widget/OverScroller;-><init>(Landroid/content/Context;)V
+  
+      iput-object v0, p0, Landroid/widget/AbsListView$FlingRunnable;->mScroller:Landroid/widget/OverScroller;
+  
+--- 52,64 ----
+  
+      iput-object v0, p0, Landroid/widget/AbsListView$FlingRunnable;->mCheckFlywheel:Ljava/lang/Runnable;
+  
+      invoke-virtual {p1}, Landroid/widget/AbsListView;->getContext()Landroid/content/Context;
+  
+!     move-result-object v0
+! 
+!     invoke-static {v0}, Landroid/widget/OppoOverScroller;->newInstance(Landroid/content/Context;)Landroid/widget/OverScroller;
+  
+!     move-result-object v0
+  
+      iput-object v0, p0, Landroid/widget/AbsListView$FlingRunnable;->mScroller:Landroid/widget/OverScroller;
+  

@@ -1,0 +1,497 @@
+*** /home/suda/color2.0/device/temp/android_smali/./framework.jar.out/smali/android/content/res/Configuration.smali	2014-05-01 23:28:57.000000000 +0800
+--- ./framework.jar.out/smali/android/content/res/Configuration.smali	2014-05-01 23:29:13.000000000 +0800
+***************
+*** 180,185 ****
+--- 180,193 ----
+  
+  .field public locale:Ljava/util/Locale;
+  
++ .field public mOppoExtraConfiguration:Loppo/content/res/OppoExtraConfiguration;
++     .annotation build Landroid/annotation/OppoHook;
++         level = .enum Landroid/annotation/OppoHook$OppoHookType;->NEW_FIELD:Landroid/annotation/OppoHook$OppoHookType;
++         note = "Yaojun.Luo@Plf.SDK : modify for rom theme"
++         property = .enum Landroid/annotation/OppoHook$OppoRomType;->ROM:Landroid/annotation/OppoHook$OppoRomType;
++     .end annotation
++ .end field
++ 
+  .field public mcc:I
+  
+  .field public mnc:I
+***************
+*** 232,266 ****
+  .end method
+  
+  .method public constructor <init>()V
+!     .locals 0
+  
+      .prologue
+      invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+  
+      invoke-virtual {p0}, Landroid/content/res/Configuration;->setToDefaults()V
+  
+      return-void
+  .end method
+  
+  .method public constructor <init>(Landroid/content/res/Configuration;)V
+!     .locals 0
+      .parameter "o"
+  
+      .prologue
+      invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+  
+      invoke-virtual {p0, p1}, Landroid/content/res/Configuration;->setTo(Landroid/content/res/Configuration;)V
+  
+      return-void
+  .end method
+  
+  .method private constructor <init>(Landroid/os/Parcel;)V
+!     .locals 0
+      .parameter "source"
+  
+      .prologue
+      invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+  
+      invoke-virtual {p0, p1}, Landroid/content/res/Configuration;->readFromParcel(Landroid/os/Parcel;)V
+  
+      return-void
+--- 240,319 ----
+  .end method
+  
+  .method public constructor <init>()V
+!     .locals 1
+!     .annotation build Landroid/annotation/OppoHook;
+!         level = .enum Landroid/annotation/OppoHook$OppoHookType;->CHANGE_CODE:Landroid/annotation/OppoHook$OppoHookType;
+!         note = "Yaojun.Luo@Plf.SDK : modify for rom theme"
+!         property = .enum Landroid/annotation/OppoHook$OppoRomType;->ROM:Landroid/annotation/OppoHook$OppoRomType;
+!     .end annotation
+  
+      .prologue
+      invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+  
++     const/4 v0, 0x0
++ 
++     iput-object v0, p0, Landroid/content/res/Configuration;->mOppoExtraConfiguration:Loppo/content/res/OppoExtraConfiguration;
++ 
++     new-instance v0, Loppo/content/res/OppoExtraConfiguration;
++ 
++     invoke-direct {v0}, Loppo/content/res/OppoExtraConfiguration;-><init>()V
++ 
++     iput-object v0, p0, Landroid/content/res/Configuration;->mOppoExtraConfiguration:Loppo/content/res/OppoExtraConfiguration;
++ 
+      invoke-virtual {p0}, Landroid/content/res/Configuration;->setToDefaults()V
+  
+      return-void
+  .end method
+  
+  .method public constructor <init>(Landroid/content/res/Configuration;)V
+!     .locals 1
+      .parameter "o"
++     .annotation build Landroid/annotation/OppoHook;
++         level = .enum Landroid/annotation/OppoHook$OppoHookType;->CHANGE_CODE:Landroid/annotation/OppoHook$OppoHookType;
++         note = "Yaojun.Luo@Plf.SDK : modify for rom theme"
++         property = .enum Landroid/annotation/OppoHook$OppoRomType;->ROM:Landroid/annotation/OppoHook$OppoRomType;
++     .end annotation
+  
+      .prologue
+      invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+  
++     const/4 v0, 0x0
++ 
++     iput-object v0, p0, Landroid/content/res/Configuration;->mOppoExtraConfiguration:Loppo/content/res/OppoExtraConfiguration;
++ 
++     new-instance v0, Loppo/content/res/OppoExtraConfiguration;
++ 
++     invoke-direct {v0}, Loppo/content/res/OppoExtraConfiguration;-><init>()V
++ 
++     iput-object v0, p0, Landroid/content/res/Configuration;->mOppoExtraConfiguration:Loppo/content/res/OppoExtraConfiguration;
++ 
+      invoke-virtual {p0, p1}, Landroid/content/res/Configuration;->setTo(Landroid/content/res/Configuration;)V
+  
+      return-void
+  .end method
+  
+  .method private constructor <init>(Landroid/os/Parcel;)V
+!     .locals 1
+      .parameter "source"
++     .annotation build Landroid/annotation/OppoHook;
++         level = .enum Landroid/annotation/OppoHook$OppoHookType;->CHANGE_CODE:Landroid/annotation/OppoHook$OppoHookType;
++         note = "Yaojun.Luo@Plf.SDK : modify for rom theme"
++         property = .enum Landroid/annotation/OppoHook$OppoRomType;->ROM:Landroid/annotation/OppoHook$OppoRomType;
++     .end annotation
+  
+      .prologue
+      invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+  
++     const/4 v0, 0x0
++ 
++     iput-object v0, p0, Landroid/content/res/Configuration;->mOppoExtraConfiguration:Loppo/content/res/OppoExtraConfiguration;
++ 
++     new-instance v0, Loppo/content/res/OppoExtraConfiguration;
++ 
++     invoke-direct {v0}, Loppo/content/res/OppoExtraConfiguration;-><init>()V
++ 
++     iput-object v0, p0, Landroid/content/res/Configuration;->mOppoExtraConfiguration:Loppo/content/res/OppoExtraConfiguration;
++ 
+      invoke-virtual {p0, p1}, Landroid/content/res/Configuration;->readFromParcel(Landroid/os/Parcel;)V
+  
+      return-void
+***************
+*** 307,312 ****
+--- 360,370 ----
+      .locals 1
+      .parameter "configChanges"
+      .parameter "interestingChanges"
++     .annotation build Landroid/annotation/OppoHook;
++         level = .enum Landroid/annotation/OppoHook$OppoHookType;->CHANGE_CODE:Landroid/annotation/OppoHook$OppoHookType;
++         note = "Yaojun.Luo@Plf.SDK : modify for FlipFont && rom theme"
++         property = .enum Landroid/annotation/OppoHook$OppoRomType;->ROM:Landroid/annotation/OppoHook$OppoRomType;
++     .end annotation
+  
+      .prologue
+      const/high16 v0, 0x4000
+***************
+*** 315,328 ****
+  
+      and-int/2addr v0, p0
+  
+!     if-eqz v0, :cond_0
+  
+      const/4 v0, 0x1
+  
+      :goto_0
+      return v0
+  
+!     :cond_0
+      const/4 v0, 0x0
+  
+      goto :goto_0
+--- 373,393 ----
+  
+      and-int/2addr v0, p0
+  
+!     if-nez v0, :cond_0
+! 
+!     invoke-static {p0}, Loppo/content/res/OppoExtraConfiguration;->needNewResources(I)Z
+  
++     move-result v0
++ 
++     if-eqz v0, :cond_1
++ 
++     :cond_0
+      const/4 v0, 0x1
+  
+      :goto_0
+      return v0
+  
+!     :cond_1
+      const/4 v0, 0x0
+  
+      goto :goto_0
+***************
+*** 474,479 ****
+--- 539,549 ----
+  .method public compareTo(Landroid/content/res/Configuration;)I
+      .locals 7
+      .parameter "that"
++     .annotation build Landroid/annotation/OppoHook;
++         level = .enum Landroid/annotation/OppoHook$OppoHookType;->CHANGE_CODE:Landroid/annotation/OppoHook$OppoHookType;
++         note = "Yaojun.Luo@Plf.Framework.SDK : modify for rom theme"
++         property = .enum Landroid/annotation/OppoHook$OppoRomType;->ROM:Landroid/annotation/OppoHook$OppoRomType;
++     .end annotation
+  
+      .prologue
+      const/4 v4, 0x1
+***************
+*** 710,716 ****
+  
+      iget-object v3, p1, Landroid/content/res/Configuration;->skin:Ljava/lang/String;
+  
+!     if-eqz v3, :cond_0
+  
+      move v2, v4
+  
+--- 780,786 ----
+  
+      iget-object v3, p1, Landroid/content/res/Configuration;->skin:Ljava/lang/String;
+  
+!     if-eqz v3, :cond_8
+  
+      move v2, v4
+  
+***************
+*** 734,739 ****
+--- 804,818 ----
+  
+      move-result v2
+  
++     :cond_8
++     iget-object v3, p0, Landroid/content/res/Configuration;->mOppoExtraConfiguration:Loppo/content/res/OppoExtraConfiguration;
++ 
++     iget-object v4, p1, Landroid/content/res/Configuration;->mOppoExtraConfiguration:Loppo/content/res/OppoExtraConfiguration;
++ 
++     invoke-virtual {v3, v4}, Loppo/content/res/OppoExtraConfiguration;->compareTo(Loppo/content/res/OppoExtraConfiguration;)I
++ 
++     move-result v2
++ 
+      goto/16 :goto_0
+  .end method
+  
+***************
+*** 764,769 ****
+--- 843,853 ----
+  .method public diff(Landroid/content/res/Configuration;)I
+      .locals 3
+      .parameter "delta"
++     .annotation build Landroid/annotation/OppoHook;
++         level = .enum Landroid/annotation/OppoHook$OppoHookType;->CHANGE_CODE:Landroid/annotation/OppoHook$OppoHookType;
++         note = "Yaojun.Luo@Plf.Framework.SDK : modify for rom theme"
++         property = .enum Landroid/annotation/OppoHook$OppoRomType;->ROM:Landroid/annotation/OppoHook$OppoRomType;
++     .end annotation
+  
+      .prologue
+      const/4 v0, 0x0
+***************
+*** 1045,1050 ****
+--- 1129,1144 ----
+      or-int/2addr v0, v1
+  
+      :cond_13
++     iget-object v1, p0, Landroid/content/res/Configuration;->mOppoExtraConfiguration:Loppo/content/res/OppoExtraConfiguration;
++ 
++     iget-object v2, p1, Landroid/content/res/Configuration;->mOppoExtraConfiguration:Loppo/content/res/OppoExtraConfiguration;
++ 
++     invoke-virtual {v1, v2}, Loppo/content/res/OppoExtraConfiguration;->diff(Loppo/content/res/OppoExtraConfiguration;)I
++ 
++     move-result v1
++ 
++     or-int/2addr v0, v1
++ 
+      return v0
+  .end method
+  
+***************
+*** 1122,1127 ****
+--- 1216,1226 ----
+  
+  .method public hashCode()I
+      .locals 4
++     .annotation build Landroid/annotation/OppoHook;
++         level = .enum Landroid/annotation/OppoHook$OppoHookType;->CHANGE_CODE:Landroid/annotation/OppoHook$OppoHookType;
++         note = "Yaojun.Luo@Plf.Framework.SDK : modify for rom theme"
++         property = .enum Landroid/annotation/OppoHook$OppoRomType;->ROM:Landroid/annotation/OppoHook$OppoRomType;
++     .end annotation
+  
+      .prologue
+      const/4 v2, 0x0
+***************
+*** 1257,1263 ****
+      :cond_0
+      add-int v0, v1, v2
+  
+!     return v0
+  
+      :cond_1
+      move v1, v2
+--- 1356,1370 ----
+      :cond_0
+      add-int v0, v1, v2
+  
+!     iget-object v1, p0, Landroid/content/res/Configuration;->mOppoExtraConfiguration:Loppo/content/res/OppoExtraConfiguration;
+! 
+!     invoke-virtual {v1}, Loppo/content/res/OppoExtraConfiguration;->hashCode()I
+! 
+!     move-result v1
+! 
+!     add-int/2addr v1, v0
+! 
+!     return v1
+  
+      :cond_1
+      move v1, v2
+***************
+*** 1354,1359 ****
+--- 1461,1471 ----
+  .method public readFromParcel(Landroid/os/Parcel;)V
+      .locals 6
+      .parameter "source"
++     .annotation build Landroid/annotation/OppoHook;
++         level = .enum Landroid/annotation/OppoHook$OppoHookType;->CHANGE_CODE:Landroid/annotation/OppoHook$OppoHookType;
++         note = "Yaojun.Luo@Plf.Framework.SDK : modify for rom theme"
++         property = .enum Landroid/annotation/OppoHook$OppoRomType;->ROM:Landroid/annotation/OppoHook$OppoRomType;
++     .end annotation
+  
+      .prologue
+      const/4 v2, 0x0
+***************
+*** 1531,1536 ****
+--- 1643,1652 ----
+  
+      iput-object v0, p0, Landroid/content/res/Configuration;->skin:Ljava/lang/String;
+  
++     iget-object v0, p0, Landroid/content/res/Configuration;->mOppoExtraConfiguration:Loppo/content/res/OppoExtraConfiguration;
++ 
++     invoke-virtual {v0, p1}, Loppo/content/res/OppoExtraConfiguration;->readFromParcel(Landroid/os/Parcel;)V
++ 
+      return-void
+  
+      :cond_1
+***************
+*** 1588,1595 ****
+  .end method
+  
+  .method public setTo(Landroid/content/res/Configuration;)V
+!     .locals 1
+      .parameter "o"
+  
+      .prologue
+      iget v0, p1, Landroid/content/res/Configuration;->fontScale:F
+--- 1704,1716 ----
+  .end method
+  
+  .method public setTo(Landroid/content/res/Configuration;)V
+!     .locals 2
+      .parameter "o"
++     .annotation build Landroid/annotation/OppoHook;
++         level = .enum Landroid/annotation/OppoHook$OppoHookType;->CHANGE_CODE:Landroid/annotation/OppoHook$OppoHookType;
++         note = "Yaojun.Luo@Plf.Framework.SDK : modify for rom theme"
++         property = .enum Landroid/annotation/OppoHook$OppoRomType;->ROM:Landroid/annotation/OppoHook$OppoRomType;
++     .end annotation
+  
+      .prologue
+      iget v0, p1, Landroid/content/res/Configuration;->fontScale:F
+***************
+*** 1699,1709 ****
+--- 1820,1841 ----
+  
+      iput-object v0, p0, Landroid/content/res/Configuration;->skin:Ljava/lang/String;
+  
++     iget-object v0, p0, Landroid/content/res/Configuration;->mOppoExtraConfiguration:Loppo/content/res/OppoExtraConfiguration;
++ 
++     iget-object v1, p1, Landroid/content/res/Configuration;->mOppoExtraConfiguration:Loppo/content/res/OppoExtraConfiguration;
++ 
++     invoke-virtual {v0, v1}, Loppo/content/res/OppoExtraConfiguration;->setTo(Loppo/content/res/OppoExtraConfiguration;)V
++ 
+      return-void
+  .end method
+  
+  .method public setToDefaults()V
+      .locals 3
++     .annotation build Landroid/annotation/OppoHook;
++         level = .enum Landroid/annotation/OppoHook$OppoHookType;->CHANGE_CODE:Landroid/annotation/OppoHook$OppoHookType;
++         note = "Yaojun.Luo@Plf.Framework.SDK : modify for rom theme"
++         property = .enum Landroid/annotation/OppoHook$OppoRomType;->ROM:Landroid/annotation/OppoHook$OppoRomType;
++     .end annotation
+  
+      .prologue
+      const/4 v2, 0x0
+***************
+*** 1760,1770 ****
+--- 1892,1911 ----
+  
+      iput-object v2, p0, Landroid/content/res/Configuration;->skin:Ljava/lang/String;
+  
++     iget-object v0, p0, Landroid/content/res/Configuration;->mOppoExtraConfiguration:Loppo/content/res/OppoExtraConfiguration;
++ 
++     invoke-virtual {v0}, Loppo/content/res/OppoExtraConfiguration;->setToDefaults()V
++ 
+      return-void
+  .end method
+  
+  .method public toString()Ljava/lang/String;
+      .locals 3
++     .annotation build Landroid/annotation/OppoHook;
++         level = .enum Landroid/annotation/OppoHook$OppoHookType;->CHANGE_CODE:Landroid/annotation/OppoHook$OppoHookType;
++         note = "Yaojun.Luo@Plf.Framework.SDK : modify for rom theme"
++         property = .enum Landroid/annotation/OppoHook$OppoRomType;->ROM:Landroid/annotation/OppoHook$OppoRomType;
++     .end annotation
+  
+      .prologue
+      new-instance v1, Ljava/lang/StringBuilder;
+***************
+*** 2092,2097 ****
+--- 2233,2246 ----
+      invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+  
+      :cond_0
++     iget-object v2, p0, Landroid/content/res/Configuration;->mOppoExtraConfiguration:Loppo/content/res/OppoExtraConfiguration;
++ 
++     invoke-virtual {v2}, Loppo/content/res/OppoExtraConfiguration;->toString()Ljava/lang/String;
++ 
++     move-result-object v2
++ 
++     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
++ 
+      const/16 v2, 0x7d
+  
+      invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+***************
+*** 2454,2461 ****
+  
+      goto/16 :goto_12
+  
+-     nop
+- 
+      :sswitch_data_0
+      .sparse-switch
+          0x0 -> :sswitch_2
+--- 2603,2608 ----
+***************
+*** 2554,2559 ****
+--- 2701,2711 ----
+  .method public updateFrom(Landroid/content/res/Configuration;)I
+      .locals 4
+      .parameter "delta"
++     .annotation build Landroid/annotation/OppoHook;
++         level = .enum Landroid/annotation/OppoHook$OppoHookType;->CHANGE_CODE:Landroid/annotation/OppoHook$OppoHookType;
++         note = "Yaojun.Luo@Plf.Framework.SDK : modify for rom theme"
++         property = .enum Landroid/annotation/OppoHook$OppoRomType;->ROM:Landroid/annotation/OppoHook$OppoRomType;
++     .end annotation
+  
+      .prologue
+      const/4 v3, 0x1
+***************
+*** 3030,3035 ****
+--- 3182,3197 ----
+      iput-object v1, p0, Landroid/content/res/Configuration;->skin:Ljava/lang/String;
+  
+      :cond_1c
++     iget-object v1, p0, Landroid/content/res/Configuration;->mOppoExtraConfiguration:Loppo/content/res/OppoExtraConfiguration;
++ 
++     iget-object v2, p1, Landroid/content/res/Configuration;->mOppoExtraConfiguration:Loppo/content/res/OppoExtraConfiguration;
++ 
++     invoke-virtual {v1, v2}, Loppo/content/res/OppoExtraConfiguration;->updateFrom(Loppo/content/res/OppoExtraConfiguration;)I
++ 
++     move-result v1
++ 
++     or-int/2addr v0, v1
++ 
+      return v0
+  
+      :cond_1d
+***************
+*** 3049,3054 ****
+--- 3211,3221 ----
+      .locals 3
+      .parameter "dest"
+      .parameter "flags"
++     .annotation build Landroid/annotation/OppoHook;
++         level = .enum Landroid/annotation/OppoHook$OppoHookType;->CHANGE_CODE:Landroid/annotation/OppoHook$OppoHookType;
++         note = "Yaojun.Luo@Plf.Framework.SDK : modify for rom theme"
++         property = .enum Landroid/annotation/OppoHook$OppoRomType;->ROM:Landroid/annotation/OppoHook$OppoRomType;
++     .end annotation
+  
+      .prologue
+      const/4 v2, 0x1
+***************
+*** 3160,3165 ****
+--- 3327,3336 ----
+  
+      invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+  
++     iget-object v0, p0, Landroid/content/res/Configuration;->mOppoExtraConfiguration:Loppo/content/res/OppoExtraConfiguration;
++ 
++     invoke-virtual {v0, p1, p2}, Loppo/content/res/OppoExtraConfiguration;->writeToParcel(Landroid/os/Parcel;I)V
++ 
+      return-void
+  
+      :cond_0

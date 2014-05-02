@@ -1,0 +1,33 @@
+*** Notification$InboxStyle.smali	2014-05-01 23:29:00.000000000 +0800
+--- Notification$InboxStyle.smali	2014-05-01 23:29:17.000000000 +0800
+***************
+*** 85,98 ****
+      #setter for: Landroid/app/Notification$Builder;->mContentText:Ljava/lang/CharSequence;
+      invoke-static {v8, v11}, Landroid/app/Notification$Builder;->access$702(Landroid/app/Notification$Builder;Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
+  
+!     const v8, 0x1090092
+  
+      invoke-virtual {p0, v8}, Landroid/app/Notification$InboxStyle;->getStandardView(I)Landroid/widget/RemoteViews;
+  
+      move-result-object v1
+  
+      .local v1, contentView:Landroid/widget/RemoteViews;
+!     const v8, 0x1020015
+  
+      invoke-virtual {v1, v8, v10}, Landroid/widget/RemoteViews;->setViewVisibility(II)V
+  
+--- 90,103 ----
+      #setter for: Landroid/app/Notification$Builder;->mContentText:Ljava/lang/CharSequence;
+      invoke-static {v8, v11}, Landroid/app/Notification$Builder;->access$702(Landroid/app/Notification$Builder;Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
+  
+!     const v8, 0xc090420
+  
+      invoke-virtual {p0, v8}, Landroid/app/Notification$InboxStyle;->getStandardView(I)Landroid/widget/RemoteViews;
+  
+      move-result-object v1
+  
+      .local v1, contentView:Landroid/widget/RemoteViews;
+!     const v8, 0xc020476
+  
+      invoke-virtual {v1, v8, v10}, Landroid/widget/RemoteViews;->setViewVisibility(II)V
+  

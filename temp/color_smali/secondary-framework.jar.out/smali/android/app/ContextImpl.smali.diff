@@ -1,0 +1,85 @@
+*** /home/suda/color2.0/device/temp/android_smali/./secondary-framework.jar.out/smali/android/app/ContextImpl.smali	2014-05-01 23:29:00.000000000 +0800
+--- ./secondary-framework.jar.out/smali/android/app/ContextImpl.smali	2014-05-01 23:29:18.000000000 +0800
+***************
+*** 3900,3912 ****
+  .end method
+  
+  .method final init(Landroid/app/LoadedApk;Landroid/os/IBinder;Landroid/app/ActivityThread;Landroid/content/res/Resources;Ljava/lang/String;Landroid/os/UserHandle;)V
+!     .locals 4
+      .parameter "packageInfo"
+      .parameter "activityToken"
+      .parameter "mainThread"
+      .parameter "container"
+      .parameter "basePackageName"
+      .parameter "user"
+  
+      .prologue
+      iput-object p1, p0, Landroid/app/ContextImpl;->mPackageInfo:Landroid/app/LoadedApk;
+--- 3900,3917 ----
+  .end method
+  
+  .method final init(Landroid/app/LoadedApk;Landroid/os/IBinder;Landroid/app/ActivityThread;Landroid/content/res/Resources;Ljava/lang/String;Landroid/os/UserHandle;)V
+!     .locals 6
+      .parameter "packageInfo"
+      .parameter "activityToken"
+      .parameter "mainThread"
+      .parameter "container"
+      .parameter "basePackageName"
+      .parameter "user"
++     .annotation build Landroid/annotation/OppoHook;
++         level = .enum Landroid/annotation/OppoHook$OppoHookType;->CHANGE_CODE:Landroid/annotation/OppoHook$OppoHookType;
++         note = "Yaojun.Luo@Plf.SDK : modify for rom theme"
++         property = .enum Landroid/annotation/OppoHook$OppoRomType;->ROM:Landroid/annotation/OppoHook$OppoRomType;
++     .end annotation
+  
+      .prologue
+      iput-object p1, p0, Landroid/app/ContextImpl;->mPackageInfo:Landroid/app/LoadedApk;
+***************
+*** 3949,3969 ****
+  
+      if-eqz v0, :cond_0
+  
+      iget-object v0, p0, Landroid/app/ContextImpl;->mPackageInfo:Landroid/app/LoadedApk;
+  
+      invoke-virtual {v0}, Landroid/app/LoadedApk;->getResDir()Ljava/lang/String;
+  
+!     move-result-object v0
+  
+!     const/4 v1, 0x0
+  
+!     const/4 v2, 0x0
+  
+      invoke-virtual {p4}, Landroid/content/res/Resources;->getCompatibilityInfo()Landroid/content/res/CompatibilityInfo;
+  
+!     move-result-object v3
+  
+!     invoke-virtual {p3, v0, v1, v2, v3}, Landroid/app/ActivityThread;->getTopLevelResources(Ljava/lang/String;ILandroid/content/res/Configuration;Landroid/content/res/CompatibilityInfo;)Landroid/content/res/Resources;
+  
+      move-result-object v0
+  
+--- 3954,3978 ----
+  
+      if-eqz v0, :cond_0
+  
++     iget-object v1, p0, Landroid/app/ContextImpl;->mPackageInfo:Landroid/app/LoadedApk;
++ 
+      iget-object v0, p0, Landroid/app/ContextImpl;->mPackageInfo:Landroid/app/LoadedApk;
+  
+      invoke-virtual {v0}, Landroid/app/LoadedApk;->getResDir()Ljava/lang/String;
+  
+!     move-result-object v2
+  
+!     const/4 v3, 0x0
+  
+!     const/4 v4, 0x0
+  
+      invoke-virtual {p4}, Landroid/content/res/Resources;->getCompatibilityInfo()Landroid/content/res/CompatibilityInfo;
+  
+!     move-result-object v5
+! 
+!     move-object v0, p3
+  
+!     invoke-virtual/range {v0 .. v5}, Landroid/app/ActivityThread;->getTopLevelResources(Landroid/app/LoadedApk;Ljava/lang/String;ILandroid/content/res/Configuration;Landroid/content/res/CompatibilityInfo;)Landroid/content/res/Resources;
+  
+      move-result-object v0
+  

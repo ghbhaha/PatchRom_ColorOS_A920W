@@ -1,0 +1,36 @@
+*** Notification$Builder.smali	2014-05-01 23:29:00.000000000 +0800
+--- Notification$Builder.smali	2014-05-01 23:29:17.000000000 +0800
+***************
+*** 1167,1173 ****
+  
+      if-nez v0, :cond_1
+  
+!     const v0, 0x10900cd
+  
+      :goto_1
+      const/4 v1, 0x1
+--- 1192,1198 ----
+  
+      if-nez v0, :cond_1
+  
+!     const v0, 0xc09041c
+  
+      :goto_1
+      const/4 v1, 0x1
+***************
+*** 1179,1185 ****
+      goto :goto_0
+  
+      :cond_1
+!     const v0, 0x10900ce
+  
+      goto :goto_1
+  
+--- 1204,1210 ----
+      goto :goto_0
+  
+      :cond_1
+!     const v0, 0xc09041d
+  
+      goto :goto_1
+  

@@ -1,0 +1,19 @@
+*** Toast.smali	2014-05-01 23:29:03.000000000 +0800
+--- Toast.smali	2014-05-01 23:29:21.000000000 +0800
+***************
+*** 150,156 ****
+      check-cast v0, Landroid/view/LayoutInflater;
+  
+      .local v0, inflate:Landroid/view/LayoutInflater;
+!     const v4, 0x10900de
+  
+      const/4 v5, 0x0
+  
+--- 155,161 ----
+      check-cast v0, Landroid/view/LayoutInflater;
+  
+      .local v0, inflate:Landroid/view/LayoutInflater;
+!     const v4, 0xc090435
+  
+      const/4 v5, 0x0
+  

@@ -1,0 +1,30 @@
+*** /home/suda/color2.0/device/temp/android_smali/./secondary-framework.jar.out/smali/android/widget/ListPopupWindow$DropDownListView.smali	2014-05-01 23:29:02.000000000 +0800
+--- ./secondary-framework.jar.out/smali/android/widget/ListPopupWindow$DropDownListView.smali	2014-05-01 23:29:20.000000000 +0800
+***************
+*** 168,177 ****
+      goto :goto_0
+  .end method
+  
+! .method obtainView(I[Z)Landroid/view/View;
+      .locals 3
+      .parameter "position"
+      .parameter "isScrap"
+  
+      .prologue
+      invoke-super {p0, p1, p2}, Landroid/widget/ListView;->obtainView(I[Z)Landroid/view/View;
+--- 168,182 ----
+      goto :goto_0
+  .end method
+  
+! .method public obtainView(I[Z)Landroid/view/View;
+      .locals 3
+      .parameter "position"
+      .parameter "isScrap"
++     .annotation build Landroid/annotation/OppoHook;
++         level = .enum Landroid/annotation/OppoHook$OppoHookType;->CHANGE_ACCESS:Landroid/annotation/OppoHook$OppoHookType;
++         note = "default: merge oppolistview"
++         property = .enum Landroid/annotation/OppoHook$OppoRomType;->ROM:Landroid/annotation/OppoHook$OppoRomType;
++     .end annotation
+  
+      .prologue
+      invoke-super {p0, p1, p2}, Landroid/widget/ListView;->obtainView(I[Z)Landroid/view/View;

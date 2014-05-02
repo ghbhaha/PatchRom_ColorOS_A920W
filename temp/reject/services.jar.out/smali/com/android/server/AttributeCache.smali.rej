@@ -1,0 +1,19 @@
+*** AttributeCache.smali	2014-05-01 23:28:56.000000000 +0800
+--- AttributeCache.smali	2014-05-01 23:29:11.000000000 +0800
+***************
+*** 98,105 ****
+      return-object v0
+  .end method
+  
+- 
+- # virtual methods
+  .method public get(Ljava/lang/String;I[I)Lcom/android/server/AttributeCache$Entry;
+      .locals 9
+      .parameter "packageName"
+--- 98,103 ----
+      return-object v0
+  .end method
+  
+  .method public get(Ljava/lang/String;I[I)Lcom/android/server/AttributeCache$Entry;
+      .locals 9
+      .parameter "packageName"

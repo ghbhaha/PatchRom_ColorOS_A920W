@@ -1,0 +1,104 @@
+*** /home/suda/color2.0/device/temp/android_smali/./secondary-framework.jar.out/smali/android/view/MotionEvent.smali	2014-05-01 23:29:01.000000000 +0800
+--- ./secondary-framework.jar.out/smali/android/view/MotionEvent.smali	2014-05-01 23:29:19.000000000 +0800
+***************
+*** 3624,3629 ****
+--- 3624,3634 ----
+  .method public final getX(I)F
+      .locals 3
+      .parameter "pointerIndex"
++     .annotation build Landroid/annotation/OppoHook;
++         level = .enum Landroid/annotation/OppoHook$OppoHookType;->CHANGE_CODE:Landroid/annotation/OppoHook$OppoHookType;
++         note = "Jun.Zhang@Plf.Framework, modify for catch IllegalArgumentException"
++         property = .enum Landroid/annotation/OppoHook$OppoRomType;->ROM:Landroid/annotation/OppoHook$OppoRomType;
++     .end annotation
+  
+      .prologue
+      iget v0, p0, Landroid/view/MotionEvent;->mNativePtr:I
+***************
+*** 3632,3638 ****
+  
+      const/high16 v2, -0x8000
+  
+!     invoke-static {v0, v1, p1, v2}, Landroid/view/MotionEvent;->nativeGetAxisValue(IIII)F
+  
+      move-result v0
+  
+--- 3637,3643 ----
+  
+      const/high16 v2, -0x8000
+  
+!     invoke-direct {p0, v0, v1, p1, v2}, Landroid/view/MotionEvent;->getXY(IIII)F
+  
+      move-result v0
+  
+***************
+*** 3674,3679 ****
+--- 3679,3689 ----
+  .method public final getY(I)F
+      .locals 3
+      .parameter "pointerIndex"
++     .annotation build Landroid/annotation/OppoHook;
++         level = .enum Landroid/annotation/OppoHook$OppoHookType;->CHANGE_CODE:Landroid/annotation/OppoHook$OppoHookType;
++         note = "Jun.Zhang@Plf.Framework, modify for catch IllegalArgumentException"
++         property = .enum Landroid/annotation/OppoHook$OppoRomType;->ROM:Landroid/annotation/OppoHook$OppoRomType;
++     .end annotation
+  
+      .prologue
+      iget v0, p0, Landroid/view/MotionEvent;->mNativePtr:I
+***************
+*** 3682,3688 ****
+  
+      const/high16 v2, -0x8000
+  
+!     invoke-static {v0, v1, p1, v2}, Landroid/view/MotionEvent;->nativeGetAxisValue(IIII)F
+  
+      move-result v0
+  
+--- 3692,3698 ----
+  
+      const/high16 v2, -0x8000
+  
+!     invoke-direct {p0, v0, v1, p1, v2}, Landroid/view/MotionEvent;->getXY(IIII)F
+  
+      move-result v0
+  
+***************
+*** 4768,4770 ****
+--- 4778,4814 ----
+  
+      return-void
+  .end method
++ 
++ .method private final getXY(IIII)F
++     .locals 2
++     .parameter "nativePtr"
++     .parameter "axis"
++     .parameter "pointerIndex"
++     .parameter "historyPos"
++     .annotation build Landroid/annotation/OppoHook;
++         level = .enum Landroid/annotation/OppoHook$OppoHookType;->NEW_METHOD:Landroid/annotation/OppoHook$OppoHookType;
++         note = "Jun.Zhang@Plf.Framework.Input, 2013-02-26, Modify for catch IllegalArgumentException, Wanglan add for smali"
++         property = .enum Landroid/annotation/OppoHook$OppoRomType;->ROM:Landroid/annotation/OppoHook$OppoRomType;
++     .end annotation
++ 
++     .prologue
++     :try_start_0
++     invoke-static {p1, p2, p3, p4}, Landroid/view/MotionEvent;->nativeGetAxisValue(IIII)F
++     :try_end_0
++     .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
++ 
++     move-result v1
++ 
++     :goto_0
++     return v1
++ 
++     :catch_0
++     move-exception v0
++ 
++     .local v0, e:Ljava/lang/IllegalArgumentException;
++     invoke-virtual {v0}, Ljava/lang/IllegalArgumentException;->printStackTrace()V
++ 
++     const/4 v1, 0x0
++ 
++     goto :goto_0
++ .end method

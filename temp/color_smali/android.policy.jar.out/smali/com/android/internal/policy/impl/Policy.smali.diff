@@ -1,0 +1,106 @@
+*** /home/suda/color2.0/device/temp/android_smali/./android.policy.jar.out/smali/com/android/internal/policy/impl/Policy.smali	2014-05-01 23:28:50.000000000 +0800
+--- ./android.policy.jar.out/smali/com/android/internal/policy/impl/Policy.smali	2014-05-01 23:29:05.000000000 +0800
+***************
+*** 10,15 ****
+--- 10,21 ----
+  .field private static final TAG:Ljava/lang/String; = "PhonePolicy"
+  
+  .field private static final preload_classes:[Ljava/lang/String;
++     .annotation build Landroid/annotation/OppoHook;
++         level = .enum Landroid/annotation/OppoHook$OppoHookType;->CHANGE_CODE:Landroid/annotation/OppoHook$OppoHookType;
++         note = "Jianhui.Yu@Plf.SDK : Modify for oppo PhoneWindow policy"
++         property = .enum Landroid/annotation/OppoHook$OppoRomType;->ROM:Landroid/annotation/OppoHook$OppoRomType;
++     .end annotation
++ .end field
+  
+  
+  # direct methods
+***************
+*** 17,23 ****
+      .locals 8
+  
+      .prologue
+!     const/4 v5, 0x7
+  
+      new-array v5, v5, [Ljava/lang/String;
+  
+--- 23,29 ----
+      .locals 8
+  
+      .prologue
+!     const/16 v5, 0x8
+  
+      new-array v5, v5, [Ljava/lang/String;
+  
+***************
+*** 63,68 ****
+--- 69,80 ----
+  
+      aput-object v7, v5, v6
+  
++     const/4 v6, 0x7
++ 
++     const-string v7, "com.android.internal.policy.impl.OppoPhoneWindow"
++ 
++     aput-object v7, v5, v6
++ 
+      sput-object v5, Lcom/android/internal/policy/impl/Policy;->preload_classes:[Ljava/lang/String;
+  
+      sget-object v0, Lcom/android/internal/policy/impl/Policy;->preload_classes:[Ljava/lang/String;
+***************
+*** 162,183 ****
+  .method public makeNewWindow(Landroid/content/Context;)Landroid/view/Window;
+      .locals 1
+      .parameter "context"
+  
+      .prologue
+!     new-instance v0, Lcom/android/internal/policy/impl/PhoneWindow;
+  
+!     invoke-direct {v0, p1}, Lcom/android/internal/policy/impl/PhoneWindow;-><init>(Landroid/content/Context;)V
+  
+      return-object v0
+  .end method
+  
+  .method public makeNewWindowManager()Landroid/view/WindowManagerPolicy;
+      .locals 1
+  
+      .prologue
+!     new-instance v0, Lcom/android/internal/policy/impl/PhoneWindowManager;
+  
+!     invoke-direct {v0}, Lcom/android/internal/policy/impl/PhoneWindowManager;-><init>()V
+  
+      return-object v0
+  .end method
+--- 174,205 ----
+  .method public makeNewWindow(Landroid/content/Context;)Landroid/view/Window;
+      .locals 1
+      .parameter "context"
++     .annotation build Landroid/annotation/OppoHook;
++         level = .enum Landroid/annotation/OppoHook$OppoHookType;->CHANGE_CODE:Landroid/annotation/OppoHook$OppoHookType;
++         note = "Jianhui.Yu@Plf.SDK : Modify for oppo PhoneWindow policy"
++         property = .enum Landroid/annotation/OppoHook$OppoRomType;->ROM:Landroid/annotation/OppoHook$OppoRomType;
++     .end annotation
+  
+      .prologue
+!     invoke-static {p1}, Lcom/android/internal/policy/impl/OppoPhoneWindow;->newInstance(Landroid/content/Context;)Lcom/android/internal/policy/impl/PhoneWindow;
+  
+!     move-result-object v0
+  
+      return-object v0
+  .end method
+  
+  .method public makeNewWindowManager()Landroid/view/WindowManagerPolicy;
+      .locals 1
++     .annotation build Landroid/annotation/OppoHook;
++         level = .enum Landroid/annotation/OppoHook$OppoHookType;->CHANGE_CODE:Landroid/annotation/OppoHook$OppoHookType;
++         note = "ZhangJun@Plf.Input : Modify for OPPO input policy"
++         property = .enum Landroid/annotation/OppoHook$OppoRomType;->ROM:Landroid/annotation/OppoHook$OppoRomType;
++     .end annotation
+  
+      .prologue
+!     invoke-static {}, Lcom/android/internal/policy/impl/OppoClassFactory;->createPhoneWindowManager()Lcom/android/internal/policy/impl/PhoneWindowManager;
+  
+!     move-result-object v0
+  
+      return-object v0
+  .end method

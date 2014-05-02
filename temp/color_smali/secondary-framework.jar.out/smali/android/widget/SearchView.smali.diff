@@ -1,0 +1,280 @@
+*** /home/suda/color2.0/device/temp/android_smali/./secondary-framework.jar.out/smali/android/widget/SearchView.smali	2014-05-01 23:29:04.000000000 +0800
+--- ./secondary-framework.jar.out/smali/android/widget/SearchView.smali	2014-05-01 23:29:22.000000000 +0800
+***************
+*** 26,31 ****
+--- 26,39 ----
+  
+  
+  # instance fields
++ .field private isHintTextSize:Z
++     .annotation build Landroid/annotation/OppoHook;
++         level = .enum Landroid/annotation/OppoHook$OppoHookType;->NEW_FIELD:Landroid/annotation/OppoHook$OppoHookType;
++         note = "Jianjun.Dan@Plf.SDK,2013.10.05: SearchView adapted for OppoStyle "
++         property = .enum Landroid/annotation/OppoHook$OppoRomType;->ROM:Landroid/annotation/OppoHook$OppoRomType;
++     .end annotation
++ .end field
++ 
+  .field private mAppSearchData:Landroid/os/Bundle;
+  
+  .field private mClearingFocus:Z
+***************
+*** 136,141 ****
+--- 144,154 ----
+      .locals 13
+      .parameter "context"
+      .parameter "attrs"
++     .annotation build Landroid/annotation/OppoHook;
++         level = .enum Landroid/annotation/OppoHook$OppoHookType;->CHANGE_CODE:Landroid/annotation/OppoHook$OppoHookType;
++         note = "Jianjun.Dan@Plf.SDK,2013.10.05: SearchView adapted for OppoStyle "
++         property = .enum Landroid/annotation/OppoHook$OppoRomType;->ROM:Landroid/annotation/OppoHook$OppoRomType;
++     .end annotation
+  
+      .prologue
+      const/high16 v12, 0x1000
+***************
+*** 202,207 ****
+--- 215,222 ----
+  
+      iput-object v7, p0, Landroid/widget/SearchView;->mTextWatcher:Landroid/text/TextWatcher;
+  
++     iput-boolean v11, p0, Landroid/widget/SearchView;->isHintTextSize:Z
++ 
+      const-string v7, "layout_inflater"
+  
+      invoke-virtual {p1, v7}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+***************
+*** 506,511 ****
+--- 521,539 ----
+  
+      invoke-direct {p0}, Landroid/widget/SearchView;->updateQueryHint()V
+  
++     invoke-virtual {p1}, Landroid/content/Context;->isOppoStyle()Z
++ 
++     move-result v7
++ 
++     if-eqz v7, :cond_5
++ 
++     iget-object v7, p0, Landroid/widget/SearchView;->mCloseButton:Landroid/widget/ImageView;
++ 
++     const/4 v8, 0x0
++ 
++     invoke-virtual {v7, v8}, Landroid/widget/ImageView;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
++ 
++     :cond_5
+      return-void
+  .end method
+  
+***************
+*** 2197,2202 ****
+--- 2225,2235 ----
+  .method private onTextChanged(Ljava/lang/CharSequence;)V
+      .locals 5
+      .parameter "newText"
++     .annotation build Landroid/annotation/OppoHook;
++         level = .enum Landroid/annotation/OppoHook$OppoHookType;->CHANGE_CODE:Landroid/annotation/OppoHook$OppoHookType;
++         note = "Jianjun.Dan@Plf.SDK,2013.10.05: SearchView adapted for OppoStyle"
++         property = .enum Landroid/annotation/OppoHook$OppoRomType;->ROM:Landroid/annotation/OppoHook$OppoRomType;
++     .end annotation
+  
+      .prologue
+      const/4 v2, 0x1
+***************
+*** 2260,2265 ****
+--- 2293,2304 ----
+  
+      iput-object v2, p0, Landroid/widget/SearchView;->mOldQueryText:Ljava/lang/CharSequence;
+  
++     invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
++ 
++     move-result-object v2
++ 
++     invoke-direct {p0, v2}, Landroid/widget/SearchView;->changeTextSize(Ljava/lang/String;)V
++ 
+      return-void
+  
+      .end local v0           #hasText:Z
+***************
+*** 2640,2645 ****
+--- 2679,2689 ----
+  
+  .method private updateQueryHint()V
+      .locals 4
++     .annotation build Landroid/annotation/OppoHook;
++         level = .enum Landroid/annotation/OppoHook$OppoHookType;->CHANGE_CODE:Landroid/annotation/OppoHook$OppoHookType;
++         note = "Jianjun.Dan@Plf.SDK,2013.10.05: SearchView adapted for OppoStyle"
++         property = .enum Landroid/annotation/OppoHook$OppoRomType;->ROM:Landroid/annotation/OppoHook$OppoRomType;
++     .end annotation
+  
+      .prologue
+      iget-object v2, p0, Landroid/widget/SearchView;->mQueryHint:Ljava/lang/CharSequence;
+***************
+*** 2650,2656 ****
+  
+      iget-object v3, p0, Landroid/widget/SearchView;->mQueryHint:Ljava/lang/CharSequence;
+  
+!     invoke-direct {p0, v3}, Landroid/widget/SearchView;->getDecoratedHint(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
+  
+      move-result-object v3
+  
+--- 2694,2700 ----
+  
+      iget-object v3, p0, Landroid/widget/SearchView;->mQueryHint:Ljava/lang/CharSequence;
+  
+!     invoke-direct {p0, v3}, Landroid/widget/SearchView;->adjustDecoratedHint(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
+  
+      move-result-object v3
+  
+***************
+*** 2690,2696 ****
+  
+      iget-object v2, p0, Landroid/widget/SearchView;->mQueryTextView:Landroid/widget/SearchView$SearchAutoComplete;
+  
+!     invoke-direct {p0, v0}, Landroid/widget/SearchView;->getDecoratedHint(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
+  
+      move-result-object v3
+  
+--- 2734,2740 ----
+  
+      iget-object v2, p0, Landroid/widget/SearchView;->mQueryTextView:Landroid/widget/SearchView$SearchAutoComplete;
+  
+!     invoke-direct {p0, v0}, Landroid/widget/SearchView;->adjustDecoratedHint(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
+  
+      move-result-object v3
+  
+***************
+*** 2705,2711 ****
+  
+      const-string v3, ""
+  
+!     invoke-direct {p0, v3}, Landroid/widget/SearchView;->getDecoratedHint(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
+  
+      move-result-object v3
+  
+--- 2749,2755 ----
+  
+      const-string v3, ""
+  
+!     invoke-direct {p0, v3}, Landroid/widget/SearchView;->adjustDecoratedHint(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
+  
+      move-result-object v3
+  
+***************
+*** 3945,3947 ****
+--- 3989,4105 ----
+  
+      return-void
+  .end method
++ 
++ .method private adjustDecoratedHint(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
++     .locals 1
++     .parameter "hintText"
++     .annotation build Landroid/annotation/OppoHook;
++         level = .enum Landroid/annotation/OppoHook$OppoHookType;->NEW_METHOD:Landroid/annotation/OppoHook$OppoHookType;
++         note = "Jianjun.Dan@Plf.SDK,2013.10.05 : SearchView adapted for OppoStyle "
++         property = .enum Landroid/annotation/OppoHook$OppoRomType;->ROM:Landroid/annotation/OppoHook$OppoRomType;
++     .end annotation
++ 
++     .prologue
++     iget-object v0, p0, Landroid/widget/SearchView;->mContext:Landroid/content/Context;
++ 
++     invoke-virtual {v0}, Landroid/content/Context;->isOppoStyle()Z
++ 
++     move-result v0
++ 
++     if-eqz v0, :cond_0
++ 
++     .end local p1
++     :goto_0
++     return-object p1
++ 
++     .restart local p1
++     :cond_0
++     invoke-direct {p0, p1}, Landroid/widget/SearchView;->getDecoratedHint(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
++ 
++     move-result-object p1
++ 
++     goto :goto_0
++ .end method
++ 
++ .method private changeTextSize(Ljava/lang/String;)V
++     .locals 4
++     .parameter "newText"
++     .annotation build Landroid/annotation/OppoHook;
++         level = .enum Landroid/annotation/OppoHook$OppoHookType;->NEW_METHOD:Landroid/annotation/OppoHook$OppoHookType;
++         note = "Jianjun.Dan@Plf.SDK,2013.10.05 : SearchView adapted for OppoStyle "
++         property = .enum Landroid/annotation/OppoHook$OppoRomType;->ROM:Landroid/annotation/OppoHook$OppoRomType;
++     .end annotation
++ 
++     .prologue
++     const/4 v3, 0x0
++ 
++     iget-object v0, p0, Landroid/widget/SearchView;->mContext:Landroid/content/Context;
++ 
++     invoke-virtual {v0}, Landroid/content/Context;->isOppoStyle()Z
++ 
++     move-result v0
++ 
++     if-nez v0, :cond_1
++ 
++     :cond_0
++     :goto_0
++     return-void
++ 
++     :cond_1
++     invoke-virtual {p1}, Ljava/lang/String;->isEmpty()Z
++ 
++     move-result v0
++ 
++     if-eqz v0, :cond_2
++ 
++     iget-object v0, p0, Landroid/widget/SearchView;->mQueryTextView:Landroid/widget/SearchView$SearchAutoComplete;
++ 
++     iget-object v1, p0, Landroid/widget/SearchView;->mContext:Landroid/content/Context;
++ 
++     invoke-virtual {v1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
++ 
++     move-result-object v1
++ 
++     const v2, 0xc05043a
++ 
++     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
++ 
++     move-result v1
++ 
++     int-to-float v1, v1
++ 
++     invoke-virtual {v0, v3, v1}, Landroid/widget/SearchView$SearchAutoComplete;->setTextSize(IF)V
++ 
++     const/4 v0, 0x1
++ 
++     iput-boolean v0, p0, Landroid/widget/SearchView;->isHintTextSize:Z
++ 
++     goto :goto_0
++ 
++     :cond_2
++     iget-boolean v0, p0, Landroid/widget/SearchView;->isHintTextSize:Z
++ 
++     if-eqz v0, :cond_0
++ 
++     iget-object v0, p0, Landroid/widget/SearchView;->mQueryTextView:Landroid/widget/SearchView$SearchAutoComplete;
++ 
++     iget-object v1, p0, Landroid/widget/SearchView;->mContext:Landroid/content/Context;
++ 
++     invoke-virtual {v1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
++ 
++     move-result-object v1
++ 
++     const v2, 0xc05043b
++ 
++     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
++ 
++     move-result v1
++ 
++     int-to-float v1, v1
++ 
++     invoke-virtual {v0, v3, v1}, Landroid/widget/SearchView$SearchAutoComplete;->setTextSize(IF)V
++ 
++     iput-boolean v3, p0, Landroid/widget/SearchView;->isHintTextSize:Z
++ 
++     goto :goto_0
++ .end method

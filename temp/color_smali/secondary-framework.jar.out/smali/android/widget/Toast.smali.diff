@@ -1,0 +1,33 @@
+*** /home/suda/color2.0/device/temp/android_smali/./secondary-framework.jar.out/smali/android/widget/Toast.smali	2014-05-01 23:29:03.000000000 +0800
+--- ./secondary-framework.jar.out/smali/android/widget/Toast.smali	2014-05-01 23:29:21.000000000 +0800
+***************
+*** 129,134 ****
+--- 129,139 ----
+      .parameter "context"
+      .parameter "text"
+      .parameter "duration"
++     .annotation build Landroid/annotation/OppoHook;
++         level = .enum Landroid/annotation/OppoHook$OppoHookType;->CHANGE_CODE:Landroid/annotation/OppoHook$OppoHookType;
++         note = "JianJun.Dan@Plf.SDK,2013.10.05: change the Toast\'s UI to oppo style"
++         property = .enum Landroid/annotation/OppoHook$OppoRomType;->ROM:Landroid/annotation/OppoHook$OppoRomType;
++     .end annotation
+  
+      .prologue
+      new-instance v1, Landroid/widget/Toast;
+***************
+*** 145,151 ****
+      check-cast v0, Landroid/view/LayoutInflater;
+  
+      .local v0, inflate:Landroid/view/LayoutInflater;
+!     const v4, 0x10900de
+  
+      const/4 v5, 0x0
+  
+--- 150,156 ----
+      check-cast v0, Landroid/view/LayoutInflater;
+  
+      .local v0, inflate:Landroid/view/LayoutInflater;
+!     const v4, 0xc090435
+  
+      const/4 v5, 0x0
+  

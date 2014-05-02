@@ -1,0 +1,60 @@
+*** AbsListView.smali	2014-05-01 23:29:04.000000000 +0800
+--- AbsListView.smali	2014-05-01 23:29:21.000000000 +0800
+***************
+*** 468,476 ****
+  
+      iput v2, p0, Landroid/widget/AbsListView;->mDirection:I
+  
+      invoke-direct {p0}, Landroid/widget/AbsListView;->initAbsListView()V
+  
+!     invoke-virtual {p0, v4}, Landroid/widget/AbsListView;->setVerticalScrollBarEnabled(Z)V
+  
+      sget-object v1, Lcom/android/internal/R$styleable;->View:[I
+  
+--- 476,486 ----
+  
+      iput v2, p0, Landroid/widget/AbsListView;->mDirection:I
+  
++     iput-object v4, p0, Landroid/widget/AbsListView;->mOppoHooks:Landroid/widget/OppoListViewHooks;
++ 
+      invoke-direct {p0}, Landroid/widget/AbsListView;->initAbsListView()V
+  
+!     invoke-virtual {p0, v5}, Landroid/widget/AbsListView;->setVerticalScrollBarEnabled(Z)V
+  
+      sget-object v1, Lcom/android/internal/R$styleable;->View:[I
+  
+***************
+*** 5112,5121 ****
+  
+      invoke-super {p0, p1}, Landroid/widget/AdapterView;->draw(Landroid/graphics/Canvas;)V
+  
+      iget-object v8, p0, Landroid/widget/AbsListView;->mEdgeGlowTop:Landroid/widget/EdgeEffect;
+  
+      if-eqz v8, :cond_3
+  
+      iget v6, p0, Landroid/widget/AbsListView;->mScrollY:I
+  
+      .local v6, scrollY:I
+--- 5143,5164 ----
+  
+      invoke-super {p0, p1}, Landroid/widget/AdapterView;->draw(Landroid/graphics/Canvas;)V
+  
++     invoke-direct {p0}, Landroid/widget/AbsListView;->scrolling()V
++ 
+      iget-object v8, p0, Landroid/widget/AbsListView;->mEdgeGlowTop:Landroid/widget/EdgeEffect;
+  
+      if-eqz v8, :cond_3
+  
++     invoke-virtual {p0}, Landroid/widget/AbsListView;->getContext()Landroid/content/Context;
++ 
++     move-result-object v8
++ 
++     invoke-virtual {v8}, Landroid/content/Context;->isOppoStyle()Z
++ 
++     move-result v8
++ 
++     if-nez v8, :cond_3
++ 
+      iget v6, p0, Landroid/widget/AbsListView;->mScrollY:I
+  
+      .local v6, scrollY:I

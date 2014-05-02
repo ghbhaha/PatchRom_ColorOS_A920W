@@ -1,0 +1,93 @@
+*** /home/suda/color2.0/device/temp/android_smali/./secondary-framework.jar.out/smali/android/app/Notification$InboxStyle.smali	2014-05-01 23:29:00.000000000 +0800
+--- ./secondary-framework.jar.out/smali/android/app/Notification$InboxStyle.smali	2014-05-01 23:29:17.000000000 +0800
+***************
+*** 67,72 ****
+--- 67,77 ----
+  
+  .method private makeBigContentView()Landroid/widget/RemoteViews;
+      .locals 13
++     .annotation build Landroid/annotation/OppoHook;
++         level = .enum Landroid/annotation/OppoHook$OppoHookType;->CHANGE_RESOURCE:Landroid/annotation/OppoHook$OppoHookType;
++         note = "Jiamiao.He@Plf.Keyguard, 2013.02.04: make notification to oppo\'s"
++         property = .enum Landroid/annotation/OppoHook$OppoRomType;->ROM:Landroid/annotation/OppoHook$OppoRomType;
++     .end annotation
+  
+      .prologue
+      const/4 v9, 0x0
+***************
+*** 80,93 ****
+      #setter for: Landroid/app/Notification$Builder;->mContentText:Ljava/lang/CharSequence;
+      invoke-static {v8, v11}, Landroid/app/Notification$Builder;->access$702(Landroid/app/Notification$Builder;Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
+  
+!     const v8, 0x1090092
+  
+      invoke-virtual {p0, v8}, Landroid/app/Notification$InboxStyle;->getStandardView(I)Landroid/widget/RemoteViews;
+  
+      move-result-object v1
+  
+      .local v1, contentView:Landroid/widget/RemoteViews;
+!     const v8, 0x1020015
+  
+      invoke-virtual {v1, v8, v10}, Landroid/widget/RemoteViews;->setViewVisibility(II)V
+  
+--- 85,98 ----
+      #setter for: Landroid/app/Notification$Builder;->mContentText:Ljava/lang/CharSequence;
+      invoke-static {v8, v11}, Landroid/app/Notification$Builder;->access$702(Landroid/app/Notification$Builder;Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
+  
+!     const v8, 0xc090420
+  
+      invoke-virtual {p0, v8}, Landroid/app/Notification$InboxStyle;->getStandardView(I)Landroid/widget/RemoteViews;
+  
+      move-result-object v1
+  
+      .local v1, contentView:Landroid/widget/RemoteViews;
+!     const v8, 0xc020476
+  
+      invoke-virtual {v1, v8, v10}, Landroid/widget/RemoteViews;->setViewVisibility(II)V
+  
+***************
+*** 186,192 ****
+      :goto_2
+      invoke-virtual {v1, v11, v8}, Landroid/widget/RemoteViews;->setViewVisibility(II)V
+  
+!     const v8, 0x102033b
+  
+      iget-object v11, p0, Landroid/app/Notification$InboxStyle;->mTexts:Ljava/util/ArrayList;
+  
+--- 191,197 ----
+      :goto_2
+      invoke-virtual {v1, v11, v8}, Landroid/widget/RemoteViews;->setViewVisibility(II)V
+  
+!     const v8, 0xc020485
+  
+      iget-object v11, p0, Landroid/app/Notification$InboxStyle;->mTexts:Ljava/util/ArrayList;
+  
+***************
+*** 217,229 ****
+  
+      :array_0
+      .array-data 0x4
+!         0x34t 0x3t 0x2t 0x1t
+!         0x35t 0x3t 0x2t 0x1t
+!         0x36t 0x3t 0x2t 0x1t
+!         0x37t 0x3t 0x2t 0x1t
+!         0x38t 0x3t 0x2t 0x1t
+!         0x39t 0x3t 0x2t 0x1t
+!         0x3at 0x3t 0x2t 0x1t
+      .end array-data
+  .end method
+  
+--- 222,234 ----
+  
+      :array_0
+      .array-data 0x4
+!         0x7ct 0x4t 0x2t 0xct
+!         0x7dt 0x4t 0x2t 0xct
+!         0x7et 0x4t 0x2t 0xct
+!         0x7ft 0x4t 0x2t 0xct
+!         0x80t 0x4t 0x2t 0xct
+!         0x81t 0x4t 0x2t 0xct
+!         0x82t 0x4t 0x2t 0xct
+      .end array-data
+  .end method
+  

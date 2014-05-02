@@ -1,0 +1,53 @@
+*** TextView.smali	2014-05-01 23:29:04.000000000 +0800
+--- TextView.smali	2014-05-01 23:29:21.000000000 +0800
+***************
+*** 20377,20400 ****
+  
+      move-result v7
+  
+!     if-eqz v7, :cond_1
+  
+      :cond_5
+      invoke-virtual {p0}, Landroid/widget/TextView;->isEnabled()Z
+  
+      move-result v7
+  
+!     if-eqz v7, :cond_1
+  
+      iget-object v7, p0, Landroid/widget/TextView;->mText:Ljava/lang/CharSequence;
+  
+      instance-of v7, v7, Landroid/text/Spannable;
+  
+!     if-eqz v7, :cond_1
+  
+      iget-object v7, p0, Landroid/widget/TextView;->mLayout:Landroid/text/Layout;
+  
+!     if-eqz v7, :cond_1
+  
+      const/4 v1, 0x0
+  
+--- 20421,20444 ----
+  
+      move-result v7
+  
+!     if-eqz v7, :cond_0
+  
+      :cond_5
+      invoke-virtual {p0}, Landroid/widget/TextView;->isEnabled()Z
+  
+      move-result v7
+  
+!     if-eqz v7, :cond_0
+  
+      iget-object v7, p0, Landroid/widget/TextView;->mText:Ljava/lang/CharSequence;
+  
+      instance-of v7, v7, Landroid/text/Spannable;
+  
+!     if-eqz v7, :cond_0
+  
+      iget-object v7, p0, Landroid/widget/TextView;->mLayout:Landroid/text/Layout;
+  
+!     if-eqz v7, :cond_0
+  
+      const/4 v1, 0x0
+  

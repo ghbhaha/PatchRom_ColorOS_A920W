@@ -1,0 +1,39 @@
+*** /home/suda/color2.0/device/temp/android_smali/./framework.jar.out/smali/android/provider/Settings$System.smali	2014-05-01 23:28:58.000000000 +0800
+--- ./framework.jar.out/smali/android/provider/Settings$System.smali	2014-05-01 23:29:14.000000000 +0800
+***************
+*** 2,9 ****
+--- 2,20 ----
+  .super Landroid/provider/Settings$NameValueTable;
+  .source "Settings.java"
+  
++ # interfaces
++ .implements Lcom/oppo/provider/OppoSettings$Mtk_System;
++ .implements Lcom/oppo/provider/OppoSettings$Qcom_System;
++ .implements Lcom/oppo/provider/OppoSettings$Oppo_System;
++ 
+  
+  # annotations
++ .annotation build Landroid/annotation/OppoHook;
++     level = .enum Landroid/annotation/OppoHook$OppoHookType;->CHANGE_CODE:Landroid/annotation/OppoHook$OppoHookType;
++     note = "OPPO CHANGE"
++     property = .enum Landroid/annotation/OppoHook$OppoRomType;->ROM:Landroid/annotation/OppoHook$OppoRomType;
++ .end annotation
++ 
+  .annotation system Ldalvik/annotation/EnclosingClass;
+      value = Landroid/provider/Settings;
+  .end annotation
+***************
+*** 579,584 ****
+--- 590,601 ----
+  .field public static final VOLUME_RING:Ljava/lang/String; = "volume_ring"
+  
+  .field public static final VOLUME_SETTINGS:[Ljava/lang/String; = null
++     .annotation build Landroid/annotation/OppoHook;
++         level = .enum Landroid/annotation/OppoHook$OppoHookType;->CHANGE_CODE:Landroid/annotation/OppoHook$OppoHookType;
++         note = "QCOM MTK MODIFY"
++         property = .enum Landroid/annotation/OppoHook$OppoRomType;->QCOM:Landroid/annotation/OppoHook$OppoRomType;
++     .end annotation
++ .end field
+  
+  .field public static final VOLUME_SYSTEM:Ljava/lang/String; = "volume_system"
+  

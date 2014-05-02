@@ -1,0 +1,326 @@
+*** /home/suda/color2.0/device/temp/android_smali/./secondary-framework.jar.out/smali/android/widget/OverScroller.smali	2014-05-01 23:29:03.000000000 +0800
+--- ./secondary-framework.jar.out/smali/android/widget/OverScroller.smali	2014-05-01 23:29:21.000000000 +0800
+***************
+*** 545,552 ****
+--- 545,573 ----
+  
+  .method public final getCurrX()I
+      .locals 1
++     .annotation build Landroid/annotation/OppoHook;
++         level = .enum Landroid/annotation/OppoHook$OppoHookType;->CHANGE_CODE:Landroid/annotation/OppoHook$OppoHookType;
++         note = "LiangJing.Fu@Plf.SDK : Add for oppo scroller spring effect"
++         property = .enum Landroid/annotation/OppoHook$OppoRomType;->ROM:Landroid/annotation/OppoHook$OppoRomType;
++     .end annotation
+  
+      .prologue
++     instance-of v0, p0, Landroid/widget/OppoOverScroller;
++ 
++     if-eqz v0, :cond_0
++ 
++     check-cast p0, Landroid/widget/OppoOverScroller;
++ 
++     .end local p0
++     invoke-virtual {p0}, Landroid/widget/OppoOverScroller;->getOppoCurrX()I
++ 
++     move-result v0
++ 
++     .restart local p0
++     :goto_0
++     return v0
++ 
++     :cond_0
+      iget-object v0, p0, Landroid/widget/OverScroller;->mScrollerX:Landroid/widget/OverScroller$SplineOverScroller;
+  
+      #getter for: Landroid/widget/OverScroller$SplineOverScroller;->mCurrentPosition:I
+***************
+*** 554,566 ****
+  
+      move-result v0
+  
+!     return v0
+  .end method
+  
+  .method public final getCurrY()I
+      .locals 1
+  
+      .prologue
+      iget-object v0, p0, Landroid/widget/OverScroller;->mScrollerY:Landroid/widget/OverScroller$SplineOverScroller;
+  
+      #getter for: Landroid/widget/OverScroller$SplineOverScroller;->mCurrentPosition:I
+--- 575,608 ----
+  
+      move-result v0
+  
+!     goto :goto_0
+  .end method
+  
+  .method public final getCurrY()I
+      .locals 1
++     .annotation build Landroid/annotation/OppoHook;
++         level = .enum Landroid/annotation/OppoHook$OppoHookType;->CHANGE_CODE:Landroid/annotation/OppoHook$OppoHookType;
++         note = "LiangJing.Fu@Plf.SDK,2013.08.02: Add for oppo scroller spring effect"
++         property = .enum Landroid/annotation/OppoHook$OppoRomType;->ROM:Landroid/annotation/OppoHook$OppoRomType;
++     .end annotation
+  
+      .prologue
++     instance-of v0, p0, Landroid/widget/OppoOverScroller;
++ 
++     if-eqz v0, :cond_0
++ 
++     check-cast p0, Landroid/widget/OppoOverScroller;
++ 
++     .end local p0
++     invoke-virtual {p0}, Landroid/widget/OppoOverScroller;->getOppoCurrY()I
++ 
++     move-result v0
++ 
++     .restart local p0
++     :goto_0
++     return v0
++ 
++     :cond_0
+      iget-object v0, p0, Landroid/widget/OverScroller;->mScrollerY:Landroid/widget/OverScroller$SplineOverScroller;
+  
+      #getter for: Landroid/widget/OverScroller$SplineOverScroller;->mCurrentPosition:I
+***************
+*** 568,574 ****
+  
+      move-result v0
+  
+!     return v0
+  .end method
+  
+  .method public final getDuration()I
+--- 610,616 ----
+  
+      move-result v0
+  
+!     goto :goto_0
+  .end method
+  
+  .method public final getDuration()I
+***************
+*** 600,607 ****
+--- 642,670 ----
+  
+  .method public final getFinalX()I
+      .locals 1
++     .annotation build Landroid/annotation/OppoHook;
++         level = .enum Landroid/annotation/OppoHook$OppoHookType;->CHANGE_CODE:Landroid/annotation/OppoHook$OppoHookType;
++         note = "LiangJing.Fu@Plf.SDK,2013.08.02: Add for oppo scroller spring effect"
++         property = .enum Landroid/annotation/OppoHook$OppoRomType;->ROM:Landroid/annotation/OppoHook$OppoRomType;
++     .end annotation
+  
+      .prologue
++     instance-of v0, p0, Landroid/widget/OppoOverScroller;
++ 
++     if-eqz v0, :cond_0
++ 
++     check-cast p0, Landroid/widget/OppoOverScroller;
++ 
++     .end local p0
++     invoke-virtual {p0}, Landroid/widget/OppoOverScroller;->getOppoFinalX()I
++ 
++     move-result v0
++ 
++     .restart local p0
++     :goto_0
++     return v0
++ 
++     :cond_0
+      iget-object v0, p0, Landroid/widget/OverScroller;->mScrollerX:Landroid/widget/OverScroller$SplineOverScroller;
+  
+      #getter for: Landroid/widget/OverScroller$SplineOverScroller;->mFinal:I
+***************
+*** 609,621 ****
+  
+      move-result v0
+  
+!     return v0
+  .end method
+  
+  .method public final getFinalY()I
+      .locals 1
+  
+      .prologue
+      iget-object v0, p0, Landroid/widget/OverScroller;->mScrollerY:Landroid/widget/OverScroller$SplineOverScroller;
+  
+      #getter for: Landroid/widget/OverScroller$SplineOverScroller;->mFinal:I
+--- 672,705 ----
+  
+      move-result v0
+  
+!     goto :goto_0
+  .end method
+  
+  .method public final getFinalY()I
+      .locals 1
++     .annotation build Landroid/annotation/OppoHook;
++         level = .enum Landroid/annotation/OppoHook$OppoHookType;->CHANGE_CODE:Landroid/annotation/OppoHook$OppoHookType;
++         note = "LiangJing.Fu@Plf.SDK : Add for oppo scroller spring effect"
++         property = .enum Landroid/annotation/OppoHook$OppoRomType;->ROM:Landroid/annotation/OppoHook$OppoRomType;
++     .end annotation
+  
+      .prologue
++     instance-of v0, p0, Landroid/widget/OppoOverScroller;
++ 
++     if-eqz v0, :cond_0
++ 
++     check-cast p0, Landroid/widget/OppoOverScroller;
++ 
++     .end local p0
++     invoke-virtual {p0}, Landroid/widget/OppoOverScroller;->getOppoFinalY()I
++ 
++     move-result v0
++ 
++     .restart local p0
++     :goto_0
++     return v0
++ 
++     :cond_0
+      iget-object v0, p0, Landroid/widget/OverScroller;->mScrollerY:Landroid/widget/OverScroller$SplineOverScroller;
+  
+      #getter for: Landroid/widget/OverScroller$SplineOverScroller;->mFinal:I
+***************
+*** 623,629 ****
+  
+      move-result v0
+  
+!     return v0
+  .end method
+  
+  .method public final getStartX()I
+--- 707,713 ----
+  
+      move-result v0
+  
+!     goto :goto_0
+  .end method
+  
+  .method public final getStartX()I
+***************
+*** 656,663 ****
+--- 740,768 ----
+  
+  .method public final isFinished()Z
+      .locals 1
++     .annotation build Landroid/annotation/OppoHook;
++         level = .enum Landroid/annotation/OppoHook$OppoHookType;->CHANGE_CODE:Landroid/annotation/OppoHook$OppoHookType;
++         note = "LiangJing.Fu@Plf.SDK,2013.08.02: Add for oppo scroller spring effect"
++         property = .enum Landroid/annotation/OppoHook$OppoRomType;->ROM:Landroid/annotation/OppoHook$OppoRomType;
++     .end annotation
+  
+      .prologue
++     instance-of v0, p0, Landroid/widget/OppoOverScroller;
++ 
++     if-eqz v0, :cond_0
++ 
++     check-cast p0, Landroid/widget/OppoOverScroller;
++ 
++     .end local p0
++     invoke-virtual {p0}, Landroid/widget/OppoOverScroller;->isOppoFinished()Z
++ 
++     move-result v0
++ 
++     .restart local p0
++     :goto_0
++     return v0
++ 
++     :cond_0
+      iget-object v0, p0, Landroid/widget/OverScroller;->mScrollerX:Landroid/widget/OverScroller$SplineOverScroller;
+  
+      #getter for: Landroid/widget/OverScroller$SplineOverScroller;->mFinished:Z
+***************
+*** 665,671 ****
+  
+      move-result v0
+  
+!     if-eqz v0, :cond_0
+  
+      iget-object v0, p0, Landroid/widget/OverScroller;->mScrollerY:Landroid/widget/OverScroller$SplineOverScroller;
+  
+--- 770,776 ----
+  
+      move-result v0
+  
+!     if-eqz v0, :cond_1
+  
+      iget-object v0, p0, Landroid/widget/OverScroller;->mScrollerY:Landroid/widget/OverScroller$SplineOverScroller;
+  
+***************
+*** 674,687 ****
+  
+      move-result v0
+  
+!     if-eqz v0, :cond_0
+  
+      const/4 v0, 0x1
+  
+!     :goto_0
+!     return v0
+  
+!     :cond_0
+      const/4 v0, 0x0
+  
+      goto :goto_0
+--- 779,791 ----
+  
+      move-result v0
+  
+!     if-eqz v0, :cond_1
+  
+      const/4 v0, 0x1
+  
+!     goto :goto_0
+  
+!     :cond_1
+      const/4 v0, 0x0
+  
+      goto :goto_0
+***************
+*** 884,891 ****
+--- 988,1014 ----
+  .method public final setFriction(F)V
+      .locals 1
+      .parameter "friction"
++     .annotation build Landroid/annotation/OppoHook;
++         level = .enum Landroid/annotation/OppoHook$OppoHookType;->CHANGE_CODE:Landroid/annotation/OppoHook$OppoHookType;
++         note = "LiangJing.Fu@Plf.SDK,2013.08.02: Add for oppo scroller spring effect"
++         property = .enum Landroid/annotation/OppoHook$OppoRomType;->ROM:Landroid/annotation/OppoHook$OppoRomType;
++     .end annotation
+  
+      .prologue
++     instance-of v0, p0, Landroid/widget/OppoOverScroller;
++ 
++     if-eqz v0, :cond_0
++ 
++     check-cast p0, Landroid/widget/OppoOverScroller;
++ 
++     .end local p0
++     invoke-virtual {p0, p1}, Landroid/widget/OppoOverScroller;->setOppoFriction(F)V
++ 
++     :goto_0
++     return-void
++ 
++     .restart local p0
++     :cond_0
+      iget-object v0, p0, Landroid/widget/OverScroller;->mScrollerX:Landroid/widget/OverScroller$SplineOverScroller;
+  
+      invoke-virtual {v0, p1}, Landroid/widget/OverScroller$SplineOverScroller;->setFriction(F)V
+***************
+*** 894,900 ****
+  
+      invoke-virtual {v0, p1}, Landroid/widget/OverScroller$SplineOverScroller;->setFriction(F)V
+  
+!     return-void
+  .end method
+  
+  .method setInterpolator(Landroid/view/animation/Interpolator;)V
+--- 1017,1023 ----
+  
+      invoke-virtual {v0, p1}, Landroid/widget/OverScroller$SplineOverScroller;->setFriction(F)V
+  
+!     goto :goto_0
+  .end method
+  
+  .method setInterpolator(Landroid/view/animation/Interpolator;)V

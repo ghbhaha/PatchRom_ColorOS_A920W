@@ -1,0 +1,36 @@
+*** /home/suda/color2.0/device/temp/android_smali/./services.jar.out/smali/com/android/server/wm/WindowManagerService$DisplayContentsIterator.smali	2014-05-01 23:28:54.000000000 +0800
+--- ./services.jar.out/smali/com/android/server/wm/WindowManagerService$DisplayContentsIterator.smali	2014-05-01 23:29:09.000000000 +0800
+***************
+*** 57,63 ****
+      iget-object v1, p0, Lcom/android/server/wm/WindowManagerService$DisplayContentsIterator;->this$0:Lcom/android/server/wm/WindowManagerService;
+  
+      #getter for: Lcom/android/server/wm/WindowManagerService;->mDisplayContents:Landroid/util/SparseArray;
+!     invoke-static {v1}, Lcom/android/server/wm/WindowManagerService;->access$2500(Lcom/android/server/wm/WindowManagerService;)Landroid/util/SparseArray;
+  
+      move-result-object v1
+  
+--- 57,63 ----
+      iget-object v1, p0, Lcom/android/server/wm/WindowManagerService$DisplayContentsIterator;->this$0:Lcom/android/server/wm/WindowManagerService;
+  
+      #getter for: Lcom/android/server/wm/WindowManagerService;->mDisplayContents:Landroid/util/SparseArray;
+!     invoke-static {v1}, Lcom/android/server/wm/WindowManagerService;->access$2400(Lcom/android/server/wm/WindowManagerService;)Landroid/util/SparseArray;
+  
+      move-result-object v1
+  
+***************
+*** 91,97 ****
+      iget-object v0, p0, Lcom/android/server/wm/WindowManagerService$DisplayContentsIterator;->this$0:Lcom/android/server/wm/WindowManagerService;
+  
+      #getter for: Lcom/android/server/wm/WindowManagerService;->mDisplayContents:Landroid/util/SparseArray;
+!     invoke-static {v0}, Lcom/android/server/wm/WindowManagerService;->access$2500(Lcom/android/server/wm/WindowManagerService;)Landroid/util/SparseArray;
+  
+      move-result-object v0
+  
+--- 91,97 ----
+      iget-object v0, p0, Lcom/android/server/wm/WindowManagerService$DisplayContentsIterator;->this$0:Lcom/android/server/wm/WindowManagerService;
+  
+      #getter for: Lcom/android/server/wm/WindowManagerService;->mDisplayContents:Landroid/util/SparseArray;
+!     invoke-static {v0}, Lcom/android/server/wm/WindowManagerService;->access$2400(Lcom/android/server/wm/WindowManagerService;)Landroid/util/SparseArray;
+  
+      move-result-object v0
+  

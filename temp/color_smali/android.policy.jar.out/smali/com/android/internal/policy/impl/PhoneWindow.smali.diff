@@ -1,0 +1,50 @@
+*** /home/suda/color2.0/device/temp/android_smali/./android.policy.jar.out/smali/com/android/internal/policy/impl/PhoneWindow.smali	2014-05-01 23:28:51.000000000 +0800
+--- ./android.policy.jar.out/smali/com/android/internal/policy/impl/PhoneWindow.smali	2014-05-01 23:29:06.000000000 +0800
+***************
+*** 3146,3151 ****
+--- 3146,3156 ----
+  .method protected generateLayout(Lcom/android/internal/policy/impl/PhoneWindow$DecorView;)Landroid/view/ViewGroup;
+      .locals 22
+      .parameter "decor"
++     .annotation build Landroid/annotation/OppoHook;
++         level = .enum Landroid/annotation/OppoHook$OppoHookType;->CHANGE_CODE:Landroid/annotation/OppoHook$OppoHookType;
++         note = "Jianhui.Yu@Plf.SDK,2013.10.05 : Modify for ActionBar of oppo style"
++         property = .enum Landroid/annotation/OppoHook$OppoRomType;->ROM:Landroid/annotation/OppoHook$OppoRomType;
++     .end annotation
+  
+      .prologue
+      invoke-virtual/range {p0 .. p0}, Lcom/android/internal/policy/impl/PhoneWindow;->getWindowStyle()Landroid/content/res/TypedArray;
+***************
+*** 4033,4038 ****
+--- 4038,4049 ----
+  
+      move-object/from16 v0, p0
+  
++     invoke-virtual {v0, v10}, Lcom/android/internal/policy/impl/PhoneWindow;->hookGetScreenLayout(I)I
++ 
++     move-result v10
++ 
++     move-object/from16 v0, p0
++ 
+      iget-object v0, v0, Lcom/android/internal/policy/impl/PhoneWindow;->mLayoutInflater:Landroid/view/LayoutInflater;
+  
+      move-object/from16 v19, v0
+***************
+*** 7142,7144 ****
+--- 7153,7168 ----
+      :cond_0
+      return-void
+  .end method
++ 
++ .method public hookGetScreenLayout(I)I
++     .locals 0
++     .parameter "layoutResource"
++     .annotation build Landroid/annotation/OppoHook;
++         level = .enum Landroid/annotation/OppoHook$OppoHookType;->NEW_METHOD:Landroid/annotation/OppoHook$OppoHookType;
++         note = "Jianhui.Yu@Plf.SDK,2013.10.05 : Add for ActionBar of oppo style"
++         property = .enum Landroid/annotation/OppoHook$OppoRomType;->ROM:Landroid/annotation/OppoHook$OppoRomType;
++     .end annotation
++ 
++     .prologue
++     return p1
++ .end method

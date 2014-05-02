@@ -1,0 +1,28 @@
+*** /home/suda/color2.0/device/temp/android_smali/./secondary-framework.jar.out/smali/android/widget/ListPopupWindow.smali	2014-05-01 23:29:02.000000000 +0800
+--- ./secondary-framework.jar.out/smali/android/widget/ListPopupWindow.smali	2014-05-01 23:29:20.000000000 +0800
+***************
+*** 1888,1896 ****
+      return-void
+  .end method
+  
+! .method setListItemExpandMax(I)V
+      .locals 0
+      .parameter "max"
+  
+      .prologue
+      iput p1, p0, Landroid/widget/ListPopupWindow;->mListItemExpandMaximum:I
+--- 1888,1901 ----
+      return-void
+  .end method
+  
+! .method public setListItemExpandMax(I)V
+      .locals 0
+      .parameter "max"
++     .annotation build Landroid/annotation/OppoHook;
++         level = .enum Landroid/annotation/OppoHook$OppoHookType;->CHANGE_ACCESS:Landroid/annotation/OppoHook$OppoHookType;
++         note = "Liangjing.Fu@Plf.SDK,2013.10.07:[+public+hide]merge oppolistview"
++         property = .enum Landroid/annotation/OppoHook$OppoRomType;->ROM:Landroid/annotation/OppoHook$OppoRomType;
++     .end annotation
+  
+      .prologue
+      iput p1, p0, Landroid/widget/ListPopupWindow;->mListItemExpandMaximum:I

@@ -1,0 +1,33 @@
+*** /home/suda/color2.0/device/temp/android_smali/./secondary-framework.jar.out/smali/android/app/WallpaperManager$Globals.smali	2014-05-01 23:29:01.000000000 +0800
+--- ./secondary-framework.jar.out/smali/android/app/WallpaperManager$Globals.smali	2014-05-01 23:29:18.000000000 +0800
+***************
+*** 270,275 ****
+--- 270,280 ----
+  .method private getDefaultWallpaperLocked(Landroid/content/Context;)Landroid/graphics/Bitmap;
+      .locals 10
+      .parameter "context"
++     .annotation build Landroid/annotation/OppoHook;
++         level = .enum Landroid/annotation/OppoHook$OppoHookType;->CHANGE_RESOURCE:Landroid/annotation/OppoHook$OppoHookType;
++         note = "gaoliang@Plf.Keyguard,2012.08.27:add to change the default wallpaper res"
++         property = .enum Landroid/annotation/OppoHook$OppoRomType;->ROM:Landroid/annotation/OppoHook$OppoRomType;
++     .end annotation
+  
+      .prologue
+      const/4 v7, 0x0
+***************
+*** 279,285 ****
+  
+      move-result-object v6
+  
+!     const v8, 0x108021e
+  
+      invoke-virtual {v6, v8}, Landroid/content/res/Resources;->openRawResource(I)Ljava/io/InputStream;
+  
+--- 284,290 ----
+  
+      move-result-object v6
+  
+!     const v8, 0xc08003e
+  
+      invoke-virtual {v6, v8}, Landroid/content/res/Resources;->openRawResource(I)Ljava/io/InputStream;
+  

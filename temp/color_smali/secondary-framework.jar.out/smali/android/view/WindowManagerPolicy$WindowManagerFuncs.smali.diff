@@ -1,0 +1,16 @@
+*** /home/suda/color2.0/device/temp/android_smali/./secondary-framework.jar.out/smali/android/view/WindowManagerPolicy$WindowManagerFuncs.smali	2014-05-01 23:29:01.000000000 +0800
+--- ./secondary-framework.jar.out/smali/android/view/WindowManagerPolicy$WindowManagerFuncs.smali	2014-05-01 23:29:19.000000000 +0800
+***************
+*** 43,45 ****
+--- 43,53 ----
+  
+  .method public abstract switchKeyboardLayout(II)V
+  .end method
++ 
++ .method public abstract reboot()V
++     .annotation build Landroid/annotation/OppoHook;
++         level = .enum Landroid/annotation/OppoHook$OppoHookType;->NEW_METHOD:Landroid/annotation/OppoHook$OppoHookType;
++         note = "yaolang@Plf.Framework, add for oppo global actions"
++         property = .enum Landroid/annotation/OppoHook$OppoRomType;->ROM:Landroid/annotation/OppoHook$OppoRomType;
++     .end annotation
++ .end method

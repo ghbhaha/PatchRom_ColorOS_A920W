@@ -1,0 +1,31 @@
+*** /home/suda/color2.0/device/temp/android_smali/./services.jar.out/smali/com/android/server/AlarmManagerService$UninstallReceiver.smali	2014-05-01 23:28:53.000000000 +0800
+--- ./services.jar.out/smali/com/android/server/AlarmManagerService$UninstallReceiver.smali	2014-05-01 23:29:08.000000000 +0800
+***************
+*** 85,90 ****
+--- 85,95 ----
+      .locals 12
+      .parameter "context"
+      .parameter "intent"
++     .annotation build Landroid/annotation/OppoHook;
++         level = .enum Landroid/annotation/OppoHook$OppoHookType;->CHANGE_CODE:Landroid/annotation/OppoHook$OppoHookType;
++         note = "Jun.Zhang@Plf.Framework, alarm filter packages for oppo"
++         property = .enum Landroid/annotation/OppoHook$OppoRomType;->ROM:Landroid/annotation/OppoHook$OppoRomType;
++     .end annotation
+  
+      .prologue
+      iget-object v9, p0, Lcom/android/server/AlarmManagerService$UninstallReceiver;->this$0:Lcom/android/server/AlarmManagerService;
+***************
+*** 311,316 ****
+--- 316,327 ----
+      .restart local v6       #pkg:Ljava/lang/String;
+      if-eqz v6, :cond_3
+  
++     invoke-static {v6}, Lcom/android/server/OppoAlarmManagerHelper;->isFilterRemovePackage(Ljava/lang/String;)Z
++ 
++     move-result v9
++ 
++     if-nez v9, :cond_3
++ 
+      const/4 v9, 0x1
+  
+      new-array v7, v9, [Ljava/lang/String;
